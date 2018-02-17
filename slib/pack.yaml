@@ -1,11 +1,13 @@
 # Pack: Yields streams for each incoming element containing that element
 ---
 in:
-  type: number
+  type: generic
+  generic: itemType
 out:
   type: stream
   stream:
-    type: number
+    type: generic
+    generic: itemType
 
 operators:
   # Loop
@@ -13,9 +15,11 @@ operators:
     operator: loop
     generics:
       itemType:
-        type: number
+        type: generic
+        generic: itemType
       stateType:
-        type: number
+        type: generic
+        generic: itemType
   # False
   false:
     operator: const

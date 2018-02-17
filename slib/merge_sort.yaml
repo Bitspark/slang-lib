@@ -14,7 +14,7 @@ operators:
   packer:
     operator: .pack
     generics:
-      stateType:
+      itemType:
         type: number
   # Sorter
   merger:

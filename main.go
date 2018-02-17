@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/Bitspark/slang"
+	"github.com/Bitspark/Slang"
 	"os"
 	"fmt"
 	"io/ioutil"
@@ -16,6 +16,7 @@ func runTests(dir string) {
 	}
 
 	tests := 0
+	files := 0
 	for _, file := range testFiles {
 		if file.IsDir() {
 			continue
@@ -29,11 +30,11 @@ func runTests(dir string) {
 		fmt.Println()
 		if succs, fails, err := slang.TestOperator(path, os.Stdout, false); err != nil || succs == 0 || fails != 0 {
 			if err != nil {
-				log.Fatal(err)
+				log.Println(err)
 			}
-			os.Exit(-1)
 		} else {
 			tests += succs
+			files++
 		}
 		fmt.Println()
 	}
@@ -42,7 +43,7 @@ func runTests(dir string) {
 	fmt.Println()
 	fmt.Println("SUMMARY OVER ALL TEST FILES")
 	fmt.Println()
-	fmt.Printf("Files: %3d\n", len(testFiles))
+	fmt.Printf("Files: %3d\n", files)
 	fmt.Printf("Tests: %3d\n", tests)
 	fmt.Println()
 }
