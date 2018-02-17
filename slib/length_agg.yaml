@@ -1,0 +1,50 @@
+# Length: Outputs the length of a stream
+---
+in:
+  type: stream
+  stream:
+    type: number
+out:
+  type: number
+
+operators:
+  # Counter
+  counter:
+    operator: agg
+    generics:
+      itemType:
+        type: number
+      stateType:
+        type: number
+  # Zero
+  zero:
+    operator: const
+    generics:
+      valueType:
+        type: number
+    properties:
+      value: 0.0
+  # AddOne (+1)
+  addOne:
+    operator: eval
+    generics:
+      paramsMap:
+        type: map
+        map:
+          x:
+            type: number
+    properties:
+      expression: x+1
+
+connections:
+  (:
+  - items(counter
+  - (zero
+  zero):
+  - init(counter
+  counter)iteration..state:
+  - x(addOne
+  addOne):
+  - state.(counter
+  counter)end:
+  - )

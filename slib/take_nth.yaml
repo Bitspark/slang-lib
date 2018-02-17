@@ -1,0 +1,97 @@
+# Take-Nth: outputs the n-th element of a stream
+---
+in:
+  type: map
+  map:
+    items:
+      type: stream
+      stream:
+        type: number
+    index:
+      type: number
+out:
+  type: number
+
+operators:
+  # Default (const)
+  default:
+    operator: const
+    generics:
+      valueType:
+        type: number
+    properties:
+      value: -1
+  # Zero (const)
+  zero:
+    operator: const
+    generics:
+      valueType:
+        type: number
+    properties:
+      value: 0
+  # MinusOne (eval)
+  minusOne:
+    operator: eval
+    generics:
+      paramsMap:
+        type: map
+        map:
+          x:
+            type: number
+    properties:
+      expression: x-1
+  # Found (eval)
+  found:
+    operator: eval
+    generics:
+      paramsMap:
+        type: map
+        map:
+          x:
+            type: number
+    properties:
+      expression: x==0
+  # Iterator (agg)
+  iter:
+    operator: agg
+    generics:
+      itemType:
+        type: number
+      stateType:
+        type: map
+        map:
+          index:
+            type: number
+          item:
+            type: number
+  # Switch (merge)
+  switch:
+    operator: syncMerge
+    generics:
+      itemType:
+        type: number
+
+connections:
+  (:
+    - (default
+  items(:
+    - items(iter
+  index(:
+    - init.index(iter
+  default):
+    - init.item(iter
+  iter)iteration..i:
+    - true(switch
+  iter)iteration..state.item:
+    - false(switch
+  iter)iteration..state.index:
+    - x(minusOne
+    - x(found
+  found):
+    - select(switch
+  minusOne):
+    - state..index(iter
+  switch):
+    - state..item(iter
+  iter)end.item:
+    - )

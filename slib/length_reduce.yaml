@@ -1,0 +1,51 @@
+# Length: Outputs the length of a stream
+---
+in:
+  type: stream
+  stream:
+    type: number
+out:
+  type: number
+
+operators:
+  # Counter
+  counter:
+    operator: reduce
+    generics:
+      itemType:
+        type: number
+    properties:
+      emptyValue: 0
+  # One
+  one:
+    operator: const
+    generics:
+      valueType:
+        type: number
+    properties:
+      value: 1
+  # Adder
+  adder:
+    operator: eval
+    generics:
+      paramsMap:
+        type: map
+        map:
+          a:
+            type: number
+          b:
+            type: number
+    properties:
+      expression: a+b
+
+connections:
+  .(:
+  - (one
+  one):
+  - items.(counter
+  counter)selection.:
+  - (adder
+  adder):
+  - pool.(counter
+  counter)result:
+  - )

@@ -1,0 +1,67 @@
+# Merge sort
+---
+in:
+  type: stream
+  stream:
+    type: number
+out:
+  type: stream
+  stream:
+    type: number
+
+operators:
+  # Packer
+  packer:
+    operator: .pack
+    generics:
+      stateType:
+        type: number
+  # Sorter
+  merger:
+    operator: take
+    generics:
+      itemType:
+        type: number
+  # Reducer
+  reducer:
+    operator: reduce
+    generics:
+      itemType:
+        type: stream
+        stream:
+          type: number
+    properties:
+      emptyValue: []
+  # Comparator
+  comparator:
+    operator: eval
+    generics:
+      paramsMap:
+        type: map
+        map:
+          a:
+            type: number
+          b:
+            type: number
+    properties:
+      expression: a <= b
+
+connections:
+  .(:
+    - (packer
+  packer):
+    - items.(reducer
+  reducer)selection..a:
+    - true(merger
+  reducer)selection..b:
+    - false(merger
+  merger)compare..true:
+    - a(comparator
+  merger)compare..false:
+    - b(comparator
+  comparator):
+    - select.(merger
+  merger)result:
+    - pool.(reducer
+  reducer)result:
+    - )

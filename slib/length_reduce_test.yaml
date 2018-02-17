@@ -1,0 +1,34 @@
+# Stream length test
+---
+operatorFile: length_reduce.yaml
+testCases:
+- name: Empty
+  data:
+    in:
+    - []
+    - []
+    out:
+    - 0
+    - 0
+- name: Single
+  data:
+    in:
+    - [0]
+    - [1]
+    - [2]
+    - [3]
+    out:
+    - 1
+    - 1
+    - 1
+    - 1
+- name: Multiple
+  data:
+    in:
+    - [1,2,3]
+    - [4,2]
+    - [3,7,3,6,0,0,0,1]
+    out:
+    - 3
+    - 2
+    - 8
