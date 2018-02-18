@@ -55,12 +55,12 @@ connections:
     - true.(merger
   reducer.selection)..b.:
     - false.(merger
-  merger)compare..true:
+  merger.compare)..true:
     - a(comparator
-  merger)compare..false:
+  merger.compare)..false:
     - b(comparator
   comparator):
-    - select.(merger
+    - .(merger.compare
   merger)result:
     - .(reducer.selection
   reducer)result:
