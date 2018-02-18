@@ -1,0 +1,39 @@
+# Sums up all values of a stream
+---
+in:
+  type: stream
+  stream:
+    type: number
+out:
+  type: number
+
+operators:
+  reducer:
+    operator: reduce
+    generics:
+      itemType:
+        type: number
+    properties:
+      emptyValue: 0
+  add:
+    operator: eval
+    generics:
+      paramsMap:
+        type: map
+        map:
+          a:
+            type: number
+          b:
+            type: number
+    properties:
+      expression: a + b
+
+connections:
+  (:
+  - items(reducer
+  reducer.selection).:
+  - (add
+  add):
+  - .(reducer.selection
+  reducer)result:
+  - )
