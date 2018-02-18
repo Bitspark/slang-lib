@@ -1,0 +1,49 @@
+# Sums up all values of a stream
+---
+in:
+  type: stream
+  stream:
+    type: number
+out:
+  type: number
+
+operators:
+  agg:
+    operator: agg
+    generics:
+      itemType:
+        type: number
+      stateType:
+        type: number
+  add:
+    operator: eval
+    generics:
+      paramsMap:
+        type: map
+        map:
+          state:
+            type: number
+          i:
+            type: number
+    properties:
+      expression: i + state
+  const:
+    operator: const
+    generics:
+      valueType:
+        type: number
+    properties:
+      value: 0.0
+
+connections:
+  (:
+  - items(agg
+  - (const
+  const):
+  - init(agg
+  agg)iteration.:
+  - (add
+  add):
+  - state.(agg
+  agg)end:
+  - )
