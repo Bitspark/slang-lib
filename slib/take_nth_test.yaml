@@ -3,6 +3,8 @@
 operatorFile: take_nth.yaml
 testCases:
 - name: 5 items
+  properties:
+    default: -1
   data:
     in:
     - {items: [1,2,3,4,5], index: 0}
@@ -17,6 +19,8 @@ testCases:
     - 4
     - 5
 - name: Not found
+  properties:
+    default: -1
   data:
     in:
     - {items: [1,2,3,4,5], index: -4}
@@ -25,6 +29,8 @@ testCases:
     - -1
     - -1
 - name: 50 items
+  properties:
+    default: -1
   data:
     in:
     - {items: [836,931,399,694,746,967,77,440,164,170,776,364,117,760,775,708,58,665,157,866,737,59,310,529,655,783,227,

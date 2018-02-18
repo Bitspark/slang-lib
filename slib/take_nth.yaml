@@ -11,6 +11,8 @@ in:
       type: number
 out:
   type: number
+properties:
+  - default
 
 operators:
   # Default (const)
@@ -20,7 +22,7 @@ operators:
       valueType:
         type: number
     properties:
-      value: -1
+      value: $default
   # Zero (const)
   zero:
     operator: const
