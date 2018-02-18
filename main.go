@@ -17,6 +17,7 @@ func runTests(dir string) {
 
 	succsTotal := 0
 	failsTotal := 0
+	errors := false
 	files := 0
 	for _, file := range testFiles {
 		if file.IsDir() {
@@ -32,13 +33,15 @@ func runTests(dir string) {
 		if succs, fails, err := slang.TestOperator(path, os.Stdout, false); err != nil || succs == 0 || fails != 0 {
 			if err != nil {
 				log.Println(err)
-				failsTotal++
+				errors = true
 			}
+			succsTotal += succs
+			failsTotal += fails
 		} else {
 			succsTotal += succs
 			failsTotal += fails
-			files++
 		}
+		files++
 		fmt.Println()
 	}
 
@@ -50,10 +53,12 @@ func runTests(dir string) {
 	fmt.Printf("Tests: %3d / %3d\n", succsTotal, succsTotal + failsTotal)
 	fmt.Println()
 
-	if failsTotal == 0 {
+	if failsTotal == 0 && !errors {
 		fmt.Println("ALL TESTS PASSED :)")
-	} else {
+	} else if failsTotal != 0 {
 		fmt.Printf("%d TEST(S) FAILED :(\n", failsTotal)
+	} else {
+		fmt.Printf("ERRORS OCCURRED :(\n")
 	}
 }
 
