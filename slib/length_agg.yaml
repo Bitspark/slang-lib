@@ -42,9 +42,9 @@ connections:
   - (zero
   zero):
   - init(counter
-  counter)iteration..state:
+  counter.iteration)..state:
   - x(addOne
   addOne):
-  - state.(counter
+  - .(counter.iteration
   counter)end:
   - )

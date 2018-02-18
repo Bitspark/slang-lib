@@ -32,6 +32,7 @@ func runTests(dir string) {
 		if succs, fails, err := slang.TestOperator(path, os.Stdout, false); err != nil || succs == 0 || fails != 0 {
 			if err != nil {
 				log.Println(err)
+				failsTotal++
 			}
 		} else {
 			succsTotal += succs
@@ -52,7 +53,7 @@ func runTests(dir string) {
 	if failsTotal == 0 {
 		fmt.Println("ALL TESTS PASSED :)")
 	} else {
-		fmt.Printf("%s TEST(S) FAILED :)\n", failsTotal)
+		fmt.Printf("%d TEST(S) FAILED :(\n", failsTotal)
 	}
 }
 

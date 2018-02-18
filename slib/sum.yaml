@@ -41,9 +41,9 @@ connections:
   - (const
   const):
   - init(agg
-  agg)iteration.:
+  agg.iteration).:
   - (add
   add):
-  - state.(agg
+  - .(agg.iteration
   agg)end:
   - )

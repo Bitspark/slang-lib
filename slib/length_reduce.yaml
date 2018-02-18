@@ -43,9 +43,9 @@ connections:
   - (one
   one):
   - items.(counter
-  counter)selection.:
+  counter.selection).:
   - (adder
   adder):
-  - pool.(counter
+  - .(counter.selection
   counter)result:
   - )

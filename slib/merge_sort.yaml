@@ -16,7 +16,7 @@ operators:
     generics:
       itemType:
         type: number
-  # Sorter
+  # Merger
   merger:
     operator: take
     generics:
@@ -51,9 +51,9 @@ connections:
     - (packer
   packer):
     - items.(reducer
-  reducer)selection..a:
+  reducer.selection)..a:
     - true(merger
-  reducer)selection..b:
+  reducer.selection)..b:
     - false(merger
   merger)compare..true:
     - a(comparator
@@ -62,6 +62,6 @@ connections:
   comparator):
     - select.(merger
   merger)result:
-    - pool.(reducer
+    - .(reducer.selection
   reducer)result:
     - )
