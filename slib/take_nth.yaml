@@ -82,7 +82,7 @@ connections:
     - init.index(iter
   default):
     - init.item(iter
-  iter.iteration)..i:
+  iter.iteration)..item:
     - true(switch
   iter.iteration)..state.item:
     - false(switch
@@ -95,5 +95,5 @@ connections:
     - ..index(iter.iteration
   switch):
     - ..item(iter.iteration
-  iter)end.item:
+  iter)item:
     - )

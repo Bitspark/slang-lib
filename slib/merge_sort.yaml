@@ -50,7 +50,7 @@ connections:
   .(:
     - (packer
   packer):
-    - items.(reducer
+    - .(reducer
   reducer.selection)..a.:
     - true.(merger
   reducer.selection)..b.:
@@ -61,7 +61,7 @@ connections:
     - b(comparator
   comparator):
     - .(merger.compare
-  merger)result:
+  merger):
     - .(reducer.selection
-  reducer)result:
+  reducer):
     - )

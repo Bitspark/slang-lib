@@ -31,7 +31,7 @@ operators:
 
 connections:
   (:
-  - init(loop
+  - (loop
   loop.iteration).:
   - (false
   - ..state(loop.iteration

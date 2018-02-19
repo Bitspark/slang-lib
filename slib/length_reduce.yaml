@@ -42,10 +42,10 @@ connections:
   .(:
   - (one
   one):
-  - items.(counter
+  - .(counter
   counter.selection).:
   - (adder
   adder):
   - .(counter.selection
-  counter)result:
+  counter):
   - )
