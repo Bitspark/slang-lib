@@ -1,0 +1,18 @@
+# Sum tests
+---
+operatorFile: concat.yaml
+testCases:
+- name: EmptyStream
+  data:
+    in:
+    - []
+    out:
+    - ""
+- name: NonemptyStream
+  data:
+    in:
+    - ["1", "2", "3"]
+    - ["hello", " ", "slang"]
+    out:
+    - "123"
+    - "hello slang"
