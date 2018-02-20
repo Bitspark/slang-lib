@@ -3,7 +3,8 @@
 in:
   type: stream
   stream:
-    type: number
+    type: generic
+    generic: itemType
 out:
   type: number
 

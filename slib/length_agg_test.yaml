@@ -3,6 +3,9 @@
 operatorFile: length_agg.yaml
 testCases:
 - name: Empty
+  generics:
+    itemType:
+      type: number
   data:
     in:
     - []
@@ -11,6 +14,9 @@ testCases:
     - 0
     - 0
 - name: Single
+  generics:
+    itemType:
+      type: number
   data:
     in:
     - [0]
@@ -23,6 +29,9 @@ testCases:
     - 1
     - 1
 - name: Multiple
+  generics:
+    itemType:
+      type: number
   data:
     in:
     - [1,2,3]

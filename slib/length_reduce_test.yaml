@@ -3,6 +3,9 @@
 operatorFile: length_reduce.yaml
 testCases:
 - name: Empty
+  generics:
+    itemType:
+      type: number
   data:
     in:
     - []
@@ -11,18 +14,24 @@ testCases:
     - 0
     - 0
 - name: Single
+  generics:
+    itemType:
+      type: string
   data:
     in:
-    - [0]
-    - [1]
-    - [2]
-    - [3]
+    - ["0"]
+    - ["1"]
+    - ["2"]
+    - ["3"]
     out:
     - 1
     - 1
     - 1
     - 1
 - name: Multiple
+  generics:
+    itemType:
+      type: number
   data:
     in:
     - [1,2,3]
