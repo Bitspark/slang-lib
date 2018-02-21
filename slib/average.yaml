@@ -1,0 +1,72 @@
+# Median: calculates median value
+---
+in:
+  type: stream
+  stream:
+    type: number
+out:
+  type: number
+properties:
+  - zeroValue
+
+operators:
+  sum:
+    operator: .sum_reduce
+  length:
+    operator: .length_reduce
+    generics:
+      itemType:
+        type: number
+  div:
+    operator: eval
+    generics:
+      paramsMap:
+        type: map
+        map:
+          sum:
+            type: number
+          length:
+            type: number
+    properties:
+      expression: sum/length
+  zeroval:
+    operator: const
+    generics:
+      valueType:
+        type: primitive
+    properties:
+      value: $zeroValue
+  gtzero:
+    operator: eval
+    generics:
+      paramsMap:
+        type: map
+        map:
+          length:
+            type: number
+    properties:
+      expression: length > 0
+  switch:
+    operator: syncMerge
+    generics:
+      itemType:
+        type: primitive
+
+connections:
+  (:
+  - (sum
+  - (length
+  sum):
+  - sum(div
+  length):
+  - length(div
+  - (zeroval
+  - length(gtzero
+  gtzero):
+  - select(switch
+  zeroval):
+  - false(switch
+  div):
+  - true(switch
+  switch):
+  - )

@@ -1,0 +1,32 @@
+# Median tests
+---
+operatorFile: average.yaml
+testCases:
+- name: Empty stream 1
+  properties:
+    zeroValue: 0
+  data:
+    in:
+    - []
+    out:
+    - 0
+- name: Empty stream 2
+  properties:
+    zeroValue: null
+  data:
+    in:
+    - []
+    out:
+    - null
+- name: Averages
+  properties:
+    zeroValue: 0
+  data:
+    in:
+    - [1]
+    - [1,2]
+    - [1,10,100]
+    out:
+    - 1
+    - 1.5
+    - 37
