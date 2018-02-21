@@ -8,13 +8,16 @@ out:
   type: number
 
 operators:
+  # Sort the stream
   sorter:
     operator: .merge_sort
+  # Get length of stream
   length:
     operator: .length_reduce
     generics:
       itemType:
         type: number
+  # Calculate middle index
   halve:
     operator: eval
     generics:
@@ -25,6 +28,7 @@ operators:
             type: number
     properties:
       expression: floor(x/2)
+  # Take middle value from sorted stream
   takenth:
     operator: .take_nth
     properties:

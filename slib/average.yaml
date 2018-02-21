@@ -1,4 +1,4 @@
-# Median: calculates median value
+# Average: calculates average value
 ---
 in:
   type: stream

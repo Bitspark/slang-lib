@@ -1,4 +1,4 @@
-# Sum tests
+# Concat tests
 ---
 operatorFile: concat.yaml
 testCases:

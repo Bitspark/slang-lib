@@ -1,4 +1,4 @@
-# Sums up all values of a stream
+# Concats up all string values of a stream
 ---
 in:
   type: stream
