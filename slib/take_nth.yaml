@@ -23,14 +23,6 @@ operators:
         type: number
     properties:
       value: $default
-  # Zero (const)
-  zero:
-    operator: const
-    generics:
-      valueType:
-        type: number
-    properties:
-      value: 0
   # MinusOne (eval)
   minusOne:
     operator: eval
@@ -74,11 +66,10 @@ operators:
         type: number
 
 connections:
-  (:
-    - (default
   items(:
     - items(iter
   index(:
+    - (default
     - init.index(iter
   default):
     - init.item(iter

@@ -18,6 +18,14 @@ testCases:
     - 3
     - 4
     - 5
+- name: some items
+  properties:
+    default: 0
+  data:
+    in:
+    - {items: [1,1,1,2,2,2,2,2,3,4,5,8,9,94], index: 7}
+    out:
+    - 2
 - name: Not found
   properties:
     default: -1
