@@ -1,0 +1,26 @@
+# Median tests
+---
+operatorFile: median.yaml
+testCases:
+- name: EmptyStream
+  data:
+    in:
+    - []
+    out:
+    - null
+- name: NonemptyStream
+  data:
+    in:
+    - [1]
+    - [1,2,3]
+    - [7,1,6,2,5,4,4,4]
+    out:
+    - 1
+    - 2
+    - 4
+- name: Long stream
+  data:
+    in:
+    - [7,1,6,2,5,4,4,4,7,1,6,2,5,4,4,4,7,1,6,2,5,4,4,4,7,1,6,2,5,4,4,4,7,1,6,2,5,4,4,4,7,1,6,2,5,4,4,4]
+    out:
+    - 4
