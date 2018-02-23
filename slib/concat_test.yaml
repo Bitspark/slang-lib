@@ -2,17 +2,23 @@
 ---
 operatorFile: concat.yaml
 testCases:
-- name: EmptyStream
+- name: Empty stream
   data:
     in:
     - []
     out:
     - ""
-- name: NonemptyStream
+- name: Nonempty stream
   data:
     in:
     - ["1", "2", "3"]
-    - ["hello", " ", "slang"]
+    - ["hello", " ", "slang", "!"]
     out:
     - "123"
-    - "hello slang"
+    - "hello slang!"
+- name: Single charachter stream
+  data:
+    in:
+    - ["h", "e", "l", "l", "o", ",", " ", "s", "l", "a", "n", "g", "!"]
+    out:
+    - "hello, slang!"
