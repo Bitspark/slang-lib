@@ -55,10 +55,13 @@ func runTests(dir string) {
 
 	if failsTotal == 0 && !errors {
 		fmt.Println("ALL TESTS PASSED :)")
+		os.Exit(0)
 	} else if failsTotal != 0 {
 		fmt.Printf("%d TEST(S) FAILED :(\n", failsTotal)
+		os.Exit(-1)
 	} else {
 		fmt.Printf("ERRORS OCCURRED :(\n")
+		os.Exit(-1)
 	}
 }
 
