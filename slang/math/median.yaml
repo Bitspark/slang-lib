@@ -44,5 +44,5 @@ connections:
   - items(takenth
   halve):
   - index(takenth
-  takenth):
+  takenth)item:
   - )

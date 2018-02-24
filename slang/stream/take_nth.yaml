@@ -10,7 +10,14 @@ in:
     index:
       type: number
 out:
-  type: number
+  type: map
+  map:
+    item:
+      type: number
+    others:
+      type: stream
+      stream:
+        type: number
 properties:
   - default
 
@@ -64,6 +71,11 @@ operators:
     generics:
       itemType:
         type: number
+  filter:
+    operator: slang.fork
+    generics:
+      itemType:
+        type: number
 
 connections:
   items(:
@@ -75,6 +87,7 @@ connections:
     - init.item(iter
   iter.iteration)..item:
     - true(switch
+    - ..item(filter
   iter.iteration)..state.item:
     - false(switch
   iter.iteration)..state.index:
@@ -82,9 +95,12 @@ connections:
     - x(found
   found):
     - select(switch
+    - ..select(filter
   minusOne):
     - ..index(iter.iteration
   switch):
     - ..item(iter.iteration
+  filter)false.:
+    - )others.
   iter)item:
-    - )
+    - )item
