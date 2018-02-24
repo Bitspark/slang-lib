@@ -12,7 +12,7 @@ out:
 operators:
   # Loop
   loop:
-    operator: loop
+    operator: slang.loop
     generics:
       itemType:
         type: generic
@@ -22,7 +22,7 @@ operators:
         generic: itemType
   # False
   false:
-    operator: const
+    operator: slang.const
     generics:
       valueType:
         type: boolean

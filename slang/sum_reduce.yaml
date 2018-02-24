@@ -9,14 +9,14 @@ out:
 
 operators:
   reducer:
-    operator: reduce
+    operator: slang.reduce
     generics:
       itemType:
         type: number
     properties:
       emptyValue: 0
   add:
-    operator: eval
+    operator: slang.eval
     generics:
       paramsMap:
         type: map

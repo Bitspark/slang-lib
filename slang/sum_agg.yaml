@@ -9,14 +9,14 @@ out:
 
 operators:
   agg:
-    operator: agg
+    operator: slang.aggregate
     generics:
       itemType:
         type: number
       stateType:
         type: number
   add:
-    operator: eval
+    operator: slang.eval
     generics:
       paramsMap:
         type: map
@@ -28,7 +28,7 @@ operators:
     properties:
       expression: item + state
   const:
-    operator: const
+    operator: slang.const
     generics:
       valueType:
         type: number

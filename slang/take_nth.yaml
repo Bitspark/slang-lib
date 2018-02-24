@@ -17,7 +17,7 @@ properties:
 operators:
   # Default (const)
   default:
-    operator: const
+    operator: slang.const
     generics:
       valueType:
         type: number
@@ -25,7 +25,7 @@ operators:
       value: $default
   # MinusOne (eval)
   minusOne:
-    operator: eval
+    operator: slang.eval
     generics:
       paramsMap:
         type: map
@@ -36,7 +36,7 @@ operators:
       expression: x-1
   # Found (eval)
   found:
-    operator: eval
+    operator: slang.eval
     generics:
       paramsMap:
         type: map
@@ -47,7 +47,7 @@ operators:
       expression: x==0
   # Iterator (agg)
   iter:
-    operator: agg
+    operator: slang.aggregate
     generics:
       itemType:
         type: number
@@ -60,7 +60,7 @@ operators:
             type: number
   # Switch (merge)
   switch:
-    operator: syncMerge
+    operator: slang.syncMerge
     generics:
       itemType:
         type: number

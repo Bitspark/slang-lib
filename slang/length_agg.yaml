@@ -11,7 +11,7 @@ out:
 operators:
   # Counter
   counter:
-    operator: agg
+    operator: slang.aggregate
     generics:
       itemType:
         type: generic
@@ -20,7 +20,7 @@ operators:
         type: number
   # Zero
   zero:
-    operator: const
+    operator: slang.const
     generics:
       valueType:
         type: number
@@ -28,7 +28,7 @@ operators:
       value: 0.0
   # AddOne (+1)
   addOne:
-    operator: eval
+    operator: slang.eval
     generics:
       paramsMap:
         type: map

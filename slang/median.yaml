@@ -19,7 +19,7 @@ operators:
         type: number
   # Calculate middle index
   halve:
-    operator: eval
+    operator: slang.eval
     generics:
       paramsMap:
         type: map

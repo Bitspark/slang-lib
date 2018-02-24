@@ -32,7 +32,7 @@ func runTests(dir string) {
 		fmt.Println()
 		if succs, fails, err := slang.TestOperator(path, os.Stdout, false); err != nil || succs == 0 || fails != 0 {
 			if err != nil {
-				log.Println(err)
+				log.Fatal(err)
 				errors = true
 			}
 			succsTotal += succs
@@ -66,5 +66,5 @@ func runTests(dir string) {
 }
 
 func main() {
-	runTests("./slib/")
+	runTests("./slang/")
 }

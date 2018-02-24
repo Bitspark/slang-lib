@@ -18,7 +18,7 @@ operators:
       itemType:
         type: number
   div:
-    operator: eval
+    operator: slang.eval
     generics:
       paramsMap:
         type: map
@@ -30,14 +30,14 @@ operators:
     properties:
       expression: sum/length
   zeroval:
-    operator: const
+    operator: slang.const
     generics:
       valueType:
         type: primitive
     properties:
       value: $zeroValue
   gtzero:
-    operator: eval
+    operator: slang.eval
     generics:
       paramsMap:
         type: map
@@ -47,7 +47,7 @@ operators:
     properties:
       expression: length > 0
   switch:
-    operator: syncMerge
+    operator: slang.syncMerge
     generics:
       itemType:
         type: primitive
