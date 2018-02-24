@@ -10,10 +10,10 @@ out:
 operators:
   # Sort the stream
   sorter:
-    operator: .merge_sort
+    operator: slang.stream.merge_sort
   # Get length of stream
   length:
-    operator: .length_reduce
+    operator: slang.stream.length_reduce
     generics:
       itemType:
         type: number
@@ -30,7 +30,7 @@ operators:
       expression: floor(x/2)
   # Take middle value from sorted stream
   takenth:
-    operator: .take_nth
+    operator: slang.stream.take_nth
     properties:
       default: null
 

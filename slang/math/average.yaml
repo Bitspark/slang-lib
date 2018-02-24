@@ -13,7 +13,7 @@ operators:
   sum:
     operator: .sum_reduce
   length:
-    operator: .length_reduce
+    operator: slang.stream.length_reduce
     generics:
       itemType:
         type: number
