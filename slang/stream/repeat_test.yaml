@@ -1,0 +1,31 @@
+# Repeat test
+---
+operatorFile: repeat.yaml
+testCases:
+- name: No Repeat
+  generics:
+    itemType:
+      type: string
+  data:
+    in:
+    - {"value": "not repeated :(", "triggers": []}
+    out:
+    - []
+- name: Repeat
+  generics:
+    itemType:
+      type: string
+  data:
+    in:
+    - {"value": "repeat :)", "triggers": [1, 2, 3]}
+    out:
+    - ["repeat :)", "repeat :)", "repeat :)"]
+- name: Repeat
+  generics:
+    itemType:
+      type: number
+  data:
+    in:
+    - {"value": 42, "triggers": [true, false, "whatever", "cool", "huh?"]}
+    out:
+    - [42, 42, 42, 42, 42]

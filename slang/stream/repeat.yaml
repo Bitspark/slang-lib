@@ -1,0 +1,35 @@
+in:
+  type: map
+  map:
+    value:
+      type: generic
+      generic: itemType
+    triggers:
+      type: stream
+      stream:
+        type: trigger
+out:
+  type: stream
+  stream:
+    type: generic
+    generic: itemType
+
+operators:
+  repeater:
+    operator: slang.aggregate
+    generics:
+      itemType:
+        type: trigger
+      stateType:
+        type: generic
+        generic: itemType
+
+connections:
+  value(:
+  - init(repeater
+  triggers(:
+  - items(repeater
+
+  repeater.iteration)..state:
+  - .(repeater.iteration
+  - ).
