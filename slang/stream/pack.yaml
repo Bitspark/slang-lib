@@ -32,10 +32,10 @@ operators:
 connections:
   (:
   - (loop
-  loop.iteration).:
+  loop.iteration)~:
   - (false
-  - ..state(loop.iteration
+  - ~.state(loop.iteration
   loop.iteration):
   - )
   false):
-  - ..continue(loop.iteration
+  - ~.continue(loop.iteration

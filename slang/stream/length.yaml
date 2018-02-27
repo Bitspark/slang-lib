@@ -40,13 +40,13 @@ operators:
       expression: a+b
 
 connections:
-  .(:
+  ~(:
   - (one
   one):
-  - .(counter
-  counter.selection).:
+  - ~(counter
+  counter.selection)~:
   - (adder
   adder):
-  - .(counter.selection
+  - ~(counter.selection
   counter):
   - )

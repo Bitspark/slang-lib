@@ -30,6 +30,6 @@ connections:
   triggers(:
   - items(repeater
 
-  repeater.iteration)..state:
-  - .(repeater.iteration
-  - ).
+  repeater.iteration)~.state:
+  - ~(repeater.iteration
+  - )~

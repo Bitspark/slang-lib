@@ -85,22 +85,22 @@ connections:
     - init.index(iter
   default):
     - init.item(iter
-  iter.iteration)..item:
+  iter.iteration)~.item:
     - true(switch
-    - ..item(filter
-  iter.iteration)..state.item:
+    - ~.item(filter
+  iter.iteration)~.state.item:
     - false(switch
-  iter.iteration)..state.index:
+  iter.iteration)~.state.index:
     - x(minusOne
     - x(found
   found):
     - select(switch
-    - ..select(filter
+    - ~.select(filter
   minusOne):
-    - ..index(iter.iteration
+    - ~.index(iter.iteration
   switch):
-    - ..item(iter.iteration
-  filter)false.:
-    - )others.
+    - ~.item(iter.iteration
+  filter)false.~:
+    - )others.~
   iter)item:
     - )item

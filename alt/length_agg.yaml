@@ -40,13 +40,13 @@ operators:
 
 connections:
   (:
-  - .items(counter
+  - items(counter
   - (zero
   zero):
   - init(counter
-  counter.iteration)..state:
+  counter.iteration)~.state:
   - x(addOne
   addOne):
-  - .(counter.iteration
+  - ~(counter.iteration
   counter):
   - )

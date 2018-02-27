@@ -47,21 +47,21 @@ operators:
       expression: a <= b
 
 connections:
-  .(:
+  ~(:
     - (packer
   packer):
-    - .(reducer
-  reducer.selection)..a.:
-    - true.(merger
-  reducer.selection)..b.:
-    - false.(merger
-  merger.compare)..true:
+    - ~(reducer
+  reducer.selection)~.a.~:
+    - true.~(merger
+  reducer.selection)~.b.~:
+    - false.~(merger
+  merger.compare)~.true:
     - a(comparator
-  merger.compare)..false:
+  merger.compare)~.false:
     - b(comparator
   comparator):
-    - .(merger.compare
+    - ~(merger.compare
   merger):
-    - .(reducer.selection
+    - ~(reducer.selection
   reducer):
     - )

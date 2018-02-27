@@ -31,9 +31,9 @@ operators:
 connections:
   (:
   - (reducer
-  reducer.selection).:
+  reducer.selection)~:
   - (add
   add):
-  - .(reducer.selection
+  - ~(reducer.selection
   reducer):
   - )
