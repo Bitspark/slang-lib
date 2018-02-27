@@ -1,6 +1,6 @@
 # Sum tests
 ---
-operatorFile: sum_reduce.yaml
+operatorFile: sum.yaml
 testCases:
 - name: EmptyStream
   data:

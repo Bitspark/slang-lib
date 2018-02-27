@@ -11,9 +11,9 @@ properties:
 
 operators:
   sum:
-    operator: .sum_reduce
+    operator: .sum
   length:
-    operator: slang.stream.length_reduce
+    operator: slang.stream.length
     generics:
       itemType:
         type: number

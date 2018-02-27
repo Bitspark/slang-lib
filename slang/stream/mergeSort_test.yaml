@@ -1,6 +1,6 @@
 # Merge sort test
 ---
-operatorFile: merge_sort.yaml
+operatorFile: mergeSort.yaml
 testCases:
 - name: Empty
   data:

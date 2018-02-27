@@ -1,6 +1,6 @@
 # Take-nth test
 ---
-operatorFile: take_nth.yaml
+operatorFile: takeNth.yaml
 testCases:
 - name: 5 items
   properties:

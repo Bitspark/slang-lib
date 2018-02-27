@@ -50,7 +50,7 @@ func runTests(dir string) (int, int, int) {
 }
 
 func main() {
-	succsTotal, failsTotal, filesTotal := runTests("./slang/")
+	succsTotal, failsTotal, filesTotal := runTests("./")
 
 	fmt.Println("SUMMARY OVER ALL TEST FILES")
 	fmt.Println()

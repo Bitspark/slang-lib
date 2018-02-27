@@ -1,6 +1,6 @@
 # Stream length test
 ---
-operatorFile: length_reduce.yaml
+operatorFile: length.yaml
 testCases:
 - name: Empty
   generics:
