@@ -30,8 +30,7 @@ func runTests(dir string) (int, int, int) {
 			continue
 		}
 		path := dir + file.Name()
-		fmt.Println()
-		fmt.Printf("RUNNING TEST FILE %s\n", path)
+		fmt.Printf("FILE %s", path)
 		fmt.Println()
 		if succs, fails, err := slang.TestOperator(path, os.Stdout, false); err != nil || succs == 0 || fails != 0 {
 			if err != nil {
@@ -53,8 +52,6 @@ func runTests(dir string) (int, int, int) {
 func main() {
 	succsTotal, failsTotal, filesTotal := runTests("./slang/")
 
-	fmt.Println()
-	fmt.Println()
 	fmt.Println("SUMMARY OVER ALL TEST FILES")
 	fmt.Println()
 	fmt.Printf("Files: %3d\n", filesTotal)
