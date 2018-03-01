@@ -38,7 +38,7 @@ connections:
   b.~(:
   - false.~(taker
 
-  taker.compare)~:
+  taker.compare)~.true:
   - (ctrue
   ctrue):
   - ~(taker.compare
