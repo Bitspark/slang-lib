@@ -1,0 +1,30 @@
+# Stream length test
+---
+operatorFile: append.yaml
+testCases:
+- name: Empty
+  generics:
+    itemType:
+      type: number
+  data:
+    in:
+    - {"a": [], "b": []}
+    - {"a": [1], "b": []}
+    - {"a": [], "b": [2]}
+    - {"a": [1,2,3,4,5], "b": []}
+    - {"a": [], "b": [1,2,3,4,5]}
+    out:
+    - []
+    - [1]
+    - [2]
+    - [1,2,3,4,5]
+    - [1,2,3,4,5]
+- name: Two streams
+  generics:
+    itemType:
+      type: number
+  data:
+    in:
+    - {"a": [1,2,3], "b": [4,5,6]}
+    out:
+    - [1,2,3,4,5,6]

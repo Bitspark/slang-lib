@@ -1,0 +1,47 @@
+in:
+  type: map
+  map:
+    a:
+      type: stream
+      stream:
+        type: generic
+        generic: itemType
+    b:
+      type: stream
+      stream:
+        type: generic
+        generic: itemType
+out:
+  type: stream
+  stream:
+    type: generic
+    generic: itemType
+
+operators:
+  taker:
+    operator: slang.take
+    generics:
+      itemType:
+        type: generic
+        generic: itemType
+  ctrue:
+    operator: slang.const
+    generics:
+      valueType:
+        type: boolean
+    properties:
+      value: true
+
+connections:
+  a.~(:
+  - true.~(taker
+  b.~(:
+  - false.~(taker
+
+  taker.compare)~:
+  - (ctrue
+  ctrue):
+  - ~(taker.compare
+
+  taker)~:
+  - )~

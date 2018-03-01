@@ -1,7 +1,7 @@
 package main
 
 import (
-	"slang"
+	"github.com/Bitspark/slang"
 	"os"
 	"fmt"
 	"io/ioutil"
