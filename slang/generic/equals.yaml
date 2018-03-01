@@ -1,0 +1,40 @@
+in:
+  type: generic
+  generic: itemType
+out:
+  type: boolean
+properties:
+- value
+
+operators:
+  value:
+    operator: slang.const
+    generics:
+      valueType:
+        type: generic
+        generic: itemType
+    properties:
+      value: $value
+  eval:
+    operator: slang.eval
+    generics:
+      paramsMap:
+        type: map
+        map:
+          v:
+            type: generic
+            generic: itemType
+          c:
+            type: generic
+            generic: itemType
+    properties:
+      expression: c == v
+
+connections:
+  (:
+  - (value
+  - v(eval
+  value):
+  - c(eval
+  eval):
+  - )
