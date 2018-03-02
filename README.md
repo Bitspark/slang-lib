@@ -1,3 +1,3 @@
-# Slib
+# slang Standard Library
 
-Implementation of Slang operator for test purposes.
+Implementation of standard slang operators.
