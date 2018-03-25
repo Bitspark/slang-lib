@@ -1,23 +1,26 @@
 # Take-Nth: outputs the n-th element of a stream
 ---
-in:
-  type: map
-  map:
-    items:
-      type: stream
-      stream:
-        type: number
-    index:
-      type: number
-out:
-  type: map
-  map:
-    item:
-      type: number
-    others:
-      type: stream
-      stream:
-        type: number
+services:
+  main:
+    in:
+      type: map
+      map:
+        items:
+          type: stream
+          stream:
+            type: number
+        index:
+          type: number
+    out:
+      type: map
+      map:
+        item:
+          type: number
+        others:
+          type: stream
+          stream:
+            type: number
+
 properties:
   - default
 

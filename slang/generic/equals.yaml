@@ -1,8 +1,10 @@
-in:
-  type: generic
-  generic: itemType
-out:
-  type: boolean
+services:
+  main:
+    in:
+      type: generic
+      generic: itemType
+    out:
+      type: boolean
 properties:
 - value
 

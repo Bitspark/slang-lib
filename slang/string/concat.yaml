@@ -1,11 +1,13 @@
 # Concats up all string values of a stream
 ---
-in:
-  type: stream
-  stream:
-    type: string
-out:
-  type: string
+services:
+  main:
+    in:
+      type: stream
+      stream:
+        type: string
+    out:
+      type: string
 
 operators:
   agg:

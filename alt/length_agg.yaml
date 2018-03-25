@@ -1,12 +1,14 @@
 # Length: Outputs the length of a stream
 ---
-in:
-  type: stream
-  stream:
-    type: generic
-    generic: itemType
-out:
-  type: number
+services:
+  main:
+    in:
+      type: stream
+      stream:
+        type: generic
+        generic: itemType
+    out:
+      type: number
 
 operators:
   # Counter

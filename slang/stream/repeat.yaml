@@ -1,18 +1,20 @@
-in:
-  type: map
-  map:
-    value:
-      type: generic
-      generic: itemType
-    triggers:
+services:
+  main:
+    in:
+      type: map
+      map:
+        value:
+          type: generic
+          generic: itemType
+        triggers:
+          type: stream
+          stream:
+            type: trigger
+    out:
       type: stream
       stream:
-        type: trigger
-out:
-  type: stream
-  stream:
-    type: generic
-    generic: itemType
+        type: generic
+        generic: itemType
 
 operators:
   repeater:

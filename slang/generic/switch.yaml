@@ -1,19 +1,21 @@
-in:
-  type: stream
-  stream:
-    type: map
-    map:
-      select:
+services:
+  main:
+    in:
+      type: stream
+      stream:
+        type: map
+        map:
+          select:
+            type: generic
+            generic: selectType
+          item:
+            type: generic
+            generic: inItemType
+    out:
+      type: stream
+      stream:
         type: generic
-        generic: selectType
-      item:
-        type: generic
-        generic: inItemType
-out:
-  type: stream
-  stream:
-    type: generic
-    generic: outItemType
+        generic: outItemType
 delegates:
   handler:
     out:

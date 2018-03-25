@@ -1,11 +1,13 @@
 # Sums up all values of a stream
 ---
-in:
-  type: stream
-  stream:
-    type: number
-out:
-  type: number
+services:
+  main:
+    in:
+      type: stream
+      stream:
+        type: number
+    out:
+      type: number
 
 operators:
   reducer:

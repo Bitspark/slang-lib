@@ -1,12 +1,12 @@
 package main
 
 import (
-	"github.com/Bitspark/slang"
-	"os"
-	"fmt"
 	"io/ioutil"
 	"log"
 	"strings"
+	"fmt"
+	"os"
+	"github.com/Bitspark/slang/pkg/api"
 )
 
 func runTests(dir string) (int, int, int) {
@@ -32,7 +32,7 @@ func runTests(dir string) (int, int, int) {
 		path := dir + file.Name()
 		fmt.Printf("FILE %s", path)
 		fmt.Println()
-		if succs, fails, err := slang.TestOperator(path, os.Stdout, false); err != nil || succs == 0 || fails != 0 {
+		if succs, fails, err := api.TestOperator(path, os.Stdout, false); err != nil || succs == 0 || fails != 0 {
 			if err != nil {
 				log.Fatal(err)
 			}

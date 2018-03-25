@@ -1,25 +1,27 @@
-in:
-  type: map
-  map:
-    red:
-      type: number
-    green:
-      type: number
-    blue:
-      type: number
-    alpha:
-      type: number
-out:
-  type: map
-  map:
-    red:
-      type: number
-    green:
-      type: number
-    blue:
-      type: number
-    alpha:
-      type: number
+services:
+  main:
+    in:
+      type: map
+      map:
+        red:
+          type: number
+        green:
+          type: number
+        blue:
+          type: number
+        alpha:
+          type: number
+    out:
+      type: map
+      map:
+        red:
+          type: number
+        green:
+          type: number
+        blue:
+          type: number
+        alpha:
+          type: number
 
 operators:
   gray:

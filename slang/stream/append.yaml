@@ -1,21 +1,23 @@
-in:
-  type: map
-  map:
-    a:
+services:
+  main:
+    in:
+      type: map
+      map:
+        a:
+          type: stream
+          stream:
+            type: generic
+            generic: itemType
+        b:
+          type: stream
+          stream:
+            type: generic
+            generic: itemType
+    out:
       type: stream
       stream:
         type: generic
         generic: itemType
-    b:
-      type: stream
-      stream:
-        type: generic
-        generic: itemType
-out:
-  type: stream
-  stream:
-    type: generic
-    generic: itemType
 
 operators:
   taker:
