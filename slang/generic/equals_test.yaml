@@ -46,7 +46,7 @@ testCases:
       type: map
       map:
         a:
-          type: string
+          type: number
   properties:
     value: {"a": 3}
   in:

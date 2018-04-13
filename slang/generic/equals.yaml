@@ -6,7 +6,9 @@ services:
     out:
       type: boolean
 properties:
-- value
+  value:
+    type: generic
+    generic: itemType
 
 operators:
   value:

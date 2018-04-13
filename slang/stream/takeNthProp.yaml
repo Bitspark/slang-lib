@@ -3,26 +3,18 @@
 services:
   main:
     in:
-      type: map
-      map:
-        items:
-          type: stream
-          stream:
-            type: number
-        index:
-          type: number
+      type: stream
+      stream:
+        type: generic
+        generic: itemType
     out:
-      type: map
-      map:
-        item:
-          type: number
-        others:
-          type: stream
-          stream:
-            type: number
+      type: generic
+      generic: itemType
 
 properties:
   default:
+    type: number
+  index:
     type: number
 
 operators:
@@ -34,6 +26,14 @@ operators:
         type: number
     properties:
       value: $default
+  # Index (const)
+  index:
+    operator: slang.const
+    generics:
+      valueType:
+        type: number
+    properties:
+      value: $index
   # MinusOne (eval)
   minusOne:
     operator: slang.eval
@@ -82,10 +82,11 @@ operators:
         type: number
 
 connections:
-  items(:
+  (:
     - items(iter
-  index(:
+    - (index
     - (default
+  index):
     - init.index(iter
   default):
     - init.item(iter
@@ -104,7 +105,5 @@ connections:
     - ~.index(iter.iteration
   switch):
     - ~.item(iter.iteration
-  filter)false.~:
-    - )others.~
   iter)item:
-    - )item
+    - )

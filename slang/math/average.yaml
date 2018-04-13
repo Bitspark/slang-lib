@@ -10,7 +10,9 @@ services:
       type: number
 
 properties:
-  - zeroValue
+  zeroValue:
+    type: generic
+    generic: valueType
 
 operators:
   sum:

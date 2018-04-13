@@ -3,6 +3,9 @@
 operatorFile: average.yaml
 testCases:
 - name: Empty stream 1
+  generics:
+    valueType:
+      type: number
   properties:
     zeroValue: 0
   data:
@@ -11,6 +14,9 @@ testCases:
     out:
     - 0
 - name: Empty stream 2
+  generics:
+    valueType:
+      type: primitive
   properties:
     zeroValue: null
   data:
@@ -19,6 +25,9 @@ testCases:
     out:
     - null
 - name: Averages
+  generics:
+    valueType:
+      type: number
   properties:
     zeroValue: 0
   data:

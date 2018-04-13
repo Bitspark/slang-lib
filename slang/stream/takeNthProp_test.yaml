@@ -1,0 +1,52 @@
+# Take-nth test
+---
+operatorFile: takeNthProp.yaml
+testCases:
+- name: 5 items [0]
+  generics:
+    itemType:
+      type: number
+  properties:
+    default: -1
+    index: 0
+  data:
+    in:
+    - [1,2,3,4,5]
+    out:
+    - 1
+- name: 5 items [3]
+  generics:
+    itemType:
+      type: number
+  properties:
+    default: -1
+    index: 2
+  data:
+    in:
+    - [1,2,3,4,5]
+    out:
+    - 3
+- name: Not found [-4]
+  generics:
+    itemType:
+      type: number
+  properties:
+    default: -1
+    index: -4
+  data:
+    in:
+    - [1,2,3,4,5]
+    out:
+    - -1
+- name: Not found [9]
+  generics:
+    itemType:
+      type: number
+  properties:
+    default: -1
+    index: 9
+  data:
+    in:
+    - [1,2,3,4,5]
+    out:
+    - -1
