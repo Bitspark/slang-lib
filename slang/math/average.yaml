@@ -24,16 +24,9 @@ operators:
         type: number
   div:
     operator: slang.eval
-    generics:
-      paramsMap:
-        type: map
-        map:
-          sum:
-            type: number
-          length:
-            type: number
     properties:
       expression: sum/length
+      variables: ["sum", "length"]
   zeroval:
     operator: slang.const
     generics:
@@ -43,14 +36,9 @@ operators:
       value: $zeroValue
   gtzero:
     operator: slang.eval
-    generics:
-      paramsMap:
-        type: map
-        map:
-          length:
-            type: number
     properties:
       expression: length > 0
+      variables: ["length"]
   switch:
     operator: slang.syncMerge
     generics:

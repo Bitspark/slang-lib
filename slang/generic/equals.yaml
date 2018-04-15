@@ -21,18 +21,9 @@ operators:
       value: $value
   eval:
     operator: slang.eval
-    generics:
-      paramsMap:
-        type: map
-        map:
-          v:
-            type: generic
-            generic: itemType
-          c:
-            type: generic
-            generic: itemType
     properties:
       expression: c == v
+      variables: ["c", "v"]
 
 connections:
   (:

@@ -22,14 +22,9 @@ operators:
   # Calculate middle index
   halve:
     operator: slang.eval
-    generics:
-      paramsMap:
-        type: map
-        map:
-          x:
-            type: number
     properties:
       expression: floor(x/2)
+      variables: ["x"]
   # Take middle value from sorted stream
   takenth:
     operator: slang.stream.takeNth

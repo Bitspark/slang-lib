@@ -19,16 +19,9 @@ operators:
         type: string
   con:
     operator: slang.eval
-    generics:
-      paramsMap:
-        type: map
-        map:
-          state:
-            type: string
-          item:
-            type: string
     properties:
       expression: state + item
+      variables: ["state", "item"]
   const:
     operator: slang.const
     generics:

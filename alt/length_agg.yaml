@@ -31,14 +31,9 @@ operators:
   # AddOne (+1)
   addOne:
     operator: slang.eval
-    generics:
-      paramsMap:
-        type: map
-        map:
-          x:
-            type: number
     properties:
       expression: x+1
+      variables: ["x"]
 
 connections:
   (:

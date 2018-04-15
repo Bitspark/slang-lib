@@ -26,20 +26,9 @@ services:
 operators:
   gray:
     operator: slang.eval
-    generics:
-      paramsMap:
-        type: map
-        map:
-          red:
-            type: number
-          green:
-            type: number
-          blue:
-            type: number
-          alpha:
-            type: number
     properties:
       expression: (0\.21*red+0\.72*green+0\.07*blue)/3
+      variables: ["red", "green", "blue", "alpha"]
 
 connections:
   (:
