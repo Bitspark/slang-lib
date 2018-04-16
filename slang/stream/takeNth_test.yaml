@@ -3,6 +3,9 @@
 operatorFile: takeNth.yaml
 testCases:
 - name: 5 items
+  generics:
+    itemType:
+      type: number
   properties:
     default: -1
   data:
@@ -19,6 +22,9 @@ testCases:
     - {item: 4, others: [1,2,3,5]}
     - {item: 5, others: [1,2,3,4]}
 - name: some items
+  generics:
+    itemType:
+      type: number
   properties:
     default: 0
   data:
@@ -26,7 +32,21 @@ testCases:
     - {items: [1,1,1,2,2,2,2,2,3,4,5,8,9,94], index: 7}
     out:
     - {item: 2, others: [1,1,1,2,2,2,2,3,4,5,8,9,94]}
+- name: some items (string)
+  generics:
+    itemType:
+      type: string
+  properties:
+    default: "default"
+  data:
+    in:
+    - {items: ["1","1","1","2","2","2","2","2","3","4","5","8","9","94"], index: 7}
+    out:
+    - {item: "2", others: ["1","1","1","2","2","2","2","3","4","5","8","9","94"]}
 - name: Not found
+  generics:
+    itemType:
+      type: number
   properties:
     default: -1
   data:
@@ -37,6 +57,9 @@ testCases:
     - {item: -1, others: [1,2,3,4,5]}
     - {item: -1, others: [1,2,3,4,5]}
 - name: 50 items
+  generics:
+    itemType:
+      type: number
   properties:
     default: -1
   data:

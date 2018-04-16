@@ -9,6 +9,11 @@ services:
     out:
       type: number
 
+properties:
+  emptyValue:
+    type: generic
+    generic: emptyType
+
 operators:
   # Sort the stream
   sorter:
@@ -28,8 +33,11 @@ operators:
   # Take middle value from sorted stream
   takenth:
     operator: slang.stream.takeNth
+    generics:
+      itemType:
+        type: number
     properties:
-      default: null
+      default: $emptyValue
 
 connections:
   (:

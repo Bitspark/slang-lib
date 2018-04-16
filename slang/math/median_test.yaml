@@ -3,12 +3,22 @@
 operatorFile: median.yaml
 testCases:
 - name: EmptyStream
+  generics:
+    emptyType:
+      type: number
+  properties:
+    emptyValue: null
   data:
     in:
     - []
     out:
     - null
 - name: NonemptyStream
+  generics:
+    emptyType:
+      type: number
+  properties:
+    emptyValue: 0
   data:
     in:
     - [1]
@@ -19,6 +29,11 @@ testCases:
     - 2
     - 4
 - name: Long stream
+  generics:
+    emptyType:
+      type: number
+  properties:
+    emptyValue: 0
   data:
     in:
     - [7,1,6,2,5,4,4,4,7,1,6,2,5,4,4,4,7,1,6,2,5,4,4,4,7,1,6,2,5,4,4,4,7,1,6,2,5,4,4,4,7,1,6,2,5,4,4,4]

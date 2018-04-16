@@ -6,6 +6,8 @@ testCases:
   generics:
     valueType:
       type: number
+    zeroType:
+      type: number
   properties:
     zeroValue: 0
   data:
@@ -17,6 +19,8 @@ testCases:
   generics:
     valueType:
       type: primitive
+    zeroType:
+      type: number
   properties:
     zeroValue: null
   data:
@@ -27,6 +31,8 @@ testCases:
 - name: Averages
   generics:
     valueType:
+      type: number
+    zeroType:
       type: number
   properties:
     zeroValue: 0

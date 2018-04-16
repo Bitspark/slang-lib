@@ -12,7 +12,7 @@ services:
 properties:
   zeroValue:
     type: generic
-    generic: valueType
+    generic: zeroType
 
 operators:
   sum:
@@ -31,7 +31,8 @@ operators:
     operator: slang.const
     generics:
       valueType:
-        type: primitive
+        type: generic
+        generic: zeroType
     properties:
       value: $zeroValue
   gtzero:

@@ -8,22 +8,26 @@ services:
         items:
           type: stream
           stream:
-            type: number
+            type: generic
+            generic: itemType
         index:
           type: number
     out:
       type: map
       map:
         item:
-          type: number
+          type: generic
+          generic: itemType
         others:
           type: stream
           stream:
-            type: number
+            type: generic
+            generic: itemType
 
 properties:
   default:
-    type: number
+    type: generic
+    generic: itemType
 
 operators:
   # Default (const)
@@ -31,7 +35,8 @@ operators:
     operator: slang.const
     generics:
       valueType:
-        type: number
+        type: generic
+        generic: itemType
     properties:
       value: $default
   # MinusOne (eval)
@@ -51,25 +56,29 @@ operators:
     operator: slang.aggregate
     generics:
       itemType:
-        type: number
+        type: generic
+        generic: itemType
       stateType:
         type: map
         map:
           index:
             type: number
           item:
-            type: number
+            type: generic
+            generic: itemType
   # Switch (merge)
   switch:
     operator: slang.syncMerge
     generics:
       itemType:
-        type: number
+        type: generic
+        generic: itemType
   filter:
     operator: slang.fork
     generics:
       itemType:
-        type: number
+        type: generic
+        generic: itemType
 
 connections:
   items(:

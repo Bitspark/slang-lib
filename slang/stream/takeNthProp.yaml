@@ -13,19 +13,12 @@ services:
 
 properties:
   default:
-    type: number
+    type: generic
+    generic: itemType
   index:
     type: number
 
 operators:
-  # Default (const)
-  default:
-    operator: slang.const
-    generics:
-      valueType:
-        type: number
-    properties:
-      value: $default
   # Index (const)
   index:
     operator: slang.const
@@ -34,66 +27,21 @@ operators:
         type: number
     properties:
       value: $index
-  # MinusOne (eval)
-  minusOne:
-    operator: slang.eval
+  # TakeNth
+  takeNth:
+    operator: .takeNth
+    generics:
+      itemType:
+        type: generic
+        generic: itemType
     properties:
-      expression: x-1
-      variables: ["x"]
-  # Found (eval)
-  found:
-    operator: slang.eval
-    properties:
-      expression: x==0
-      variables: ["x"]
-  # Iterator (agg)
-  iter:
-    operator: slang.aggregate
-    generics:
-      itemType:
-        type: number
-      stateType:
-        type: map
-        map:
-          index:
-            type: number
-          item:
-            type: number
-  # Switch (merge)
-  switch:
-    operator: slang.syncMerge
-    generics:
-      itemType:
-        type: number
-  filter:
-    operator: slang.fork
-    generics:
-      itemType:
-        type: number
+      default: $default
 
 connections:
   (:
-    - items(iter
+    - items(takeNth
     - (index
-    - (default
   index):
-    - init.index(iter
-  default):
-    - init.item(iter
-  iter.iteration)~.item:
-    - true(switch
-    - ~.item(filter
-  iter.iteration)~.state.item:
-    - false(switch
-  iter.iteration)~.state.index:
-    - x(minusOne
-    - x(found
-  found):
-    - select(switch
-    - ~.select(filter
-  minusOne):
-    - ~.index(iter.iteration
-  switch):
-    - ~.item(iter.iteration
-  iter)item:
+    - index(takeNth
+  takeNth)item:
     - )
