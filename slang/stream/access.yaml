@@ -18,10 +18,8 @@ services:
                 type: generic
                 generic: valueType
     out:
-      type: stream
-      stream:
-        type: generic
-        generic: valueType
+      type: generic
+      generic: valueType
 
 properties:
   default:
@@ -77,4 +75,7 @@ connections:
   - ~.item(filter
 
   filter)true:
+  - (takeFirst
+
+  takeFirst):
   - )
