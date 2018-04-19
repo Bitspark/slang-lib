@@ -34,6 +34,14 @@ operators:
       itemType:
         type: generic
         generic: itemType
+      stateType:
+        type: map
+        map:
+          index:
+            type: number
+          item:
+            type: generic
+            generic: itemType
     properties:
       default: $default
 
