@@ -1,0 +1,80 @@
+services:
+  main:
+    in:
+      type: map
+      map:
+        key:
+          type: generic
+          generic: keyType
+        stream:
+          type: stream
+          stream:
+            type: map
+            map:
+              key:
+                type: generic
+                generic: keyType
+              value:
+                type: generic
+                generic: valueType
+    out:
+      type: stream
+      stream:
+        type: generic
+        generic: valueType
+
+properties:
+  default:
+    type: generic
+    generic: valueType
+
+operators:
+  keyRepeater:
+    operator: slang.aggregate
+    generics:
+      itemType:
+        type: trigger
+      stateType:
+        type: generic
+        generic: keyType
+  isEntry:
+    operator: slang.eval
+    properties:
+      variables: ["key", "currentKey"]
+      expression: key == currentKey
+  filter:
+    operator: slang.fork
+    generics:
+      itemType:
+        type: generic
+        generic: valueType
+  takeFirst:
+    operator: slang.stream.takeNthProp
+    generics:
+      itemType:
+        type: generic
+        generic: valueType
+    properties:
+      index: 0
+      default: $default
+
+connections:
+  key(:
+  - init(keyRepeater
+  stream(:
+  - items(keyRepeater
+
+  keyRepeater.iteration)~.state:
+  - ~(keyRepeater.iteration
+  - key(isEntry
+
+  stream.~.key(:
+  - currentKey(isEntry
+
+  isEntry):
+  - ~.select(filter
+  stream.~.value(:
+  - ~.item(filter
+
+  filter)true:
+  - )

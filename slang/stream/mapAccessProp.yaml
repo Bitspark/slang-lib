@@ -1,0 +1,50 @@
+services:
+  main:
+    in:
+      type: stream
+      stream:
+        type: map
+        map:
+          key:
+            type: generic
+            generic: keyType
+          value:
+            type: generic
+            generic: valueType
+    out:
+      type: generic
+      generic: valueType
+
+properties:
+  key:
+    type: generic
+    generic: keyType
+
+operators:
+  key:
+    operator: slang.const
+    generics:
+      valueType:
+        type: generic
+        generic: keyType
+    properties:
+      value: $key
+  access:
+    operator: slang.stream.mapAccess
+    generics:
+      keyType:
+        type: generic
+        generic: keyType
+      valueType:
+        type: generic
+        generic: valueType
+
+connections:
+  (:
+  - (key
+  ~(:
+  - stream.~(access
+  key):
+  - key(access
+  access):
+  - )
