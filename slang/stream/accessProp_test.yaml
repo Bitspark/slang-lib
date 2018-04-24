@@ -1,0 +1,45 @@
+# Stream length test
+---
+operatorFile: accessProp.yaml
+testCases:
+- name: Simple
+  generics:
+    keyType:
+      type: string
+    valueType:
+      type: number
+  properties:
+    key: "b"
+    default: null
+  data:
+    in:
+    - [{key: "a", value: 1}, {key: "b", value: 2}]
+    - [{key: "a", value: 3}, {key: "b", value: 6}, {key: "c", value: 1}]
+    - [{key: "a", value: 3}, {key: "c", value: 1}]
+    out:
+    - 2
+    - 6
+    - null
+- name: Complex
+  generics:
+    keyType:
+      type: string
+    valueType:
+      type: map
+      map:
+        a:
+          type: number
+        b:
+          type: boolean
+  properties:
+    key: "c"
+    default: {a: -1, b: false}
+  data:
+    in:
+    - [{key: "a", value: {a: 1, b: true}}, {key: "b", value: {a: 1, b: true}}]
+    - [{key: "a", value: {a: 1, b: true}}, {key: "b", value: {a: 1, b: false}}, {key: "c", value: {a: 3, b: true}}]
+    - [{key: "a", value: {a: 1, b: true}}, {key: "c", value: {a: 3, b: false}}]
+    out:
+    - {a: -1, b: false}
+    - {a: 3, b: true}
+    - {a: 3, b: false}

@@ -19,3 +19,23 @@ testCases:
     - 2
     - 6
     - null
+- name: Complex
+  generics:
+    keyType:
+      type: string
+    valueType:
+      type: map
+      map:
+        a:
+          type: number
+        b:
+          type: boolean
+  properties:
+    default: {a: -1, b: false}
+  data:
+    in:
+    - {key: "b", stream: [{key: "a", value: {a: 1, b: true}}, {key: "b", value: {a: 1, b: false}}, {key: "c", value: {a: 3, b: true}}]}
+    - {key: "", stream: [{key: "a", value: {a: 1, b: true}}, {key: "b", value: {a: 1, b: false}}, {key: "c", value: {a: 3, b: true}}]}
+    out:
+    - {a: 1, b: false}
+    - {a: -1, b: false}

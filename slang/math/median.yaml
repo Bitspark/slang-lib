@@ -31,7 +31,7 @@ operators:
       expression: floor(x/2)
       variables: ["x"]
   # Take middle value from sorted stream
-  takenth:
+  takeNth:
     operator: slang.stream.takeNth
     generics:
       itemType:
@@ -46,8 +46,8 @@ connections:
   length):
   - x(halve
   sorter):
-  - items(takenth
+  - items(takeNth
   halve):
-  - index(takenth
-  takenth)item:
+  - index(takeNth
+  takeNth)item:
   - )

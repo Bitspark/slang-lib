@@ -28,11 +28,9 @@ properties:
 
 operators:
   keyRepeater:
-    operator: slang.aggregate
+    operator: .repeat
     generics:
       itemType:
-        type: trigger
-      stateType:
         type: generic
         generic: keyType
   isEntry:
@@ -58,12 +56,11 @@ operators:
 
 connections:
   key(:
-  - init(keyRepeater
+  - value(keyRepeater
   stream(:
-  - items(keyRepeater
+  - triggers(keyRepeater
 
-  keyRepeater.iteration)~.state:
-  - ~(keyRepeater.iteration
+  keyRepeater)~:
   - key(isEntry
 
   stream.~.key(:

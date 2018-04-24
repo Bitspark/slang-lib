@@ -19,6 +19,9 @@ properties:
   key:
     type: generic
     generic: keyType
+  default:
+    type: generic
+    generic: valueType
 
 operators:
   key:
@@ -30,7 +33,7 @@ operators:
     properties:
       value: $key
   access:
-    operator: slang.stream.mapAccess
+    operator: .access
     generics:
       keyType:
         type: generic
@@ -38,6 +41,8 @@ operators:
       valueType:
         type: generic
         generic: valueType
+    properties:
+      default: $default
 
 connections:
   (:
