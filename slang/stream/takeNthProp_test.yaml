@@ -50,3 +50,19 @@ testCases:
     - [1,2,3,4,5]
     out:
     - -1
+- name: stream
+  generics:
+    itemType:
+      type: stream
+      stream:
+        type: number
+  properties:
+    default: []
+    index: 1
+  data:
+    in:
+    - [[1,2,3],[4,5]]
+    - [[],[-1]]
+    out:
+    - [4,5]
+    - [-1]

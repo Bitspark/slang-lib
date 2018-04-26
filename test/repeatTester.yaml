@@ -1,0 +1,44 @@
+services:
+  main:
+    in:
+      type: map
+      map:
+        value:
+          type: generic
+          generic: itemType
+        triggers:
+          type: stream
+          stream:
+            type: trigger
+    out:
+      type: stream
+      stream:
+        type: generic
+        generic: itemType
+
+operators:
+  streamConst:
+    operator: slang.const
+    generics:
+      valueType:
+        type: stream
+        stream:
+          type: number
+    properties:
+      value: [1,2,3,3,3,3,3]
+  repeater:
+    operator: slang.stream.repeat
+    generics:
+      itemType:
+        type: generic
+        generic: itemType
+
+connections:
+  value(:
+  - value(repeater
+  triggers.~(:
+  - (streamConst
+  streamConst):
+  - triggers.~(repeater
+  repeater):
+  - )

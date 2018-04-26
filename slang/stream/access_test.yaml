@@ -2,6 +2,50 @@
 ---
 operatorFile: access.yaml
 testCases:
+- name: Stream of streams
+  generics:
+    keyType:
+      type: string
+    valueType:
+      type: stream
+      stream:
+        type: stream
+        stream:
+          type: number
+  properties:
+    default: []
+  data:
+    in:
+    - {key: "c", stream: []}
+    - {key: "c", stream: [{key: "a", value: []}, {key: "c", value: [[9,8,7],[]]}]}
+    - {key: "c", stream: [{key: "a", value: []}, {key: "b", value: [[]]}, {key: "c", value: [[1,2,3],[],[4]]}]}
+    - {key: "c", stream: [{key: "a", value: []}, {key: "c", value: [[1,2,3],[],[4]]}]}
+    - {key: "c", stream: [{key: "a", value: [[],[]]}, {key: "b", value: [[1,2]]}]}
+    - {key: "c", stream: [{key: "a", value: []}, {key: "c", value: [[9,8,7],[]]}]}
+    - {key: "c", stream: [{key: "c", value: [[1],[2]]}]}
+    out:
+    - []
+    - [[9,8,7],[]]
+    - [[1,2,3],[],[4]]
+    - [[1,2,3],[],[4]]
+    - []
+    - [[9,8,7],[]]
+    - [[1],[2]]
+- name: Stream
+  generics:
+    keyType:
+      type: string
+    valueType:
+      type: stream
+      stream:
+        type: number
+  properties:
+    default: []
+  data:
+    in:
+    - {key: "a", stream: [{key: "a", value: [1]}]}
+    out:
+    - [1]
 - name: Simple
   generics:
     keyType:

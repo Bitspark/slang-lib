@@ -1,0 +1,24 @@
+# Repeat test
+---
+operatorFile: repeatTester.yaml
+testCases:
+- name: Stream
+  generics:
+    itemType:
+      type: string
+  data:
+    in:
+    - {"value": "r", "triggers": ["a"]}
+    - {"value": "rep", "triggers": [null, null, null]}
+    out:
+    - ["r"]
+    - ["rep", "rep", "rep"]
+- name: Repeat once
+  generics:
+    itemType:
+      type: string
+  data:
+    in:
+    - {"value": "repeated :)", "triggers": [1]}
+    out:
+    - ["repeated :)"]

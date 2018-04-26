@@ -20,7 +20,7 @@ testCases:
     - 2
     - 6
     - null
-- name: Complex
+- name: Map
   generics:
     keyType:
       type: string
@@ -43,3 +43,55 @@ testCases:
     - {a: -1, b: false}
     - {a: 3, b: true}
     - {a: 3, b: false}
+- name: Stream
+  generics:
+    keyType:
+      type: string
+    valueType:
+      type: stream
+      stream:
+        type: number
+  properties:
+    key: "c"
+    default: []
+  data:
+    in:
+    - [{key: "c", value: [1]}]
+    - [{key: "a", value: []}, {key: "b", value: []}, {key: "c", value: [1,2,3]}]
+    - [{key: "a", value: []}, {key: "b", value: [1,2]}]
+    - [{key: "a", value: []}, {key: "c", value: [9,8,7]}]
+    out:
+    - [1]
+    - [1,2,3]
+    - []
+    - [9,8,7]
+- name: Stream of streams
+  generics:
+    keyType:
+      type: string
+    valueType:
+      type: stream
+      stream:
+        type: stream
+        stream:
+          type: number
+  properties:
+    key: "c"
+    default: []
+  data:
+    in:
+    - []
+    - [{key: "a", value: []}, {key: "c", value: [[9,8,7],[]]}]
+    - [{key: "a", value: []}, {key: "b", value: [[]]}, {key: "c", value: [[1,2,3],[],[4]]}]
+    - [{key: "a", value: []}, {key: "c", value: [[1,2,3],[],[4]]}]
+    - [{key: "a", value: [[],[]]}, {key: "b", value: [[1,2]]}]
+    - [{key: "a", value: []}, {key: "c", value: [[9,8,7],[]]}]
+    - [{key: "c", value: [[1],[2]]}]
+    out:
+    - []
+    - [[9,8,7],[]]
+    - [[1,2,3],[],[4]]
+    - [[1,2,3],[],[4]]
+    - []
+    - [[9,8,7],[]]
+    - [[1],[2]]

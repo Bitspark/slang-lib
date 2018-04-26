@@ -1,0 +1,26 @@
+# Concat tester
+---
+operatorFile: concatTester.yaml
+testCases:
+- name: Single
+  properties:
+    streams: ["a"]
+  data:
+    in:
+    - {"stream_a": [1,2,3]}
+    - {"stream_a": []}
+    - {"stream_a": [4]}
+    out:
+    - [1,2,3]
+    - []
+    - [4]
+- name: Two
+  properties:
+    streams: ["a", "b"]
+  data:
+    in:
+    - {"stream_a": [1,2,3], "stream_b": [4, 5, 6]}
+    - {"stream_a": [1,2,3], "stream_b": [4, 5, 6]}
+    out:
+    - [1,2,3,4,5,6]
+    - [1,2,3,4,5,6]
