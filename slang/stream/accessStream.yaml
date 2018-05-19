@@ -22,42 +22,38 @@ services:
       stream:
         type: generic
         generic: valueType
-
 operators:
-  keyRepeater:
-    operator: .repeat
-    generics:
-      itemType:
-        type: generic
-        generic: keyType
-  isEntry:
-    operator: slang.eval
-    properties:
-      variables: ["key", "currentKey"]
-      expression: key == currentKey
   filter:
     operator: slang.fork
     generics:
       itemType:
         type: generic
         generic: valueType
-
+  isEntry:
+    operator: slang.eval
+    properties:
+      expression: key == currentKey
+      variables:
+      - key
+      - currentKey
+  keyRepeater:
+    operator: .repeat
+    generics:
+      itemType:
+        type: generic
+        generic: keyType
 connections:
-  key(:
-  - value(keyRepeater
-  stream(:
-  - triggers(keyRepeater
-
-  keyRepeater)~:
-  - key(isEntry
-
-  stream.~.key(:
-  - currentKey(isEntry
-
-  isEntry):
-  - ~.select(filter
-  stream.~.value(:
-  - ~.item(filter
-
   filter)true:
   - )
+  isEntry):
+  - ~.select(filter
+  key(:
+  - value(keyRepeater
+  keyRepeater)~:
+  - key(isEntry
+  stream(:
+  - triggers(keyRepeater
+  stream.~.key(:
+  - currentKey(isEntry
+  stream.~.value(:
+  - ~.item(filter

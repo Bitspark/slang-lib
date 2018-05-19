@@ -1,17 +1,15 @@
-# Take-Nth: outputs the n-th element of a stream
----
 services:
   main:
     in:
       type: map
       map:
+        index:
+          type: number
         items:
           type: stream
           stream:
             type: generic
             generic: itemType
-        index:
-          type: number
     out:
       type: map
       map:
@@ -23,35 +21,27 @@ services:
           stream:
             type: generic
             generic: itemType
-
-properties:
-  default:
-    type: generic
-    generic: itemType
-
 operators:
-  # Default (const)
   default:
     operator: slang.const
+    properties:
+      value: $default
     generics:
       valueType:
         type: generic
         generic: itemType
-    properties:
-      value: $default
-  # MinusOne (eval)
-  minusOne:
-    operator: slang.eval
-    properties:
-      expression: x-1
-      variables: ["x"]
-  # Found (eval)
+  filter:
+    operator: slang.fork
+    generics:
+      itemType:
+        type: generic
+        generic: itemType
   found:
     operator: slang.eval
     properties:
       expression: x==0
-      variables: ["x"]
-  # Iterator (agg)
+      variables:
+      - x
   iter:
     operator: slang.aggregate
     generics:
@@ -66,44 +56,46 @@ operators:
           item:
             type: generic
             generic: itemType
-  # Switch (merge)
+  minusOne:
+    operator: slang.eval
+    properties:
+      expression: x-1
+      variables:
+      - x
   switch:
     operator: slang.syncMerge
     generics:
       itemType:
         type: generic
         generic: itemType
-  filter:
-    operator: slang.fork
-    generics:
-      itemType:
-        type: generic
-        generic: itemType
-
+properties:
+  default:
+    type: generic
+    generic: itemType
 connections:
-  items(:
-    - items(iter
-  index(:
-    - (default
-    - init.index(iter
   default):
-    - init.item(iter
-  iter.iteration)~.item:
-    - true(switch
-    - ~.item(filter
-  iter.iteration)~.state.item:
-    - false(switch
-  iter.iteration)~.state.index:
-    - x(minusOne
-    - x(found
-  found):
-    - select(switch
-    - ~.select(filter
-  minusOne):
-    - ~.index(iter.iteration
-  switch):
-    - ~.item(iter.iteration
+  - init.item(iter
   filter)false.~:
-    - )others.~
+  - )others.~
+  found):
+  - select(switch
+  - ~.select(filter
+  index(:
+  - (default
+  - init.index(iter
+  items(:
+  - items(iter
   iter)item:
-    - )item
+  - )item
+  iter.iteration)~.item:
+  - true(switch
+  - ~.item(filter
+  iter.iteration)~.state.index:
+  - x(minusOne
+  - x(found
+  iter.iteration)~.state.item:
+  - false(switch
+  minusOne):
+  - ~.index(iter.iteration
+  switch):
+  - ~.item(iter.iteration

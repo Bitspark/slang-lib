@@ -1,5 +1,3 @@
-# Length: Outputs the length of a stream
----
 services:
   main:
     in:
@@ -9,9 +7,13 @@ services:
         generic: itemType
     out:
       type: number
-
 operators:
-  # Counter
+  addOne:
+    operator: slang.eval
+    properties:
+      expression: x+1
+      variables:
+      - x
   counter:
     operator: slang.aggregate
     generics:
@@ -20,30 +22,22 @@ operators:
         generic: itemType
       stateType:
         type: number
-  # Zero
   zero:
     operator: slang.const
+    properties:
+      value: 0
     generics:
       valueType:
         type: number
-    properties:
-      value: 0.0
-  # AddOne (+1)
-  addOne:
-    operator: slang.eval
-    properties:
-      expression: x+1
-      variables: ["x"]
-
 connections:
   (:
   - items(counter
   - (zero
-  zero):
-  - init(counter
-  counter.iteration)~.state:
-  - x(addOne
   addOne):
   - ~(counter.iteration
   counter):
   - )
+  counter.iteration)~.state:
+  - x(addOne
+  zero):
+  - init(counter

@@ -1,5 +1,3 @@
-# Average: calculates average value
----
 services:
   main:
     in:
@@ -8,59 +6,59 @@ services:
         type: number
     out:
       type: number
-
-properties:
-  zeroValue:
-    type: generic
-    generic: zeroType
-
 operators:
-  sum:
-    operator: .sum
+  div:
+    operator: slang.eval
+    properties:
+      expression: sum/length
+      variables:
+      - sum
+      - length
+  gtzero:
+    operator: slang.eval
+    properties:
+      expression: length == 0
+      variables:
+      - length
   length:
     operator: slang.stream.length
     generics:
       itemType:
         type: number
-  div:
-    operator: slang.eval
-    properties:
-      expression: sum/length
-      variables: ["sum", "length"]
-  zeroval:
-    operator: slang.const
-    generics:
-      valueType:
-        type: generic
-        generic: zeroType
-    properties:
-      value: $zeroValue
-  gtzero:
-    operator: slang.eval
-    properties:
-      expression: length > 0
-      variables: ["length"]
+  sum:
+    operator: .sum
   switch:
     operator: slang.syncMerge
     generics:
       itemType:
         type: primitive
-
+  zeroval:
+    operator: slang.const
+    properties:
+      value: $zeroValue
+    generics:
+      valueType:
+        type: generic
+        generic: zeroType
+properties:
+  zeroValue:
+    type: generic
+    generic: zeroType
 connections:
   (:
   - (sum
   - (length
-  sum):
-  - sum(div
+  div):
+  - false(switch
+  gtzero):
+  - select(switch
   length):
   - length(div
   - (zeroval
   - length(gtzero
-  gtzero):
-  - select(switch
-  zeroval):
-  - false(switch
-  div):
-  - true(switch
+  sum):
+  - sum(div
   switch):
   - )
+  zeroval):
+  - true(switch

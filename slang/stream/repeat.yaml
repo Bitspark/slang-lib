@@ -3,19 +3,18 @@ services:
     in:
       type: map
       map:
-        value:
-          type: generic
-          generic: itemType
         triggers:
           type: stream
           stream:
             type: trigger
+        value:
+          type: generic
+          generic: itemType
     out:
       type: stream
       stream:
         type: generic
         generic: itemType
-
 operators:
   repeater:
     operator: slang.aggregate
@@ -25,13 +24,11 @@ operators:
       stateType:
         type: generic
         generic: itemType
-
 connections:
-  value(:
-  - init(repeater
-  triggers(:
-  - items(repeater
-
   repeater.iteration)~.state:
   - ~(repeater.iteration
   - )~
+  triggers(:
+  - items(repeater
+  value(:
+  - init(repeater

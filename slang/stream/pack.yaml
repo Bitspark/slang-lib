@@ -1,5 +1,3 @@
-# Pack: Yields streams for each incoming element containing that element
----
 services:
   main:
     in:
@@ -10,9 +8,14 @@ services:
       stream:
         type: generic
         generic: itemType
-
 operators:
-  # Loop
+  "false":
+    operator: slang.const
+    properties:
+      value: false
+    generics:
+      valueType:
+        type: boolean
   loop:
     operator: slang.loop
     generics:
@@ -22,22 +25,13 @@ operators:
       stateType:
         type: generic
         generic: itemType
-  # False
-  false:
-    operator: slang.const
-    generics:
-      valueType:
-        type: boolean
-    properties:
-      value: false
-
 connections:
   (:
   - (loop
+  false):
+  - ~.continue(loop.iteration
+  loop.iteration):
+  - )
   loop.iteration)~:
   - (false
   - ~.state(loop.iteration
-  loop.iteration):
-  - )
-  false):
-  - ~.continue(loop.iteration

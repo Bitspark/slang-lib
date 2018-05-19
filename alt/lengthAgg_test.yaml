@@ -1,6 +1,6 @@
 # Stream length test
 ---
-operatorFile: length_agg.yaml
+operatorFile: lengthAgg.yaml
 testCases:
 - name: Empty
   generics:

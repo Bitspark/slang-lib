@@ -1,5 +1,3 @@
-# Length: Outputs the length of a stream
----
 services:
   main:
     in:
@@ -9,39 +7,36 @@ services:
         generic: itemType
     out:
       type: number
-
 operators:
-  # Counter
-  counter:
-    operator: slang.reduce
-    generics:
-      itemType:
-        type: number
-    properties:
-      emptyValue: 0
-  # One
-  one:
-    operator: slang.const
-    generics:
-      valueType:
-        type: number
-    properties:
-      value: 1
-  # Adder
   adder:
     operator: slang.eval
     properties:
       expression: a+b
-      variables: ["a", "b"]
-
+      variables:
+      - a
+      - b
+  counter:
+    operator: slang.reduce
+    properties:
+      emptyValue: 0
+    generics:
+      itemType:
+        type: number
+  one:
+    operator: slang.const
+    properties:
+      value: 1
+    generics:
+      valueType:
+        type: number
 connections:
   ~(:
   - (one
-  one):
-  - ~(counter
-  counter.selection)~:
-  - (adder
   adder):
   - ~(counter.selection
   counter):
   - )
+  counter.selection)~:
+  - (adder
+  one):
+  - ~(counter

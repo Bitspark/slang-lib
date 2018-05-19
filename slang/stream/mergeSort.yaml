@@ -1,5 +1,3 @@
-# Merge sort
----
 services:
   main:
     in:
@@ -10,53 +8,49 @@ services:
       type: stream
       stream:
         type: number
-
 operators:
-  # Packer
-  packer:
-    operator: .pack
-    generics:
-      itemType:
-        type: number
-  # Merger
+  comparator:
+    operator: slang.eval
+    properties:
+      expression: a <= b
+      variables:
+      - a
+      - b
   merger:
     operator: slang.take
     generics:
       itemType:
         type: number
-  # Reducer
+  packer:
+    operator: .pack
+    generics:
+      itemType:
+        type: number
   reducer:
     operator: slang.reduce
+    properties:
+      emptyValue: []
     generics:
       itemType:
         type: stream
         stream:
           type: number
-    properties:
-      emptyValue: []
-  # Comparator
-  comparator:
-    operator: slang.eval
-    properties:
-      expression: a <= b
-      variables: ["a", "b"]
-
 connections:
   ~(:
-    - (packer
-  packer):
-    - ~(reducer
-  reducer.selection)~.a.~:
-    - true.~(merger
-  reducer.selection)~.b.~:
-    - false.~(merger
-  merger.compare)~.true:
-    - a(comparator
-  merger.compare)~.false:
-    - b(comparator
+  - (packer
   comparator):
-    - ~(merger.compare
+  - ~(merger.compare
   merger):
-    - ~(reducer.selection
+  - ~(reducer.selection
+  merger.compare)~.false:
+  - b(comparator
+  merger.compare)~.true:
+  - a(comparator
+  packer):
+  - ~(reducer
   reducer):
-    - )
+  - )
+  reducer.selection)~.a.~:
+  - true.~(merger
+  reducer.selection)~.b.~:
+  - false.~(merger

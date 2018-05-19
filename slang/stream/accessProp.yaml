@@ -14,26 +14,11 @@ services:
     out:
       type: generic
       generic: valueType
-
-properties:
-  key:
-    type: generic
-    generic: keyType
-  default:
-    type: generic
-    generic: valueType
-
 operators:
-  key:
-    operator: slang.const
-    generics:
-      valueType:
-        type: generic
-        generic: keyType
-    properties:
-      value: $key
   access:
     operator: .access
+    properties:
+      default: $default
     generics:
       keyType:
         type: generic
@@ -41,15 +26,27 @@ operators:
       valueType:
         type: generic
         generic: valueType
+  key:
+    operator: slang.const
     properties:
-      default: $default
-
+      value: $key
+    generics:
+      valueType:
+        type: generic
+        generic: keyType
+properties:
+  default:
+    type: generic
+    generic: valueType
+  key:
+    type: generic
+    generic: keyType
 connections:
   (:
   - (key
   ~(:
   - stream.~(access
-  key):
-  - key(access
   access):
   - )
+  key):
+  - key(access

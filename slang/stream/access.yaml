@@ -20,12 +20,6 @@ services:
     out:
       type: generic
       generic: valueType
-
-properties:
-  default:
-    type: generic
-    generic: valueType
-
 operators:
   accessStream:
     operator: .accessStream
@@ -38,20 +32,21 @@ operators:
         generic: valueType
   takeFirst:
     operator: slang.stream.takeNthProp
+    properties:
+      default: $default
+      index: 0
     generics:
       itemType:
         type: generic
         generic: valueType
-    properties:
-      index: 0
-      default: $default
-
+properties:
+  default:
+    type: generic
+    generic: valueType
 connections:
   (:
   - (accessStream
-
   accessStream):
   - (takeFirst
-
   takeFirst):
   - )

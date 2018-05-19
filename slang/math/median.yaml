@@ -1,5 +1,3 @@
-# Median: calculates median value
----
 services:
   main:
     in:
@@ -8,46 +6,40 @@ services:
         type: number
     out:
       type: number
-
-properties:
-  emptyValue:
-    type: generic
-    generic: emptyType
-
 operators:
-  # Sort the stream
-  sorter:
-    operator: slang.stream.mergeSort
-  # Get length of stream
+  halve:
+    operator: slang.eval
+    properties:
+      expression: floor(x/2)
+      variables:
+      - x
   length:
     operator: slang.stream.length
     generics:
       itemType:
         type: number
-  # Calculate middle index
-  halve:
-    operator: slang.eval
-    properties:
-      expression: floor(x/2)
-      variables: ["x"]
-  # Take middle value from sorted stream
+  sorter:
+    operator: slang.stream.mergeSort
   takeNth:
     operator: slang.stream.takeNth
+    properties:
+      default: $emptyValue
     generics:
       itemType:
         type: number
-    properties:
-      default: $emptyValue
-
+properties:
+  emptyValue:
+    type: generic
+    generic: emptyType
 connections:
   (:
   - (sorter
   - (length
+  halve):
+  - index(takeNth
   length):
   - x(halve
   sorter):
   - items(takeNth
-  halve):
-  - index(takeNth
   takeNth)item:
   - )

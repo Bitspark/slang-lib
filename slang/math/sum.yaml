@@ -1,5 +1,3 @@
-# Sums up all values of a stream
----
 services:
   main:
     in:
@@ -8,27 +6,27 @@ services:
         type: number
     out:
       type: number
-
 operators:
-  reducer:
-    operator: slang.reduce
-    generics:
-      itemType:
-        type: number
-    properties:
-      emptyValue: 0
   add:
     operator: slang.eval
     properties:
       expression: a + b
-      variables: ["a", "b"]
-
+      variables:
+      - a
+      - b
+  reducer:
+    operator: slang.reduce
+    properties:
+      emptyValue: 0
+    generics:
+      itemType:
+        type: number
 connections:
   (:
   - (reducer
-  reducer.selection)~:
-  - (add
   add):
   - ~(reducer.selection
   reducer):
   - )
+  reducer.selection)~:
+  - (add

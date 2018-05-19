@@ -3,33 +3,35 @@ services:
     in:
       type: map
       map:
-        red:
-          type: number
-        green:
+        alpha:
           type: number
         blue:
           type: number
-        alpha:
+        green:
+          type: number
+        red:
           type: number
     out:
       type: map
       map:
-        red:
-          type: number
-        green:
+        alpha:
           type: number
         blue:
           type: number
-        alpha:
+        green:
           type: number
-
+        red:
+          type: number
 operators:
   gray:
     operator: slang.eval
     properties:
       expression: (0\.21*red+0\.72*green+0\.07*blue)/3
-      variables: ["red", "green", "blue", "alpha"]
-
+      variables:
+      - red
+      - green
+      - blue
+      - alpha
 connections:
   (:
   - (gray
