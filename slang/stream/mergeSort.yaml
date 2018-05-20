@@ -16,41 +16,17 @@ operators:
       variables:
       - a
       - b
-  merger:
-    operator: slang.take
+  sorter:
+    operator: .mergeSortDlg
     generics:
       itemType:
         type: number
-  packer:
-    operator: .pack
-    generics:
-      itemType:
-        type: number
-  reducer:
-    operator: slang.reduce
-    properties:
-      emptyValue: []
-    generics:
-      itemType:
-        type: stream
-        stream:
-          type: number
 connections:
-  ~(:
-  - (packer
-  comparator):
-  - ~(merger.compare
-  merger):
-  - ~(reducer.selection
-  merger.compare)~.false:
-  - b(comparator
-  merger.compare)~.true:
-  - a(comparator
-  packer):
-  - ~(reducer
-  reducer):
+  (:
+  - (sorter
+  sorter):
   - )
-  reducer.selection)~.a.~:
-  - true.~(merger
-  reducer.selection)~.b.~:
-  - false.~(merger
+  sorter.comparator):
+  - (comparator
+  comparator):
+  - (sorter.comparator
