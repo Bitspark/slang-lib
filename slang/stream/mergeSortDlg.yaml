@@ -12,6 +12,8 @@ services:
         generic: itemType
 delegates:
   comparator:
+    in:
+      type: boolean
     out:
       type: map
       map:
@@ -21,8 +23,6 @@ delegates:
         b:
           type: generic
           generic: itemType
-    in:
-      type: boolean
 operators:
   merger:
     operator: slang.take
@@ -47,10 +47,10 @@ operators:
           type: generic
           generic: itemType
 connections:
-  ~(:
-  - (packer
   (.comparator:
   - ~(merger.compare
+  ~(:
+  - (packer
   merger):
   - ~(reducer.selection
   merger.compare)~.false:

@@ -24,9 +24,9 @@ operators:
 connections:
   (:
   - (sorter
+  comparator):
+  - (sorter.comparator
   sorter):
   - )
   sorter.comparator):
   - (comparator
-  comparator):
-  - (sorter.comparator
