@@ -1,0 +1,24 @@
+# Fibonacci tests
+---
+operatorFile: fib.yaml
+testCases:
+- name: Empty stream 1
+  data:
+    in:
+    - 0
+    out:
+    - 1
+- name: Fibs
+  data:
+    in:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    out:
+    - 1
+    - 2
+    - 3
+    - 5
+    - 8
