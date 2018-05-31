@@ -61,7 +61,7 @@ connections:
   - ~(reducer
   reducer):
   - )
-  reducer.selection)~.a.~:
-  - true.~(merger
-  reducer.selection)~.b.~:
-  - false.~(merger
+  reducer.selection)~.a:
+  - true(merger
+  reducer.selection)~.b:
+  - false(merger

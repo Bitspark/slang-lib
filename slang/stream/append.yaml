@@ -18,32 +18,28 @@ services:
       stream:
         type: generic
         generic: itemType
-
 operators:
+  cfalse:
+    operator: slang.const
+    properties:
+      value: false
+    generics:
+      valueType:
+        type: boolean
   taker:
     operator: slang.take
     generics:
       itemType:
         type: generic
         generic: itemType
-  ctrue:
-    operator: slang.const
-    generics:
-      valueType:
-        type: boolean
-    properties:
-      value: true
-
 connections:
-  a.~(:
-  - true.~(taker
-  b.~(:
-  - false.~(taker
-
-  taker.compare)~.true:
-  - (ctrue
-  ctrue):
+  a(:
+  - false(taker
+  b(:
+  - true(taker
+  cfalse):
   - ~(taker.compare
-
-  taker)~:
-  - )~
+  taker):
+  - )
+  taker.compare)~.true:
+  - (cfalse
