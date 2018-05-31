@@ -1,5 +1,3 @@
-# Take-Nth: outputs the n-th element of a stream
----
 services:
   main:
     in:
@@ -10,26 +8,18 @@ services:
     out:
       type: generic
       generic: itemType
-
-properties:
-  default:
-    type: generic
-    generic: itemType
-  index:
-    type: number
-
 operators:
-  # Index (const)
   index:
     operator: slang.const
+    properties:
+      value: $index
     generics:
       valueType:
         type: number
-    properties:
-      value: $index
-  # TakeNth
   takeNth:
     operator: .takeNth
+    properties:
+      default: $default
     generics:
       itemType:
         type: generic
@@ -42,14 +32,17 @@ operators:
           item:
             type: generic
             generic: itemType
-    properties:
-      default: $default
-
+properties:
+  default:
+    type: generic
+    generic: itemType
+  index:
+    type: number
 connections:
   (:
-    - items(takeNth
-    - (index
+  - items(takeNth
+  - (index
   index):
-    - index(takeNth
+  - index(takeNth
   takeNth)item:
-    - )
+  - )

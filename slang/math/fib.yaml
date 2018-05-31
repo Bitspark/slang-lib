@@ -1,0 +1,68 @@
+services:
+  main:
+    in:
+      type: number
+    out:
+      type: number
+operators:
+  "-1":
+    operator: slang.eval
+    properties:
+      expression: x-1
+      variables:
+      - x
+  '>0?':
+    operator: slang.eval
+    properties:
+      expression: x>0
+      variables:
+      - x
+  A+B:
+    operator: slang.eval
+    properties:
+      expression: a+b
+      variables:
+      - a
+      - b
+  ONE:
+    operator: slang.const
+    properties:
+      value: 1
+    generics:
+      valueType:
+        type: number
+  loop:
+    operator: slang.loop
+    generics:
+      stateType:
+        type: map
+        map:
+          fib:
+            type: number
+          fib':
+            type: number
+          i:
+            type: number
+connections:
+  (:
+  - (ONE
+  - i(loop
+  -1):
+  - x(>0?
+  - ~.state.i(loop.iteration
+  '>0?)':
+  - ~.continue(loop.iteration
+  A+B):
+  - ~.state.fib(loop.iteration
+  ONE):
+  - fib(loop
+  - fib'(loop
+  loop)fib:
+  - )
+  loop.iteration)~.fib:
+  - a(A+B
+  - ~.state.fib'(loop.iteration
+  loop.iteration)~.fib':
+  - b(A+B
+  loop.iteration)~.i:
+  - x(-1

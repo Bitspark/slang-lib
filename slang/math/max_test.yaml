@@ -1,0 +1,32 @@
+# Max tests
+---
+operatorFile: max.yaml
+testCases:
+- name: Empty stream 1
+  properties:
+    startValue: 0
+  data:
+    in:
+    - []
+    out:
+    - 0
+- name: Empty stream 2
+  properties:
+    startValue: -4
+  data:
+    in:
+    - []
+    out:
+    - -4
+- name: Maxs
+  properties:
+    startValue: 0
+  data:
+    in:
+    - [1]
+    - [1,2]
+    - [1,100,10]
+    out:
+    - 1
+    - 2
+    - 100
