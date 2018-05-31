@@ -1,0 +1,102 @@
+services:
+  main:
+    in:
+      type: map
+      map:
+        count:
+          type: number
+        item:
+          type: generic
+          generic: itemType
+    out:
+      type: stream
+      stream:
+        type: generic
+        generic: itemType
+operators:
+  const:
+    operator: slang.const
+    properties:
+      value: []
+    generics:
+      valueType:
+        type: stream
+        stream:
+          type: generic
+          generic: itemType
+  eval:
+    operator: slang.eval
+    properties:
+      expression: x-1
+      variables:
+      - x
+  eval1:
+    operator: slang.eval
+    properties:
+      expression: x>0
+      variables:
+      - x
+  eval2:
+    operator: slang.eval
+    properties:
+      expression: x>0
+      variables:
+      - x
+  loop:
+    operator: slang.loop
+    generics:
+      stateType:
+        type: map
+        map:
+          count:
+            type: number
+          item:
+            type: generic
+            generic: itemType
+  switch:
+    operator: slang.switch
+    properties:
+      cases:
+      - true
+      - false
+    generics:
+      inType:
+        type: map
+        map:
+          count:
+            type: number
+          item:
+            type: generic
+            generic: itemType
+      outType:
+        type: stream
+        stream:
+          type: generic
+          generic: itemType
+      selectType:
+        type: boolean
+connections:
+  (:
+  - item(switch
+  const):
+  - (switch.false
+  count(:
+  - x(eval2
+  eval):
+  - ~.state.count(loop.iteration
+  - x(eval1
+  eval1):
+  - ~.continue(loop.iteration
+  eval2):
+  - select(switch
+  loop.iteration)~.count:
+  - x(eval
+  loop.iteration)~.item:
+  - ~.state.item(loop.iteration
+  - ~(switch.true
+  switch):
+  - )
+  switch.false)count:
+  - (const
+  switch.true):
+  - (loop
