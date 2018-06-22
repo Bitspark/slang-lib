@@ -16,7 +16,7 @@ testCases:
     out:
     - "123"
     - "hello slang!"
-- name: Single charachter stream
+- name: Single character stream
   data:
     in:
     - ["h", "e", "l", "l", "o", ",", " ", "s", "l", "a", "n", "g", "!"]
