@@ -1,0 +1,59 @@
+# Repeat test
+---
+operatorFile: reverse.yaml
+testCases:
+- name: Nothing
+  generics:
+    itemType:
+      type: string
+  data:
+    in:
+    - []
+    out:
+    - []
+- name: Single
+  generics:
+    itemType:
+      type: string
+  data:
+    in:
+    - ["a"]
+    - ["z"]
+    - ["a", "c"]
+    - ["a", "b", "c"]
+    out:
+    - ["a"]
+    - ["z"]
+    - ["c", "a"]
+    - ["c", "b", "a"]
+- name: Numbers
+  generics:
+    itemType:
+      type: number
+  data:
+    in:
+    - [1, 2]
+    - [4, 3, 9]
+    out:
+    - [2, 1]
+    - [9, 3, 4]
+- name: Booleans
+  generics:
+    itemType:
+      type: boolean
+  data:
+    in:
+    - [true, false]
+    out:
+    - [false, true]
+- name: Single
+  generics:
+    itemType:
+      type: primitive
+  data:
+    in:
+    - ["hallo", "slang", "!", "\n", "flow", "based", "rocks", true]
+    - [1, "eins", true]
+    out:
+    - [true, "rocks", "based", "flow", "\n", "!", "slang", "hallo"]
+    - [true, "eins", 1]
