@@ -36,7 +36,7 @@ operators:
   eval2:
     operator: slang.eval
     properties:
-      expression: x >= 0
+      expression: x > 0
       variables:
       - x
   eval3:
@@ -45,20 +45,35 @@ operators:
       expression: x>0
       variables:
       - x
+  isolatedLoop:
+    operator: slang.isolatedLoop
+    generics:
+      inType:
+        type: stream
+        stream:
+          type: generic
+          generic: itemType
+      itemType:
+        type: stream
+        stream:
+          type: generic
+          generic: itemType
+      outType:
+        type: primitive
+      stateType:
+        type: map
+        map:
+          index:
+            type: number
+      valueType:
+        type: generic
+        generic: itemType
   length:
     operator: slang.stream.length
     generics:
       itemType:
         type: generic
         generic: itemType
-  loop:
-    operator: slang.loop
-    generics:
-      stateType:
-        type: map
-        map:
-          index:
-            type: number
   repeat:
     operator: slang.stream.repeat
     generics:
@@ -106,21 +121,25 @@ connections:
   const):
   - (switch.false
   eval):
-  - index(loop
+  - stateInit.index(isolatedLoop
   eval1):
-  - ~.state.index(loop.iteration
-  - x(eval2
+  - ~.state.index(isolatedLoop.delegate
   eval2):
-  - ~.continue(loop.iteration
+  - ~.continue(isolatedLoop.delegate
   eval3):
   - select(switch
+  isolatedLoop)values:
+  - (switch.true
+  isolatedLoop.delegate)delegateInit:
+  - value(repeat
+  isolatedLoop.delegate)loop.~.index:
+  - x(eval1
+  - triggers.~(repeat
+  - index(takeNth
+  - x(eval2
   length):
   - x(eval3
   - item.length(switch
-  loop.iteration)~.index:
-  - triggers.~(repeat
-  - index(takeNth
-  - x(eval1
   repeat)~:
   - items(takeNth
   switch):
@@ -128,8 +147,8 @@ connections:
   switch.false)length:
   - (const
   switch.true)items:
-  - value(repeat
+  - delegateInit(isolatedLoop
   switch.true)length:
   - x(eval
   takeNth)item:
-  - ~(switch.true
+  - ~.value(isolatedLoop.delegate
