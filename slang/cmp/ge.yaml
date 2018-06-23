@@ -10,15 +10,19 @@ services:
     out:
       type: boolean
 operators:
-  eval:
-    operator: slang.eval
-    properties:
-      expression: a <= b
-      variables:
-      - a
-      - b
+  eq:
+    operator: slang.cmp.eq
+  gt:
+    operator: slang.cmp.gt
+  or:
+    operator: slang.logic.or
 connections:
   (:
-  - (eval
-  eval):
+  - (eq
+  - (gt
+  eq):
+  - b(or
+  gt):
+  - a(or
+  or):
   - )
