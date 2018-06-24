@@ -1,0 +1,81 @@
+services:
+  main:
+    in:
+      type: map
+      map:
+        end:
+          type: number
+        start:
+          type: number
+        step:
+          type: number
+    out:
+      type: stream
+      stream:
+        type: number
+operators:
+  eval:
+    operator: slang.eval
+    properties:
+      expression: index<=end
+      variables:
+      - index
+      - end
+  eval1:
+    operator: slang.eval
+    properties:
+      expression: index+step
+      variables:
+      - index
+      - step
+  eval2:
+    operator: slang.eval
+    properties:
+      expression: index<=end
+      variables:
+      - index
+      - end
+  fork:
+    operator: slang.fork
+    generics:
+      itemType:
+        type: number
+  loop:
+    operator: slang.loop
+    generics:
+      stateType:
+        type: map
+        map:
+          end:
+            type: number
+          index:
+            type: number
+          step:
+            type: number
+connections:
+  end(:
+  - end(loop
+  eval):
+  - ~.continue(loop.iteration
+  eval1):
+  - ~.state.index(loop.iteration
+  - index(eval
+  eval2):
+  - ~.select(fork
+  fork)true:
+  - )
+  loop.iteration)~.end:
+  - end(eval
+  - ~.state.end(loop.iteration
+  - end(eval2
+  loop.iteration)~.index:
+  - index(eval1
+  - ~.item(fork
+  - index(eval2
+  loop.iteration)~.step:
+  - step(eval1
+  - ~.state.step(loop.iteration
+  start(:
+  - index(loop
+  step(:
+  - step(loop
