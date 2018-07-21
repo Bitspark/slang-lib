@@ -10,7 +10,7 @@ jobs:
           name: Build tester
           command: |
             go get ./...
-            go build -o tester build
+            go build -o tester
       - run:
           name: Test
           command: ./tester
