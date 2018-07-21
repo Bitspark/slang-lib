@@ -10,7 +10,7 @@ if __name__ == '__main__':
 
     execute_commands([
         f'mkdir {versioned_dist}',
-        f'cp -r slang {versioned_dist}/'
+        f'cp -r slang {versioned_dist}/',
         'mkdir ci/release',
         f'zip -r ci/release/{versioned_dist}.zip {versioned_dist}',
         # f'tar -zcvf ci/{versioned_dist}.zip {versioned_dist}',
