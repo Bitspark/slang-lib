@@ -9,7 +9,7 @@ jobs:
       - run:
           name: Build tester
           command: |
-            go get github.com/Bitspark/slang
+            go get github.com/Bitspark/slang/pkg/api
             go -o tester build
       - run:
           name: Test
