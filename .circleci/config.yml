@@ -9,7 +9,7 @@ jobs:
       - run:
           name: Build tester
           command: |
-            go get ./...
+            go get -u -v ./...
             go -o tester build
       - run:
           name: Test
