@@ -23,6 +23,7 @@ jobs:
       - run:
           name: Package
           command: |
+            CIRCLE_TAG=v0.2
             python3 ./ci/package.py ${CIRCLE_TAG}
       - run:
           name: Release
