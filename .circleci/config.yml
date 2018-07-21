@@ -1,0 +1,45 @@
+version: 2
+jobs:
+  test:
+    docker:
+      - image: bitspark/slang-ci:latest
+    working_directory: ~/test-ui
+    steps:
+      - checkout
+      - run:
+          name: Build tester
+          command: |
+            go get ./...
+            go -o tester build
+      - run:
+          name: Test
+          command: ./tester
+  release:
+    docker:
+      - image: bitspark/slang-ci:latest
+    working_directory: ~/test-ui
+    steps:
+      - checkout
+      - run:
+          name: Package
+          command: |
+            python3 ./ci/package.py ${CIRCLE_TAG}
+      - run:
+          name: Release
+          command: ${GOPATH}/bin/ghr -t ${GITHUB_TOKEN} -u ${CIRCLE_PROJECT_USERNAME} -r ${CIRCLE_PROJECT_REPONAME} -c ${CIRCLE_SHA1} -delete ${CIRCLE_TAG} ./ci/release/
+workflows:
+  version: 2
+  build-and-release:
+    jobs:
+      - test:
+          filters:
+            tags:
+              only: /.*/
+      - release:
+          requires:
+            - test
+          filters:
+            branches:
+              ignore: /.*/
+            tags:
+              only: /^v.*/
