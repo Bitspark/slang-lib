@@ -1,8 +1,6 @@
 import sys
 from utils import execute_commands
 
-name = 'PACKAGE'
-
 if __name__ == '__main__':
     if len(sys.argv) != 2:
         print('Usage: python3 package.py vx.y.z')
@@ -10,7 +8,6 @@ if __name__ == '__main__':
 
     versioned_dist = 'slang-lib-' + sys.argv[1].replace('.', '_')
 
-    print(f'Step: {name}')
     execute_commands([
         f'mkdir {versioned_dist}',
         f'cp -r slang {versioned_dist}/'
