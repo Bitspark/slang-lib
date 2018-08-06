@@ -22,9 +22,7 @@ jobs:
       - checkout
       - run:
           name: Package
-          command: |
-            CIRCLE_TAG=v0.2
-            python3 ./ci/package.py ${CIRCLE_TAG}
+          command: python3 ./ci/package.py ${CIRCLE_TAG}
       - run:
           name: Release
           command: ${GOPATH}/bin/ghr -t ${GITHUB_TOKEN} -u ${CIRCLE_PROJECT_USERNAME} -r ${CIRCLE_PROJECT_REPONAME} -c ${CIRCLE_SHA1} ${CIRCLE_TAG} ./ci/release/
