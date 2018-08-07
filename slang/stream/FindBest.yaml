@@ -1,0 +1,57 @@
+services:
+  main:
+    in:
+      type: stream
+      stream:
+        type: generic
+        generic: itemType
+    out:
+      type: generic
+      generic: itemType
+delegates:
+  chooser:
+    in:
+      type: boolean
+    out:
+      type: map
+      map:
+        "false":
+          type: generic
+          generic: itemType
+        "true":
+          type: generic
+          generic: itemType
+operators:
+  Choose:
+    operator: slang.control.Choose
+    generics:
+      itemType:
+        type: generic
+        generic: itemType
+  Reduce:
+    operator: slang.control.Reduce
+    properties:
+      emptyValue: $emptyValue
+    generics:
+      itemType:
+        type: generic
+        generic: itemType
+properties:
+  emptyValue:
+    type: generic
+    generic: itemType
+connections:
+  (:
+  - (Reduce
+  (.chooser:
+  - (Choose.chooser
+  Choose):
+  - ~(Reduce.selection
+  Choose.chooser):
+  - .chooser)
+  Reduce):
+  - )
+  Reduce.selection)~.a:
+  - false(Choose
+  Reduce.selection)~.b:
+  - true(Choose

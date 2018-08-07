@@ -1,0 +1,28 @@
+services:
+  main:
+    in:
+      type: stream
+      stream:
+        type: number
+    out:
+      type: number
+operators:
+  Count:
+    operator: slang.stream.Count
+    generics:
+      itemType:
+        type: number
+  Divide:
+    operator: slang.math.arith.Divide
+  Sum:
+    operator: slang.math.aggregate.Sum
+connections:
+  (:
+  - (Sum
+  - (Count
+  Count):
+  - b(Divide
+  Divide):
+  - )
+  Sum):
+  - a(Divide
