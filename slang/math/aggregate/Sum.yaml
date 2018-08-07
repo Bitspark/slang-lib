@@ -1,0 +1,27 @@
+services:
+  main:
+    in:
+      type: stream
+      stream:
+        type: number
+    out:
+      type: number
+operators:
+  Add:
+    operator: slang.math.arith.Add
+  Reduce:
+    operator: slang.control.Reduce
+    properties:
+      emptyValue: 0
+    generics:
+      itemType:
+        type: number
+connections:
+  (:
+  - (Reduce
+  Add):
+  - ~(Reduce.selection
+  Reduce):
+  - )
+  Reduce.selection)~:
+  - (Add
