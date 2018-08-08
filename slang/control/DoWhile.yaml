@@ -1,0 +1,95 @@
+services:
+  main:
+    in:
+      type: generic
+      generic: stateType
+    out:
+      type: map
+      map:
+        items:
+          type: stream
+          stream:
+            type: generic
+            generic: itemType
+        result:
+          type: generic
+          generic: stateType
+delegates:
+  iterator:
+    in:
+      type: map
+      map:
+        continue:
+          type: boolean
+        item:
+          type: generic
+          generic: itemType
+        state:
+          type: generic
+          generic: stateType
+    out:
+      type: generic
+      generic: stateType
+operators:
+  Loop:
+    operator: slang.control.Loop
+    generics:
+      itemType:
+        type: map
+        map:
+          item:
+            type: generic
+            generic: itemType
+          valid:
+            type: boolean
+      stateType:
+        type: map
+        map:
+          next:
+            type: boolean
+          state:
+            type: generic
+            generic: stateType
+  Split:
+    operator: slang.control.Split
+    generics:
+      itemType:
+        type: map
+        map:
+          item:
+            type: generic
+            generic: itemType
+          valid:
+            type: boolean
+  Value:
+    operator: slang.data.Value
+    properties:
+      value: true
+    generics:
+      valueType:
+        type: boolean
+connections:
+  (:
+  - (Value
+  - state(Loop
+  Loop)items:
+  - (Split
+  Loop)result.state:
+  - )result
+  Loop.controller)next:
+  - (Loop.controller
+  Loop.iterator)state:
+  - .iterator)
+  Split)true.~.item:
+  - )items.~
+  Split.controller)valid:
+  - (Split.controller
+  Value):
+  - next(Loop
+  continue(.iterator:
+  - item.valid(Loop.iterator
+  - state.next(Loop.iterator
+  item(.iterator:
+  - item.item(Loop.iterator
+  state(.iterator:
+  - state.state(Loop.iterator
