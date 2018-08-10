@@ -1,7 +1,15 @@
 services:
   main:
     in:
-      type: string
+      type: map
+      map:
+        params:
+          type: map
+          map:
+            '{params}':
+              type: primitive
+        url:
+          type: string
     out:
       type: map
       map:
@@ -26,6 +34,16 @@ operators:
       itemType:
         type: generic
         generic: responseType
+  Template:
+    operator: slang.string.Template
+    properties:
+      variables:
+      - url
+      - query
+  URLWrite:
+    operator: slang.encoding.URLWrite
+    properties:
+      params: $params
   Value:
     operator: slang.data.Value
     properties:
@@ -56,12 +74,19 @@ operators:
               type: stream
               stream:
                 type: string
+  Value3:
+    operator: slang.data.Value
+    properties:
+      value: '{url}?{query}'
+    generics:
+      valueType:
+        type: string
+properties:
+  params:
+    type: stream
+    stream:
+      type: string
 connections:
-  (:
-  - url(HTTPClient
-  - (Value2
-  - (Value1
-  - (Value
   Convert):
   - body(HTTPClient
   HTTPClient)body:
@@ -70,9 +95,23 @@ connections:
   - )status
   JSONRead):
   - )response
+  Template):
+  - url(HTTPClient
+  URLWrite):
+  - query(Template
   Value):
   - (Convert
   Value1):
   - method(HTTPClient
   Value2):
   - headers(HTTPClient
+  Value3):
+  - content(Template
+  params(:
+  - (URLWrite
+  url(:
+  - (Value2
+  - (Value
+  - (Value1
+  - (Value3
+  - url(Template
