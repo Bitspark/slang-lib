@@ -18,6 +18,8 @@ services:
           generic: responseType
         status:
           type: number
+        valid:
+          type: boolean
 operators:
   Convert:
     operator: slang.data.Convert
@@ -93,8 +95,10 @@ connections:
   - (JSONRead
   HTTPClient)status:
   - )status
-  JSONRead):
+  JSONRead)item:
   - )response
+  JSONRead)valid:
+  - )valid
   Template):
   - url(HTTPClient
   URLWrite):
