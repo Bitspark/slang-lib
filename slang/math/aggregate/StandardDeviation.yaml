@@ -1,0 +1,67 @@
+services:
+  main:
+    in:
+      type: stream
+      stream:
+        type: number
+    out:
+      type: number
+operators:
+  Count:
+    operator: slang.stream.Count
+    generics:
+      itemType:
+        type: number
+  Divide:
+    operator: slang.math.arith.Divide
+  Divide1:
+    operator: slang.math.arith.Divide
+  Evaluate:
+    operator: slang.data.Evaluate
+    properties:
+      expression: x**2
+      variables:
+      - x
+  Evaluate1:
+    operator: slang.data.Evaluate
+    properties:
+      expression: x**2
+      variables:
+      - x
+  Evaluate2:
+    operator: slang.data.Evaluate
+    properties:
+      expression: sqrt(x)
+      variables:
+      - x
+  Subtract:
+    operator: slang.math.arith.Subtract
+  Sum:
+    operator: slang.math.aggregate.Sum
+  Sum1:
+    operator: slang.math.aggregate.Sum
+connections:
+  (:
+  - (Sum
+  - (Count
+  ~(:
+  - x(Evaluate
+  Count):
+  - b(Divide
+  - b(Divide1
+  Divide):
+  - x(Evaluate1
+  Divide1):
+  - a(Subtract
+  Evaluate):
+  - ~(Sum1
+  Evaluate1):
+  - b(Subtract
+  Evaluate2):
+  - )
+  Subtract):
+  - x(Evaluate2
+  Sum):
+  - a(Divide
+  Sum1):
+  - a(Divide1
