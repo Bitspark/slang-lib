@@ -12,6 +12,8 @@ operators:
     operator: slang.math.arith.Add
   Reduce:
     operator: slang.control.Reduce
+    properties:
+      emptyValue: 0
     generics:
       itemType:
         type: number
