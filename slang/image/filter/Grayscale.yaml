@@ -1,0 +1,27 @@
+services:
+  main:
+    in:
+      type: map
+      map:
+        blue:
+          type: number
+        green:
+          type: number
+        red:
+          type: number
+    out:
+      type: number
+operators:
+  Evaluate:
+    operator: slang.data.Evaluate
+    properties:
+      expression: 0.2989 * red + 0.5870 * green + 0.1140 * blue
+      variables:
+      - red
+      - green
+      - blue
+connections:
+  (:
+  - (Evaluate
+  Evaluate):
+  - )
