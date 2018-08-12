@@ -1,0 +1,36 @@
+services:
+  main:
+    in:
+      type: stream
+      stream:
+        type: map
+        map:
+          item:
+            type: generic
+            generic: itemType
+          pass:
+            type: boolean
+    out:
+      type: stream
+      stream:
+        type: generic
+        generic: itemType
+operators:
+  Filter:
+    operator: slang.stream.Filter
+    generics:
+      itemType:
+        type: map
+        map:
+          item:
+            type: generic
+            generic: itemType
+          pass:
+            type: boolean
+connections:
+  (:
+  - (Filter
+  Filter)~.item:
+  - )~
+  Filter.filter)pass:
+  - (Filter.filter
