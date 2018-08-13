@@ -46,12 +46,12 @@ connections:
   (.chooser:
   - (Choose.chooser
   Choose):
-  - ~(Reduce.selection
+  - (Reduce.reducer
   Choose.chooser):
   - .chooser)
   Reduce):
   - )
-  Reduce.selection)~.a:
+  Reduce.reducer)a:
   - false(Choose
-  Reduce.selection)~.b:
+  Reduce.reducer)b:
   - true(Choose

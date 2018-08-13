@@ -20,8 +20,8 @@ connections:
   (:
   - (Reduce
   Add):
-  - ~(Reduce.selection
+  - (Reduce.reducer
   Reduce):
   - )
-  Reduce.selection)~:
+  Reduce.reducer):
   - (Add

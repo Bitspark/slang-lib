@@ -28,10 +28,10 @@ connections:
   ~(:
   - (Value
   Add):
-  - ~(Reduce.selection
+  - (Reduce.reducer
   Reduce):
   - )
-  Reduce.selection)~:
+  Reduce.reducer):
   - (Add
   Value):
   - ~(Reduce

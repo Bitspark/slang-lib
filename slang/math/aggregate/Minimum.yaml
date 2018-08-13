@@ -25,7 +25,7 @@ connections:
   (:
   - (Reduce
   Choose):
-  - ~(Reduce.selection
+  - (Reduce.reducer
   Choose.chooser)false:
   - b(Less
   Choose.chooser)true:
@@ -34,7 +34,7 @@ connections:
   - (Choose.chooser
   Reduce):
   - )
-  Reduce.selection)~.a:
+  Reduce.reducer)a:
   - true(Choose
-  Reduce.selection)~.b:
+  Reduce.reducer)b:
   - false(Choose

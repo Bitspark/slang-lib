@@ -1,0 +1,16 @@
+operatorFile: Product.yaml
+testCases:
+- name: Integers
+  data:
+    in:
+    - [1, 2, 3, 4]
+    - [12, 9, 4]
+    out:
+    - 24
+    - 432
+- name: Floats
+  data:
+    in:
+    - [1.5, 3.5, 2.5]
+    out:
+    - 13.125
