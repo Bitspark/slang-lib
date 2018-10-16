@@ -1,0 +1,135 @@
+services:
+  main:
+    in:
+      type: trigger
+    out:
+      type: string
+operators:
+  Convert:
+    operator: slang.data.Convert
+    generics:
+      fromType:
+        type: number
+      toType:
+        type: string
+  Evaluate:
+    operator: slang.data.Evaluate
+    properties:
+      expression: len(query) == 0
+      variables:
+      - query
+  Evaluate1:
+    operator: slang.data.Evaluate
+    properties:
+      expression: '"?" + query'
+      variables:
+      - query
+  Switch:
+    operator: slang.control.Switch
+    properties:
+      cases:
+      - true
+    generics:
+      inType:
+        type: string
+      outType:
+        type: string
+      selectType:
+        type: boolean
+  Template:
+    operator: slang.string.Template
+    properties:
+      variables:
+      - protocol
+      - host
+      - port
+      - path
+      - query
+  Value:
+    operator: slang.data.Value
+    properties:
+      value: '{protocol}://{host}:{port}/{path}{query}'
+    generics:
+      valueType:
+        type: string
+  Value1:
+    operator: slang.data.Value
+    properties:
+      value: $protocol
+    generics:
+      valueType:
+        type: string
+  Value2:
+    operator: slang.data.Value
+    properties:
+      value: $path
+    generics:
+      valueType:
+        type: string
+  Value3:
+    operator: slang.data.Value
+    properties:
+      value: $port
+    generics:
+      valueType:
+        type: number
+  Value4:
+    operator: slang.data.Value
+    properties:
+      value: $host
+    generics:
+      valueType:
+        type: string
+  Value5:
+    operator: slang.data.Value
+    properties:
+      value: $query
+    generics:
+      valueType:
+        type: string
+properties:
+  host:
+    type: string
+  path:
+    type: string
+  port:
+    type: number
+  protocol:
+    type: string
+  query:
+    type: string
+connections:
+  (:
+  - (Value
+  - (Value3
+  - (Value2
+  - (Value1
+  - (Value4
+  - (Value5
+  Convert):
+  - port(Template
+  Evaluate):
+  - select(Switch
+  Evaluate1):
+  - (Switch.default
+  Switch):
+  - query(Template
+  Switch.default):
+  - query(Evaluate1
+  Switch.true):
+  - (Switch.true
+  Template):
+  - )
+  Value):
+  - content(Template
+  Value1):
+  - protocol(Template
+  Value2):
+  - path(Template
+  Value3):
+  - (Convert
+  Value4):
+  - host(Template
+  Value5):
+  - query(Evaluate
+  - item(Switch
