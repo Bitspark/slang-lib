@@ -1,0 +1,64 @@
+services:
+  main:
+    in:
+      type: trigger
+    out:
+      type: stream
+      stream:
+        type: trigger
+operators:
+  Delay:
+    operator: slang.time.Delay
+    generics:
+      itemType:
+        type: trigger
+  Loop:
+    operator: slang.control.Loop
+    generics:
+      itemType:
+        type: trigger
+      stateType:
+        type: trigger
+  Value:
+    operator: slang.data.Value
+    properties:
+      value: $interval
+    generics:
+      valueType:
+        type: primitive
+  Value1:
+    operator: slang.data.Value
+    properties:
+      value: true
+    generics:
+      valueType:
+        type: boolean
+  Value2:
+    operator: slang.data.Value
+    properties:
+      value: null
+    generics:
+      valueType:
+        type: trigger
+properties:
+  interval:
+    type: number
+connections:
+  (:
+  - (Loop
+  Delay):
+  - state(Loop.iterator
+  - item(Loop.iterator
+  Loop)items.~:
+  - (Value2
+  Loop.controller):
+  - (Value1
+  Loop.iterator):
+  - (Value
+  Value):
+  - delay(Delay
+  - item(Delay
+  Value1):
+  - (Loop.controller
+  Value2):
+  - )~
