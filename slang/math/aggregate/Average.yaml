@@ -14,15 +14,57 @@ operators:
         type: number
   Divide:
     operator: slang.math.arith.Divide
+  Equal:
+    operator: slang.math.arith.Equal
   Sum:
     operator: slang.math.aggregate.Sum
+  Switch:
+    operator: slang.control.Switch
+    properties:
+      cases:
+      - false
+    generics:
+      inType:
+        type: map
+        map:
+          len:
+            type: number
+          values:
+            type: stream
+            stream:
+              type: number
+      outType:
+        type: number
+      selectType:
+        type: boolean
+  Value:
+    operator: slang.data.Value
+    properties:
+      value: 0
+    generics:
+      valueType:
+        type: number
 connections:
   (:
-  - (Sum
   - (Count
+  - item.values(Switch
   Count):
-  - b(Divide
+  - item.len(Switch
+  - a(Equal
+  - (Value
   Divide):
-  - )
+  - (Switch.false
+  Equal):
+  - select(Switch
   Sum):
   - a(Divide
+  Switch):
+  - )
+  Switch.default)len:
+  - (Switch.default
+  Switch.false)len:
+  - b(Divide
+  Switch.false)values:
+  - (Sum
+  Value):
+  - b(Equal
