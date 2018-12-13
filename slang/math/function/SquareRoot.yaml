@@ -1,0 +1,18 @@
+services:
+  main:
+    in:
+      type: number
+    out:
+      type: number
+operators:
+  Evaluate:
+    operator: slang.data.Evaluate
+    properties:
+      expression: sqrt(x)
+      variables:
+      - x
+connections:
+  (:
+  - x(Evaluate
+  Evaluate):
+  - )

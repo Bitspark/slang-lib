@@ -1,0 +1,102 @@
+services:
+  main:
+    in:
+      type: trigger
+    out:
+      type: trigger
+operators:
+  headers:
+    operator: slang.data.Value
+    properties:
+      value:
+      - key: Access-Control-Allow-Origin
+        value: '*'
+    generics:
+      valueType:
+        type: stream
+        stream:
+          type: map
+          map:
+            key:
+              type: string
+            value:
+              type: string
+  httpServer:
+    operator: slang.net.HTTPServer
+  operator:
+    operator: math.function.SquareRoot
+  packer:
+    operator: slang.encoding.JSONWrite
+    generics:
+      itemType:
+        type: stream
+        stream:
+          type: number
+  port:
+    operator: slang.data.Value
+    properties:
+      value: 50001
+    generics:
+      valueType:
+        type: number
+  statusCode:
+    operator: slang.data.Value
+    properties:
+      value: 200
+    generics:
+      valueType:
+        type: number
+  store:
+    operator: slang.meta.Store
+    generics:
+      examineType:
+        type: number
+  switch:
+    operator: slang.control.Switch
+    properties:
+      cases:
+      - POST
+    generics:
+      inType:
+        type: binary
+      outType:
+        type: binary
+      selectType:
+        type: string
+  unpacker:
+    operator: slang.encoding.JSONRead
+    generics:
+      itemType:
+        type: number
+connections:
+  (:
+  - (port
+  headers):
+  - headers(httpServer.handler
+  httpServer):
+  - )
+  httpServer.handler)body:
+  - item(switch
+  httpServer.handler)method:
+  - select(switch
+  operator):
+  - (store
+  packer):
+  - (switch.default
+  port):
+  - (httpServer
+  query@store):
+  - (packer
+  statusCode):
+  - status(httpServer.handler
+  switch):
+  - body(httpServer.handler
+  - (statusCode
+  - (headers
+  switch.POST):
+  - (unpacker
+  - (switch.POST
+  switch.default):
+  - (query@store
+  unpacker)item:
+  - (operator
