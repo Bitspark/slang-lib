@@ -1,0 +1,3 @@
+name: arith
+displayName: Arithmetics
+description: This package contains operators performing arithmetical operations such as addition or division, and comparison operators such as greater than.

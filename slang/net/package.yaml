@@ -1,0 +1,3 @@
+name: net
+displayName: Networking
+description: This package contains networking operators. They either allow usage of protocols such as HTTP or more complex operations such as sending emails.

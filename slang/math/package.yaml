@@ -1,0 +1,3 @@
+name: math
+displayName: Math
+description: This package contains operators performing mathematical operations or functions such as aggregation, arithmetics and boolean logic.
