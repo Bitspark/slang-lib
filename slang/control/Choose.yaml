@@ -1,3 +1,8 @@
+name: choose
+displayName: Choose
+shortDescription: Takes two items and emits one of them.
+description: Takes two items and emits one of them.
+icon: crosshairs
 services:
   main:
     in:

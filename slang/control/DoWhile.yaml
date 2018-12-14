@@ -1,3 +1,8 @@
+name: do-while
+displayName: Do While
+shortDescription: Performs a task repetetively, at least once.
+description: Performs a task repetetively, at least once.
+icon: undo
 services:
   main:
     in:
