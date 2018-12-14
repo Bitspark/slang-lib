@@ -1,3 +1,4 @@
 name: control
 displayName: Control
+shortDescription: This package contains operators controlling the path data takes.
 description: This package contains operators controlling the path data takes.
