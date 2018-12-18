@@ -1,3 +1,4 @@
 name: slang
 displayName: Slang
-description: The Slang standard library.
+shortDescription: Slang standard library
+description: This package is the root package for all packages and operators inside the Slang standard library.

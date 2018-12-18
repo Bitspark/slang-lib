@@ -1,3 +1,4 @@
 name: time
 displayName: Time
+shortDescription: Contains operators dealing with timing or dates
 description: This package contains operators dealing with timing or dates.

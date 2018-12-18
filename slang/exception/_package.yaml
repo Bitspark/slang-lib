@@ -1,3 +1,4 @@
 name: exception
 displayName: Exception
+shortDescription: Contains operators dealing with exceptions
 description: This package contains operators dealing with exceptions.

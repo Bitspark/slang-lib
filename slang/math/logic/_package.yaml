@@ -1,3 +1,4 @@
 name: logic
 displayName: Logic
+shortDescription: Contains operators performing logical boolean operations
 description: This package contains operators performing logical boolean operations.

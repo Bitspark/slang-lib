@@ -1,3 +1,4 @@
 name: filter
 displayName: Filter
+shortDescription: Contains operators modifying image colors
 description: This package contains operators modifying image colors.
