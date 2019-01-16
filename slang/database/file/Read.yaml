@@ -1,0 +1,56 @@
+services:
+  main:
+    in:
+      type: trigger
+    out:
+      type: stream
+      stream:
+        type: generic
+        generic: itemType
+operators:
+  Convert:
+    operator: slang.data.Convert
+    generics:
+      fromType:
+        type: string
+      toType:
+        type: binary
+  FilterSimple:
+    operator: slang.stream.FilterSimple
+    generics:
+      itemType:
+        type: generic
+        generic: itemType
+  JSONRead:
+    operator: slang.encoding.JSONRead
+    generics:
+      itemType:
+        type: generic
+        generic: itemType
+  ReadLines:
+    operator: slang.files.ReadLines
+  Value:
+    operator: slang.data.Value
+    properties:
+      value: $filename
+    generics:
+      valueType:
+        type: string
+properties:
+  filename:
+    type: string
+connections:
+  (:
+  - (Value
+  Convert):
+  - (JSONRead
+  FilterSimple):
+  - )
+  JSONRead)item:
+  - ~.item(FilterSimple
+  JSONRead)valid:
+  - ~.pass(FilterSimple
+  ReadLines)~:
+  - (Convert
+  Value):
+  - filename(ReadLines
