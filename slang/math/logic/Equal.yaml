@@ -1,8 +1,8 @@
-name: "And"
-displayName: "And"
+name: "Equal"
+displayName: "Equal"
 icon: ""
-shortDescription: "Takes two boolean values and emits true only if both are true."
-description: "Takes two boolean values and emits true in case both values are true, and false otherwise."
+shortDescription: "Takes two boolean values and emits true only if both are equal."
+description: "Takes two boolean values and emits true in case both values are true or both are false, and false otherwise."
 services:
   main:
     in:
@@ -18,7 +18,7 @@ operators:
   Evaluate:
     operator: slang.data.Evaluate
     properties:
-      expression: a && b
+      expression: a==b
       variables:
       - a
       - b

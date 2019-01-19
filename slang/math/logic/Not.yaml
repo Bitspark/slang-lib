@@ -1,0 +1,23 @@
+name: "Not"
+displayName: "Not"
+icon: ""
+shortDescription: "Takes a boolean value and emits its inverse."
+description: "Take a boolean and emits true it it is false, and false if it is true."
+services:
+  main:
+    in:
+      type: boolean
+    out:
+      type: boolean
+operators:
+  Evaluate:
+    operator: slang.data.Evaluate
+    properties:
+      expression: '!x'
+      variables:
+      - x
+connections:
+  (:
+  - x(Evaluate
+  Evaluate):
+  - )
