@@ -1,0 +1,76 @@
+name: ""
+displayName: ""
+icon: ""
+shortDescription: ""
+description: ""
+services:
+  main:
+    in:
+      type: stream
+      stream:
+        type: number
+    out:
+      type: stream
+      stream:
+        type: number
+operators:
+  Add:
+    operator: slang.math.arith.Add
+  Divide:
+    operator: slang.math.arith.Divide
+  Evaluate:
+    operator: slang.data.Evaluate
+    properties:
+      expression: x+1
+      variables:
+      - x
+  Transform:
+    operator: slang.stream.Transform
+    generics:
+      inItemType:
+        type: number
+      outItemType:
+        type: number
+      stateType:
+        type: map
+        map:
+          count:
+            type: number
+          sum:
+            type: number
+  Value:
+    operator: slang.data.Value
+    properties:
+      value:
+        count: 0
+        sum: 0
+    generics:
+      valueType:
+        type: map
+        map:
+          count:
+            type: number
+          sum:
+            type: number
+connections:
+  (:
+  - items(Transform
+  - (Value
+  Add):
+  - state.sum(Transform.iterator
+  - a(Divide
+  Divide):
+  - item(Transform.iterator
+  Evaluate):
+  - state.count(Transform.iterator
+  - b(Divide
+  Transform)items:
+  - )
+  Transform.iterator)item:
+  - a(Add
+  Transform.iterator)state.count:
+  - x(Evaluate
+  Transform.iterator)state.sum:
+  - b(Add
+  Value):
+  - initial(Transform
