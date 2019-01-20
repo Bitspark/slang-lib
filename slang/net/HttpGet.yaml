@@ -14,8 +14,6 @@ services:
           type: binary
         status:
           type: number
-        valid:
-          type: boolean
 operators:
   Convert:
     operator: slang.data.Convert
