@@ -1,0 +1,10 @@
+operatorFile: Not.yaml
+testCases:
+- name: Booleans
+  data:
+    in:
+    - true
+    - false
+    out:
+    - false
+    - true

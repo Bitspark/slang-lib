@@ -1,0 +1,14 @@
+operatorFile: Equal.yaml
+testCases:
+- name: Booleans
+  data:
+    in:
+    - {a: true, b: true}
+    - {a: true, b: false}
+    - {a: false, b: true}
+    - {a: false, b: false}
+    out:
+    - true
+    - false
+    - false
+    - true
