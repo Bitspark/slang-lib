@@ -56,11 +56,6 @@ operators:
               type: stream
               stream:
                 type: string
-properties:
-  params:
-    type: stream
-    stream:
-      type: string
 connections:
   (:
   - (Value
