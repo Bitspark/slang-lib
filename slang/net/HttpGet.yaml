@@ -10,7 +10,7 @@ services:
     out:
       type: map
       map:
-        b:
+        body:
           type: binary
         status:
           type: number
@@ -70,7 +70,7 @@ connections:
   Convert):
   - body(HTTPClient
   HTTPClient)body:
-  - )b
+  - )body
   HTTPClient)status:
   - )status
   Value):
