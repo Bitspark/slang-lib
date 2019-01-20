@@ -2,7 +2,7 @@ name: "Not"
 displayName: "Not"
 icon: ""
 shortDescription: "Takes a boolean value and emits its inverse."
-description: "Take a boolean and emits true it it is false, and false if it is true."
+description: "Takes a boolean and emits true in case it is false, and false if it is true."
 services:
   main:
     in:
