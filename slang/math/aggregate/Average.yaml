@@ -1,3 +1,8 @@
+name: ""
+displayName: ""
+icon: ""
+shortDescription: ""
+description: ""
 services:
   main:
     in:
@@ -44,6 +49,13 @@ operators:
     generics:
       valueType:
         type: number
+  Value1:
+    operator: slang.data.Value
+    properties:
+      value: null
+    generics:
+      valueType:
+        type: number
 connections:
   (:
   - (Count
@@ -61,10 +73,12 @@ connections:
   Switch):
   - )
   Switch.default)len:
-  - (Switch.default
+  - (Value1
   Switch.false)len:
   - b(Divide
   Switch.false)values:
   - (Sum
   Value):
   - b(Equal
+  Value1):
+  - (Switch.default

@@ -22,13 +22,10 @@ operators:
   Reduce:
     operator: slang.control.Reduce
     properties:
-      emptyValue: $emptyValue
+      emptyValue: null
     generics:
       itemType:
         type: number
-properties:
-  emptyValue:
-    type: number
 connections:
   (:
   - (Reduce
