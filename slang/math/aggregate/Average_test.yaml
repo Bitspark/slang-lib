@@ -1,4 +1,4 @@
-operatorFile: Maximum.yaml
+operatorFile: Average.yaml
 testCases:
 - name: Integers
   data:
@@ -7,15 +7,15 @@ testCases:
     - [1, 12, 9, 4, 4, 26, 7, 35, 1, 24, 9, 76]
     - [1, 12, 9, 4, 4, 26, 7, 35, 1, 24, 9, 76, 1, 12, 9, 4, 4, 26, 7, 35, 1, 24, 9, 76]
     out:
-    - 4
-    - 76
-    - 76
+    - 2.5
+    - 17.333333333333332
+    - 17.333333333333332
 - name: Floats
   data:
     in:
     - [1.5, 3.5, 2.5]
     out:
-    - 3.5
+    - 2.5
 - name: Empty
   data:
     in:

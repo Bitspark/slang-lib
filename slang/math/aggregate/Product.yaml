@@ -12,7 +12,7 @@ operators:
   Reduce:
     operator: slang.control.Reduce
     properties:
-      emptyValue: 0
+      emptyValue: 1
     generics:
       itemType:
         type: number

@@ -14,3 +14,11 @@ testCases:
     - [1.5, 3.5, 2.5]
     out:
     - 13.125
+- name: Empty
+  data:
+    in:
+    - []
+    - []
+    out:
+    - 1
+    - 1
