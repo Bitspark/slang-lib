@@ -1,0 +1,120 @@
+name: ""
+displayName: ""
+icon: ""
+shortDescription: ""
+description: ""
+services:
+  main:
+    in:
+      type: map
+      map:
+        index:
+          type: number
+        items:
+          type: stream
+          stream:
+            type: generic
+            generic: itemType
+    out:
+      type: generic
+      generic: itemType
+operators:
+  Equal:
+    operator: slang.math.arith.Equal
+  Evaluate:
+    operator: slang.data.Evaluate
+    properties:
+      expression: x+1
+      variables:
+      - x
+  Iterate:
+    operator: slang.control.Iterate
+    generics:
+      inItemType:
+        type: generic
+        generic: itemType
+      outItemType:
+        type: trigger
+      stateType:
+        type: map
+        map:
+          index:
+            type: number
+          item:
+            type: generic
+            generic: itemType
+          iter:
+            type: number
+  Switch:
+    operator: slang.control.Switch
+    properties:
+      cases:
+      - false
+    generics:
+      inType:
+        type: map
+        map:
+          a:
+            type: generic
+            generic: itemType
+          b:
+            type: generic
+            generic: itemType
+      outType:
+        type: generic
+        generic: itemType
+      selectType:
+        type: boolean
+  Value:
+    operator: slang.data.Value
+    properties:
+      value: $default
+    generics:
+      valueType:
+        type: generic
+        generic: itemType
+  Value1:
+    operator: slang.data.Value
+    properties:
+      value: 0
+    generics:
+      valueType:
+        type: number
+properties:
+  default:
+    type: generic
+    generic: itemType
+connections:
+  Equal):
+  - select(Switch
+  - item(Iterate.iterator
+  Evaluate):
+  - state.iter(Iterate.iterator
+  Iterate)result.item:
+  - )
+  Iterate.iterator)item:
+  - item.b(Switch
+  Iterate.iterator)state.index:
+  - state.index(Iterate.iterator
+  - a(Equal
+  Iterate.iterator)state.item:
+  - item.a(Switch
+  Iterate.iterator)state.iter:
+  - x(Evaluate
+  - b(Equal
+  Switch):
+  - state.item(Iterate.iterator
+  Switch.default)b:
+  - (Switch.default
+  Switch.false)a:
+  - (Switch.false
+  Value):
+  - initial.item(Iterate
+  Value1):
+  - initial.iter(Iterate
+  index(:
+  - (Value
+  - initial.index(Iterate
+  - (Value1
+  items(:
+  - items(Iterate

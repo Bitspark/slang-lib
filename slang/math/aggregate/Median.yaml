@@ -1,0 +1,94 @@
+name: ""
+displayName: ""
+icon: ""
+shortDescription: ""
+description: ""
+services:
+  main:
+    in:
+      type: stream
+      stream:
+        type: number
+    out:
+      type: number
+operators:
+  Count:
+    operator: slang.stream.Count
+    generics:
+      itemType:
+        type: number
+  Evaluate:
+    operator: slang.data.Evaluate
+    properties:
+      expression: x>0
+      variables:
+      - x
+  Evaluate1:
+    operator: slang.data.Evaluate
+    properties:
+      expression: floor(x/2)
+      variables:
+      - x
+  IndexAccess:
+    operator: slang.stream.IndexAccess
+    properties:
+      default: $emptyValue
+    generics:
+      itemType:
+        type: number
+  SortPrimitive:
+    operator: slang.stream.SortPrimitive
+  Switch:
+    operator: slang.control.Switch
+    properties:
+      cases:
+      - false
+    generics:
+      inType:
+        type: map
+        map:
+          count:
+            type: number
+          items:
+            type: stream
+            stream:
+              type: number
+      outType:
+        type: number
+      selectType:
+        type: boolean
+  Value:
+    operator: slang.data.Value
+    properties:
+      value: $emptyValue
+    generics:
+      valueType:
+        type: number
+properties:
+  emptyValue:
+    type: number
+connections:
+  (:
+  - (Count
+  - item.items(Switch
+  Count):
+  - x(Evaluate
+  - item.count(Switch
+  Evaluate):
+  - select(Switch
+  Evaluate1):
+  - index(IndexAccess
+  IndexAccess):
+  - (Switch.default
+  SortPrimitive):
+  - items(IndexAccess
+  Switch):
+  - )
+  Switch.default)count:
+  - x(Evaluate1
+  Switch.default)items:
+  - (SortPrimitive
+  Switch.false):
+  - (Value
+  Value):
+  - (Switch.false
