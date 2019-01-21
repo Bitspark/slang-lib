@@ -1,0 +1,24 @@
+operatorFile: TakeLast.yaml
+testCases:
+- name: Null
+  generics:
+    itemType:
+      type: boolean
+  data:
+    in:
+    - []
+    - []
+    out:
+    - null
+    - null
+- name: Strings
+  generics:
+    itemType:
+      type: string
+  data:
+    in:
+    - ["f", "a", "c"]
+    - ["a"]
+    out:
+    - "c"
+    - "a"
