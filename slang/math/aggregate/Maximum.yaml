@@ -11,6 +11,9 @@ services:
         type: number
     out:
       type: number
+properties:
+  emptyValue:
+    type: number
 operators:
   Choose:
     operator: slang.control.Choose
@@ -22,7 +25,7 @@ operators:
   Reduce:
     operator: slang.control.Reduce
     properties:
-      emptyValue: null
+      emptyValue: $emptyValue
     generics:
       itemType:
         type: number

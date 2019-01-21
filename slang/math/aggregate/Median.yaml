@@ -11,6 +11,9 @@ services:
         type: number
     out:
       type: number
+properties:
+  emptyValue:
+    type: number
 operators:
   Count:
     operator: slang.stream.Count
@@ -26,7 +29,7 @@ operators:
   IndexAccess:
     operator: slang.stream.IndexAccess
     properties:
-      default: null
+      default: $emptyValue
     generics:
       itemType:
         type: number

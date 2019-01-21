@@ -1,6 +1,8 @@
 operatorFile: Minimum.yaml
 testCases:
 - name: Integers
+  properties:
+    emptyValue: null
   data:
     in:
     - [1, 2, 3, 4]
@@ -11,12 +13,16 @@ testCases:
     - 1
     - 1
 - name: Floats
+  properties:
+    emptyValue: null
   data:
     in:
     - [1.5, 3.5, 2.5]
     out:
     - 1.5
 - name: Empty
+  properties:
+    emptyValue: null
   data:
     in:
     - []

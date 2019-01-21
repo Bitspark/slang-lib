@@ -11,6 +11,9 @@ services:
         type: number
     out:
       type: number
+properties:
+  emptyValue:
+    type: number
 operators:
   Count:
     operator: slang.stream.Count
@@ -52,7 +55,7 @@ operators:
   Value1:
     operator: slang.data.Value
     properties:
-      value: null
+      value: $emptyValue
     generics:
       valueType:
         type: number

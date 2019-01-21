@@ -4,6 +4,8 @@ testCases:
   generics:
     itemType:
       type: boolean
+  properties:
+    emptyValue: null
   data:
     in:
     - []
@@ -15,6 +17,8 @@ testCases:
   generics:
     itemType:
       type: string
+  properties:
+    emptyValue: null
   data:
     in:
     - ["f", "a", "c"]

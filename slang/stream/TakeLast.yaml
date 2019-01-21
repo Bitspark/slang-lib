@@ -13,6 +13,10 @@ services:
     out:
       type: generic
       generic: itemType
+properties:
+  emptyValue:
+    type: generic
+    generic: itemType
 operators:
   Iterate:
     operator: slang.control.Iterate
@@ -29,7 +33,7 @@ operators:
   Value:
     operator: slang.data.Value
     properties:
-      value: null
+      value: $emptyValue
     generics:
       valueType:
         type: generic
