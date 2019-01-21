@@ -13,10 +13,6 @@ services:
     out:
       type: generic
       generic: itemType
-properties:
-  emptyValue:
-    type: generic
-    generic: itemType
 operators:
   Iterate:
     operator: slang.control.Iterate
@@ -38,10 +34,14 @@ operators:
       valueType:
         type: generic
         generic: itemType
+properties:
+  emptyValue:
+    type: generic
+    generic: itemType
 connections:
   (:
-  - (Value
   - items(Iterate
+  - (Value
   Iterate)result:
   - )
   Iterate.iterator)item:
