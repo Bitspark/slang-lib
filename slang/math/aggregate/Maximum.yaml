@@ -11,9 +11,6 @@ services:
         type: number
     out:
       type: number
-properties:
-  emptyValue:
-    type: number
 operators:
   Choose:
     operator: slang.control.Choose
@@ -29,9 +26,12 @@ operators:
     generics:
       itemType:
         type: number
+properties:
+  emptyValue:
+    type: number
 connections:
-  (:
-  - (Reduce
+  ~(:
+  - ~(Reduce
   Choose):
   - (Reduce.reducer
   Choose.chooser)false:

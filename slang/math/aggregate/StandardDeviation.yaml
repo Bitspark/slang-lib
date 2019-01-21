@@ -6,26 +6,24 @@ description: ""
 services:
   main:
     in:
-      type: map
-      map:
-        a:
-          type: number
-        b:
-          type: number
+      type: stream
+      stream:
+        type: number
     out:
-      type: boolean
+      type: number
 operators:
   Evaluate:
     operator: slang.data.Evaluate
     properties:
-      expression: a>b
+      expression: sqrt(x)
       variables:
-      - a
-      - b
+      - x
+  Variance:
+    operator: slang.math.aggregate.Variance
 connections:
+  (:
+  - (Variance
   Evaluate):
   - )
-  a(:
-  - a(Evaluate
-  b(:
-  - b(Evaluate
+  Variance):
+  - x(Evaluate

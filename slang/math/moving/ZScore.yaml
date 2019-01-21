@@ -1,0 +1,59 @@
+name: ""
+displayName: ""
+icon: ""
+shortDescription: ""
+description: ""
+services:
+  main:
+    in:
+      type: stream
+      stream:
+        type: number
+    out:
+      type: stream
+      stream:
+        type: number
+operators:
+  Divide:
+    operator: slang.math.arith.Divide
+  Median:
+    operator: slang.math.aggregate.Median
+    properties:
+      emptyValue: 0
+  StandardDeviation:
+    operator: slang.math.aggregate.StandardDeviation
+  Subtract:
+    operator: slang.math.arith.Subtract
+  TakeLast:
+    operator: slang.stream.TakeLast
+    properties:
+      emptyValue: 0
+    generics:
+      itemType:
+        type: number
+  Window:
+    operator: slang.stream.Window
+    properties:
+      fill: false
+      size: 30
+      stride: 1
+    generics:
+      itemType:
+        type: number
+connections:
+  ~(:
+  - ~(Window
+  Divide):
+  - )~
+  Median):
+  - b(Subtract
+  StandardDeviation):
+  - b(Divide
+  Subtract):
+  - a(Divide
+  TakeLast):
+  - a(Subtract
+  Window)~.~:
+  - ~(TakeLast
+  - ~(Median
+  - ~(StandardDeviation
