@@ -1,3 +1,8 @@
+name: ""
+displayName: ""
+icon: ""
+shortDescription: ""
+description: ""
 services:
   main:
     in:
@@ -17,10 +22,13 @@ operators:
   Reduce:
     operator: slang.control.Reduce
     properties:
-      emptyValue: null
+      emptyValue: $emptyValue
     generics:
       itemType:
         type: number
+properties:
+  emptyValue:
+    type: number
 connections:
   (:
   - (Reduce
