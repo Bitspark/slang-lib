@@ -12,16 +12,21 @@ services:
     out:
       type: number
 operators:
+  Count:
+    operator: slang.stream.Count
+    generics:
+      itemType:
+        type: number
   Evaluate1:
     operator: slang.data.Evaluate
     properties:
-      expression: floor(x/2)
+      expression: floor((x-1)/2)
       variables:
       - x
   IndexAccess:
     operator: slang.stream.IndexAccess
     properties:
-      default: $emptyValue
+      default: null
     generics:
       itemType:
         type: number
@@ -30,7 +35,8 @@ operators:
 connections:
   (:
   - (SortPrimitive
-  ~(:
+  - (Count
+  Count):
   - x(Evaluate1
   Evaluate1):
   - index(IndexAccess

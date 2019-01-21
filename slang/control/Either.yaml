@@ -1,0 +1,55 @@
+name: ""
+displayName: ""
+icon: ""
+shortDescription: ""
+description: ""
+services:
+  main:
+    in:
+      type: map
+      map:
+        choose:
+          type: boolean
+        "false":
+          type: generic
+          generic: itemType
+        "true":
+          type: generic
+          generic: itemType
+    out:
+      type: generic
+      generic: itemType
+operators:
+  Switch:
+    operator: slang.control.Switch
+    properties:
+      cases:
+      - false
+    generics:
+      inType:
+        type: map
+        map:
+          "false":
+            type: generic
+            generic: itemType
+          "true":
+            type: generic
+            generic: itemType
+      outType:
+        type: generic
+        generic: itemType
+      selectType:
+        type: boolean
+connections:
+  Switch):
+  - )
+  Switch.default)true:
+  - (Switch.default
+  Switch.false)false:
+  - (Switch.false
+  choose(:
+  - select(Switch
+  false(:
+  - item.false(Switch
+  true(:
+  - item.true(Switch

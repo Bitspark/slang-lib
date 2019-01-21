@@ -1,3 +1,8 @@
+name: ""
+displayName: ""
+icon: ""
+shortDescription: ""
+description: ""
 services:
   main:
     in:

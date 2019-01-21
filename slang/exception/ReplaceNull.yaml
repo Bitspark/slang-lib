@@ -1,0 +1,40 @@
+name: ""
+displayName: ""
+icon: ""
+shortDescription: ""
+description: ""
+services:
+  main:
+    in:
+      type: string
+    out:
+      type: primitive
+operators:
+  Either:
+    operator: slang.control.Either
+    generics:
+      itemType:
+        type: primitive
+  IsNull:
+    operator: slang.exception.IsNull
+  Value:
+    operator: slang.data.Value
+    properties:
+      value: $default
+    generics:
+      valueType:
+        type: primitive
+properties:
+  default:
+    type: primitive
+connections:
+  (:
+  - (IsNull
+  - false(Either
+  - (Value
+  Either):
+  - )
+  IsNull):
+  - choose(Either
+  Value):
+  - true(Either

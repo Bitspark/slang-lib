@@ -1,0 +1,28 @@
+operatorFile: ReplaceNull.yaml
+testCases:
+- name: Integers
+  properties:
+    default: -1
+  data:
+    in:
+    - 1
+    - null
+    - 2
+    out:
+    - 1
+    - -1
+    - 2
+- name: Strings
+  properties:
+    default: ""
+  data:
+    in:
+    - null
+    - "a"
+    - "b"
+    - null
+    out:
+    - ""
+    - "a"
+    - "b"
+    - ""
