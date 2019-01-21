@@ -1,0 +1,101 @@
+name: ""
+displayName: ""
+icon: ""
+shortDescription: ""
+description: ""
+services:
+  main:
+    in:
+      type: stream
+      stream:
+        type: generic
+        generic: itemType
+    out:
+      type: generic
+      generic: itemType
+operators:
+  Iterate:
+    operator: slang.control.Iterate
+    generics:
+      inItemType:
+        type: generic
+        generic: itemType
+      outItemType:
+        type: trigger
+      stateType:
+        type: map
+        map:
+          done:
+            type: boolean
+          value:
+            type: generic
+            generic: itemType
+  Switch:
+    operator: slang.control.Switch
+    properties:
+      cases:
+      - false
+    generics:
+      inType:
+        type: map
+        map:
+          a:
+            type: generic
+            generic: itemType
+          b:
+            type: generic
+            generic: itemType
+      outType:
+        type: generic
+        generic: itemType
+      selectType:
+        type: boolean
+  Value:
+    operator: slang.data.Value
+    properties:
+      value: false
+    generics:
+      valueType:
+        type: boolean
+  Value1:
+    operator: slang.data.Value
+    properties:
+      value: null
+    generics:
+      valueType:
+        type: generic
+        generic: itemType
+  Value2:
+    operator: slang.data.Value
+    properties:
+      value: true
+    generics:
+      valueType:
+        type: boolean
+connections:
+  (:
+  - (Value
+  - (Value1
+  - items(Iterate
+  Iterate)result.value:
+  - )
+  Iterate.iterator)item:
+  - item.b(Switch
+  Iterate.iterator)state.done:
+  - (Value2
+  - select(Switch
+  - item(Iterate.iterator
+  Iterate.iterator)state.value:
+  - item.a(Switch
+  Switch):
+  - state.value(Iterate.iterator
+  Switch.default)a:
+  - (Switch.default
+  Switch.false)b:
+  - (Switch.false
+  Value):
+  - initial.done(Iterate
+  Value1):
+  - initial.value(Iterate
+  Value2):
+  - state.done(Iterate.iterator

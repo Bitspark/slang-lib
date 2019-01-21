@@ -1,0 +1,18 @@
+operatorFile: SortPrimitive.yaml
+testCases:
+- name: Integers
+  data:
+    in:
+    - []
+    - [2,7,4,3]
+    - [5,3,3,3]
+    out:
+    - []
+    - [2,3,4,7]
+    - [3,3,3,5]
+- name: Strings
+  data:
+    in:
+    - ["f", "a", "c"]
+    out:
+    - ["a", "c", "f"]
