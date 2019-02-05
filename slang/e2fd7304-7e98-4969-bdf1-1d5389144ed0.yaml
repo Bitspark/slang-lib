@@ -3,11 +3,12 @@ connections:
   - x(Evaluate
   Evaluate):
   - )
-description: ''
-displayName: ''
-icon: ''
 id: e2fd7304-7e98-4969-bdf1-1d5389144ed0
-name: slang.exception.IsNull
+meta:
+  description: ''
+  icon: ''
+  name: slang.exception.IsNull
+  shortDescription: ''
 operators:
   Evaluate:
     operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
@@ -21,6 +22,5 @@ services:
       type: primitive
     out:
       type: boolean
-shortDescription: ''
 
 

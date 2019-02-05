@@ -13,11 +13,12 @@ connections:
   - )
   ~(:
   - x(Evaluate
-description: ''
-displayName: ''
-icon: ''
 id: 7d2857e5-e3b5-4a7b-a5f7-9eea0bbe8004
-name: slang.math.aggregate.Variance
+meta:
+  description: ''
+  icon: ''
+  name: slang.math.aggregate.Variance
+  shortDescription: ''
 operators:
   Average:
     operator: f9e04d5b-3d56-47b4-bcb0-27741ef5a4aa
@@ -49,6 +50,5 @@ services:
       type: stream
     out:
       type: number
-shortDescription: ''
 
 

@@ -3,12 +3,13 @@ connections:
   - (Evaluate
   Evaluate):
   - )
-description: Takes two boolean values and emits true in case both values are true,
-  and false otherwise.
-displayName: And
-icon: ''
 id: b4ea20d7-9df1-45ac-bee4-9682fc8345e7
-name: slang.math.logic.And
+meta:
+  description: Takes two boolean values and emits true in case both values are true,
+    and false otherwise.
+  icon: ''
+  name: slang.math.logic.And
+  shortDescription: Takes two boolean values and emits true only if both are true.
 operators:
   Evaluate:
     operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
@@ -28,6 +29,22 @@ services:
       type: map
     out:
       type: boolean
-shortDescription: Takes two boolean values and emits true only if both are true.
+testCases:
+- data:
+    in:
+    - a: true
+      b: true
+    - a: true
+      b: false
+    - a: false
+      b: true
+    - a: false
+      b: false
+    out:
+    - true
+    - false
+    - false
+    - false
+  name: Booleans
 
 

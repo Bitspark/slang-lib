@@ -30,11 +30,12 @@ delegates:
           generic: itemType
           type: generic
       type: map
-description: ''
-displayName: ''
-icon: ''
 id: 72096116-885a-4218-a726-c101f6839cd5
-name: slang.stream.Sort
+meta:
+  description: ''
+  icon: ''
+  name: slang.stream.Sort
+  shortDescription: ''
 operators:
   Reduce:
     generics:
@@ -70,6 +71,5 @@ services:
         generic: itemType
         type: generic
       type: stream
-shortDescription: ''
 
 

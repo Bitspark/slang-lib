@@ -34,7 +34,11 @@ connections:
   - query(Evaluate
   - item(Switch
 id: 540c84aa-a42a-48a5-abd6-dfe1b7283107
-name: slang.string.BuildURL
+meta:
+  description: ''
+  icon: ''
+  name: slang.string.BuildURL
+  shortDescription: ''
 operators:
   Convert:
     generics:

@@ -18,11 +18,12 @@ connections:
   - headers.~.key(HTTPClient
   Value2)~.values.~:
   - headers.~.values.~(HTTPClient
-description: ''
-displayName: ''
-icon: ''
 id: 026dabc6-c7e1-4f93-84a6-e75737d62ac5
-name: slang.net.HttpGet
+meta:
+  description: ''
+  icon: ''
+  name: slang.net.HttpGet
+  shortDescription: ''
 operators:
   Convert:
     generics:
@@ -74,6 +75,5 @@ services:
         status:
           type: number
       type: map
-shortDescription: ''
 
 

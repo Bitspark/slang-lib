@@ -15,11 +15,12 @@ connections:
   - true(Choose
   Reduce.reducer)b:
   - false(Choose
-description: ''
-displayName: ''
-icon: ''
 id: 6422aa8f-b4f0-4acc-9931-820431e0c462
-name: slang.math.aggregate.Minimum
+meta:
+  description: ''
+  icon: ''
+  name: slang.math.aggregate.Minimum
+  shortDescription: ''
 operators:
   Choose:
     generics:
@@ -46,6 +47,73 @@ services:
       type: stream
     out:
       type: number
-shortDescription: ''
+testCases:
+- data:
+    in:
+    - - 1
+      - 2
+      - 3
+      - 4
+    - - 12
+      - 9
+      - 4
+      - 4
+      - 26
+      - 7
+      - 35
+      - 1
+      - 24
+      - 9
+      - 76
+    - - 12
+      - 9
+      - 4
+      - 4
+      - 26
+      - 7
+      - 35
+      - 1
+      - 24
+      - 9
+      - 76
+      - 1
+      - 12
+      - 9
+      - 4
+      - 4
+      - 26
+      - 7
+      - 35
+      - 1
+      - 24
+      - 9
+      - 76
+    out:
+    - 1
+    - 1
+    - 1
+  name: Integers
+  properties:
+    emptyValue: null
+- data:
+    in:
+    - - 1.5
+      - 3.5
+      - 2.5
+    out:
+    - 1.5
+  name: Floats
+  properties:
+    emptyValue: null
+- data:
+    in:
+    - []
+    - []
+    out:
+    - null
+    - null
+  name: Empty
+  properties:
+    emptyValue: null
 
 

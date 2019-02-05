@@ -8,7 +8,11 @@ connections:
   Value):
   - (Crontab
 id: f7c858f5-d7aa-463f-8f33-99907d85f046
-name: slang.time.Schedule
+meta:
+  description: ''
+  icon: ''
+  name: slang.time.Schedule
+  shortDescription: ''
 operators:
   Crontab:
     generics:

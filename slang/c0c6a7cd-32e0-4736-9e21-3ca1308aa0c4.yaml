@@ -15,11 +15,12 @@ connections:
   - ~(StandardDeviation
   ~(:
   - ~(Window
-description: ''
-displayName: ''
-icon: ''
 id: c0c6a7cd-32e0-4736-9e21-3ca1308aa0c4
-name: slang.math.moving.ZScore
+meta:
+  description: ''
+  icon: ''
+  name: slang.math.moving.ZScore
+  shortDescription: ''
 operators:
   Divide:
     operator: 668cb9bf-c0c4-4055-8dfd-0088b4abfdc0
@@ -57,6 +58,5 @@ services:
       stream:
         type: number
       type: stream
-shortDescription: ''
 
 

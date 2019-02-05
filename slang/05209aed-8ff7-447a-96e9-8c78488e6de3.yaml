@@ -4,7 +4,11 @@ connections:
   Evaluate):
   - )
 id: 05209aed-8ff7-447a-96e9-8c78488e6de3
-name: slang.image.filter.Grayscale
+meta:
+  description: ''
+  icon: ''
+  name: slang.image.filter.Grayscale
+  shortDescription: ''
 operators:
   Evaluate:
     operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1

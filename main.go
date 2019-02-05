@@ -1,38 +1,41 @@
 package main
 
 import (
-	"io/ioutil"
-	"log"
-	"strings"
 	"fmt"
-	"os"
 	"github.com/Bitspark/slang/pkg/api"
+	"github.com/Bitspark/slang/pkg/storage"
+	"log"
+	"os"
 )
 
 func runTests(dir string) (int, int, int) {
-	testFiles, err := ioutil.ReadDir(dir)
-	if err != nil {
-		log.Fatal(err)
-	}
+	stor := storage.NewStorage(nil).AddLoader(storage.NewFileSystem(dir))
+	tb := api.NewTestBench(stor)
 
 	succsTotal := 0
 	failsTotal := 0
 	filesTotal := 0
-	for _, file := range testFiles {
-		if file.IsDir() {
-			succs, fails, files := runTests(dir + file.Name() + "/")
-			succsTotal += succs
-			failsTotal += fails
-			filesTotal += files
-			continue
+
+	opIds, err := stor.List()
+
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	for _, opId := range opIds {
+		opDef, err := stor.Load(opId)
+
+		if err != nil {
+			log.Fatal(err)
 		}
-		if !strings.HasSuffix(file.Name(), "_test.yaml") {
-			continue
+
+		fmt.Println("BLUEPRINT", opId.String(), opDef.Meta.Name)
+		if opDef.Meta.ShortDescription != "" {
+			fmt.Println("         ", opDef.Meta.ShortDescription)
 		}
-		path := dir + file.Name()
-		fmt.Printf("FILE %s", path)
 		fmt.Println()
-		if succs, fails, err := api.TestOperator(path, os.Stdout, false); err != nil || succs == 0 || fails != 0 {
+
+		if succs, fails, err := tb.Run(opId, os.Stdout, false); err != nil || succs == 0 || fails != 0 {
 			if err != nil {
 				log.Fatal(err)
 			}
@@ -50,12 +53,12 @@ func runTests(dir string) (int, int, int) {
 }
 
 func main() {
-	succsTotal, failsTotal, filesTotal := runTests("./")
+	succsTotal, failsTotal, filesTotal := runTests("./slang/")
 
 	fmt.Println("SUMMARY OVER ALL TEST FILES")
 	fmt.Println()
 	fmt.Printf("Files: %3d\n", filesTotal)
-	fmt.Printf("Tests: %3d / %3d\n", succsTotal, succsTotal + failsTotal)
+	fmt.Printf("Tests: %3d / %3d\n", succsTotal, succsTotal+failsTotal)
 	fmt.Println()
 
 	if failsTotal == 0 {

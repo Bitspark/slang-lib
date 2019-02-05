@@ -9,11 +9,12 @@ connections:
   - choose(Either
   Value):
   - true(Either
-description: ''
-displayName: ''
-icon: ''
 id: 08f7de95-0fa0-4606-afab-da39f4280f21
-name: slang.exception.ReplaceNull
+meta:
+  description: ''
+  icon: ''
+  name: slang.exception.ReplaceNull
+  shortDescription: ''
 operators:
   Either:
     generics:
@@ -38,6 +39,32 @@ services:
       type: string
     out:
       type: primitive
-shortDescription: ''
+testCases:
+- data:
+    in:
+    - 1
+    - null
+    - 2
+    out:
+    - 1
+    - -1
+    - 2
+  name: Integers
+  properties:
+    default: -1
+- data:
+    in:
+    - null
+    - a
+    - b
+    - null
+    out:
+    - ''
+    - a
+    - b
+    - ''
+  name: Strings
+  properties:
+    default: ''
 
 

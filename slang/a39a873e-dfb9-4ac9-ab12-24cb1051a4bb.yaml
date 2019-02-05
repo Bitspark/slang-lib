@@ -26,7 +26,11 @@ connections:
   Value3):
   - content(Template
 id: a39a873e-dfb9-4ac9-ab12-24cb1051a4bb
-name: slang.net.APIGetSimple
+meta:
+  description: ''
+  icon: ''
+  name: slang.net.APIGetSimple
+  shortDescription: ''
 operators:
   Convert:
     generics:

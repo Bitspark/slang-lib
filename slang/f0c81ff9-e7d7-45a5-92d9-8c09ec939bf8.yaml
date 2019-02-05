@@ -12,11 +12,12 @@ connections:
   - (WindowCollect
   stream2.~(:
   - (WindowCollect1
-description: ''
-displayName: ''
-icon: ''
 id: f0c81ff9-e7d7-45a5-92d9-8c09ec939bf8
-name: slang.stream.Synchronize
+meta:
+  description: ''
+  icon: ''
+  name: slang.stream.Synchronize
+  shortDescription: ''
 operators:
   Clock:
     operator: 40d65b90-8b4e-4383-8e91-0911d0ab826c
@@ -87,6 +88,5 @@ services:
             type: stream
         type: map
       type: stream
-shortDescription: ''
 
 

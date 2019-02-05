@@ -8,7 +8,11 @@ connections:
   Reduce.reducer):
   - (Multiply
 id: b32235c4-4475-44db-8ded-28a7c2091c8f
-name: slang.math.aggregate.Product
+meta:
+  description: ''
+  icon: ''
+  name: slang.math.aggregate.Product
+  shortDescription: ''
 operators:
   Multiply:
     operator: bb7569d8-1391-41d0-961f-ba4db4abce7b
@@ -27,5 +31,35 @@ services:
       type: stream
     out:
       type: number
+testCases:
+- data:
+    in:
+    - - 1
+      - 2
+      - 3
+      - 4
+    - - 12
+      - 9
+      - 4
+    out:
+    - 24
+    - 432
+  name: Integers
+- data:
+    in:
+    - - 1.5
+      - 3.5
+      - 2.5
+    out:
+    - 13.125
+  name: Floats
+- data:
+    in:
+    - []
+    - []
+    out:
+    - 1
+    - 1
+  name: Empty
 
 

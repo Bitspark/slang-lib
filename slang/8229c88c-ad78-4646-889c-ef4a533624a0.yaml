@@ -4,7 +4,11 @@ connections:
   Evaluate):
   - )
 id: 8229c88c-ad78-4646-889c-ef4a533624a0
-name: slang.math.arith.Less
+meta:
+  description: ''
+  icon: ''
+  name: slang.math.arith.Less
+  shortDescription: ''
 operators:
   Evaluate:
     operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1

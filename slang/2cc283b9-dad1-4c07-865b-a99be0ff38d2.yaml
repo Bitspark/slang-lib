@@ -15,11 +15,12 @@ connections:
   - false(Choose
   ~(:
   - ~(Reduce
-description: ''
-displayName: ''
-icon: ''
 id: 2cc283b9-dad1-4c07-865b-a99be0ff38d2
-name: slang.math.aggregate.Maximum
+meta:
+  description: ''
+  icon: ''
+  name: slang.math.aggregate.Maximum
+  shortDescription: ''
 operators:
   Choose:
     generics:
@@ -46,6 +47,75 @@ services:
       type: stream
     out:
       type: number
-shortDescription: ''
+testCases:
+- data:
+    in:
+    - - 1
+      - 2
+      - 3
+      - 4
+    - - 1
+      - 12
+      - 9
+      - 4
+      - 4
+      - 26
+      - 7
+      - 35
+      - 1
+      - 24
+      - 9
+      - 76
+    - - 1
+      - 12
+      - 9
+      - 4
+      - 4
+      - 26
+      - 7
+      - 35
+      - 1
+      - 24
+      - 9
+      - 76
+      - 1
+      - 12
+      - 9
+      - 4
+      - 4
+      - 26
+      - 7
+      - 35
+      - 1
+      - 24
+      - 9
+      - 76
+    out:
+    - 4
+    - 76
+    - 76
+  name: Integers
+  properties:
+    emptyValue: null
+- data:
+    in:
+    - - 1.5
+      - 3.5
+      - 2.5
+    out:
+    - 3.5
+  name: Floats
+  properties:
+    emptyValue: null
+- data:
+    in:
+    - []
+    - []
+    out:
+    - null
+    - null
+  name: Empty
+  properties:
+    emptyValue: null
 
 

@@ -11,11 +11,12 @@ connections:
   - item.false(Switch
   true(:
   - item.true(Switch
-description: ''
-displayName: ''
-icon: ''
 id: bf4960c8-76b2-4147-8802-a47619001477
-name: slang.control.Either
+meta:
+  description: ''
+  icon: ''
+  name: slang.control.Either
+  shortDescription: ''
 operators:
   Switch:
     generics:
@@ -53,6 +54,5 @@ services:
     out:
       generic: itemType
       type: generic
-shortDescription: ''
 
 

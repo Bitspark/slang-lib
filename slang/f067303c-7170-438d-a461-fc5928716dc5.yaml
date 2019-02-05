@@ -6,7 +6,11 @@ connections:
   Filter.filter)pass:
   - (Filter.filter
 id: f067303c-7170-438d-a461-fc5928716dc5
-name: slang.stream.FilterSimple
+meta:
+  description: ''
+  icon: ''
+  name: slang.stream.FilterSimple
+  shortDescription: ''
 operators:
   Filter:
     generics:

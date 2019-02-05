@@ -23,11 +23,12 @@ delegates:
           generic: itemType
           type: generic
       type: map
-description: Takes two items and emits one of them.
-displayName: Choose
-icon: crosshairs
 id: 8345ea9e-98c9-463b-8494-7123ee261270
-name: slang.control.Choose
+meta:
+  description: Takes two items and emits one of them.
+  icon: crosshairs
+  name: slang.control.Choose
+  shortDescription: Takes two items and emits one of them.
 operators:
   Switch:
     generics:
@@ -63,6 +64,5 @@ services:
     out:
       generic: itemType
       type: generic
-shortDescription: Takes two items and emits one of them.
 
 

@@ -4,7 +4,11 @@ connections:
   Evaluate):
   - )
 id: 185635e5-7d49-4590-b6c8-5d9989ab7067
-name: slang.math.function.Floor
+meta:
+  description: ''
+  icon: ''
+  name: slang.math.function.Floor
+  shortDescription: ''
 operators:
   Evaluate:
     operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1

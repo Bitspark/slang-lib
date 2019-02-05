@@ -4,7 +4,11 @@ connections:
   Evaluate):
   - )
 id: bc301ef9-52ac-4db8-a191-f0bbd84ce525
-name: slang.math.arith.Subtract
+meta:
+  description: ''
+  icon: ''
+  name: slang.math.arith.Subtract
+  shortDescription: ''
 operators:
   Evaluate:
     operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
@@ -24,5 +28,56 @@ services:
       type: map
     out:
       type: number
+testCases:
+- data:
+    in:
+    - a: 0
+      b: 0
+    - a: 1
+      b: 0
+    - a: 0
+      b: 1
+    - a: 1
+      b: 1
+    - a: 2
+      b: 5
+    - a: -2
+      b: 5
+    - a: 2
+      b: -5
+    - a: -2
+      b: -5
+    out:
+    - 0
+    - 1
+    - -1
+    - 0
+    - -3
+    - -7
+    - 7
+    - 3
+  name: Integers
+- data:
+    in:
+    - a: 0.5
+      b: 0.5
+    - a: 1.3
+      b: 0.5
+    - a: -1.3
+      b: 0.3
+    - a: 1.3
+      b: -0.3
+    - a: -1.5
+      b: -0.8
+    - a: 0.25
+      b: 0.5
+    out:
+    - 0.0
+    - 0.8
+    - -1.6
+    - 1.6
+    - -0.7
+    - -0.25
+  name: Floats
 
 

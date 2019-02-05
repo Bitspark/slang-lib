@@ -18,7 +18,11 @@ connections:
   Value2):
   - )~
 id: 40d65b90-8b4e-4383-8e91-0911d0ab826c
-name: slang.time.Clock
+meta:
+  description: ''
+  icon: ''
+  name: slang.time.Clock
+  shortDescription: ''
 operators:
   Delay:
     generics:

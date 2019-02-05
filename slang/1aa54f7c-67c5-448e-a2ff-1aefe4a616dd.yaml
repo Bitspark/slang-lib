@@ -16,7 +16,11 @@ connections:
   Value1):
   - state.first(Loop.iterator
 id: 1aa54f7c-67c5-448e-a2ff-1aefe4a616dd
-name: slang.stream.WrapItem
+meta:
+  description: ''
+  icon: ''
+  name: slang.stream.WrapItem
+  shortDescription: ''
 operators:
   Loop:
     generics:

@@ -9,7 +9,11 @@ connections:
   Value):
   - filename(Append
 id: 08e3ea52-11bd-48dc-82bb-a762cf391d90
-name: slang.database.file.Insert
+meta:
+  description: ''
+  icon: ''
+  name: slang.database.file.Insert
+  shortDescription: ''
 operators:
   Append:
     operator: e49369c2-eac2-4dc7-9a6d-b635ae1654f9

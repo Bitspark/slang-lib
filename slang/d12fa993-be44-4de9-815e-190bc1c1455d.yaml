@@ -39,11 +39,12 @@ delegates:
     out:
       generic: stateType
       type: generic
-description: Performs a task repetetively, at least once.
-displayName: Do While
-icon: undo
 id: d12fa993-be44-4de9-815e-190bc1c1455d
-name: slang.control.DoWhile
+meta:
+  description: Performs a task repetetively, at least once.
+  icon: undo
+  name: slang.control.DoWhile
+  shortDescription: Performs a task repetetively, at least once.
 operators:
   Loop:
     generics:
@@ -98,6 +99,5 @@ services:
           generic: stateType
           type: generic
       type: map
-shortDescription: Performs a task repetetively, at least once.
 
 

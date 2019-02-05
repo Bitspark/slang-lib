@@ -10,11 +10,12 @@ connections:
   - )
   SortPrimitive):
   - items(IndexAccess
-description: ''
-displayName: ''
-icon: ''
 id: db72519d-c9f5-487b-962c-e6eb3068962e
-name: slang.math.aggregate.Median
+meta:
+  description: ''
+  icon: ''
+  name: slang.math.aggregate.Median
+  shortDescription: ''
 operators:
   Count:
     generics:
@@ -47,6 +48,87 @@ services:
       type: stream
     out:
       type: number
-shortDescription: ''
+testCases:
+- data:
+    in:
+    - - 1
+      - 2
+      - 3
+      - 4
+    - - 1
+      - 12
+      - 9
+      - 4
+      - 4
+      - 26
+      - 7
+      - 35
+      - 1
+      - 24
+      - 9
+      - 76
+    - - 1
+      - 12
+      - 9
+      - 20
+      - 4
+      - 4
+      - 26
+      - 7
+      - 35
+      - 19
+      - 1
+      - 24
+      - 9
+      - 3
+      - 7
+      - 2
+      - 12
+      - 76
+      - 1
+      - 12
+      - 9
+      - 4
+      - 4
+      - 26
+      - 54
+      - 23
+      - 15
+      - 18
+      - 7
+      - 35
+      - 1
+      - 24
+      - 9
+      - 76
+      - 10
+      - 11
+    out:
+    - 2
+    - 9
+    - 10
+  name: Integers
+  properties:
+    emptyValue: null
+- data:
+    in:
+    - - 1.5
+      - 3.5
+      - 2.5
+    out:
+    - 2.5
+  name: Floats
+  properties:
+    emptyValue: null
+- data:
+    in:
+    - []
+    - []
+    out:
+    - null
+    - null
+  name: Empty
+  properties:
+    emptyValue: null
 
 

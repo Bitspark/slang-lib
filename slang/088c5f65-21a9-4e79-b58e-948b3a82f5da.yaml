@@ -15,7 +15,11 @@ delegates:
       generic: itemType
       type: generic
 id: 088c5f65-21a9-4e79-b58e-948b3a82f5da
-name: slang.stream.Filter
+meta:
+  description: ''
+  icon: ''
+  name: slang.stream.Filter
+  shortDescription: ''
 operators:
   Split:
     generics:

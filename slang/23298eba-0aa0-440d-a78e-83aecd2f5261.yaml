@@ -8,7 +8,11 @@ connections:
   Reduce.reducer):
   - (Add
 id: 23298eba-0aa0-440d-a78e-83aecd2f5261
-name: slang.math.aggregate.Sum
+meta:
+  description: ''
+  icon: ''
+  name: slang.math.aggregate.Sum
+  shortDescription: ''
 operators:
   Add:
     operator: 7b01fa17-7e11-4275-8d1e-fb1ad5b81c3d
@@ -27,5 +31,35 @@ services:
       type: stream
     out:
       type: number
+testCases:
+- data:
+    in:
+    - - 1
+      - 2
+      - 3
+      - 4
+    - - 12
+      - 9
+      - 4
+    out:
+    - 10
+    - 25
+  name: Integers
+- data:
+    in:
+    - - 1.5
+      - 3.5
+      - 2.5
+    out:
+    - 7.5
+  name: Floats
+- data:
+    in:
+    - []
+    - []
+    out:
+    - 0
+    - 0
+  name: Empty
 
 

@@ -7,11 +7,12 @@ connections:
   - )
   Sort.comparator):
   - (Evaluate
-description: ''
-displayName: ''
-icon: ''
 id: 5e3739da-6de1-45b2-9a77-a129d888b3fe
-name: slang.stream.SortPrimitive
+meta:
+  description: ''
+  icon: ''
+  name: slang.stream.SortPrimitive
+  shortDescription: ''
 operators:
   Evaluate:
     operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
@@ -35,6 +36,38 @@ services:
       stream:
         type: primitive
       type: stream
-shortDescription: ''
+testCases:
+- data:
+    in:
+    - []
+    - - 2
+      - 7
+      - 4
+      - 3
+    - - 5
+      - 3
+      - 3
+      - 3
+    out:
+    - []
+    - - 2
+      - 3
+      - 4
+      - 7
+    - - 3
+      - 3
+      - 3
+      - 5
+  name: Integers
+- data:
+    in:
+    - - f
+      - a
+      - c
+    out:
+    - - a
+      - c
+      - f
+  name: Strings
 
 

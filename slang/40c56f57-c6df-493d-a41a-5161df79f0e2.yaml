@@ -4,7 +4,11 @@ connections:
   Evaluate):
   - )
 id: 40c56f57-c6df-493d-a41a-5161df79f0e2
-name: slang.math.arith.GreaterOrEqual
+meta:
+  description: ''
+  icon: ''
+  name: slang.math.arith.GreaterOrEqual
+  shortDescription: ''
 operators:
   Evaluate:
     operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1

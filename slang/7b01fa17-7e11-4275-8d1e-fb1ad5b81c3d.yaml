@@ -4,7 +4,11 @@ connections:
   Evaluate):
   - )
 id: 7b01fa17-7e11-4275-8d1e-fb1ad5b81c3d
-name: slang.math.arith.Add
+meta:
+  description: ''
+  icon: ''
+  name: slang.math.arith.Add
+  shortDescription: ''
 operators:
   Evaluate:
     operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
@@ -24,5 +28,56 @@ services:
       type: map
     out:
       type: number
+testCases:
+- data:
+    in:
+    - a: 0
+      b: 0
+    - a: 1
+      b: 0
+    - a: 0
+      b: 1
+    - a: 1
+      b: 1
+    - a: 2
+      b: 5
+    - a: -2
+      b: 5
+    - a: 2
+      b: -5
+    - a: -2
+      b: -5
+    out:
+    - 0
+    - 1
+    - 1
+    - 2
+    - 7
+    - 3
+    - -3
+    - -7
+  name: Integers
+- data:
+    in:
+    - a: 0.5
+      b: 0.5
+    - a: 1.3
+      b: 0.7
+    - a: -1.3
+      b: 0.3
+    - a: 1.3
+      b: -0.3
+    - a: -1.3
+      b: -0.7
+    - a: 0.25
+      b: 0.5
+    out:
+    - 1.0
+    - 2.0
+    - -1.0
+    - 1.0
+    - -2.0
+    - 0.75
+  name: Floats
 
 

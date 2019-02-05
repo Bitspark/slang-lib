@@ -24,11 +24,12 @@ connections:
   - b(Equal
   Value1):
   - (Switch.default
-description: ''
-displayName: ''
-icon: ''
 id: f9e04d5b-3d56-47b4-bcb0-27741ef5a4aa
-name: slang.math.aggregate.Average
+meta:
+  description: ''
+  icon: ''
+  name: slang.math.aggregate.Average
+  shortDescription: ''
 operators:
   Count:
     generics:
@@ -85,6 +86,75 @@ services:
       type: stream
     out:
       type: number
-shortDescription: ''
+testCases:
+- data:
+    in:
+    - - 1
+      - 2
+      - 3
+      - 4
+    - - 1
+      - 12
+      - 9
+      - 4
+      - 4
+      - 26
+      - 7
+      - 35
+      - 1
+      - 24
+      - 9
+      - 76
+    - - 1
+      - 12
+      - 9
+      - 4
+      - 4
+      - 26
+      - 7
+      - 35
+      - 1
+      - 24
+      - 9
+      - 76
+      - 1
+      - 12
+      - 9
+      - 4
+      - 4
+      - 26
+      - 7
+      - 35
+      - 1
+      - 24
+      - 9
+      - 76
+    out:
+    - 2.5
+    - 17.333333333333332
+    - 17.333333333333332
+  name: Integers
+  properties:
+    emptyValue: null
+- data:
+    in:
+    - - 1.5
+      - 3.5
+      - 2.5
+    out:
+    - 2.5
+  name: Floats
+  properties:
+    emptyValue: null
+- data:
+    in:
+    - []
+    - []
+    out:
+    - null
+    - null
+  name: Empty
+  properties:
+    emptyValue: null
 
 

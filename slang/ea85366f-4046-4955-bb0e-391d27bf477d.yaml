@@ -32,11 +32,12 @@ connections:
   - (Value1
   items(:
   - items(Iterate
-description: ''
-displayName: ''
-icon: ''
 id: ea85366f-4046-4955-bb0e-391d27bf477d
-name: slang.stream.IndexAccess
+meta:
+  description: ''
+  icon: ''
+  name: slang.stream.IndexAccess
+  shortDescription: ''
 operators:
   Equal:
     operator: 4fe3f7d5-4401-4ff4-9c9b-120ff613b79a
@@ -118,6 +119,5 @@ services:
     out:
       generic: itemType
       type: generic
-shortDescription: ''
 
 

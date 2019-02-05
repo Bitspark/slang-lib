@@ -9,11 +9,12 @@ connections:
   - item(Iterate.iterator
   Value):
   - initial(Iterate
-description: ''
-displayName: ''
-icon: ''
 id: 3fb28704-266d-4339-8cc7-8630436aab93
-name: slang.stream.TakeLast
+meta:
+  description: ''
+  icon: ''
+  name: slang.stream.TakeLast
+  shortDescription: ''
 operators:
   Iterate:
     generics:
@@ -49,6 +50,34 @@ services:
     out:
       generic: itemType
       type: generic
-shortDescription: ''
+testCases:
+- data:
+    in:
+    - []
+    - []
+    out:
+    - null
+    - null
+  generics:
+    itemType:
+      type: boolean
+  name: null
+  properties:
+    emptyValue: null
+- data:
+    in:
+    - - f
+      - a
+      - c
+    - - a
+    out:
+    - c
+    - a
+  generics:
+    itemType:
+      type: string
+  name: Strings
+  properties:
+    emptyValue: null
 
 

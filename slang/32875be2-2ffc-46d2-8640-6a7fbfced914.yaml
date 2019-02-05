@@ -1,46 +1,3 @@
-id: 32875be2-2ffc-46d2-8640-6a7fbfced914
-name: slang.database.file.Read
-services:
-  main:
-    in:
-      type: trigger
-    out:
-      type: stream
-      stream:
-        type: generic
-        generic: itemType
-operators:
-  Convert:
-    operator: d1191456-3583-4eaf-8ec1-e486c3818c60
-    generics:
-      fromType:
-        type: string
-      toType:
-        type: binary
-  FilterSimple:
-    operator: f067303c-7170-438d-a461-fc5928716dc5
-    generics:
-      itemType:
-        type: generic
-        generic: itemType
-  JSONRead:
-    operator: b79b019f-5efe-4012-9a1d-1f61549ede25
-    generics:
-      itemType:
-        type: generic
-        generic: itemType
-  ReadLines:
-    operator: 6124cd6b-5c23-4e17-a714-458d0f8ac1a7
-  Value:
-    operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
-    properties:
-      value: $filename
-    generics:
-      valueType:
-        type: string
-properties:
-  filename:
-    type: string
 connections:
   (:
   - (Value
@@ -56,3 +13,52 @@ connections:
   - (Convert
   Value):
   - filename(ReadLines
+id: 32875be2-2ffc-46d2-8640-6a7fbfced914
+meta:
+  description: ''
+  icon: ''
+  name: slang.database.file.Read
+  shortDescription: ''
+operators:
+  Convert:
+    generics:
+      fromType:
+        type: string
+      toType:
+        type: binary
+    operator: d1191456-3583-4eaf-8ec1-e486c3818c60
+  FilterSimple:
+    generics:
+      itemType:
+        generic: itemType
+        type: generic
+    operator: f067303c-7170-438d-a461-fc5928716dc5
+  JSONRead:
+    generics:
+      itemType:
+        generic: itemType
+        type: generic
+    operator: b79b019f-5efe-4012-9a1d-1f61549ede25
+  ReadLines:
+    operator: 6124cd6b-5c23-4e17-a714-458d0f8ac1a7
+  Value:
+    generics:
+      valueType:
+        type: string
+    operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
+    properties:
+      value: $filename
+properties:
+  filename:
+    type: string
+services:
+  main:
+    in:
+      type: trigger
+    out:
+      stream:
+        generic: itemType
+        type: generic
+      type: stream
+
+

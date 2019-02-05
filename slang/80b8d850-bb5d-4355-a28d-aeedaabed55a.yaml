@@ -4,7 +4,11 @@ connections:
   Evaluate):
   - )
 id: 80b8d850-bb5d-4355-a28d-aeedaabed55a
-name: slang.math.arith.Unequal
+meta:
+  description: ''
+  icon: ''
+  name: slang.math.arith.Unequal
+  shortDescription: ''
 operators:
   Evaluate:
     operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1

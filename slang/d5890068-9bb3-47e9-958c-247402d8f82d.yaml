@@ -27,7 +27,11 @@ delegates:
           type: generic
       type: map
 id: d5890068-9bb3-47e9-958c-247402d8f82d
-name: slang.stream.FindBest
+meta:
+  description: ''
+  icon: ''
+  name: slang.stream.FindBest
+  shortDescription: ''
 operators:
   Choose:
     generics:

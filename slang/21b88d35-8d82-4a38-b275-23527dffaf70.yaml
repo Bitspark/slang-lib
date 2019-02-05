@@ -25,11 +25,12 @@ connections:
   - initial.value(Iterate
   Value2):
   - state.done(Iterate.iterator
-description: ''
-displayName: ''
-icon: ''
 id: 21b88d35-8d82-4a38-b275-23527dffaf70
-name: slang.stream.TakeFirst
+meta:
+  description: ''
+  icon: ''
+  name: slang.stream.TakeFirst
+  shortDescription: ''
 operators:
   Iterate:
     generics:
@@ -103,6 +104,34 @@ services:
     out:
       generic: itemType
       type: generic
-shortDescription: ''
+testCases:
+- data:
+    in:
+    - []
+    - []
+    out:
+    - null
+    - null
+  generics:
+    itemType:
+      type: boolean
+  name: null
+  properties:
+    emptyValue: null
+- data:
+    in:
+    - - f
+      - a
+      - c
+    - - a
+    out:
+    - f
+    - a
+  generics:
+    itemType:
+      type: string
+  name: Strings
+  properties:
+    emptyValue: null
 
 

@@ -30,7 +30,11 @@ connections:
   - (Value3
   - url(Template
 id: b887c2a1-3446-411c-b980-1c9b2ae15fbc
-name: slang.net.APIGet
+meta:
+  description: ''
+  icon: ''
+  name: slang.net.APIGet
+  shortDescription: ''
 operators:
   Convert:
     generics:

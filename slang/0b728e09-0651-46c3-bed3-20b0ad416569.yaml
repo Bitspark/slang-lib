@@ -4,7 +4,11 @@ connections:
   Evaluate):
   - )
 id: 0b728e09-0651-46c3-bed3-20b0ad416569
-name: slang.string.Concatenate
+meta:
+  description: ''
+  icon: ''
+  name: slang.string.Concatenate
+  shortDescription: ''
 operators:
   Evaluate:
     operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
@@ -24,5 +28,22 @@ services:
       type: map
     out:
       type: string
+testCases:
+- data:
+    in:
+    - a: ''
+      b: ''
+    - a: ha
+      b: llo
+    - a: ''
+      b: llo
+    - a: ha
+      b: ''
+    out:
+    - ''
+    - hallo
+    - llo
+    - ha
+  name: Strings
 
 
