@@ -1,0 +1,51 @@
+connections:
+  (:
+  - (Reduce
+  Choose):
+  - (Reduce.reducer
+  Choose.chooser)false:
+  - b(Less
+  Choose.chooser)true:
+  - a(Less
+  Less):
+  - (Choose.chooser
+  Reduce):
+  - )
+  Reduce.reducer)a:
+  - true(Choose
+  Reduce.reducer)b:
+  - false(Choose
+description: ''
+displayName: ''
+icon: ''
+id: 6422aa8f-b4f0-4acc-9931-820431e0c462
+name: slang.math.aggregate.Minimum
+operators:
+  Choose:
+    generics:
+      itemType:
+        type: number
+    operator: 8345ea9e-98c9-463b-8494-7123ee261270
+  Less:
+    operator: 8229c88c-ad78-4646-889c-ef4a533624a0
+  Reduce:
+    generics:
+      itemType:
+        type: number
+    operator: b95e6da8-9770-4a04-a73d-cdfe2081870f
+    properties:
+      emptyValue: $emptyValue
+properties:
+  emptyValue:
+    type: number
+services:
+  main:
+    in:
+      stream:
+        type: number
+      type: stream
+    out:
+      type: number
+shortDescription: ''
+
+

@@ -1,0 +1,28 @@
+connections:
+  (:
+  - (Evaluate
+  Evaluate):
+  - )
+id: 7b01fa17-7e11-4275-8d1e-fb1ad5b81c3d
+name: slang.math.arith.Add
+operators:
+  Evaluate:
+    operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
+    properties:
+      expression: a+b
+      variables:
+      - a
+      - b
+services:
+  main:
+    in:
+      map:
+        a:
+          type: number
+        b:
+          type: number
+      type: map
+    out:
+      type: number
+
+

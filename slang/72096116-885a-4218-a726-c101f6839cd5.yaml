@@ -1,0 +1,75 @@
+connections:
+  (.comparator:
+  - ~(Take.compare
+  Reduce):
+  - )
+  Reduce.reducer)a:
+  - true(Take
+  Reduce.reducer)b:
+  - false(Take
+  Take):
+  - (Reduce.reducer
+  Take.compare)~.false:
+  - .comparator)a
+  Take.compare)~.true:
+  - .comparator)b
+  WrapItem):
+  - ~(Reduce
+  ~(:
+  - (WrapItem
+delegates:
+  comparator:
+    in:
+      type: boolean
+    out:
+      map:
+        a:
+          generic: itemType
+          type: generic
+        b:
+          generic: itemType
+          type: generic
+      type: map
+description: ''
+displayName: ''
+icon: ''
+id: 72096116-885a-4218-a726-c101f6839cd5
+name: slang.stream.Sort
+operators:
+  Reduce:
+    generics:
+      itemType:
+        stream:
+          generic: itemType
+          type: generic
+        type: stream
+    operator: b95e6da8-9770-4a04-a73d-cdfe2081870f
+    properties:
+      emptyValue: []
+  Take:
+    generics:
+      itemType:
+        generic: itemType
+        type: generic
+    operator: 9bebc4bf-d512-4944-bcb1-5b2c3d5b5471
+  WrapItem:
+    generics:
+      itemType:
+        generic: itemType
+        type: generic
+    operator: 1aa54f7c-67c5-448e-a2ff-1aefe4a616dd
+services:
+  main:
+    in:
+      stream:
+        generic: itemType
+        type: generic
+      type: stream
+    out:
+      stream:
+        generic: itemType
+        type: generic
+      type: stream
+shortDescription: ''
+
+

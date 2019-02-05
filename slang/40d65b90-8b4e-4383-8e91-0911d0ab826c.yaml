@@ -1,0 +1,68 @@
+connections:
+  (:
+  - (Loop
+  Delay):
+  - state(Loop.iterator
+  - item(Loop.iterator
+  Loop)items.~:
+  - (Value2
+  Loop.controller):
+  - (Value1
+  Loop.iterator):
+  - (Value
+  Value):
+  - delay(Delay
+  - item(Delay
+  Value1):
+  - (Loop.controller
+  Value2):
+  - )~
+id: 40d65b90-8b4e-4383-8e91-0911d0ab826c
+name: slang.time.Clock
+operators:
+  Delay:
+    generics:
+      itemType:
+        type: trigger
+    operator: 7d61b83a-9aa2-4875-9c21-1e11f6adbfae
+  Loop:
+    generics:
+      itemType:
+        type: trigger
+      stateType:
+        type: trigger
+    operator: 0b8a1592-1368-44bc-92d5-692acc78b1d3
+  Value:
+    generics:
+      valueType:
+        type: primitive
+    operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
+    properties:
+      value: $interval
+  Value1:
+    generics:
+      valueType:
+        type: boolean
+    operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
+    properties:
+      value: true
+  Value2:
+    generics:
+      valueType:
+        type: trigger
+    operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
+    properties:
+      value: null
+properties:
+  interval:
+    type: number
+services:
+  main:
+    in:
+      type: trigger
+    out:
+      stream:
+        type: trigger
+      type: stream
+
+

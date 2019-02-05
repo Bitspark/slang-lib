@@ -1,0 +1,42 @@
+connections:
+  (:
+  - (JSONWrite
+  - (Value
+  Append):
+  - )
+  JSONWrite):
+  - content(Append
+  Value):
+  - filename(Append
+id: 08e3ea52-11bd-48dc-82bb-a762cf391d90
+name: slang.database.file.Insert
+operators:
+  Append:
+    operator: e49369c2-eac2-4dc7-9a6d-b635ae1654f9
+    properties:
+      newLine: true
+  JSONWrite:
+    generics:
+      itemType:
+        generic: itemType
+        type: generic
+    operator: d4aabe2d-dee7-409f-b2bb-713ebc836672
+  Value:
+    generics:
+      valueType:
+        type: string
+    operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
+    properties:
+      value: $filename
+properties:
+  filename:
+    type: string
+services:
+  main:
+    in:
+      generic: itemType
+      type: generic
+    out:
+      type: string
+
+

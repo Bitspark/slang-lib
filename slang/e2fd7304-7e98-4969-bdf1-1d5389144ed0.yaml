@@ -1,0 +1,26 @@
+connections:
+  (:
+  - x(Evaluate
+  Evaluate):
+  - )
+description: ''
+displayName: ''
+icon: ''
+id: e2fd7304-7e98-4969-bdf1-1d5389144ed0
+name: slang.exception.IsNull
+operators:
+  Evaluate:
+    operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
+    properties:
+      expression: isNull(x)
+      variables:
+      - x
+services:
+  main:
+    in:
+      type: primitive
+    out:
+      type: boolean
+shortDescription: ''
+
+

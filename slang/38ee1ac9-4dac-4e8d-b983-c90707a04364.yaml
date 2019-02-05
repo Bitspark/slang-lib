@@ -1,0 +1,28 @@
+connections:
+  (:
+  - (Evaluate
+  Evaluate):
+  - )
+id: 38ee1ac9-4dac-4e8d-b983-c90707a04364
+name: slang.math.arith.Modulo
+operators:
+  Evaluate:
+    operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
+    properties:
+      expression: a%b
+      variables:
+      - a
+      - b
+services:
+  main:
+    in:
+      map:
+        a:
+          type: number
+        b:
+          type: number
+      type: map
+    out:
+      type: number
+
+

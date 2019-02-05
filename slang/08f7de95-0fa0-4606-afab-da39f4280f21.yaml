@@ -1,0 +1,43 @@
+connections:
+  (:
+  - (IsNull
+  - false(Either
+  - (Value
+  Either):
+  - )
+  IsNull):
+  - choose(Either
+  Value):
+  - true(Either
+description: ''
+displayName: ''
+icon: ''
+id: 08f7de95-0fa0-4606-afab-da39f4280f21
+name: slang.exception.ReplaceNull
+operators:
+  Either:
+    generics:
+      itemType:
+        type: primitive
+    operator: bf4960c8-76b2-4147-8802-a47619001477
+  IsNull:
+    operator: e2fd7304-7e98-4969-bdf1-1d5389144ed0
+  Value:
+    generics:
+      valueType:
+        type: primitive
+    operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
+    properties:
+      value: $default
+properties:
+  default:
+    type: primitive
+services:
+  main:
+    in:
+      type: string
+    out:
+      type: primitive
+shortDescription: ''
+
+

@@ -1,0 +1,22 @@
+connections:
+  (:
+  - x(Evaluate
+  Evaluate):
+  - )
+id: 6ea575c8-b387-4b80-a977-3675678d0270
+name: slang.math.function.SquareRoot
+operators:
+  Evaluate:
+    operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
+    properties:
+      expression: sqrt(x)
+      variables:
+      - x
+services:
+  main:
+    in:
+      type: number
+    out:
+      type: number
+
+

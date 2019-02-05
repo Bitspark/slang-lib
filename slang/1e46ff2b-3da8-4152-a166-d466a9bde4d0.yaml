@@ -1,0 +1,79 @@
+connections:
+  (:
+  - items(Transform
+  - (Value
+  Add):
+  - state.sum(Transform.iterator
+  - a(Divide
+  Divide):
+  - item(Transform.iterator
+  Evaluate):
+  - state.count(Transform.iterator
+  - b(Divide
+  Transform)items:
+  - )
+  Transform.iterator)item:
+  - a(Add
+  Transform.iterator)state.count:
+  - x(Evaluate
+  Transform.iterator)state.sum:
+  - b(Add
+  Value):
+  - initial(Transform
+description: ''
+displayName: ''
+icon: ''
+id: 1e46ff2b-3da8-4152-a166-d466a9bde4d0
+name: slang.math.moving.Average
+operators:
+  Add:
+    operator: 7b01fa17-7e11-4275-8d1e-fb1ad5b81c3d
+  Divide:
+    operator: 668cb9bf-c0c4-4055-8dfd-0088b4abfdc0
+  Evaluate:
+    operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
+    properties:
+      expression: x+1
+      variables:
+      - x
+  Transform:
+    generics:
+      inItemType:
+        type: number
+      outItemType:
+        type: number
+      stateType:
+        map:
+          count:
+            type: number
+          sum:
+            type: number
+        type: map
+    operator: dce082cb-7272-4e85-b4fa-740778e8ba8d
+  Value:
+    generics:
+      valueType:
+        map:
+          count:
+            type: number
+          sum:
+            type: number
+        type: map
+    operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
+    properties:
+      value:
+        count: 0
+        sum: 0
+services:
+  main:
+    in:
+      stream:
+        type: number
+      type: stream
+    out:
+      stream:
+        type: number
+      type: stream
+shortDescription: ''
+
+

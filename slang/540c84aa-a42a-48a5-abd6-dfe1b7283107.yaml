@@ -1,0 +1,139 @@
+connections:
+  (:
+  - (Value
+  - (Value3
+  - (Value2
+  - (Value1
+  - (Value4
+  - (Value5
+  Convert):
+  - port(Template
+  Evaluate):
+  - select(Switch
+  Evaluate1):
+  - (Switch.default
+  Switch):
+  - query(Template
+  Switch.default):
+  - query(Evaluate1
+  Switch.true):
+  - (Switch.true
+  Template):
+  - )
+  Value):
+  - content(Template
+  Value1):
+  - protocol(Template
+  Value2):
+  - path(Template
+  Value3):
+  - (Convert
+  Value4):
+  - host(Template
+  Value5):
+  - query(Evaluate
+  - item(Switch
+id: 540c84aa-a42a-48a5-abd6-dfe1b7283107
+name: slang.string.BuildURL
+operators:
+  Convert:
+    generics:
+      fromType:
+        type: number
+      toType:
+        type: string
+    operator: d1191456-3583-4eaf-8ec1-e486c3818c60
+  Evaluate:
+    operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
+    properties:
+      expression: len(query) == 0
+      variables:
+      - query
+  Evaluate1:
+    operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
+    properties:
+      expression: '"?" + query'
+      variables:
+      - query
+  Switch:
+    generics:
+      inType:
+        type: string
+      outType:
+        type: string
+      selectType:
+        type: boolean
+    operator: cd6fc5c8-5b64-4b1a-9885-59ede141b398
+    properties:
+      cases:
+      - true
+  Template:
+    operator: 3c39f999-b5c2-490d-aed1-19149d228b04
+    properties:
+      variables:
+      - protocol
+      - host
+      - port
+      - path
+      - query
+  Value:
+    generics:
+      valueType:
+        type: string
+    operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
+    properties:
+      value: '{protocol}://{host}:{port}/{path}{query}'
+  Value1:
+    generics:
+      valueType:
+        type: string
+    operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
+    properties:
+      value: $protocol
+  Value2:
+    generics:
+      valueType:
+        type: string
+    operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
+    properties:
+      value: $path
+  Value3:
+    generics:
+      valueType:
+        type: number
+    operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
+    properties:
+      value: $port
+  Value4:
+    generics:
+      valueType:
+        type: string
+    operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
+    properties:
+      value: $host
+  Value5:
+    generics:
+      valueType:
+        type: string
+    operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
+    properties:
+      value: $query
+properties:
+  host:
+    type: string
+  path:
+    type: string
+  port:
+    type: number
+  protocol:
+    type: string
+  query:
+    type: string
+services:
+  main:
+    in:
+      type: trigger
+    out:
+      type: string
+
+

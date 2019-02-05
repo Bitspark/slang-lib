@@ -1,0 +1,28 @@
+connections:
+  (:
+  - (Evaluate
+  Evaluate):
+  - )
+id: 4fe3f7d5-4401-4ff4-9c9b-120ff613b79a
+name: slang.math.arith.Equal
+operators:
+  Evaluate:
+    operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
+    properties:
+      expression: a==b
+      variables:
+      - a
+      - b
+services:
+  main:
+    in:
+      map:
+        a:
+          type: number
+        b:
+          type: number
+      type: map
+    out:
+      type: boolean
+
+

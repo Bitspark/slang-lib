@@ -1,0 +1,39 @@
+connections:
+  (:
+  - (Split
+  (.filter:
+  - (Split.controller
+  Split)true:
+  - )
+  Split.controller):
+  - .filter)
+delegates:
+  filter:
+    in:
+      type: boolean
+    out:
+      generic: itemType
+      type: generic
+id: 088c5f65-21a9-4e79-b58e-948b3a82f5da
+name: slang.stream.Filter
+operators:
+  Split:
+    generics:
+      itemType:
+        generic: itemType
+        type: generic
+    operator: fed72b41-2584-424c-8213-1978410ccab6
+services:
+  main:
+    in:
+      stream:
+        generic: itemType
+        type: generic
+      type: stream
+    out:
+      stream:
+        generic: itemType
+        type: generic
+      type: stream
+
+

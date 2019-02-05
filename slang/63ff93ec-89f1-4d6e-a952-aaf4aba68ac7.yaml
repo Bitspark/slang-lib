@@ -1,0 +1,34 @@
+connections:
+  Evaluate):
+  - )
+  a(:
+  - a(Evaluate
+  b(:
+  - b(Evaluate
+description: ''
+displayName: ''
+icon: ''
+id: 63ff93ec-89f1-4d6e-a952-aaf4aba68ac7
+name: slang.math.arith.Greater
+operators:
+  Evaluate:
+    operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
+    properties:
+      expression: a>b
+      variables:
+      - a
+      - b
+services:
+  main:
+    in:
+      map:
+        a:
+          type: number
+        b:
+          type: number
+      type: map
+    out:
+      type: boolean
+shortDescription: ''
+
+

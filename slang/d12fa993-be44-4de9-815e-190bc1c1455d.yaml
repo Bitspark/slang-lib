@@ -1,0 +1,103 @@
+connections:
+  (:
+  - (Value
+  - state(Loop
+  Loop)items:
+  - (Split
+  Loop)result.state:
+  - )result
+  Loop.controller)next:
+  - (Loop.controller
+  Loop.iterator)state:
+  - .iterator)
+  Split)true.~.item:
+  - )items.~
+  Split.controller)valid:
+  - (Split.controller
+  Value):
+  - next(Loop
+  continue(.iterator:
+  - item.valid(Loop.iterator
+  - state.next(Loop.iterator
+  item(.iterator:
+  - item.item(Loop.iterator
+  state(.iterator:
+  - state.state(Loop.iterator
+delegates:
+  iterator:
+    in:
+      map:
+        continue:
+          type: boolean
+        item:
+          generic: itemType
+          type: generic
+        state:
+          generic: stateType
+          type: generic
+      type: map
+    out:
+      generic: stateType
+      type: generic
+description: Performs a task repetetively, at least once.
+displayName: Do While
+icon: undo
+id: d12fa993-be44-4de9-815e-190bc1c1455d
+name: slang.control.DoWhile
+operators:
+  Loop:
+    generics:
+      itemType:
+        map:
+          item:
+            generic: itemType
+            type: generic
+          valid:
+            type: boolean
+        type: map
+      stateType:
+        map:
+          next:
+            type: boolean
+          state:
+            generic: stateType
+            type: generic
+        type: map
+    operator: 0b8a1592-1368-44bc-92d5-692acc78b1d3
+  Split:
+    generics:
+      itemType:
+        map:
+          item:
+            generic: itemType
+            type: generic
+          valid:
+            type: boolean
+        type: map
+    operator: fed72b41-2584-424c-8213-1978410ccab6
+  Value:
+    generics:
+      valueType:
+        type: boolean
+    operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
+    properties:
+      value: true
+services:
+  main:
+    in:
+      generic: stateType
+      type: generic
+    out:
+      map:
+        items:
+          stream:
+            generic: itemType
+            type: generic
+          type: stream
+        result:
+          generic: stateType
+          type: generic
+      type: map
+shortDescription: Performs a task repetetively, at least once.
+
+

@@ -1,0 +1,40 @@
+connections:
+  (:
+  - (Filter
+  Filter)~.item:
+  - )~
+  Filter.filter)pass:
+  - (Filter.filter
+id: f067303c-7170-438d-a461-fc5928716dc5
+name: slang.stream.FilterSimple
+operators:
+  Filter:
+    generics:
+      itemType:
+        map:
+          item:
+            generic: itemType
+            type: generic
+          pass:
+            type: boolean
+        type: map
+    operator: 088c5f65-21a9-4e79-b58e-948b3a82f5da
+services:
+  main:
+    in:
+      stream:
+        map:
+          item:
+            generic: itemType
+            type: generic
+          pass:
+            type: boolean
+        type: map
+      type: stream
+    out:
+      stream:
+        generic: itemType
+        type: generic
+      type: stream
+
+

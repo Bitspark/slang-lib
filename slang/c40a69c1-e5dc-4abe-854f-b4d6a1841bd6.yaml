@@ -1,0 +1,22 @@
+connections:
+  (:
+  - x(Evaluate
+  Evaluate):
+  - )
+id: c40a69c1-e5dc-4abe-854f-b4d6a1841bd6
+name: slang.math.function.FlipSign
+operators:
+  Evaluate:
+    operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
+    properties:
+      expression: -x
+      variables:
+      - x
+services:
+  main:
+    in:
+      type: number
+    out:
+      type: number
+
+

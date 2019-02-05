@@ -1,0 +1,58 @@
+connections:
+  Switch):
+  - )
+  Switch.default)true:
+  - (Switch.default
+  Switch.false)false:
+  - (Switch.false
+  choose(:
+  - select(Switch
+  false(:
+  - item.false(Switch
+  true(:
+  - item.true(Switch
+description: ''
+displayName: ''
+icon: ''
+id: bf4960c8-76b2-4147-8802-a47619001477
+name: slang.control.Either
+operators:
+  Switch:
+    generics:
+      inType:
+        map:
+          'false':
+            generic: itemType
+            type: generic
+          'true':
+            generic: itemType
+            type: generic
+        type: map
+      outType:
+        generic: itemType
+        type: generic
+      selectType:
+        type: boolean
+    operator: cd6fc5c8-5b64-4b1a-9885-59ede141b398
+    properties:
+      cases:
+      - false
+services:
+  main:
+    in:
+      map:
+        choose:
+          type: boolean
+        'false':
+          generic: itemType
+          type: generic
+        'true':
+          generic: itemType
+          type: generic
+      type: map
+    out:
+      generic: itemType
+      type: generic
+shortDescription: ''
+
+

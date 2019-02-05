@@ -1,0 +1,52 @@
+connections:
+  (:
+  - (SortPrimitive
+  - (Count
+  Count):
+  - x(Evaluate1
+  Evaluate1):
+  - index(IndexAccess
+  IndexAccess):
+  - )
+  SortPrimitive):
+  - items(IndexAccess
+description: ''
+displayName: ''
+icon: ''
+id: db72519d-c9f5-487b-962c-e6eb3068962e
+name: slang.math.aggregate.Median
+operators:
+  Count:
+    generics:
+      itemType:
+        type: number
+    operator: 5df619e7-f8ab-44d9-b315-05fdcd52ee43
+  Evaluate1:
+    operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
+    properties:
+      expression: floor((x-1)/2)
+      variables:
+      - x
+  IndexAccess:
+    generics:
+      itemType:
+        type: number
+    operator: ea85366f-4046-4955-bb0e-391d27bf477d
+    properties:
+      default: $emptyValue
+  SortPrimitive:
+    operator: 5e3739da-6de1-45b2-9a77-a129d888b3fe
+properties:
+  emptyValue:
+    type: number
+services:
+  main:
+    in:
+      stream:
+        type: number
+      type: stream
+    out:
+      type: number
+shortDescription: ''
+
+

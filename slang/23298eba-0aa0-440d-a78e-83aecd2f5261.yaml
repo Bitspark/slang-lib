@@ -1,0 +1,31 @@
+connections:
+  (:
+  - (Reduce
+  Add):
+  - (Reduce.reducer
+  Reduce):
+  - )
+  Reduce.reducer):
+  - (Add
+id: 23298eba-0aa0-440d-a78e-83aecd2f5261
+name: slang.math.aggregate.Sum
+operators:
+  Add:
+    operator: 7b01fa17-7e11-4275-8d1e-fb1ad5b81c3d
+  Reduce:
+    generics:
+      itemType:
+        type: number
+    operator: b95e6da8-9770-4a04-a73d-cdfe2081870f
+    properties:
+      emptyValue: 0
+services:
+  main:
+    in:
+      stream:
+        type: number
+      type: stream
+    out:
+      type: number
+
+

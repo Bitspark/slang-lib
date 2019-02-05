@@ -1,0 +1,61 @@
+connections:
+  (:
+  - (Reduce
+  (.chooser:
+  - (Choose.chooser
+  Choose):
+  - (Reduce.reducer
+  Choose.chooser):
+  - .chooser)
+  Reduce):
+  - )
+  Reduce.reducer)a:
+  - false(Choose
+  Reduce.reducer)b:
+  - true(Choose
+delegates:
+  chooser:
+    in:
+      type: boolean
+    out:
+      map:
+        'false':
+          generic: itemType
+          type: generic
+        'true':
+          generic: itemType
+          type: generic
+      type: map
+id: d5890068-9bb3-47e9-958c-247402d8f82d
+name: slang.stream.FindBest
+operators:
+  Choose:
+    generics:
+      itemType:
+        generic: itemType
+        type: generic
+    operator: 8345ea9e-98c9-463b-8494-7123ee261270
+  Reduce:
+    generics:
+      itemType:
+        generic: itemType
+        type: generic
+    operator: b95e6da8-9770-4a04-a73d-cdfe2081870f
+    properties:
+      emptyValue: $emptyValue
+properties:
+  emptyValue:
+    generic: itemType
+    type: generic
+services:
+  main:
+    in:
+      stream:
+        generic: itemType
+        type: generic
+      type: stream
+    out:
+      generic: itemType
+      type: generic
+
+

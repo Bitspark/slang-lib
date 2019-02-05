@@ -1,0 +1,123 @@
+connections:
+  Equal):
+  - select(Switch
+  - item(Iterate.iterator
+  Evaluate):
+  - state.iter(Iterate.iterator
+  Iterate)result.item:
+  - )
+  Iterate.iterator)item:
+  - item.b(Switch
+  Iterate.iterator)state.index:
+  - state.index(Iterate.iterator
+  - a(Equal
+  Iterate.iterator)state.item:
+  - item.a(Switch
+  Iterate.iterator)state.iter:
+  - x(Evaluate
+  - b(Equal
+  Switch):
+  - state.item(Iterate.iterator
+  Switch.default)b:
+  - (Switch.default
+  Switch.false)a:
+  - (Switch.false
+  Value):
+  - initial.item(Iterate
+  Value1):
+  - initial.iter(Iterate
+  index(:
+  - (Value
+  - initial.index(Iterate
+  - (Value1
+  items(:
+  - items(Iterate
+description: ''
+displayName: ''
+icon: ''
+id: ea85366f-4046-4955-bb0e-391d27bf477d
+name: slang.stream.IndexAccess
+operators:
+  Equal:
+    operator: 4fe3f7d5-4401-4ff4-9c9b-120ff613b79a
+  Evaluate:
+    operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
+    properties:
+      expression: x+1
+      variables:
+      - x
+  Iterate:
+    generics:
+      inItemType:
+        generic: itemType
+        type: generic
+      outItemType:
+        type: trigger
+      stateType:
+        map:
+          index:
+            type: number
+          item:
+            generic: itemType
+            type: generic
+          iter:
+            type: number
+        type: map
+    operator: e58624d4-5568-40d3-8b77-ab792ef620f1
+  Switch:
+    generics:
+      inType:
+        map:
+          a:
+            generic: itemType
+            type: generic
+          b:
+            generic: itemType
+            type: generic
+        type: map
+      outType:
+        generic: itemType
+        type: generic
+      selectType:
+        type: boolean
+    operator: cd6fc5c8-5b64-4b1a-9885-59ede141b398
+    properties:
+      cases:
+      - false
+  Value:
+    generics:
+      valueType:
+        generic: itemType
+        type: generic
+    operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
+    properties:
+      value: $default
+  Value1:
+    generics:
+      valueType:
+        type: number
+    operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
+    properties:
+      value: 0
+properties:
+  default:
+    generic: itemType
+    type: generic
+services:
+  main:
+    in:
+      map:
+        index:
+          type: number
+        items:
+          stream:
+            generic: itemType
+            type: generic
+          type: stream
+      type: map
+    out:
+      generic: itemType
+      type: generic
+shortDescription: ''
+
+

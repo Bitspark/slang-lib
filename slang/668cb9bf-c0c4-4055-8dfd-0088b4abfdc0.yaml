@@ -1,0 +1,28 @@
+connections:
+  (:
+  - (Evaluate
+  Evaluate):
+  - )
+id: 668cb9bf-c0c4-4055-8dfd-0088b4abfdc0
+name: slang.math.arith.Divide
+operators:
+  Evaluate:
+    operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
+    properties:
+      expression: a/b
+      variables:
+      - a
+      - b
+services:
+  main:
+    in:
+      map:
+        a:
+          type: number
+        b:
+          type: number
+      type: map
+    out:
+      type: number
+
+

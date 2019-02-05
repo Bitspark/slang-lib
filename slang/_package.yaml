@@ -1,4 +1,0 @@
-name: slang
-displayName: Slang
-shortDescription: Slang standard library
-description: This package is the root package for all packages and operators inside the Slang standard library.

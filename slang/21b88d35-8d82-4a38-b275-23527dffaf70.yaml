@@ -1,0 +1,108 @@
+connections:
+  (:
+  - (Value
+  - (Value1
+  - items(Iterate
+  Iterate)result.value:
+  - )
+  Iterate.iterator)item:
+  - item.b(Switch
+  Iterate.iterator)state.done:
+  - (Value2
+  - select(Switch
+  - item(Iterate.iterator
+  Iterate.iterator)state.value:
+  - item.a(Switch
+  Switch):
+  - state.value(Iterate.iterator
+  Switch.default)a:
+  - (Switch.default
+  Switch.false)b:
+  - (Switch.false
+  Value):
+  - initial.done(Iterate
+  Value1):
+  - initial.value(Iterate
+  Value2):
+  - state.done(Iterate.iterator
+description: ''
+displayName: ''
+icon: ''
+id: 21b88d35-8d82-4a38-b275-23527dffaf70
+name: slang.stream.TakeFirst
+operators:
+  Iterate:
+    generics:
+      inItemType:
+        generic: itemType
+        type: generic
+      outItemType:
+        type: trigger
+      stateType:
+        map:
+          done:
+            type: boolean
+          value:
+            generic: itemType
+            type: generic
+        type: map
+    operator: e58624d4-5568-40d3-8b77-ab792ef620f1
+  Switch:
+    generics:
+      inType:
+        map:
+          a:
+            generic: itemType
+            type: generic
+          b:
+            generic: itemType
+            type: generic
+        type: map
+      outType:
+        generic: itemType
+        type: generic
+      selectType:
+        type: boolean
+    operator: cd6fc5c8-5b64-4b1a-9885-59ede141b398
+    properties:
+      cases:
+      - false
+  Value:
+    generics:
+      valueType:
+        type: boolean
+    operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
+    properties:
+      value: false
+  Value1:
+    generics:
+      valueType:
+        generic: itemType
+        type: generic
+    operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
+    properties:
+      value: $emptyValue
+  Value2:
+    generics:
+      valueType:
+        type: boolean
+    operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
+    properties:
+      value: true
+properties:
+  emptyValue:
+    generic: itemType
+    type: generic
+services:
+  main:
+    in:
+      stream:
+        generic: itemType
+        type: generic
+      type: stream
+    out:
+      generic: itemType
+      type: generic
+shortDescription: ''
+
+

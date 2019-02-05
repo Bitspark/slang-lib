@@ -1,0 +1,51 @@
+connections:
+  Choose):
+  - (Reduce.reducer
+  Choose.chooser)false:
+  - b(Greater
+  Choose.chooser)true:
+  - a(Greater
+  Greater):
+  - (Choose.chooser
+  Reduce):
+  - )
+  Reduce.reducer)a:
+  - true(Choose
+  Reduce.reducer)b:
+  - false(Choose
+  ~(:
+  - ~(Reduce
+description: ''
+displayName: ''
+icon: ''
+id: 2cc283b9-dad1-4c07-865b-a99be0ff38d2
+name: slang.math.aggregate.Maximum
+operators:
+  Choose:
+    generics:
+      itemType:
+        type: number
+    operator: 8345ea9e-98c9-463b-8494-7123ee261270
+  Greater:
+    operator: 63ff93ec-89f1-4d6e-a952-aaf4aba68ac7
+  Reduce:
+    generics:
+      itemType:
+        type: number
+    operator: b95e6da8-9770-4a04-a73d-cdfe2081870f
+    properties:
+      emptyValue: $emptyValue
+properties:
+  emptyValue:
+    type: number
+services:
+  main:
+    in:
+      stream:
+        type: number
+      type: stream
+    out:
+      type: number
+shortDescription: ''
+
+

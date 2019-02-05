@@ -1,0 +1,31 @@
+connections:
+  (:
+  - (Evaluate
+  Evaluate):
+  - )
+id: 05209aed-8ff7-447a-96e9-8c78488e6de3
+name: slang.image.filter.Grayscale
+operators:
+  Evaluate:
+    operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
+    properties:
+      expression: 0.2989 * red + 0.5870 * green + 0.1140 * blue
+      variables:
+      - red
+      - green
+      - blue
+services:
+  main:
+    in:
+      map:
+        blue:
+          type: number
+        green:
+          type: number
+        red:
+          type: number
+      type: map
+    out:
+      type: number
+
+

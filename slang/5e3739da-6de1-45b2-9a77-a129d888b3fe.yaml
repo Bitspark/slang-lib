@@ -1,0 +1,40 @@
+connections:
+  (:
+  - (Sort
+  Evaluate):
+  - (Sort.comparator
+  Sort):
+  - )
+  Sort.comparator):
+  - (Evaluate
+description: ''
+displayName: ''
+icon: ''
+id: 5e3739da-6de1-45b2-9a77-a129d888b3fe
+name: slang.stream.SortPrimitive
+operators:
+  Evaluate:
+    operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
+    properties:
+      expression: a>b
+      variables:
+      - a
+      - b
+  Sort:
+    generics:
+      itemType:
+        type: primitive
+    operator: 72096116-885a-4218-a726-c101f6839cd5
+services:
+  main:
+    in:
+      stream:
+        type: primitive
+      type: stream
+    out:
+      stream:
+        type: primitive
+      type: stream
+shortDescription: ''
+
+

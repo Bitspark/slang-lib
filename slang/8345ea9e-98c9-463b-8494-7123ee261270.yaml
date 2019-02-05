@@ -1,0 +1,68 @@
+connections:
+  (:
+  - item(Switch
+  - .chooser)
+  (.chooser:
+  - select(Switch
+  Switch):
+  - )
+  Switch.default)true:
+  - (Switch.default
+  Switch.false)false:
+  - (Switch.false
+delegates:
+  chooser:
+    in:
+      type: boolean
+    out:
+      map:
+        'false':
+          generic: itemType
+          type: generic
+        'true':
+          generic: itemType
+          type: generic
+      type: map
+description: Takes two items and emits one of them.
+displayName: Choose
+icon: crosshairs
+id: 8345ea9e-98c9-463b-8494-7123ee261270
+name: slang.control.Choose
+operators:
+  Switch:
+    generics:
+      inType:
+        map:
+          'false':
+            generic: itemType
+            type: generic
+          'true':
+            generic: itemType
+            type: generic
+        type: map
+      outType:
+        generic: itemType
+        type: generic
+      selectType:
+        type: boolean
+    operator: cd6fc5c8-5b64-4b1a-9885-59ede141b398
+    properties:
+      cases:
+      - false
+services:
+  main:
+    in:
+      map:
+        'false':
+          generic: itemType
+          type: generic
+        'true':
+          generic: itemType
+          type: generic
+      type: map
+    out:
+      generic: itemType
+      type: generic
+shortDescription: Takes two items and emits one of them.
+
+

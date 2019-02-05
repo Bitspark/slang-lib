@@ -1,0 +1,37 @@
+connections:
+  (:
+  - (Value
+  Crontab):
+  - )
+  Crontab.handler):
+  - (Crontab.handler
+  Value):
+  - (Crontab
+id: f7c858f5-d7aa-463f-8f33-99907d85f046
+name: slang.time.Schedule
+operators:
+  Crontab:
+    generics:
+      itemType:
+        type: trigger
+    operator: 60b849fd-ca5a-4206-8312-996e4e3f6c31
+  Value:
+    generics:
+      valueType:
+        type: string
+    operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
+    properties:
+      value: $crontab
+properties:
+  crontab:
+    type: string
+services:
+  main:
+    in:
+      type: trigger
+    out:
+      stream:
+        type: trigger
+      type: stream
+
+

@@ -1,0 +1,27 @@
+connections:
+  (:
+  - x(Evaluate
+  Evaluate):
+  - )
+description: Takes a boolean and emits true in case it is false, and false if it is
+  true.
+displayName: Not
+icon: ''
+id: a56807fd-ddae-4e3c-b726-f75cf89397a4
+name: slang.math.logic.Not
+operators:
+  Evaluate:
+    operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
+    properties:
+      expression: '!x'
+      variables:
+      - x
+services:
+  main:
+    in:
+      type: boolean
+    out:
+      type: boolean
+shortDescription: Takes a boolean value and emits its inverse.
+
+

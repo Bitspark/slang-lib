@@ -1,4 +1,0 @@
-name: aggregate
-displayName: Aggregate
-shortDescription: Contains operators aggregating items
-description: This package contains operators aggregating items. Normally, they take a stream and emit a single item, the aggregate.

@@ -1,0 +1,54 @@
+connections:
+  (:
+  - (Average1
+  Average):
+  - a(Subtract
+  Average1):
+  - x(Evaluate1
+  Evaluate):
+  - ~(Average
+  Evaluate1):
+  - b(Subtract
+  Subtract):
+  - )
+  ~(:
+  - x(Evaluate
+description: ''
+displayName: ''
+icon: ''
+id: 7d2857e5-e3b5-4a7b-a5f7-9eea0bbe8004
+name: slang.math.aggregate.Variance
+operators:
+  Average:
+    operator: f9e04d5b-3d56-47b4-bcb0-27741ef5a4aa
+    properties:
+      emptyValue: 0
+  Average1:
+    operator: f9e04d5b-3d56-47b4-bcb0-27741ef5a4aa
+    properties:
+      emptyValue: 0
+  Evaluate:
+    operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
+    properties:
+      expression: x**2
+      variables:
+      - x
+  Evaluate1:
+    operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
+    properties:
+      expression: x**2
+      variables:
+      - x
+  Subtract:
+    operator: bc301ef9-52ac-4db8-a191-f0bbd84ce525
+services:
+  main:
+    in:
+      stream:
+        type: number
+      type: stream
+    out:
+      type: number
+shortDescription: ''
+
+

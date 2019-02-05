@@ -1,0 +1,33 @@
+connections:
+  (:
+  - (Evaluate
+  Evaluate):
+  - )
+description: Takes two boolean values and emits true in case both values are true,
+  and false otherwise.
+displayName: And
+icon: ''
+id: b4ea20d7-9df1-45ac-bee4-9682fc8345e7
+name: slang.math.logic.And
+operators:
+  Evaluate:
+    operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
+    properties:
+      expression: a && b
+      variables:
+      - a
+      - b
+services:
+  main:
+    in:
+      map:
+        a:
+          type: boolean
+        b:
+          type: boolean
+      type: map
+    out:
+      type: boolean
+shortDescription: Takes two boolean values and emits true only if both are true.
+
+
