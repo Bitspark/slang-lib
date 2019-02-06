@@ -36,7 +36,7 @@ services:
       stream:
         type: primitive
       type: stream
-testCases:
+tests:
 - data:
     in:
     - []

@@ -29,7 +29,7 @@ services:
       type: map
     out:
       type: boolean
-testCases:
+tests:
 - data:
     in:
     - a: true

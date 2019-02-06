@@ -28,7 +28,7 @@ services:
       type: map
     out:
       type: number
-testCases:
+tests:
 - data:
     in:
     - a: 0

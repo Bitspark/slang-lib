@@ -86,7 +86,7 @@ services:
       type: stream
     out:
       type: number
-testCases:
+tests:
 - data:
     in:
     - - 1

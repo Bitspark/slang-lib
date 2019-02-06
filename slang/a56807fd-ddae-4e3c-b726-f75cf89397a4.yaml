@@ -23,7 +23,7 @@ services:
       type: boolean
     out:
       type: boolean
-testCases:
+tests:
 - data:
     in:
     - true

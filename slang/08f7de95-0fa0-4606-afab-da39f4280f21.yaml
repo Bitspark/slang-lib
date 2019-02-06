@@ -39,7 +39,7 @@ services:
       type: string
     out:
       type: primitive
-testCases:
+tests:
 - data:
     in:
     - 1

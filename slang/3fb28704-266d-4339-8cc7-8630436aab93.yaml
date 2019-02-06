@@ -50,7 +50,7 @@ services:
     out:
       generic: itemType
       type: generic
-testCases:
+tests:
 - data:
     in:
     - []
