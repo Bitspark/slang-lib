@@ -1,3 +1,28 @@
+id: 08f7de95-0fa0-4606-afab-da39f4280f21
+services:
+  main:
+    in:
+      type: primitive
+    out:
+      type: primitive
+operators:
+  Either:
+    operator: bf4960c8-76b2-4147-8802-a47619001477
+    generics:
+      itemType:
+        type: primitive
+  IsNull:
+    operator: e2fd7304-7e98-4969-bdf1-1d5389144ed0
+  Value:
+    operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
+    properties:
+      value: $default
+    generics:
+      valueType:
+        type: primitive
+properties:
+  default:
+    type: primitive
 connections:
   (:
   - (IsNull
@@ -9,38 +34,22 @@ connections:
   - choose(Either
   Value):
   - true(Either
-id: 08f7de95-0fa0-4606-afab-da39f4280f21
 meta:
-  description: ''
-  icon: ''
   name: replace null
-  shortDescription: replaces null items with specified value in a stream of primitive items
-operators:
-  Either:
-    generics:
-      itemType:
-        type: primitive
-    operator: bf4960c8-76b2-4147-8802-a47619001477
-  IsNull:
-    operator: e2fd7304-7e98-4969-bdf1-1d5389144ed0
-  Value:
-    generics:
-      valueType:
-        type: primitive
-    operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
-    properties:
-      value: $default
-properties:
-  default:
-    type: primitive
-services:
-  main:
-    in:
-      type: primitive
-    out:
-      type: primitive
+  icon: ""
+  shortDescription: replaces null items with specified value in a stream of primitive
+    items
+  description: ""
+  docUrl: https://bitspark.de/slang/docs/operator/replace-null
+  tags: []
+  related: []
 tests:
-- data:
+- name: Integers
+  description: ""
+  generics: {}
+  properties:
+    default: -1
+  data:
     in:
     - 1
     - null
@@ -49,22 +58,19 @@ tests:
     - 1
     - -1
     - 2
-  name: Integers
+- name: Strings
+  description: ""
+  generics: {}
   properties:
-    default: -1
-- data:
+    default: ""
+  data:
     in:
     - null
     - a
     - b
     - null
     out:
-    - ''
+    - ""
     - a
     - b
-    - ''
-  name: Strings
-  properties:
-    default: ''
-
-
+    - ""

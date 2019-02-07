@@ -1,14 +1,10 @@
-connections:
-  (:
-  - x(Evaluate
-  Evaluate):
-  - )
 id: c40a69c1-e5dc-4abe-854f-b4d6a1841bd6
-meta:
-  description: ''
-  icon: ''
-  name: slang.math.function.FlipSign
-  shortDescription: ''
+services:
+  main:
+    in:
+      type: number
+    out:
+      type: number
 operators:
   Evaluate:
     operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
@@ -16,11 +12,16 @@ operators:
       expression: -x
       variables:
       - x
-services:
-  main:
-    in:
-      type: number
-    out:
-      type: number
-
-
+connections:
+  (:
+  - x(Evaluate
+  Evaluate):
+  - )
+meta:
+  name: flip sign
+  icon: ""
+  shortDescription: flips the sign of a given number and emit the resulting number
+  description: ""
+  docUrl: https://bitspark.de/slang/docs/operator/flip-sign
+  tags: []
+  related: []

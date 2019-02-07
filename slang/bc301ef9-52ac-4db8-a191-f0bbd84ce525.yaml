@@ -1,14 +1,15 @@
-connections:
-  (:
-  - (Evaluate
-  Evaluate):
-  - )
 id: bc301ef9-52ac-4db8-a191-f0bbd84ce525
-meta:
-  description: ''
-  icon: ''
-  name: slang.math.arith.Subtract
-  shortDescription: ''
+services:
+  main:
+    in:
+      type: map
+      map:
+        a:
+          type: number
+        b:
+          type: number
+    out:
+      type: number
 operators:
   Evaluate:
     operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
@@ -17,19 +18,25 @@ operators:
       variables:
       - a
       - b
-services:
-  main:
-    in:
-      map:
-        a:
-          type: number
-        b:
-          type: number
-      type: map
-    out:
-      type: number
+connections:
+  (:
+  - (Evaluate
+  Evaluate):
+  - )
+meta:
+  name: subtract
+  icon: ""
+  shortDescription: subtracts number B from number A and emits the resulting difference
+  description: ""
+  docUrl: https://bitspark.de/slang/docs/operator/subtract
+  tags: []
+  related: []
 tests:
-- data:
+- name: Integers
+  description: ""
+  generics: {}
+  properties: {}
+  data:
     in:
     - a: 0
       b: 0
@@ -56,8 +63,11 @@ tests:
     - -7
     - 7
     - 3
-  name: Integers
-- data:
+- name: Floats
+  description: ""
+  generics: {}
+  properties: {}
+  data:
     in:
     - a: 0.5
       b: 0.5
@@ -72,12 +82,9 @@ tests:
     - a: 0.25
       b: 0.5
     out:
-    - 0.0
+    - 0
     - 0.8
     - -1.6
     - 1.6
     - -0.7
     - -0.25
-  name: Floats
-
-

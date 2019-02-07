@@ -1,14 +1,15 @@
-connections:
-  (:
-  - (Evaluate
-  Evaluate):
-  - )
 id: bb7569d8-1391-41d0-961f-ba4db4abce7b
-meta:
-  description: ''
-  icon: ''
-  name: slang.math.arith.Multiply
-  shortDescription: ''
+services:
+  main:
+    in:
+      type: map
+      map:
+        a:
+          type: number
+        b:
+          type: number
+    out:
+      type: number
 operators:
   Evaluate:
     operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
@@ -17,19 +18,25 @@ operators:
       variables:
       - a
       - b
-services:
-  main:
-    in:
-      map:
-        a:
-          type: number
-        b:
-          type: number
-      type: map
-    out:
-      type: number
+connections:
+  (:
+  - (Evaluate
+  Evaluate):
+  - )
+meta:
+  name: multiply
+  icon: ""
+  shortDescription: multiplies two numbers A and B and emits their product
+  description: ""
+  docUrl: https://bitspark.de/slang/docs/operator/multiply
+  tags: []
+  related: []
 tests:
-- data:
+- name: Integers
+  description: ""
+  generics: {}
+  properties: {}
+  data:
     in:
     - a: 0
       b: 0
@@ -56,8 +63,11 @@ tests:
     - -10
     - -10
     - 10
-  name: Integers
-- data:
+- name: Floats
+  description: ""
+  generics: {}
+  properties: {}
+  data:
     in:
     - a: 0.5
       b: 0.5
@@ -66,6 +76,3 @@ tests:
     out:
     - 0.25
     - 0.65
-  name: Floats
-
-

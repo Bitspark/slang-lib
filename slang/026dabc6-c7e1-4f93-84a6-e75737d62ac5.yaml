@@ -1,3 +1,55 @@
+id: 026dabc6-c7e1-4f93-84a6-e75737d62ac5
+services:
+  main:
+    in:
+      type: string
+    out:
+      type: map
+      map:
+        body:
+          type: binary
+        status:
+          type: number
+operators:
+  Convert:
+    operator: d1191456-3583-4eaf-8ec1-e486c3818c60
+    generics:
+      fromType:
+        type: string
+      toType:
+        type: binary
+  HTTPClient:
+    operator: f7f5907d-758b-4892-8a3e-ae86b877b869
+  Value:
+    operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
+    properties:
+      value: ""
+    generics:
+      valueType:
+        type: string
+  Value1:
+    operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
+    properties:
+      value: GET
+    generics:
+      valueType:
+        type: string
+  Value2:
+    operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
+    properties:
+      value: []
+    generics:
+      valueType:
+        type: stream
+        stream:
+          type: map
+          map:
+            key:
+              type: string
+            values:
+              type: stream
+              stream:
+                type: string
 connections:
   (:
   - (Value
@@ -18,62 +70,12 @@ connections:
   - headers.~.key(HTTPClient
   Value2)~.values.~:
   - headers.~.values.~(HTTPClient
-id: 026dabc6-c7e1-4f93-84a6-e75737d62ac5
 meta:
-  description: ''
-  icon: ''
   name: HTTP get
-  shortDescription: performs an HTTP get request at a given URL and emits body and status code
-operators:
-  Convert:
-    generics:
-      fromType:
-        type: string
-      toType:
-        type: binary
-    operator: d1191456-3583-4eaf-8ec1-e486c3818c60
-  HTTPClient:
-    operator: f7f5907d-758b-4892-8a3e-ae86b877b869
-  Value:
-    generics:
-      valueType:
-        type: string
-    operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
-    properties:
-      value: ''
-  Value1:
-    generics:
-      valueType:
-        type: string
-    operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
-    properties:
-      value: GET
-  Value2:
-    generics:
-      valueType:
-        stream:
-          map:
-            key:
-              type: string
-            values:
-              stream:
-                type: string
-              type: stream
-          type: map
-        type: stream
-    operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
-    properties:
-      value: []
-services:
-  main:
-    in:
-      type: string
-    out:
-      map:
-        body:
-          type: binary
-        status:
-          type: number
-      type: map
-
-
+  icon: ""
+  shortDescription: performs an HTTP get request at a given URL and emits body and
+    status code
+  description: ""
+  docUrl: https://bitspark.de/slang/docs/operator/http-get
+  tags: []
+  related: []

@@ -1,15 +1,10 @@
-connections:
-  (:
-  - x(Evaluate
-  Evaluate):
-  - )
 id: a56807fd-ddae-4e3c-b726-f75cf89397a4
-meta:
-  description: Takes a boolean and emits true in case it is false, and false if it
-    is true.
-  icon: ''
-  name: slang.math.logic.Not
-  shortDescription: Takes a boolean value and emits its inverse.
+services:
+  main:
+    in:
+      type: boolean
+    out:
+      type: boolean
 operators:
   Evaluate:
     operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
@@ -17,20 +12,29 @@ operators:
       expression: '!x'
       variables:
       - x
-services:
-  main:
-    in:
-      type: boolean
-    out:
-      type: boolean
+connections:
+  (:
+  - x(Evaluate
+  Evaluate):
+  - )
+meta:
+  name: boolean not
+  icon: ""
+  shortDescription: emits the inverse of a given boolean
+  description: Takes a boolean and emits true in case it is false, and false if it
+    is true.
+  docUrl: https://bitspark.de/slang/docs/operator/boolean-not
+  tags: []
+  related: []
 tests:
-- data:
+- name: Booleans
+  description: ""
+  generics: {}
+  properties: {}
+  data:
     in:
     - true
     - false
     out:
     - false
     - true
-  name: Booleans
-
-

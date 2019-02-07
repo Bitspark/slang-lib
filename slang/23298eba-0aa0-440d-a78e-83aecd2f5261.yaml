@@ -1,3 +1,22 @@
+id: 23298eba-0aa0-440d-a78e-83aecd2f5261
+services:
+  main:
+    in:
+      type: stream
+      stream:
+        type: number
+    out:
+      type: number
+operators:
+  Add:
+    operator: 7b01fa17-7e11-4275-8d1e-fb1ad5b81c3d
+  Reduce:
+    operator: b95e6da8-9770-4a04-a73d-cdfe2081870f
+    properties:
+      emptyValue: 0
+    generics:
+      itemType:
+        type: number
 connections:
   (:
   - (Reduce
@@ -7,32 +26,20 @@ connections:
   - )
   Reduce.reducer):
   - (Add
-id: 23298eba-0aa0-440d-a78e-83aecd2f5261
 meta:
-  description: ''
-  icon: ''
-  name: sum of numbers
+  name: sum
+  icon: ""
   shortDescription: emits the sum of a stream of numbers
-operators:
-  Add:
-    operator: 7b01fa17-7e11-4275-8d1e-fb1ad5b81c3d
-  Reduce:
-    generics:
-      itemType:
-        type: number
-    operator: b95e6da8-9770-4a04-a73d-cdfe2081870f
-    properties:
-      emptyValue: 0
-services:
-  main:
-    in:
-      stream:
-        type: number
-      type: stream
-    out:
-      type: number
+  description: ""
+  docUrl: https://bitspark.de/slang/docs/operator/sum
+  tags: []
+  related: []
 tests:
-- data:
+- name: Integers
+  description: ""
+  generics: {}
+  properties: {}
+  data:
     in:
     - - 1
       - 2
@@ -44,22 +51,25 @@ tests:
     out:
     - 10
     - 25
-  name: Integers
-- data:
+- name: Floats
+  description: ""
+  generics: {}
+  properties: {}
+  data:
     in:
     - - 1.5
       - 3.5
       - 2.5
     out:
     - 7.5
-  name: Floats
-- data:
+- name: Empty
+  description: ""
+  generics: {}
+  properties: {}
+  data:
     in:
     - []
     - []
     out:
     - 0
     - 0
-  name: Empty
-
-

@@ -1,17 +1,15 @@
-connections:
-  (:
-  - (Evaluate
-  Evaluate):
-  - (Not
-  Not):
-  - )
 id: e31477ef-0513-40fd-82b6-803605503054
-meta:
-  description: Takes two boolean values and emits false in case both values are true
-    or both are false, and true otherwise.
-  icon: ''
-  name: xor
-  shortDescription: emits true only if the given boolean values A and B are not equal
+services:
+  main:
+    in:
+      type: map
+      map:
+        a:
+          type: boolean
+        b:
+          type: boolean
+    out:
+      type: boolean
 operators:
   Evaluate:
     operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
@@ -22,19 +20,28 @@ operators:
       - b
   Not:
     operator: a56807fd-ddae-4e3c-b726-f75cf89397a4
-services:
-  main:
-    in:
-      map:
-        a:
-          type: boolean
-        b:
-          type: boolean
-      type: map
-    out:
-      type: boolean
+connections:
+  (:
+  - (Evaluate
+  Evaluate):
+  - (Not
+  Not):
+  - )
+meta:
+  name: xor
+  icon: ""
+  shortDescription: emits true only if the given boolean values A and B are not equal
+  description: Takes two boolean values and emits false in case both values are true
+    or both are false, and true otherwise.
+  docUrl: https://bitspark.de/slang/docs/operator/xor
+  tags: []
+  related: []
 tests:
-- data:
+- name: Booleans
+  description: ""
+  generics: {}
+  properties: {}
+  data:
     in:
     - a: true
       b: true
@@ -49,6 +56,3 @@ tests:
     - true
     - true
     - false
-  name: Booleans
-
-

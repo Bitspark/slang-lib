@@ -1,14 +1,17 @@
-connections:
-  (:
-  - (Evaluate
-  Evaluate):
-  - )
 id: 05209aed-8ff7-447a-96e9-8c78488e6de3
-meta:
-  description: ''
-  icon: ''
-  name: grayscale pixel
-  shortDescription: transforms an RGB pixel into a gray pixel
+services:
+  main:
+    in:
+      type: map
+      map:
+        blue:
+          type: number
+        green:
+          type: number
+        red:
+          type: number
+    out:
+      type: number
 operators:
   Evaluate:
     operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
@@ -18,18 +21,16 @@ operators:
       - red
       - green
       - blue
-services:
-  main:
-    in:
-      map:
-        blue:
-          type: number
-        green:
-          type: number
-        red:
-          type: number
-      type: map
-    out:
-      type: number
-
-
+connections:
+  (:
+  - (Evaluate
+  Evaluate):
+  - )
+meta:
+  name: grayscale pixel
+  icon: ""
+  shortDescription: transforms an RGB pixel into a gray pixel
+  description: ""
+  docUrl: https://bitspark.de/slang/docs/operator/grayscale-pixel
+  tags: []
+  related: []

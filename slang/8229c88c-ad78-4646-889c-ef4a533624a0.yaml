@@ -1,14 +1,15 @@
-connections:
-  (:
-  - (Evaluate
-  Evaluate):
-  - )
 id: 8229c88c-ad78-4646-889c-ef4a533624a0
-meta:
-  description: ''
-  icon: ''
-  name: less
-  shortDescription: emits true only if number A is less than number B
+services:
+  main:
+    in:
+      type: map
+      map:
+        a:
+          type: number
+        b:
+          type: number
+    out:
+      type: boolean
 operators:
   Evaluate:
     operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
@@ -17,16 +18,16 @@ operators:
       variables:
       - a
       - b
-services:
-  main:
-    in:
-      map:
-        a:
-          type: number
-        b:
-          type: number
-      type: map
-    out:
-      type: boolean
-
-
+connections:
+  (:
+  - (Evaluate
+  Evaluate):
+  - )
+meta:
+  name: less
+  icon: ""
+  shortDescription: emits true only if number A is less than number B
+  description: ""
+  docUrl: https://bitspark.de/slang/docs/operator/less
+  tags: []
+  related: []

@@ -1,3 +1,81 @@
+id: a39a873e-dfb9-4ac9-ab12-24cb1051a4bb
+services:
+  main:
+    in:
+      type: string
+    out:
+      type: map
+      map:
+        response:
+          type: generic
+          generic: responseType
+        status:
+          type: number
+        valid:
+          type: boolean
+operators:
+  Convert:
+    operator: d1191456-3583-4eaf-8ec1-e486c3818c60
+    generics:
+      fromType:
+        type: string
+      toType:
+        type: binary
+  HTTPClient:
+    operator: f7f5907d-758b-4892-8a3e-ae86b877b869
+  JSONRead:
+    operator: b79b019f-5efe-4012-9a1d-1f61549ede25
+    generics:
+      itemType:
+        type: generic
+        generic: responseType
+  Template:
+    operator: 3c39f999-b5c2-490d-aed1-19149d228b04
+    properties:
+      variables:
+      - url
+  Value:
+    operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
+    properties:
+      value: ""
+    generics:
+      valueType:
+        type: string
+  Value1:
+    operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
+    properties:
+      value: GET
+    generics:
+      valueType:
+        type: string
+  Value2:
+    operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
+    properties:
+      value: []
+    generics:
+      valueType:
+        type: stream
+        stream:
+          type: map
+          map:
+            key:
+              type: string
+            values:
+              type: stream
+              stream:
+                type: string
+  Value3:
+    operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
+    properties:
+      value: '{url}?{query}'
+    generics:
+      valueType:
+        type: string
+properties:
+  params:
+    type: stream
+    stream:
+      type: string
 connections:
   (:
   - (Value
@@ -25,88 +103,11 @@ connections:
   - headers(HTTPClient
   Value3):
   - content(Template
-id: a39a873e-dfb9-4ac9-ab12-24cb1051a4bb
 meta:
-  description: ''
-  icon: ''
   name: API get
-  shortDescription: ''
-operators:
-  Convert:
-    generics:
-      fromType:
-        type: string
-      toType:
-        type: binary
-    operator: d1191456-3583-4eaf-8ec1-e486c3818c60
-  HTTPClient:
-    operator: f7f5907d-758b-4892-8a3e-ae86b877b869
-  JSONRead:
-    generics:
-      itemType:
-        generic: responseType
-        type: generic
-    operator: b79b019f-5efe-4012-9a1d-1f61549ede25
-  Template:
-    operator: 3c39f999-b5c2-490d-aed1-19149d228b04
-    properties:
-      variables:
-      - url
-  Value:
-    generics:
-      valueType:
-        type: string
-    operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
-    properties:
-      value: ''
-  Value1:
-    generics:
-      valueType:
-        type: string
-    operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
-    properties:
-      value: GET
-  Value2:
-    generics:
-      valueType:
-        stream:
-          map:
-            key:
-              type: string
-            values:
-              stream:
-                type: string
-              type: stream
-          type: map
-        type: stream
-    operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
-    properties:
-      value: []
-  Value3:
-    generics:
-      valueType:
-        type: string
-    operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
-    properties:
-      value: '{url}?{query}'
-properties:
-  params:
-    stream:
-      type: string
-    type: stream
-services:
-  main:
-    in:
-      type: string
-    out:
-      map:
-        response:
-          generic: responseType
-          type: generic
-        status:
-          type: number
-        valid:
-          type: boolean
-      type: map
-
-
+  icon: ""
+  shortDescription: queries a given URL via GET request and emits its parsed response
+  description: ""
+  docUrl: https://bitspark.de/slang/docs/operator/api-get
+  tags: []
+  related: []

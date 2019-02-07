@@ -1,14 +1,15 @@
-connections:
-  (:
-  - (Evaluate
-  Evaluate):
-  - )
 id: 0b728e09-0651-46c3-bed3-20b0ad416569
-meta:
-  description: ''
-  icon: ''
-  name: concatenate
-  shortDescription: concatenates strings A and B
+services:
+  main:
+    in:
+      type: map
+      map:
+        a:
+          type: string
+        b:
+          type: string
+    out:
+      type: string
 operators:
   Evaluate:
     operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
@@ -17,33 +18,36 @@ operators:
       variables:
       - a
       - b
-services:
-  main:
-    in:
-      map:
-        a:
-          type: string
-        b:
-          type: string
-      type: map
-    out:
-      type: string
+connections:
+  (:
+  - (Evaluate
+  Evaluate):
+  - )
+meta:
+  name: concatenate
+  icon: ""
+  shortDescription: concatenates strings A and B
+  description: ""
+  docUrl: https://bitspark.de/slang/docs/operator/concatenate
+  tags: []
+  related: []
 tests:
-- data:
+- name: Strings
+  description: ""
+  generics: {}
+  properties: {}
+  data:
     in:
-    - a: ''
-      b: ''
+    - a: ""
+      b: ""
     - a: ha
       b: llo
-    - a: ''
+    - a: ""
       b: llo
     - a: ha
-      b: ''
+      b: ""
     out:
-    - ''
+    - ""
     - hallo
     - llo
     - ha
-  name: Strings
-
-

@@ -1,14 +1,10 @@
-connections:
-  (:
-  - x(Evaluate
-  Evaluate):
-  - )
 id: e2fd7304-7e98-4969-bdf1-1d5389144ed0
-meta:
-  description: ''
-  icon: ''
-  name: slang.exception.IsNull
-  shortDescription: ''
+services:
+  main:
+    in:
+      type: primitive
+    out:
+      type: boolean
 operators:
   Evaluate:
     operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
@@ -16,11 +12,16 @@ operators:
       expression: isNull(x)
       variables:
       - x
-services:
-  main:
-    in:
-      type: primitive
-    out:
-      type: boolean
-
-
+connections:
+  (:
+  - x(Evaluate
+  Evaluate):
+  - )
+meta:
+  name: is null
+  icon: ""
+  shortDescription: emits true only if a given primitive is null
+  description: ""
+  docUrl: https://bitspark.de/slang/docs/operator/is-null
+  tags: []
+  related: []

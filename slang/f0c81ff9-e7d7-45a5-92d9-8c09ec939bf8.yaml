@@ -1,3 +1,74 @@
+id: f0c81ff9-e7d7-45a5-92d9-8c09ec939bf8
+services:
+  main:
+    in:
+      type: map
+      map:
+        stream1:
+          type: stream
+          stream:
+            type: generic
+            generic: itemType1
+        stream2:
+          type: stream
+          stream:
+            type: generic
+            generic: itemType2
+    out:
+      type: stream
+      stream:
+        type: map
+        map:
+          item1:
+            type: stream
+            stream:
+              type: generic
+              generic: itemType1
+          item2:
+            type: stream
+            stream:
+              type: generic
+              generic: itemType2
+operators:
+  Clock:
+    operator: 40d65b90-8b4e-4383-8e91-0911d0ab826c
+    properties:
+      interval: $interval
+  WindowCollect:
+    operator: 14f5de1a-5e38-4f9c-a625-eff7a572078c
+    properties:
+      store: store1
+    generics:
+      itemType:
+        type: generic
+        generic: itemType1
+  WindowCollect1:
+    operator: 14f5de1a-5e38-4f9c-a625-eff7a572078c
+    properties:
+      store: store2
+    generics:
+      itemType:
+        type: generic
+        generic: itemType2
+  WindowRelease:
+    operator: 47b3f097-2043-42c6-aad5-0cfdb9004aef
+    properties:
+      store: store1
+    generics:
+      itemType:
+        type: generic
+        generic: itemType1
+  WindowRelease1:
+    operator: 47b3f097-2043-42c6-aad5-0cfdb9004aef
+    properties:
+      store: store2
+    generics:
+      itemType:
+        type: generic
+        generic: itemType2
+properties:
+  interval:
+    type: number
 connections:
   (:
   - (Clock
@@ -12,81 +83,12 @@ connections:
   - (WindowCollect
   stream2.~(:
   - (WindowCollect1
-id: f0c81ff9-e7d7-45a5-92d9-8c09ec939bf8
 meta:
-  description: ''
-  icon: ''
-  name: slang.stream.Synchronize
-  shortDescription: ''
-operators:
-  Clock:
-    operator: 40d65b90-8b4e-4383-8e91-0911d0ab826c
-    properties:
-      interval: $interval
-  WindowCollect:
-    generics:
-      itemType:
-        generic: itemType1
-        type: generic
-    operator: 14f5de1a-5e38-4f9c-a625-eff7a572078c
-    properties:
-      store: store1
-  WindowCollect1:
-    generics:
-      itemType:
-        generic: itemType2
-        type: generic
-    operator: 14f5de1a-5e38-4f9c-a625-eff7a572078c
-    properties:
-      store: store2
-  WindowRelease:
-    generics:
-      itemType:
-        generic: itemType1
-        type: generic
-    operator: 47b3f097-2043-42c6-aad5-0cfdb9004aef
-    properties:
-      store: store1
-  WindowRelease1:
-    generics:
-      itemType:
-        generic: itemType2
-        type: generic
-    operator: 47b3f097-2043-42c6-aad5-0cfdb9004aef
-    properties:
-      store: store2
-properties:
-  interval:
-    type: number
-services:
-  main:
-    in:
-      map:
-        stream1:
-          stream:
-            generic: itemType1
-            type: generic
-          type: stream
-        stream2:
-          stream:
-            generic: itemType2
-            type: generic
-          type: stream
-      type: map
-    out:
-      stream:
-        map:
-          item1:
-            stream:
-              generic: itemType1
-              type: generic
-            type: stream
-          item2:
-            stream:
-              generic: itemType2
-              type: generic
-            type: stream
-        type: map
-      type: stream
-
-
+  name: synchronize
+  icon: ""
+  shortDescription: emits all collected values for multiple streams at once in a given
+    interval
+  description: ""
+  docUrl: https://bitspark.de/slang/docs/operator/synchronize
+  tags: []
+  related: []

@@ -1,4 +1,33 @@
+id: 2cc283b9-dad1-4c07-865b-a99be0ff38d2
+services:
+  main:
+    in:
+      type: stream
+      stream:
+        type: number
+    out:
+      type: number
+operators:
+  Choose:
+    operator: 8345ea9e-98c9-463b-8494-7123ee261270
+    generics:
+      itemType:
+        type: number
+  Greater:
+    operator: 63ff93ec-89f1-4d6e-a952-aaf4aba68ac7
+  Reduce:
+    operator: b95e6da8-9770-4a04-a73d-cdfe2081870f
+    properties:
+      emptyValue: $emptyValue
+    generics:
+      itemType:
+        type: number
+properties:
+  emptyValue:
+    type: number
 connections:
+  ~(:
+  - ~(Reduce
   Choose):
   - (Reduce.reducer
   Choose.chooser)false:
@@ -13,42 +42,21 @@ connections:
   - true(Choose
   Reduce.reducer)b:
   - false(Choose
-  ~(:
-  - ~(Reduce
-id: 2cc283b9-dad1-4c07-865b-a99be0ff38d2
 meta:
-  description: ''
-  icon: ''
-  name: maximum of numbers
+  name: maximum number
+  icon: ""
   shortDescription: finds greatest number in a stream of numbers
-operators:
-  Choose:
-    generics:
-      itemType:
-        type: number
-    operator: 8345ea9e-98c9-463b-8494-7123ee261270
-  Greater:
-    operator: 63ff93ec-89f1-4d6e-a952-aaf4aba68ac7
-  Reduce:
-    generics:
-      itemType:
-        type: number
-    operator: b95e6da8-9770-4a04-a73d-cdfe2081870f
-    properties:
-      emptyValue: $emptyValue
-properties:
-  emptyValue:
-    type: number
-services:
-  main:
-    in:
-      stream:
-        type: number
-      type: stream
-    out:
-      type: number
+  description: ""
+  docUrl: https://bitspark.de/slang/docs/operator/maximum-number
+  tags: []
+  related: []
 tests:
-- data:
+- name: Integers
+  description: ""
+  generics: {}
+  properties:
+    emptyValue: null
+  data:
     in:
     - - 1
       - 2
@@ -94,28 +102,27 @@ tests:
     - 4
     - 76
     - 76
-  name: Integers
+- name: Floats
+  description: ""
+  generics: {}
   properties:
     emptyValue: null
-- data:
+  data:
     in:
     - - 1.5
       - 3.5
       - 2.5
     out:
     - 3.5
-  name: Floats
+- name: Empty
+  description: ""
+  generics: {}
   properties:
     emptyValue: null
-- data:
+  data:
     in:
     - []
     - []
     out:
     - null
     - null
-  name: Empty
-  properties:
-    emptyValue: null
-
-

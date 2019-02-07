@@ -1,14 +1,10 @@
-connections:
-  (:
-  - x(Evaluate
-  Evaluate):
-  - )
 id: 6ea575c8-b387-4b80-a977-3675678d0270
-meta:
-  description: ''
-  icon: ''
-  name: square root
-  shortDescription: calculates square root of a number
+services:
+  main:
+    in:
+      type: number
+    out:
+      type: number
 operators:
   Evaluate:
     operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
@@ -16,11 +12,16 @@ operators:
       expression: sqrt(x)
       variables:
       - x
-services:
-  main:
-    in:
-      type: number
-    out:
-      type: number
-
-
+connections:
+  (:
+  - x(Evaluate
+  Evaluate):
+  - )
+meta:
+  name: square root
+  icon: ""
+  shortDescription: calculates square root of a number
+  description: ""
+  docUrl: https://bitspark.de/slang/docs/operator/square-root
+  tags: []
+  related: []

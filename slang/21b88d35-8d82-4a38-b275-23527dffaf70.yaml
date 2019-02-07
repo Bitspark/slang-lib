@@ -1,3 +1,77 @@
+id: 21b88d35-8d82-4a38-b275-23527dffaf70
+services:
+  main:
+    in:
+      type: stream
+      stream:
+        type: generic
+        generic: itemType
+    out:
+      type: generic
+      generic: itemType
+operators:
+  Iterate:
+    operator: e58624d4-5568-40d3-8b77-ab792ef620f1
+    generics:
+      inItemType:
+        type: generic
+        generic: itemType
+      outItemType:
+        type: trigger
+      stateType:
+        type: map
+        map:
+          done:
+            type: boolean
+          value:
+            type: generic
+            generic: itemType
+  Switch:
+    operator: cd6fc5c8-5b64-4b1a-9885-59ede141b398
+    properties:
+      cases:
+      - false
+    generics:
+      inType:
+        type: map
+        map:
+          a:
+            type: generic
+            generic: itemType
+          b:
+            type: generic
+            generic: itemType
+      outType:
+        type: generic
+        generic: itemType
+      selectType:
+        type: boolean
+  Value:
+    operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
+    properties:
+      value: false
+    generics:
+      valueType:
+        type: boolean
+  Value1:
+    operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
+    properties:
+      value: $emptyValue
+    generics:
+      valueType:
+        type: generic
+        generic: itemType
+  Value2:
+    operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
+    properties:
+      value: true
+    generics:
+      valueType:
+        type: boolean
+properties:
+  emptyValue:
+    type: generic
+    generic: itemType
 connections:
   (:
   - (Value
@@ -25,100 +99,37 @@ connections:
   - initial.value(Iterate
   Value2):
   - state.done(Iterate.iterator
-id: 21b88d35-8d82-4a38-b275-23527dffaf70
 meta:
-  description: ''
-  icon: ''
   name: take first
+  icon: ""
   shortDescription: emits first item of a stream of generic items
-operators:
-  Iterate:
-    generics:
-      inItemType:
-        generic: itemType
-        type: generic
-      outItemType:
-        type: trigger
-      stateType:
-        map:
-          done:
-            type: boolean
-          value:
-            generic: itemType
-            type: generic
-        type: map
-    operator: e58624d4-5568-40d3-8b77-ab792ef620f1
-  Switch:
-    generics:
-      inType:
-        map:
-          a:
-            generic: itemType
-            type: generic
-          b:
-            generic: itemType
-            type: generic
-        type: map
-      outType:
-        generic: itemType
-        type: generic
-      selectType:
-        type: boolean
-    operator: cd6fc5c8-5b64-4b1a-9885-59ede141b398
-    properties:
-      cases:
-      - false
-  Value:
-    generics:
-      valueType:
-        type: boolean
-    operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
-    properties:
-      value: false
-  Value1:
-    generics:
-      valueType:
-        generic: itemType
-        type: generic
-    operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
-    properties:
-      value: $emptyValue
-  Value2:
-    generics:
-      valueType:
-        type: boolean
-    operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
-    properties:
-      value: true
-properties:
-  emptyValue:
-    generic: itemType
-    type: generic
-services:
-  main:
-    in:
-      stream:
-        generic: itemType
-        type: generic
-      type: stream
-    out:
-      generic: itemType
-      type: generic
+  description: ""
+  docUrl: https://bitspark.de/slang/docs/operator/take-first
+  tags: []
+  related: []
 tests:
-- data:
-    in:
-    - []
-    - []
-    out:
-    - null
-    - null
+- name: ""
+  description: ""
   generics:
     itemType:
       type: boolean
-  name: null
   properties:
     emptyValue: null
-- data:
+  data:
+    in:
+    - []
+    - []
+    out:
+    - null
+    - null
+- name: Strings
+  description: ""
+  generics:
+    itemType:
+      type: string
+  properties:
+    emptyValue: null
+  data:
     in:
     - - f
       - a
@@ -127,11 +138,3 @@ tests:
     out:
     - f
     - a
-  generics:
-    itemType:
-      type: string
-  name: Strings
-  properties:
-    emptyValue: null
-
-

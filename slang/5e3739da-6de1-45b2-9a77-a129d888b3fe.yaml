@@ -1,18 +1,14 @@
-connections:
-  (:
-  - (Sort
-  Evaluate):
-  - (Sort.comparator
-  Sort):
-  - )
-  Sort.comparator):
-  - (Evaluate
 id: 5e3739da-6de1-45b2-9a77-a129d888b3fe
-meta:
-  description: ''
-  icon: ''
-  name: sort primitives
-  shortDescription: sorts a stream of primitive items
+services:
+  main:
+    in:
+      type: stream
+      stream:
+        type: primitive
+    out:
+      type: stream
+      stream:
+        type: primitive
 operators:
   Evaluate:
     operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
@@ -22,22 +18,33 @@ operators:
       - a
       - b
   Sort:
+    operator: 72096116-885a-4218-a726-c101f6839cd5
     generics:
       itemType:
         type: primitive
-    operator: 72096116-885a-4218-a726-c101f6839cd5
-services:
-  main:
-    in:
-      stream:
-        type: primitive
-      type: stream
-    out:
-      stream:
-        type: primitive
-      type: stream
+connections:
+  (:
+  - (Sort
+  Evaluate):
+  - (Sort.comparator
+  Sort):
+  - )
+  Sort.comparator):
+  - (Evaluate
+meta:
+  name: sort primitives
+  icon: ""
+  shortDescription: sorts a stream of primitive items
+  description: ""
+  docUrl: https://bitspark.de/slang/docs/operator/sort-primitives
+  tags: []
+  related: []
 tests:
-- data:
+- name: Integers
+  description: ""
+  generics: {}
+  properties: {}
+  data:
     in:
     - []
     - - 2
@@ -58,8 +65,11 @@ tests:
       - 3
       - 3
       - 5
-  name: Integers
-- data:
+- name: Strings
+  description: ""
+  generics: {}
+  properties: {}
+  data:
     in:
     - - f
       - a
@@ -68,6 +78,3 @@ tests:
     - - a
       - c
       - f
-  name: Strings
-
-

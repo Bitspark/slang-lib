@@ -1,24 +1,12 @@
-connections:
-  (:
-  - (Average1
-  Average):
-  - a(Subtract
-  Average1):
-  - x(Evaluate1
-  Evaluate):
-  - ~(Average
-  Evaluate1):
-  - b(Subtract
-  Subtract):
-  - )
-  ~(:
-  - x(Evaluate
 id: 7d2857e5-e3b5-4a7b-a5f7-9eea0bbe8004
-meta:
-  description: ''
-  icon: ''
-  name: variance
-  shortDescription: emits variance of a stream of numbers
+services:
+  main:
+    in:
+      type: stream
+      stream:
+        type: number
+    out:
+      type: number
 operators:
   Average:
     operator: f9e04d5b-3d56-47b4-bcb0-27741ef5a4aa
@@ -42,13 +30,26 @@ operators:
       - x
   Subtract:
     operator: bc301ef9-52ac-4db8-a191-f0bbd84ce525
-services:
-  main:
-    in:
-      stream:
-        type: number
-      type: stream
-    out:
-      type: number
-
-
+connections:
+  (:
+  - (Average1
+  ~(:
+  - x(Evaluate
+  Average):
+  - a(Subtract
+  Average1):
+  - x(Evaluate1
+  Evaluate):
+  - ~(Average
+  Evaluate1):
+  - b(Subtract
+  Subtract):
+  - )
+meta:
+  name: variance
+  icon: ""
+  shortDescription: emits variance of a stream of numbers
+  description: ""
+  docUrl: https://bitspark.de/slang/docs/operator/variance
+  tags: []
+  related: []
