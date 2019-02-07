@@ -25,7 +25,6 @@ meta:
     is true.
   docUrl: https://bitspark.de/slang/docs/operator/boolean-not
   tags: []
-  related: []
 tests:
 - name: Booleans
   description: ""

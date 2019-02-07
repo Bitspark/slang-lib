@@ -33,7 +33,6 @@ meta:
   description: ""
   docUrl: https://bitspark.de/slang/docs/operator/product
   tags: []
-  related: []
 tests:
 - name: Integers
   description: ""

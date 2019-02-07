@@ -32,7 +32,6 @@ meta:
     and true otherwise.
   docUrl: https://bitspark.de/slang/docs/operator/or
   tags: []
-  related: []
 tests:
 - name: Booleans
   description: ""

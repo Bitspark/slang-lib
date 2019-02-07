@@ -31,7 +31,6 @@ meta:
     or both are false, and false otherwise.
   docUrl: https://bitspark.de/slang/docs/operator/boolean-equal
   tags: []
-  related: []
 tests:
 - name: Booleans
   description: ""

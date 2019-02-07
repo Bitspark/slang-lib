@@ -31,7 +31,6 @@ meta:
   description: ""
   docUrl: https://bitspark.de/slang/docs/operator/modulo
   tags: []
-  related: []
 tests:
 - name: Integers
   description: ""

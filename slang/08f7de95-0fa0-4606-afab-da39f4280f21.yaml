@@ -42,7 +42,6 @@ meta:
   description: ""
   docUrl: https://bitspark.de/slang/docs/operator/replace-null
   tags: []
-  related: []
 tests:
 - name: Integers
   description: ""

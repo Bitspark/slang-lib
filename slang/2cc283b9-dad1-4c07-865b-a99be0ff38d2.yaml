@@ -49,7 +49,6 @@ meta:
   description: ""
   docUrl: https://bitspark.de/slang/docs/operator/maximum-number
   tags: []
-  related: []
 tests:
 - name: Integers
   description: ""

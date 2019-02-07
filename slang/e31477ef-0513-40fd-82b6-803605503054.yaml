@@ -35,7 +35,6 @@ meta:
     or both are false, and true otherwise.
   docUrl: https://bitspark.de/slang/docs/operator/xor
   tags: []
-  related: []
 tests:
 - name: Booleans
   description: ""

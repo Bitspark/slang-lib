@@ -49,7 +49,6 @@ meta:
   description: ""
   docUrl: https://bitspark.de/slang/docs/operator/minimum-number
   tags: []
-  related: []
 tests:
 - name: Integers
   description: ""

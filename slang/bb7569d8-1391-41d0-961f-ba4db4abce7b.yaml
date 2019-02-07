@@ -30,7 +30,6 @@ meta:
   description: ""
   docUrl: https://bitspark.de/slang/docs/operator/multiply
   tags: []
-  related: []
 tests:
 - name: Integers
   description: ""

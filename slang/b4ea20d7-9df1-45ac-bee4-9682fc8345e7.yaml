@@ -31,7 +31,6 @@ meta:
     and false otherwise.
   docUrl: https://bitspark.de/slang/docs/operator/and
   tags: []
-  related: []
 tests:
 - name: Booleans
   description: ""

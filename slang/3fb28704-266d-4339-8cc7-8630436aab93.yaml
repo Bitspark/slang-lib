@@ -52,7 +52,6 @@ meta:
   description: ""
   docUrl: https://bitspark.de/slang/docs/operator/take-last
   tags: []
-  related: []
 tests:
 - name: ""
   description: ""

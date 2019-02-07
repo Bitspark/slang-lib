@@ -50,7 +50,6 @@ meta:
   description: ""
   docUrl: https://bitspark.de/slang/docs/operator/median
   tags: []
-  related: []
 tests:
 - name: Integers
   description: ""

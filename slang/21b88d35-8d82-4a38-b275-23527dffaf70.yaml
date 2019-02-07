@@ -106,7 +106,6 @@ meta:
   description: ""
   docUrl: https://bitspark.de/slang/docs/operator/take-first
   tags: []
-  related: []
 tests:
 - name: ""
   description: ""
