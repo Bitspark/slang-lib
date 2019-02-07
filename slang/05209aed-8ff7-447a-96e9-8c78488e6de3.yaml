@@ -7,8 +7,8 @@ id: 05209aed-8ff7-447a-96e9-8c78488e6de3
 meta:
   description: ''
   icon: ''
-  name: slang.image.filter.Grayscale
-  shortDescription: ''
+  name: grayscale pixel
+  shortDescription: transforms an RGB pixel into a gray pixel
 operators:
   Evaluate:
     operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1

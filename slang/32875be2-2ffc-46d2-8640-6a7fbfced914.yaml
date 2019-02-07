@@ -17,8 +17,8 @@ id: 32875be2-2ffc-46d2-8640-6a7fbfced914
 meta:
   description: ''
   icon: ''
-  name: slang.database.file.Read
-  shortDescription: ''
+  name: read file
+  shortDescription: reads a file, deserializes each line and emits one item per line
 operators:
   Convert:
     generics:

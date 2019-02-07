@@ -8,7 +8,7 @@ meta:
   description: ''
   icon: ''
   name: less or equal
-  shortDescription: emits true only if number A is less than number B or if both are equal
+  shortDescription: emits true only if number A is less than or equal to number B
 operators:
   Evaluate:
     operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1

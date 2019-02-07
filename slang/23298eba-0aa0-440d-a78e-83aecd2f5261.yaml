@@ -11,8 +11,8 @@ id: 23298eba-0aa0-440d-a78e-83aecd2f5261
 meta:
   description: ''
   icon: ''
-  name: slang.math.aggregate.Sum
-  shortDescription: ''
+  name: sum of numbers
+  shortDescription: emits the sum of a stream of numbers
 operators:
   Add:
     operator: 7b01fa17-7e11-4275-8d1e-fb1ad5b81c3d

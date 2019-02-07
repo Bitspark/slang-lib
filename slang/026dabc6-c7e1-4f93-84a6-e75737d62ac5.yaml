@@ -22,8 +22,8 @@ id: 026dabc6-c7e1-4f93-84a6-e75737d62ac5
 meta:
   description: ''
   icon: ''
-  name: http get
-  shortDescription: ''
+  name: HTTP get
+  shortDescription: performs an HTTP get request at a given URL and emits body and status code
 operators:
   Convert:
     generics:

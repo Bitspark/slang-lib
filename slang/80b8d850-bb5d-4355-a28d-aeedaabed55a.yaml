@@ -7,8 +7,8 @@ id: 80b8d850-bb5d-4355-a28d-aeedaabed55a
 meta:
   description: ''
   icon: ''
-  name: slang.math.arith.Unequal
-  shortDescription: ''
+  name: unequal
+  shortDescription: emits true only if number A does not equal number B
 operators:
   Evaluate:
     operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1

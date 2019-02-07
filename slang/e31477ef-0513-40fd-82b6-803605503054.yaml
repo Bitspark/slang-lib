@@ -10,8 +10,8 @@ meta:
   description: Takes two boolean values and emits false in case both values are true
     or both are false, and true otherwise.
   icon: ''
-  name: slang.math.logic.Xor
-  shortDescription: Takes two boolean values and emits false only if both are equal.
+  name: xor
+  shortDescription: emits true only if the given boolean values A and B are not equal
 operators:
   Evaluate:
     operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1

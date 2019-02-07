@@ -7,8 +7,8 @@ id: 185635e5-7d49-4590-b6c8-5d9989ab7067
 meta:
   description: ''
   icon: ''
-  name: slang.math.function.Floor
-  shortDescription: ''
+  name: floor number
+  shortDescription: emits the greatest integer less than or equal to a given number
 operators:
   Evaluate:
     operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1

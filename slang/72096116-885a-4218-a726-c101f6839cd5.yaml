@@ -34,8 +34,8 @@ id: 72096116-885a-4218-a726-c101f6839cd5
 meta:
   description: ''
   icon: ''
-  name: slang.stream.Sort
-  shortDescription: ''
+  name: sort stream
+  shortDescription: sorts a stream, using a comparator delegate specifying the order
 operators:
   Reduce:
     generics:

@@ -27,8 +27,8 @@ id: 8345ea9e-98c9-463b-8494-7123ee261270
 meta:
   description: Takes two items and emits one of them.
   icon: crosshairs
-  name: slang.control.Choose
-  shortDescription: Takes two items and emits one of them.
+  name: choose item
+  shortDescription: takes two items and emits one of them, using a chooser delegate as decider
 operators:
   Switch:
     generics:

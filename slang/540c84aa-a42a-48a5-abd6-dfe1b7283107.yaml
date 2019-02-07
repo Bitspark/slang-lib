@@ -37,8 +37,8 @@ id: 540c84aa-a42a-48a5-abd6-dfe1b7283107
 meta:
   description: ''
   icon: ''
-  name: slang.string.BuildURL
-  shortDescription: ''
+  name: build URL
+  shortDescription: builds a URL value from given protocol, host, port, path and query string
 operators:
   Convert:
     generics:

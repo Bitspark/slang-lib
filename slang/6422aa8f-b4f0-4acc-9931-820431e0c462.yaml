@@ -19,8 +19,8 @@ id: 6422aa8f-b4f0-4acc-9931-820431e0c462
 meta:
   description: ''
   icon: ''
-  name: slang.math.aggregate.Minimum
-  shortDescription: ''
+  name: minimum of numbers
+  shortDescription: finds smallest number in a stream of numbers
 operators:
   Choose:
     generics:

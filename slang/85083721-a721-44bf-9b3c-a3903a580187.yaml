@@ -8,8 +8,8 @@ meta:
   description: Takes two boolean values and emits false in case both values are false,
     and true otherwise.
   icon: ''
-  name: slang.math.logic.Or
-  shortDescription: Takes two boolean values and emits false only if both are false.
+  name: or
+  shortDescription: emits true only if at least one of the given booleans A and B is true
 operators:
   Evaluate:
     operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1

@@ -7,8 +7,8 @@ id: 8229c88c-ad78-4646-889c-ef4a533624a0
 meta:
   description: ''
   icon: ''
-  name: slang.math.arith.Less
-  shortDescription: ''
+  name: less
+  shortDescription: emits true only if number A is less than number B
 operators:
   Evaluate:
     operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
