@@ -13,8 +13,8 @@ id: 5df619e7-f8ab-44d9-b315-05fdcd52ee43
 meta:
   description: ''
   icon: ''
-  name: slang.stream.Count
-  shortDescription: ''
+  name: count items
+  shortDescription: counts number of items in a stream of generic items
 operators:
   Add:
     operator: 7b01fa17-7e11-4275-8d1e-fb1ad5b81c3d

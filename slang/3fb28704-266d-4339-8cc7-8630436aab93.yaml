@@ -13,8 +13,8 @@ id: 3fb28704-266d-4339-8cc7-8630436aab93
 meta:
   description: ''
   icon: ''
-  name: slang.stream.TakeLast
-  shortDescription: ''
+  name: take last
+  shortDescription: emits last item of a stream of generic items
 operators:
   Iterate:
     generics:

@@ -22,7 +22,7 @@ id: 026dabc6-c7e1-4f93-84a6-e75737d62ac5
 meta:
   description: ''
   icon: ''
-  name: slang.net.HttpGet
+  name: http get
   shortDescription: ''
 operators:
   Convert:

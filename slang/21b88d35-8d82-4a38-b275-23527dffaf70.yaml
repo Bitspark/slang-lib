@@ -29,8 +29,8 @@ id: 21b88d35-8d82-4a38-b275-23527dffaf70
 meta:
   description: ''
   icon: ''
-  name: slang.stream.TakeFirst
-  shortDescription: ''
+  name: take first
+  shortDescription: emits first item of a stream of generic items
 operators:
   Iterate:
     generics:

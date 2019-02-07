@@ -8,8 +8,8 @@ meta:
   description: Takes two boolean values and emits true in case both values are true
     or both are false, and false otherwise.
   icon: ''
-  name: slang.math.logic.Equal
-  shortDescription: Takes two boolean values and emits true only if both are equal.
+  name: logical equal
+  shortDescription: emits true only if both booleans A and B are equal
 operators:
   Evaluate:
     operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1

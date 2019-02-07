@@ -19,8 +19,8 @@ id: 1aa54f7c-67c5-448e-a2ff-1aefe4a616dd
 meta:
   description: ''
   icon: ''
-  name: slang.stream.WrapItem
-  shortDescription: ''
+  name: wrap item
+  shortDescription: creates stream containing one single generic item
 operators:
   Loop:
     generics:

@@ -7,8 +7,8 @@ id: 7b01fa17-7e11-4275-8d1e-fb1ad5b81c3d
 meta:
   description: ''
   icon: ''
-  name: slang.math.arith.Add
-  shortDescription: ''
+  name: add
+  shortDescription: adds two numbers A and B and emits their sum
 operators:
   Evaluate:
     operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1

@@ -9,8 +9,8 @@ id: 7b598b02-b51e-4c78-9dbd-712ebb3953cf
 meta:
   description: ''
   icon: ''
-  name: slang.math.aggregate.StandardDeviation
-  shortDescription: ''
+  name: standard deviation
+  shortDescription: emits standard deviation of a stream of numbers
 operators:
   Evaluate:
     operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1

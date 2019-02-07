@@ -19,8 +19,8 @@ id: 2cc283b9-dad1-4c07-865b-a99be0ff38d2
 meta:
   description: ''
   icon: ''
-  name: slang.math.aggregate.Maximum
-  shortDescription: ''
+  name: maximum of numbers
+  shortDescription: finds greatest number in a stream of numbers
 operators:
   Choose:
     generics:

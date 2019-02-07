@@ -17,8 +17,8 @@ id: 7d2857e5-e3b5-4a7b-a5f7-9eea0bbe8004
 meta:
   description: ''
   icon: ''
-  name: slang.math.aggregate.Variance
-  shortDescription: ''
+  name: variance
+  shortDescription: emits variance of a stream of numbers
 operators:
   Average:
     operator: f9e04d5b-3d56-47b4-bcb0-27741ef5a4aa

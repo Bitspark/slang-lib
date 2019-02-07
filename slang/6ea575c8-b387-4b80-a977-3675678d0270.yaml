@@ -7,8 +7,8 @@ id: 6ea575c8-b387-4b80-a977-3675678d0270
 meta:
   description: ''
   icon: ''
-  name: slang.math.function.SquareRoot
-  shortDescription: ''
+  name: square root
+  shortDescription: calculates square root of a number
 operators:
   Evaluate:
     operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1

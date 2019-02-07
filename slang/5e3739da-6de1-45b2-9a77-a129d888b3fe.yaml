@@ -11,8 +11,8 @@ id: 5e3739da-6de1-45b2-9a77-a129d888b3fe
 meta:
   description: ''
   icon: ''
-  name: slang.stream.SortPrimitive
-  shortDescription: ''
+  name: sort primitives
+  shortDescription: sorts a stream of primitive items
 operators:
   Evaluate:
     operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1

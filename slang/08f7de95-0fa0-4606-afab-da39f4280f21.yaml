@@ -13,8 +13,8 @@ id: 08f7de95-0fa0-4606-afab-da39f4280f21
 meta:
   description: ''
   icon: ''
-  name: slang.exception.ReplaceNull
-  shortDescription: ''
+  name: replace null
+  shortDescription: replaces null items with specified value in a stream of primitive items
 operators:
   Either:
     generics:
@@ -36,7 +36,7 @@ properties:
 services:
   main:
     in:
-      type: string
+      type: primitive
     out:
       type: primitive
 tests:

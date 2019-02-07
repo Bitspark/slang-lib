@@ -24,8 +24,8 @@ id: 1e46ff2b-3da8-4152-a166-d466a9bde4d0
 meta:
   description: ''
   icon: ''
-  name: slang.math.moving.Average
-  shortDescription: ''
+  name: moving average
+  shortDescription: calculates and emits moving average for each number of a stream of numbers
 operators:
   Add:
     operator: 7b01fa17-7e11-4275-8d1e-fb1ad5b81c3d
