@@ -29,4 +29,6 @@ meta:
   shortDescription: emits standard deviation of a stream of numbers
   description: ""
   docUrl: https://bitspark.de/slang/docs/operator/standard-deviation
-  tags: []
+  tags:
+  - stream
+  - statistics

@@ -29,7 +29,8 @@ meta:
   shortDescription: concatenates strings A and B
   description: ""
   docUrl: https://bitspark.de/slang/docs/operator/concatenate
-  tags: []
+  tags:
+  - string
 tests:
 - name: Strings
   description: ""

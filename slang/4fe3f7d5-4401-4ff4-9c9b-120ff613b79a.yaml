@@ -29,4 +29,6 @@ meta:
   shortDescription: emits true if number A equals number B
   description: ""
   docUrl: https://bitspark.de/slang/docs/operator/equal
-  tags: []
+  tags:
+  - math
+  - compare

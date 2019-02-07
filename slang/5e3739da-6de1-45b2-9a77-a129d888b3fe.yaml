@@ -37,7 +37,9 @@ meta:
   shortDescription: sorts a stream of primitive items
   description: ""
   docUrl: https://bitspark.de/slang/docs/operator/sort-primitives
-  tags: []
+  tags:
+  - stream
+  - sort
 tests:
 - name: Integers
   description: ""

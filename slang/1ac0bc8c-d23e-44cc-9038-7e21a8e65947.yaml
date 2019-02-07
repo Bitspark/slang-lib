@@ -29,4 +29,6 @@ meta:
   shortDescription: emits true only if number A is less than or equal to number B
   description: ""
   docUrl: https://bitspark.de/slang/docs/operator/less-or-equal
-  tags: []
+  tags:
+  - math
+  - compare

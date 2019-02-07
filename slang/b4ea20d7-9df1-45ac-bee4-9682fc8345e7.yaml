@@ -10,6 +10,11 @@ services:
           type: boolean
     out:
       type: boolean
+    geometry:
+      in:
+        position: 30
+      out:
+        position: 25
 operators:
   Evaluate:
     operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
@@ -18,11 +23,17 @@ operators:
       variables:
       - a
       - b
+    geometry:
+      position:
+        x: 25
+        "y": 7
 connections:
-  (:
-  - (Evaluate
   Evaluate):
   - )
+  a(:
+  - a(Evaluate
+  b(:
+  - b(Evaluate
 meta:
   name: and
   icon: ""
@@ -31,23 +42,7 @@ meta:
     and false otherwise.
   docUrl: https://bitspark.de/slang/docs/operator/and
   tags: []
-tests:
-- name: Booleans
-  description: ""
-  generics: {}
-  properties: {}
-  data:
-    in:
-    - a: true
-      b: true
-    - a: true
-      b: false
-    - a: false
-      b: true
-    - a: false
-      b: false
-    out:
-    - true
-    - false
-    - false
-    - false
+geometry:
+  size:
+    width: 300
+    height: 157.5

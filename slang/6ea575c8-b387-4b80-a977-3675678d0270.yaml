@@ -23,4 +23,6 @@ meta:
   shortDescription: calculates square root of a number
   description: ""
   docUrl: https://bitspark.de/slang/docs/operator/square-root
-  tags: []
+  tags:
+  - math
+  - function

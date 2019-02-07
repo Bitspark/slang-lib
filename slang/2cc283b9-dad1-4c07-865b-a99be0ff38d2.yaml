@@ -48,7 +48,9 @@ meta:
   shortDescription: finds greatest number in a stream of numbers
   description: ""
   docUrl: https://bitspark.de/slang/docs/operator/maximum-number
-  tags: []
+  tags:
+  - math
+  - aggregate
 tests:
 - name: Integers
   description: ""

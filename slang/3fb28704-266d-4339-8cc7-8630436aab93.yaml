@@ -51,7 +51,9 @@ meta:
   shortDescription: emits last item of a stream of generic items
   description: ""
   docUrl: https://bitspark.de/slang/docs/operator/take-last
-  tags: []
+  tags:
+  - stream
+  - aggregate
 tests:
 - name: ""
   description: ""

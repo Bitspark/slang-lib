@@ -42,4 +42,6 @@ meta:
   shortDescription: counts number of items in a stream of generic items
   description: ""
   docUrl: https://bitspark.de/slang/docs/operator/count-items
-  tags: []
+  tags:
+  - stream
+  - aggregate
