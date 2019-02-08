@@ -8,7 +8,7 @@ connections:
 id: f067303c-7170-438d-a461-fc5928716dc5
 meta:
   description: ''
-  icon: ''
+  icon: filter
   name: pass filter
   shortDescription: filter a stream of generic items, letting items pass only if boolean pass is true
 operators:

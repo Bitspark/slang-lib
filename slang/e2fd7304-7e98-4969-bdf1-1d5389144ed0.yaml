@@ -19,8 +19,9 @@ connections:
   - )
 meta:
   name: is null
-  icon: ""
+  icon: bolt
   shortDescription: emits true only if a given primitive is null
   description: ""
   docUrl: https://bitspark.de/slang/docs/operator/is-null
-  tags: []
+  tags:
+  - exception

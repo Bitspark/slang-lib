@@ -25,11 +25,13 @@ connections:
   - )
 meta:
   name: subtract
-  icon: ""
+  icon: minus
   shortDescription: subtracts number B from number A and emits the resulting difference
   description: ""
   docUrl: https://bitspark.de/slang/docs/operator/subtract
-  tags: []
+  tags:
+  - math
+  - arithmetic
 tests:
 - name: Integers
   description: ""

@@ -57,8 +57,9 @@ connections:
   - filename(ReadLines
 meta:
   name: read file
-  icon: ""
+  icon: file
   shortDescription: reads a file, deserializes each line and emits one item per line
   description: ""
   docUrl: https://bitspark.de/slang/docs/operator/read-file
-  tags: []
+  tags:
+  - file

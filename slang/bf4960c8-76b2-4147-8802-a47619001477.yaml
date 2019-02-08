@@ -60,12 +60,13 @@ connections:
   - item.true(Switch
 meta:
   name: select one
-  icon: ""
+  icon: compress
   shortDescription: emits either the first or the second item depending on the given
     boolean
   description: ""
   docUrl: https://bitspark.de/slang/docs/operator/select-one
-  tags: []
+  tags:
+  - control
 geometry:
   size:
     width: 290

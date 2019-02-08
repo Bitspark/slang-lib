@@ -36,12 +36,13 @@ connections:
   - true(Either
 meta:
   name: replace null
-  icon: ""
+  icon: braille
   shortDescription: replaces null items with specified value in a stream of primitive
     items
   description: ""
   docUrl: https://bitspark.de/slang/docs/operator/replace-null
-  tags: []
+  tags:
+  - exception
 tests:
 - name: Integers
   description: ""

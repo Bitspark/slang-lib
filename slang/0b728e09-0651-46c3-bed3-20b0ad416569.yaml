@@ -25,7 +25,7 @@ connections:
   - )
 meta:
   name: concatenate
-  icon: ""
+  icon: layer-plus
   shortDescription: concatenates strings A and B
   description: ""
   docUrl: https://bitspark.de/slang/docs/operator/concatenate

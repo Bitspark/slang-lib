@@ -5,6 +5,11 @@ services:
       type: number
     out:
       type: number
+    geometry:
+      in:
+        position: 25
+      out:
+        position: 25
 operators:
   Evaluate:
     operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
@@ -12,6 +17,10 @@ operators:
       expression: floor(x)
       variables:
       - x
+    geometry:
+      position:
+        x: 25
+        "y": 2
 connections:
   (:
   - x(Evaluate
@@ -19,8 +28,14 @@ connections:
   - )
 meta:
   name: floor number
-  icon: ""
+  icon: function
   shortDescription: emits the greatest integer less than or equal to a given number
   description: ""
   docUrl: https://bitspark.de/slang/docs/operator/floor-number
-  tags: []
+  tags:
+  - math
+  - function
+geometry:
+  size:
+    width: 300
+    height: 159

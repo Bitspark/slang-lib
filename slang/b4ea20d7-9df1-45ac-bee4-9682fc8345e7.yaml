@@ -41,7 +41,8 @@ meta:
   description: Takes two boolean values and emits true in case both values are true,
     and false otherwise.
   docUrl: https://bitspark.de/slang/docs/operator/and
-  tags: []
+  tags:
+  - boolean
 geometry:
   size:
     width: 300

@@ -34,7 +34,8 @@ meta:
   description: Takes two boolean values and emits false in case both values are true
     or both are false, and true otherwise.
   docUrl: https://bitspark.de/slang/docs/operator/xor
-  tags: []
+  tags:
+  - boolean
 tests:
 - name: Booleans
   description: ""

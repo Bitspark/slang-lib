@@ -85,9 +85,11 @@ connections:
   - (WindowCollect1
 meta:
   name: synchronize
-  icon: ""
+  icon: align-left
   shortDescription: emits all collected values for multiple streams at once in a given
     interval
   description: ""
   docUrl: https://bitspark.de/slang/docs/operator/synchronize
-  tags: []
+  tags:
+  - stream
+  - synchronize

@@ -100,4 +100,6 @@ meta:
   shortDescription: Performs a task repetetively, at least once.
   description: performs a task repetetively, at least once, using an iterator delegate
   docUrl: https://bitspark.de/slang/docs/operator/do-while
-  tags: []
+  tags:
+  - control
+  - delegate

@@ -77,4 +77,6 @@ meta:
     status code
   description: ""
   docUrl: https://bitspark.de/slang/docs/operator/http-get
-  tags: []
+  tags:
+  - network
+  - http

@@ -51,4 +51,6 @@ meta:
   shortDescription: emits variance of a stream of numbers
   description: ""
   docUrl: https://bitspark.de/slang/docs/operator/variance
-  tags: []
+  tags:
+  - statistics
+  - aggregate

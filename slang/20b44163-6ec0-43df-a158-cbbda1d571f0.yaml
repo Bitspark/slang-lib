@@ -25,12 +25,14 @@ connections:
   - )
 meta:
   name: boolean equal
-  icon: ""
+  icon: equals
   shortDescription: emits true only if both booleans A and B are equal
   description: Takes two boolean values and emits true in case both values are true
     or both are false, and false otherwise.
   docUrl: https://bitspark.de/slang/docs/operator/boolean-equal
-  tags: []
+  tags:
+  - boolean
+  - compare
 tests:
 - name: Booleans
   description: ""

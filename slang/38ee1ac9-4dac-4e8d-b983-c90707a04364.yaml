@@ -25,12 +25,14 @@ connections:
   - )
 meta:
   name: modulo
-  icon: ""
+  icon: percentage
   shortDescription: emits the modulo, the remainer of a division of two numbers A
     and B
   description: ""
   docUrl: https://bitspark.de/slang/docs/operator/modulo
-  tags: []
+  tags:
+  - math
+  - arithmetic
 tests:
 - name: Integers
   description: ""

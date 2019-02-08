@@ -72,7 +72,7 @@ operators:
         type: number
     geometry:
       position:
-        x: 80
+        x: 95
         "y": -108
   Value1:
     operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
@@ -83,7 +83,7 @@ operators:
         type: number
     geometry:
       position:
-        x: 130
+        x: 85
         "y": 112
 properties:
   emptyValue:
@@ -120,7 +120,10 @@ meta:
   shortDescription: emits the average number of a stream of numbers
   description: ""
   docUrl: https://bitspark.de/slang/docs/operator/average
-  tags: []
+  tags:
+  - aggregate
+  - math
+  - stream
 geometry:
   size:
     width: 670

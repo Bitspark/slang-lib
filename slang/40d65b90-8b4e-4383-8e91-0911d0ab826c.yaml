@@ -65,8 +65,9 @@ connections:
   - )~
 meta:
   name: clock
-  icon: ""
+  icon: clock
   shortDescription: regularly emits a trigger at a given time interval
   description: ""
   docUrl: https://bitspark.de/slang/docs/operator/clock
-  tags: []
+  tags:
+  - time

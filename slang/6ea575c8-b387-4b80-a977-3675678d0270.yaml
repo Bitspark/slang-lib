@@ -19,7 +19,7 @@ connections:
   - )
 meta:
   name: square root
-  icon: ""
+  icon: square-root
   shortDescription: calculates square root of a number
   description: ""
   docUrl: https://bitspark.de/slang/docs/operator/square-root

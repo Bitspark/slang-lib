@@ -25,11 +25,13 @@ connections:
   - )
 meta:
   name: multiply
-  icon: ""
+  icon: times
   shortDescription: multiplies two numbers A and B and emits their product
   description: ""
   docUrl: https://bitspark.de/slang/docs/operator/multiply
-  tags: []
+  tags:
+  - math
+  - arithmetic
 tests:
 - name: Integers
   description: ""

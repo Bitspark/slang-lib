@@ -25,9 +25,11 @@ connections:
   - )
 meta:
   name: greater or equal
-  icon: ""
+  icon: greater-than-equal
   shortDescription: emits true only if number A is greater than or equal to number
     B
   description: ""
   docUrl: https://bitspark.de/slang/docs/operator/greater-or-equal
-  tags: []
+  tags:
+  - math
+  - compare

@@ -34,8 +34,9 @@ connections:
   - (Crontab
 meta:
   name: schedule
-  icon: ""
+  icon: calendar-alt
   shortDescription: emits triggers using a given crontab
   description: ""
   docUrl: https://bitspark.de/slang/docs/operator/schedule
-  tags: []
+  tags:
+  - time

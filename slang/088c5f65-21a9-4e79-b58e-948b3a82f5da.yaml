@@ -36,9 +36,10 @@ connections:
   - .filter)
 meta:
   name: filter
-  icon: ""
+  icon: filter
   shortDescription: filters generic items of a stream, using a filter delegate as
     decider
   description: ""
   docUrl: https://bitspark.de/slang/docs/operator/filter
-  tags: []
+  tags:
+  - stream

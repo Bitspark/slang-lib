@@ -25,11 +25,13 @@ connections:
   - )
 meta:
   name: divide
-  icon: ""
+  icon: divide
   shortDescription: divides number A by number B
   description: ""
   docUrl: https://bitspark.de/slang/docs/operator/divide
-  tags: []
+  tags:
+  - math
+  - arithmetic
 tests:
 - name: Integers
   description: ""

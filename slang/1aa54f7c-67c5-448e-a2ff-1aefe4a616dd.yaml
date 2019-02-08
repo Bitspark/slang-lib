@@ -57,7 +57,7 @@ connections:
   - state.first(Loop.iterator
 meta:
   name: wrap item
-  icon: ""
+  icon: cube
   shortDescription: creates stream containing one single generic item
   description: ""
   docUrl: https://bitspark.de/slang/docs/operator/wrap-item

@@ -28,8 +28,10 @@ connections:
   - )
 meta:
   name: grayscale pixel
-  icon: ""
+  icon: palette
   shortDescription: transforms an RGB pixel into a gray pixel
   description: ""
   docUrl: https://bitspark.de/slang/docs/operator/grayscale-pixel
-  tags: []
+  tags:
+  - image
+  - color

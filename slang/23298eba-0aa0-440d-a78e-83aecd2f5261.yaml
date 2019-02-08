@@ -28,11 +28,13 @@ connections:
   - (Add
 meta:
   name: sum
-  icon: ""
+  icon: plus-circle
   shortDescription: emits the sum of a stream of numbers
   description: ""
   docUrl: https://bitspark.de/slang/docs/operator/sum
-  tags: []
+  tags:
+  - math
+  - aggregate
 tests:
 - name: Integers
   description: ""

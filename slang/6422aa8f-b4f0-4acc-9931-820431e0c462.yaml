@@ -44,11 +44,13 @@ connections:
   - false(Choose
 meta:
   name: minimum number
-  icon: ""
+  icon: arrow-to-bottom
   shortDescription: finds smallest number in a stream of numbers
   description: ""
   docUrl: https://bitspark.de/slang/docs/operator/minimum-number
-  tags: []
+  tags:
+  - math
+  - aggregate
 tests:
 - name: Integers
   description: ""

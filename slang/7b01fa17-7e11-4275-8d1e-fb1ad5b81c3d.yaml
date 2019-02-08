@@ -36,7 +36,7 @@ connections:
   - b(Evaluate
 meta:
   name: add
-  icon: ""
+  icon: plus
   shortDescription: adds two numbers A and B and emits their sum
   description: ""
   docUrl: https://bitspark.de/slang/docs/operator/add

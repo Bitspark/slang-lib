@@ -148,7 +148,9 @@ meta:
   shortDescription: queries a given URL via GET request and emits its parsed response
   description: ""
   docUrl: https://bitspark.de/slang/docs/operator/api-get
-  tags: []
+  tags:
+  - networking
+  - http
 geometry:
   size:
     width: 765

@@ -28,11 +28,13 @@ connections:
   - (Multiply
 meta:
   name: product
-  icon: ""
+  icon: times-circle
   shortDescription: emits the product of a stream of numbers
   description: ""
   docUrl: https://bitspark.de/slang/docs/operator/product
-  tags: []
+  tags:
+  - math
+  - aggregate
 tests:
 - name: Integers
   description: ""

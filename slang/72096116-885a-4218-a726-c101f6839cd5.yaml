@@ -68,8 +68,10 @@ connections:
   - ~(Reduce
 meta:
   name: sort stream
-  icon: ""
+  icon: sort-amount-down
   shortDescription: sorts a stream, using a comparator delegate specifying the order
   description: ""
   docUrl: https://bitspark.de/slang/docs/operator/sort-stream
-  tags: []
+  tags:
+  - stream
+  - sort

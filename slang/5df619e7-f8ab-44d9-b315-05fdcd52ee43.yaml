@@ -38,7 +38,7 @@ connections:
   - ~(Reduce
 meta:
   name: count items
-  icon: ""
+  icon: abacus
   shortDescription: counts number of items in a stream of generic items
   description: ""
   docUrl: https://bitspark.de/slang/docs/operator/count-items

@@ -44,7 +44,7 @@ connections:
   - false(Choose
 meta:
   name: maximum number
-  icon: ""
+  icon: arrow-from-bottom
   shortDescription: finds greatest number in a stream of numbers
   description: ""
   docUrl: https://bitspark.de/slang/docs/operator/maximum-number

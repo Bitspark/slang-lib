@@ -47,7 +47,7 @@ connections:
   - initial(Iterate
 meta:
   name: take last
-  icon: ""
+  icon: arrow-to-right
   shortDescription: emits last item of a stream of generic items
   description: ""
   docUrl: https://bitspark.de/slang/docs/operator/take-last

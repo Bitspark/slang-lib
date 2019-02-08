@@ -24,7 +24,8 @@ meta:
   description: Takes a boolean and emits true in case it is false, and false if it
     is true.
   docUrl: https://bitspark.de/slang/docs/operator/boolean-not
-  tags: []
+  tags:
+  - boolean
 tests:
 - name: Booleans
   description: ""

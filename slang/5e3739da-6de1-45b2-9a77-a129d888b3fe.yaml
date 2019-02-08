@@ -33,7 +33,7 @@ connections:
   - (Evaluate
 meta:
   name: sort primitives
-  icon: ""
+  icon: sort-amount-down
   shortDescription: sorts a stream of primitive items
   description: ""
   docUrl: https://bitspark.de/slang/docs/operator/sort-primitives

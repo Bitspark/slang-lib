@@ -45,11 +45,14 @@ connections:
   - items(IndexAccess
 meta:
   name: median
-  icon: ""
+  icon: compress-arrows-alt
   shortDescription: emits the median number of a stream of numbers
   description: ""
   docUrl: https://bitspark.de/slang/docs/operator/median
-  tags: []
+  tags:
+  - math
+  - stream
+  - aggregate
 tests:
 - name: Integers
   description: ""

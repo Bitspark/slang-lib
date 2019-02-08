@@ -101,11 +101,13 @@ connections:
   - state.done(Iterate.iterator
 meta:
   name: take first
-  icon: ""
+  icon: arrow-to-left
   shortDescription: emits first item of a stream of generic items
   description: ""
   docUrl: https://bitspark.de/slang/docs/operator/take-first
-  tags: []
+  tags:
+  - stream
+  - aggregate
 tests:
 - name: ""
   description: ""

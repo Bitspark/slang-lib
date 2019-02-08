@@ -19,8 +19,9 @@ connections:
   - )
 meta:
   name: flip sign
-  icon: ""
+  icon: function
   shortDescription: flips the sign of a given number and emit the resulting number
   description: ""
   docUrl: https://bitspark.de/slang/docs/operator/flip-sign
-  tags: []
+  tags:
+  - math

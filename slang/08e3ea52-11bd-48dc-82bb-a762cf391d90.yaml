@@ -39,8 +39,9 @@ connections:
   - filename(Append
 meta:
   name: file insert
-  icon: ""
+  icon: file-plus
   shortDescription: appends serialization of generic item to file
   description: ""
   docUrl: https://bitspark.de/slang/docs/operator/file-insert
-  tags: []
+  tags:
+  - file

@@ -136,9 +136,12 @@ connections:
   - item(Switch
 meta:
   name: build URL
-  icon: ""
+  icon: link
   shortDescription: builds a URL value from given protocol, host, port, path and query
     string
   description: ""
   docUrl: https://bitspark.de/slang/docs/operator/build-url
-  tags: []
+  tags:
+  - network
+  - string
+  - http
