@@ -7,12 +7,21 @@ services:
       type: stream
       stream:
         type: trigger
+    geometry:
+      in:
+        position: 80
+      out:
+        position: 75
 operators:
   Delay:
     operator: 7d61b83a-9aa2-4875-9c21-1e11f6adbfae
     generics:
       itemType:
         type: trigger
+    geometry:
+      position:
+        x: -170
+        "y": -30.5
   Loop:
     operator: 0b8a1592-1368-44bc-92d5-692acc78b1d3
     generics:
@@ -20,6 +29,10 @@ operators:
         type: trigger
       stateType:
         type: trigger
+    geometry:
+      position:
+        x: 80
+        "y": -115.5
   Value:
     operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
     properties:
@@ -27,6 +40,10 @@ operators:
     generics:
       valueType:
         type: primitive
+    geometry:
+      position:
+        x: -170
+        "y": -158
   Value1:
     operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
     properties:
@@ -34,6 +51,10 @@ operators:
     generics:
       valueType:
         type: boolean
+    geometry:
+      position:
+        x: 285
+        "y": -83
   Value2:
     operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
     properties:
@@ -41,6 +62,10 @@ operators:
     generics:
       valueType:
         type: trigger
+    geometry:
+      position:
+        x: 75
+        "y": 92
 properties:
   interval:
     type: number
@@ -71,3 +96,7 @@ meta:
   docUrl: https://bitspark.de/slang/docs/operator/clock
   tags:
   - time
+geometry:
+  size:
+    width: 745
+    height: 549

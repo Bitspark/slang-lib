@@ -5,6 +5,11 @@ services:
       type: trigger
     out:
       type: string
+    geometry:
+      in:
+        position: 115
+      out:
+        position: 75
 operators:
   Convert:
     operator: d1191456-3583-4eaf-8ec1-e486c3818c60
@@ -13,18 +18,30 @@ operators:
         type: number
       toType:
         type: string
+    geometry:
+      position:
+        x: 80
+        "y": 187
   Evaluate:
     operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
     properties:
       expression: len(query) == 0
       variables:
       - query
+    geometry:
+      position:
+        x: 295
+        "y": 82
   Evaluate1:
     operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
     properties:
       expression: '"?" + query'
       variables:
       - query
+    geometry:
+      position:
+        x: 365
+        "y": 207
   Switch:
     operator: cd6fc5c8-5b64-4b1a-9885-59ede141b398
     properties:
@@ -37,6 +54,10 @@ operators:
         type: string
       selectType:
         type: boolean
+    geometry:
+      position:
+        x: 215
+        "y": 174.5
   Template:
     operator: 3c39f999-b5c2-490d-aed1-19149d228b04
     properties:
@@ -46,6 +67,10 @@ operators:
       - port
       - path
       - query
+    geometry:
+      position:
+        x: 75
+        "y": 329.5
   Value:
     operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
     properties:
@@ -53,6 +78,10 @@ operators:
     generics:
       valueType:
         type: string
+    geometry:
+      position:
+        x: -190
+        "y": 52
   Value1:
     operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
     properties:
@@ -60,6 +89,10 @@ operators:
     generics:
       valueType:
         type: string
+    geometry:
+      position:
+        x: -105
+        "y": 117
   Value2:
     operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
     properties:
@@ -67,6 +100,10 @@ operators:
     generics:
       valueType:
         type: string
+    geometry:
+      position:
+        x: 145
+        "y": 117
   Value3:
     operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
     properties:
@@ -74,6 +111,10 @@ operators:
     generics:
       valueType:
         type: number
+    geometry:
+      position:
+        x: 80
+        "y": 37
   Value4:
     operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
     properties:
@@ -81,6 +122,10 @@ operators:
     generics:
       valueType:
         type: string
+    geometry:
+      position:
+        x: 10
+        "y": 152
   Value5:
     operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
     properties:
@@ -88,6 +133,10 @@ operators:
     generics:
       valueType:
         type: string
+    geometry:
+      position:
+        x: 210
+        "y": 2
 properties:
   host:
     type: string
@@ -145,3 +194,7 @@ meta:
   - network
   - string
   - http
+geometry:
+  size:
+    width: 805
+    height: 639

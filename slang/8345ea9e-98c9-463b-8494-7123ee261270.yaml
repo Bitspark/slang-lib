@@ -13,6 +13,11 @@ services:
     out:
       type: generic
       generic: itemType
+    geometry:
+      in:
+        position: -5
+      out:
+        position: 0
 delegates:
   chooser:
     in:
@@ -26,6 +31,11 @@ delegates:
         "true":
           type: generic
           generic: itemType
+    geometry:
+      in:
+        position: 35
+      out:
+        position: -5
 operators:
   Switch:
     operator: cd6fc5c8-5b64-4b1a-9885-59ede141b398
@@ -47,10 +57,11 @@ operators:
         generic: itemType
       selectType:
         type: boolean
+    geometry:
+      position:
+        x: 0
+        "y": 94.5
 connections:
-  (:
-  - item(Switch
-  - .chooser)
   (.chooser:
   - select(Switch
   Switch):
@@ -59,6 +70,12 @@ connections:
   - (Switch.default
   Switch.false)false:
   - (Switch.false
+  false(:
+  - item.false(Switch
+  - .chooser)false
+  true(:
+  - item.true(Switch
+  - .chooser)true
 meta:
   name: choose item
   icon: crosshairs
@@ -68,3 +85,7 @@ meta:
   docUrl: https://bitspark.de/slang/docs/operator/choose-item
   tags:
   - control
+geometry:
+  size:
+    width: 260
+    height: 257.5
