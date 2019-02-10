@@ -37,7 +37,8 @@ func runTests(dir string) (int, int, int) {
 
 		if succs, fails, err := tb.Run(opId, os.Stdout, false); err != nil || succs == 0 || fails != 0 {
 			if err != nil {
-				log.Println(err)
+				log.Fatal(err)
+				continue
 			}
 			succsTotal += succs
 			failsTotal += fails
