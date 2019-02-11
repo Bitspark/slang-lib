@@ -1,3 +1,33 @@
+id: f067303c-7170-438d-a461-fc5928716dc5
+services:
+  main:
+    in:
+      type: stream
+      stream:
+        type: map
+        map:
+          item:
+            type: generic
+            generic: itemType
+          pass:
+            type: boolean
+    out:
+      type: stream
+      stream:
+        type: generic
+        generic: itemType
+operators:
+  Filter:
+    operator: 088c5f65-21a9-4e79-b58e-948b3a82f5da
+    generics:
+      itemType:
+        type: map
+        map:
+          item:
+            type: generic
+            generic: itemType
+          pass:
+            type: boolean
 connections:
   (:
   - (Filter
@@ -5,40 +35,12 @@ connections:
   - )~
   Filter.filter)pass:
   - (Filter.filter
-id: f067303c-7170-438d-a461-fc5928716dc5
 meta:
-  description: ''
-  icon: filter
   name: pass filter
-  shortDescription: filter a stream of generic items, letting items pass only if boolean pass is true
-operators:
-  Filter:
-    generics:
-      itemType:
-        map:
-          item:
-            generic: itemType
-            type: generic
-          pass:
-            type: boolean
-        type: map
-    operator: 088c5f65-21a9-4e79-b58e-948b3a82f5da
-services:
-  main:
-    in:
-      stream:
-        map:
-          item:
-            generic: itemType
-            type: generic
-          pass:
-            type: boolean
-        type: map
-      type: stream
-    out:
-      stream:
-        generic: itemType
-        type: generic
-      type: stream
-
-
+  icon: filter
+  shortDescription: filters a stream letting items pass only if given boolean pass
+    is true
+  description: ""
+  docUrl: https://bitspark.de/slang/docs/operator/pass-filter
+  tags:
+  - stream
