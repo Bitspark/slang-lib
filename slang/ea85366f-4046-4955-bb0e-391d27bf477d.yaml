@@ -117,7 +117,7 @@ connections:
 meta:
   name: index access
   icon: memory
-  shortDescription: select the n-th item in a stream of generic items, n being the
+  shortDescription: selects the n-th item in a stream of generic items, n being the
     index
   description: ""
   docUrl: https://bitspark.de/slang/docs/operator/index-access
