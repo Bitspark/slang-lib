@@ -1,3 +1,153 @@
+id: 540c84aa-a42a-48a5-abd6-dfe1b7283107
+services:
+  main:
+    in:
+      type: trigger
+    out:
+      type: string
+    geometry:
+      in:
+        position: -120
+      out:
+        position: -30
+operators:
+  Convert:
+    operator: d1191456-3583-4eaf-8ec1-e486c3818c60
+    generics:
+      fromType:
+        type: number
+      toType:
+        type: string
+    geometry:
+      position:
+        x: -30
+        "y": -32.5
+  Evaluate:
+    operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
+    properties:
+      expression: len(query) == 0
+      variables:
+      - query
+    geometry:
+      position:
+        x: 290
+        "y": -137.5
+  Evaluate1:
+    operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
+    properties:
+      expression: '"?" + query'
+      variables:
+      - query
+    geometry:
+      position:
+        x: 355
+        "y": -7.5
+  Switch:
+    operator: cd6fc5c8-5b64-4b1a-9885-59ede141b398
+    properties:
+      cases:
+      - true
+    generics:
+      inType:
+        type: string
+      outType:
+        type: string
+      selectType:
+        type: boolean
+    geometry:
+      position:
+        x: 195
+        "y": -20.5
+  Template:
+    operator: 3c39f999-b5c2-490d-aed1-19149d228b04
+    properties:
+      variables:
+      - protocol
+      - host
+      - port
+      - path
+      - query
+    geometry:
+      position:
+        x: -80
+        "y": 149.5
+  Value:
+    operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
+    properties:
+      value: '{protocol}://{host}:{port}/{path}{query}'
+    generics:
+      valueType:
+        type: string
+    geometry:
+      position:
+        x: -235
+        "y": 52.5
+  Value1:
+    operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
+    properties:
+      value: $protocol
+    generics:
+      valueType:
+        type: string
+    geometry:
+      position:
+        x: -185
+        "y": -62.5
+  Value2:
+    operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
+    properties:
+      value: $path
+    generics:
+      valueType:
+        type: string
+    geometry:
+      position:
+        x: 50
+        "y": -67.5
+  Value3:
+    operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
+    properties:
+      value: $port
+    generics:
+      valueType:
+        type: number
+    geometry:
+      position:
+        x: -30
+        "y": -147.5
+  Value4:
+    operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
+    properties:
+      value: $host
+    generics:
+      valueType:
+        type: string
+    geometry:
+      position:
+        x: -85
+        "y": -102.5
+  Value5:
+    operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
+    properties:
+      value: $query
+    generics:
+      valueType:
+        type: string
+    geometry:
+      position:
+        x: 195
+        "y": -217.5
+properties:
+  host:
+    type: string
+  path:
+    type: string
+  port:
+    type: number
+  protocol:
+    type: string
+  query:
+    type: string
 connections:
   (:
   - (Value
@@ -33,111 +183,12 @@ connections:
   Value5):
   - query(Evaluate
   - item(Switch
-id: 540c84aa-a42a-48a5-abd6-dfe1b7283107
 meta:
-  description: ''
-  icon: ''
   name: slang.string.BuildURL
-  shortDescription: ''
-operators:
-  Convert:
-    generics:
-      fromType:
-        type: number
-      toType:
-        type: string
-    operator: d1191456-3583-4eaf-8ec1-e486c3818c60
-  Evaluate:
-    operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
-    properties:
-      expression: len(query) == 0
-      variables:
-      - query
-  Evaluate1:
-    operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
-    properties:
-      expression: '"?" + query'
-      variables:
-      - query
-  Switch:
-    generics:
-      inType:
-        type: string
-      outType:
-        type: string
-      selectType:
-        type: boolean
-    operator: cd6fc5c8-5b64-4b1a-9885-59ede141b398
-    properties:
-      cases:
-      - true
-  Template:
-    operator: 3c39f999-b5c2-490d-aed1-19149d228b04
-    properties:
-      variables:
-      - protocol
-      - host
-      - port
-      - path
-      - query
-  Value:
-    generics:
-      valueType:
-        type: string
-    operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
-    properties:
-      value: '{protocol}://{host}:{port}/{path}{query}'
-  Value1:
-    generics:
-      valueType:
-        type: string
-    operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
-    properties:
-      value: $protocol
-  Value2:
-    generics:
-      valueType:
-        type: string
-    operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
-    properties:
-      value: $path
-  Value3:
-    generics:
-      valueType:
-        type: number
-    operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
-    properties:
-      value: $port
-  Value4:
-    generics:
-      valueType:
-        type: string
-    operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
-    properties:
-      value: $host
-  Value5:
-    generics:
-      valueType:
-        type: string
-    operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
-    properties:
-      value: $query
-properties:
-  host:
-    type: string
-  path:
-    type: string
-  port:
-    type: number
-  protocol:
-    type: string
-  query:
-    type: string
-services:
-  main:
-    in:
-      type: trigger
-    out:
-      type: string
-
-
+  icon: ""
+  shortDescription: ""
+  description: ""
+geometry:
+  size:
+    width: 922.5
+    height: 604

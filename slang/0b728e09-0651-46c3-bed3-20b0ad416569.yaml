@@ -1,14 +1,20 @@
-connections:
-  (:
-  - (Evaluate
-  Evaluate):
-  - )
 id: 0b728e09-0651-46c3-bed3-20b0ad416569
-meta:
-  description: ''
-  icon: ''
-  name: slang.string.Concatenate
-  shortDescription: ''
+services:
+  main:
+    in:
+      type: map
+      map:
+        a:
+          type: string
+        b:
+          type: string
+    out:
+      type: string
+    geometry:
+      in:
+        position: 0
+      out:
+        position: -5
 operators:
   Evaluate:
     operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
@@ -17,33 +23,23 @@ operators:
       variables:
       - a
       - b
-services:
-  main:
-    in:
-      map:
-        a:
-          type: string
-        b:
-          type: string
-      type: map
-    out:
-      type: string
-tests:
-- data:
-    in:
-    - a: ''
-      b: ''
-    - a: ha
-      b: llo
-    - a: ''
-      b: llo
-    - a: ha
-      b: ''
-    out:
-    - ''
-    - hallo
-    - llo
-    - ha
-  name: Strings
-
-
+    geometry:
+      position:
+        x: -5
+        "y": -2.5
+connections:
+  Evaluate):
+  - )
+  a(:
+  - a(Evaluate
+  b(:
+  - b(Evaluate
+meta:
+  name: slang.string.Concatenate
+  icon: ""
+  shortDescription: ""
+  description: ""
+geometry:
+  size:
+    width: 305
+    height: 171.75

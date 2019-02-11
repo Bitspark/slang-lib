@@ -1,3 +1,74 @@
+id: 40d65b90-8b4e-4383-8e91-0911d0ab826c
+services:
+  main:
+    in:
+      type: trigger
+    out:
+      type: stream
+      stream:
+        type: trigger
+    geometry:
+      in:
+        position: 10
+      out:
+        position: 5
+operators:
+  Delay:
+    operator: 7d61b83a-9aa2-4875-9c21-1e11f6adbfae
+    generics:
+      itemType:
+        type: trigger
+    geometry:
+      position:
+        x: -190
+        "y": 4.5
+  Loop:
+    operator: 0b8a1592-1368-44bc-92d5-692acc78b1d3
+    generics:
+      itemType:
+        type: trigger
+      stateType:
+        type: trigger
+    geometry:
+      position:
+        x: 10
+        "y": -120.5
+  Value:
+    operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
+    properties:
+      value: $interval
+    generics:
+      valueType:
+        type: primitive
+    geometry:
+      position:
+        x: -195
+        "y": -107.5
+  Value1:
+    operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
+    properties:
+      value: true
+    generics:
+      valueType:
+        type: boolean
+    geometry:
+      position:
+        x: 220
+        "y": -97.5
+  Value2:
+    operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
+    properties:
+      value: null
+    generics:
+      valueType:
+        type: trigger
+    geometry:
+      position:
+        x: 5
+        "y": 72.5
+properties:
+  interval:
+    type: number
 connections:
   (:
   - (Loop
@@ -17,56 +88,12 @@ connections:
   - (Loop.controller
   Value2):
   - )~
-id: 40d65b90-8b4e-4383-8e91-0911d0ab826c
 meta:
-  description: ''
-  icon: ''
   name: slang.time.Clock
-  shortDescription: ''
-operators:
-  Delay:
-    generics:
-      itemType:
-        type: trigger
-    operator: 7d61b83a-9aa2-4875-9c21-1e11f6adbfae
-  Loop:
-    generics:
-      itemType:
-        type: trigger
-      stateType:
-        type: trigger
-    operator: 0b8a1592-1368-44bc-92d5-692acc78b1d3
-  Value:
-    generics:
-      valueType:
-        type: primitive
-    operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
-    properties:
-      value: $interval
-  Value1:
-    generics:
-      valueType:
-        type: boolean
-    operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
-    properties:
-      value: true
-  Value2:
-    generics:
-      valueType:
-        type: trigger
-    operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
-    properties:
-      value: null
-properties:
-  interval:
-    type: number
-services:
-  main:
-    in:
-      type: trigger
-    out:
-      stream:
-        type: trigger
-      type: stream
-
-
+  icon: ""
+  shortDescription: ""
+  description: ""
+geometry:
+  size:
+    width: 655
+    height: 422.5

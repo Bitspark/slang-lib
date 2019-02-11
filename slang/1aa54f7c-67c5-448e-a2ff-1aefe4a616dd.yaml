@@ -1,9 +1,66 @@
+id: 1aa54f7c-67c5-448e-a2ff-1aefe4a616dd
+services:
+  main:
+    in:
+      type: generic
+      generic: itemType
+    out:
+      type: stream
+      stream:
+        type: generic
+        generic: itemType
+    geometry:
+      in:
+        position: 5
+      out:
+        position: -25
+operators:
+  Loop:
+    operator: 0b8a1592-1368-44bc-92d5-692acc78b1d3
+    generics:
+      itemType:
+        type: generic
+        generic: itemType
+      stateType:
+        type: map
+        map:
+          first:
+            type: boolean
+          item:
+            type: generic
+            generic: itemType
+    geometry:
+      position:
+        x: -10
+        "y": 109.5
+  Value:
+    operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
+    properties:
+      value: true
+    generics:
+      valueType:
+        type: boolean
+    geometry:
+      position:
+        x: -20
+        "y": -57.5
+  Value1:
+    operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
+    properties:
+      value: false
+    generics:
+      valueType:
+        type: boolean
+    geometry:
+      position:
+        x: -220
+        "y": 97.5
 connections:
   (:
   - item(Loop
   - (Value
-  Loop)items:
-  - )
+  Loop)items.~:
+  - )~
   Loop.controller)first:
   - (Loop.controller
   Loop.iterator)first:
@@ -15,50 +72,12 @@ connections:
   - first(Loop
   Value1):
   - state.first(Loop.iterator
-id: 1aa54f7c-67c5-448e-a2ff-1aefe4a616dd
 meta:
-  description: ''
-  icon: ''
   name: slang.stream.WrapItem
-  shortDescription: ''
-operators:
-  Loop:
-    generics:
-      itemType:
-        generic: itemType
-        type: generic
-      stateType:
-        map:
-          first:
-            type: boolean
-          item:
-            generic: itemType
-            type: generic
-        type: map
-    operator: 0b8a1592-1368-44bc-92d5-692acc78b1d3
-  Value:
-    generics:
-      valueType:
-        type: boolean
-    operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
-    properties:
-      value: true
-  Value1:
-    generics:
-      valueType:
-        type: boolean
-    operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
-    properties:
-      value: false
-services:
-  main:
-    in:
-      generic: itemType
-      type: generic
-    out:
-      stream:
-        generic: itemType
-        type: generic
-      type: stream
-
-
+  icon: ""
+  shortDescription: ""
+  description: ""
+geometry:
+  size:
+    width: 520
+    height: 400
