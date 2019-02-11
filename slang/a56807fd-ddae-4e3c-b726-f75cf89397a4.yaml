@@ -1,15 +1,15 @@
-connections:
-  (:
-  - x(Evaluate
-  Evaluate):
-  - )
 id: a56807fd-ddae-4e3c-b726-f75cf89397a4
-meta:
-  description: Takes a boolean and emits true in case it is false, and false if it
-    is true.
-  icon: ''
-  name: slang.math.logic.Not
-  shortDescription: Takes a boolean value and emits its inverse.
+services:
+  main:
+    in:
+      type: boolean
+    out:
+      type: boolean
+    geometry:
+      in:
+        position: 0
+      out:
+        position: 0
 operators:
   Evaluate:
     operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
@@ -17,20 +17,22 @@ operators:
       expression: '!x'
       variables:
       - x
-services:
-  main:
-    in:
-      type: boolean
-    out:
-      type: boolean
-tests:
-- data:
-    in:
-    - true
-    - false
-    out:
-    - false
-    - true
-  name: Booleans
-
-
+    geometry:
+      position:
+        x: 0
+        "y": -2.5
+connections:
+  (:
+  - x(Evaluate
+  Evaluate):
+  - )
+meta:
+  name: slang.math.logic.Not
+  icon: ""
+  shortDescription: Takes a boolean value and emits its inverse.
+  description: Takes a boolean and emits true in case it is false, and false if it
+    is true.
+geometry:
+  size:
+    width: 300
+    height: 159.25

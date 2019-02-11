@@ -1,17 +1,20 @@
-connections:
-  (:
-  - (Evaluate
-  Evaluate):
-  - (Not
-  Not):
-  - )
 id: e31477ef-0513-40fd-82b6-803605503054
-meta:
-  description: Takes two boolean values and emits false in case both values are true
-    or both are false, and true otherwise.
-  icon: ''
-  name: slang.math.logic.Xor
-  shortDescription: Takes two boolean values and emits false only if both are equal.
+services:
+  main:
+    in:
+      type: map
+      map:
+        a:
+          type: boolean
+        b:
+          type: boolean
+    out:
+      type: boolean
+    geometry:
+      in:
+        position: 5
+      out:
+        position: 0
 operators:
   Evaluate:
     operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
@@ -20,35 +23,32 @@ operators:
       variables:
       - a
       - b
+    geometry:
+      position:
+        x: 0
+        "y": -52.5
   Not:
     operator: a56807fd-ddae-4e3c-b726-f75cf89397a4
-services:
-  main:
-    in:
-      map:
-        a:
-          type: boolean
-        b:
-          type: boolean
-      type: map
-    out:
-      type: boolean
-tests:
-- data:
-    in:
-    - a: true
-      b: true
-    - a: true
-      b: false
-    - a: false
-      b: true
-    - a: false
-      b: false
-    out:
-    - false
-    - true
-    - true
-    - false
-  name: Booleans
-
-
+    geometry:
+      position:
+        x: 0
+        "y": 34.5
+connections:
+  Evaluate):
+  - (Not
+  Not):
+  - )
+  a(:
+  - a(Evaluate
+  b(:
+  - b(Evaluate
+meta:
+  name: slang.math.logic.Xor
+  icon: ""
+  shortDescription: Takes two boolean values and emits false only if both are equal.
+  description: Takes two boolean values and emits false in case both values are true
+    or both are false, and true otherwise.
+geometry:
+  size:
+    width: 320
+    height: 247

@@ -1,15 +1,20 @@
-connections:
-  (:
-  - (Evaluate
-  Evaluate):
-  - )
 id: b4ea20d7-9df1-45ac-bee4-9682fc8345e7
-meta:
-  description: Takes two boolean values and emits true in case both values are true,
-    and false otherwise.
-  icon: ''
-  name: slang.math.logic.And
-  shortDescription: Takes two boolean values and emits true only if both are true.
+services:
+  main:
+    in:
+      type: map
+      map:
+        a:
+          type: boolean
+        b:
+          type: boolean
+    out:
+      type: boolean
+    geometry:
+      in:
+        position: 0
+      out:
+        position: -5
 operators:
   Evaluate:
     operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
@@ -18,33 +23,24 @@ operators:
       variables:
       - a
       - b
-services:
-  main:
-    in:
-      map:
-        a:
-          type: boolean
-        b:
-          type: boolean
-      type: map
-    out:
-      type: boolean
-tests:
-- data:
-    in:
-    - a: true
-      b: true
-    - a: true
-      b: false
-    - a: false
-      b: true
-    - a: false
-      b: false
-    out:
-    - true
-    - false
-    - false
-    - false
-  name: Booleans
-
-
+    geometry:
+      position:
+        x: -5
+        "y": -2.5
+connections:
+  Evaluate):
+  - )
+  a(:
+  - a(Evaluate
+  b(:
+  - b(Evaluate
+meta:
+  name: slang.math.logic.And
+  icon: ""
+  shortDescription: Takes two boolean values and emits true only if both are true.
+  description: Takes two boolean values and emits true in case both values are true,
+    and false otherwise.
+geometry:
+  size:
+    width: 310
+    height: 164.25

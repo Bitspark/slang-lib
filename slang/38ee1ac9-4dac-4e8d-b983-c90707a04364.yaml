@@ -1,14 +1,20 @@
-connections:
-  (:
-  - (Evaluate
-  Evaluate):
-  - )
 id: 38ee1ac9-4dac-4e8d-b983-c90707a04364
-meta:
-  description: ''
-  icon: ''
-  name: slang.math.arith.Modulo
-  shortDescription: ''
+services:
+  main:
+    in:
+      type: map
+      map:
+        a:
+          type: number
+        b:
+          type: number
+    out:
+      type: number
+    geometry:
+      in:
+        position: 0
+      out:
+        position: -5
 operators:
   Evaluate:
     operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
@@ -17,58 +23,23 @@ operators:
       variables:
       - a
       - b
-services:
-  main:
-    in:
-      map:
-        a:
-          type: number
-        b:
-          type: number
-      type: map
-    out:
-      type: number
-tests:
-- data:
-    in:
-    - a: 0
-      b: 1
-    - a: 1
-      b: 1
-    - a: 2
-      b: 5
-    - a: -2
-      b: 5
-    - a: 2
-      b: -5
-    - a: -2
-      b: -5
-    - a: 8
-      b: 3
-    - a: 8
-      b: 5
-    out:
-    - 0
-    - 0
-    - 2
-    - -2
-    - 2
-    - -2
-    - 2
-    - 3
-  name: Integers
-- data:
-    in:
-    - a: 3.5
-      b: 2.1
-    - a: -18.25
-      b: 9
-    - a: -182.7
-      b: -39.3
-    out:
-    - 1.4
-    - -0.25
-    - -25.5
-  name: Floats
-
-
+    geometry:
+      position:
+        x: -5
+        "y": -7.5
+connections:
+  Evaluate):
+  - )
+  a(:
+  - a(Evaluate
+  b(:
+  - b(Evaluate
+meta:
+  name: slang.math.arith.Modulo
+  icon: ""
+  shortDescription: ""
+  description: ""
+geometry:
+  size:
+    width: 310
+    height: 160
