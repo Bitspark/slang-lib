@@ -1,14 +1,22 @@
-connections:
-  (:
-  - (Evaluate
-  Evaluate):
-  - )
 id: 05209aed-8ff7-447a-96e9-8c78488e6de3
-meta:
-  description: ''
-  icon: ''
-  name: slang.image.filter.Grayscale
-  shortDescription: ''
+services:
+  main:
+    in:
+      type: map
+      map:
+        blue:
+          type: number
+        green:
+          type: number
+        red:
+          type: number
+    out:
+      type: number
+    geometry:
+      in:
+        position: 0
+      out:
+        position: 0
 operators:
   Evaluate:
     operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
@@ -18,18 +26,25 @@ operators:
       - red
       - green
       - blue
-services:
-  main:
-    in:
-      map:
-        blue:
-          type: number
-        green:
-          type: number
-        red:
-          type: number
-      type: map
-    out:
-      type: number
-
-
+    geometry:
+      position:
+        x: 0
+        "y": 17
+connections:
+  Evaluate):
+  - )
+  blue(:
+  - blue(Evaluate
+  green(:
+  - green(Evaluate
+  red(:
+  - red(Evaluate
+meta:
+  name: slang.image.filter.Grayscale
+  icon: ""
+  shortDescription: ""
+  description: ""
+geometry:
+  size:
+    width: 310
+    height: 162.5
