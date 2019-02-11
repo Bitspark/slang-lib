@@ -1,6 +1,50 @@
+id: 6422aa8f-b4f0-4acc-9931-820431e0c462
+services:
+  main:
+    in:
+      type: stream
+      stream:
+        type: number
+    out:
+      type: number
+    geometry:
+      in:
+        position: 0
+      out:
+        position: 0
+operators:
+  Choose:
+    operator: 8345ea9e-98c9-463b-8494-7123ee261270
+    generics:
+      itemType:
+        type: number
+    geometry:
+      position:
+        x: 145
+        "y": 49.5
+  Less:
+    operator: 8229c88c-ad78-4646-889c-ef4a533624a0
+    geometry:
+      position:
+        x: 335
+        "y": 84.5
+  Reduce:
+    operator: b95e6da8-9770-4a04-a73d-cdfe2081870f
+    properties:
+      emptyValue: $emptyValue
+    generics:
+      itemType:
+        type: number
+    geometry:
+      position:
+        x: -50
+        "y": 14.5
+properties:
+  emptyValue:
+    type: number
 connections:
-  (:
-  - (Reduce
+  ~(:
+  - ~(Reduce
   Choose):
   - (Reduce.reducer
   Choose.chooser)false:
@@ -15,105 +59,12 @@ connections:
   - true(Choose
   Reduce.reducer)b:
   - false(Choose
-id: 6422aa8f-b4f0-4acc-9931-820431e0c462
 meta:
-  description: ''
-  icon: ''
   name: slang.math.aggregate.Minimum
-  shortDescription: ''
-operators:
-  Choose:
-    generics:
-      itemType:
-        type: number
-    operator: 8345ea9e-98c9-463b-8494-7123ee261270
-  Less:
-    operator: 8229c88c-ad78-4646-889c-ef4a533624a0
-  Reduce:
-    generics:
-      itemType:
-        type: number
-    operator: b95e6da8-9770-4a04-a73d-cdfe2081870f
-    properties:
-      emptyValue: $emptyValue
-properties:
-  emptyValue:
-    type: number
-services:
-  main:
-    in:
-      stream:
-        type: number
-      type: stream
-    out:
-      type: number
-tests:
-- data:
-    in:
-    - - 1
-      - 2
-      - 3
-      - 4
-    - - 12
-      - 9
-      - 4
-      - 4
-      - 26
-      - 7
-      - 35
-      - 1
-      - 24
-      - 9
-      - 76
-    - - 12
-      - 9
-      - 4
-      - 4
-      - 26
-      - 7
-      - 35
-      - 1
-      - 24
-      - 9
-      - 76
-      - 1
-      - 12
-      - 9
-      - 4
-      - 4
-      - 26
-      - 7
-      - 35
-      - 1
-      - 24
-      - 9
-      - 76
-    out:
-    - 1
-    - 1
-    - 1
-  name: Integers
-  properties:
-    emptyValue: null
-- data:
-    in:
-    - - 1.5
-      - 3.5
-      - 2.5
-    out:
-    - 1.5
-  name: Floats
-  properties:
-    emptyValue: null
-- data:
-    in:
-    - []
-    - []
-    out:
-    - null
-    - null
-  name: Empty
-  properties:
-    emptyValue: null
-
-
+  icon: ""
+  shortDescription: ""
+  description: ""
+geometry:
+  size:
+    width: 642.5
+    height: 341

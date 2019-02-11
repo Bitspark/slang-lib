@@ -1,65 +1,52 @@
+id: b32235c4-4475-44db-8ded-28a7c2091c8f
+services:
+  main:
+    in:
+      type: stream
+      stream:
+        type: number
+    out:
+      type: number
+    geometry:
+      in:
+        position: -50
+      out:
+        position: -50
+operators:
+  Multiply:
+    operator: bb7569d8-1391-41d0-961f-ba4db4abce7b
+    geometry:
+      position:
+        x: 120
+        "y": 39.5
+  Reduce:
+    operator: b95e6da8-9770-4a04-a73d-cdfe2081870f
+    properties:
+      emptyValue: 1
+    generics:
+      itemType:
+        type: number
+    geometry:
+      position:
+        x: -70
+        "y": 4.5
 connections:
-  (:
-  - (Reduce
+  ~(:
+  - ~(Reduce
   Multiply):
   - (Reduce.reducer
   Reduce):
   - )
-  Reduce.reducer):
-  - (Multiply
-id: b32235c4-4475-44db-8ded-28a7c2091c8f
+  Reduce.reducer)a:
+  - a(Multiply
+  Reduce.reducer)b:
+  - b(Multiply
 meta:
-  description: ''
-  icon: ''
   name: slang.math.aggregate.Product
-  shortDescription: ''
-operators:
-  Multiply:
-    operator: bb7569d8-1391-41d0-961f-ba4db4abce7b
-  Reduce:
-    generics:
-      itemType:
-        type: number
-    operator: b95e6da8-9770-4a04-a73d-cdfe2081870f
-    properties:
-      emptyValue: 1
-services:
-  main:
-    in:
-      stream:
-        type: number
-      type: stream
-    out:
-      type: number
-tests:
-- data:
-    in:
-    - - 1
-      - 2
-      - 3
-      - 4
-    - - 12
-      - 9
-      - 4
-    out:
-    - 24
-    - 432
-  name: Integers
-- data:
-    in:
-    - - 1.5
-      - 3.5
-      - 2.5
-    out:
-    - 13.125
-  name: Floats
-- data:
-    in:
-    - []
-    - []
-    out:
-    - 1
-    - 1
-  name: Empty
-
-
+  icon: ""
+  shortDescription: ""
+  description: ""
+geometry:
+  size:
+    width: 405
+    height: 280.25

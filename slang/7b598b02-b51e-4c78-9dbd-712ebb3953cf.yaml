@@ -1,16 +1,17 @@
-connections:
-  (:
-  - (Variance
-  Evaluate):
-  - )
-  Variance):
-  - x(Evaluate
 id: 7b598b02-b51e-4c78-9dbd-712ebb3953cf
-meta:
-  description: ''
-  icon: ''
-  name: slang.math.aggregate.StandardDeviation
-  shortDescription: ''
+services:
+  main:
+    in:
+      type: stream
+      stream:
+        type: number
+    out:
+      type: number
+    geometry:
+      in:
+        position: 0
+      out:
+        position: 0
 operators:
   Evaluate:
     operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
@@ -18,15 +19,29 @@ operators:
       expression: sqrt(x)
       variables:
       - x
+    geometry:
+      position:
+        x: 0
+        "y": 57.5
   Variance:
     operator: 7d2857e5-e3b5-4a7b-a5f7-9eea0bbe8004
-services:
-  main:
-    in:
-      stream:
-        type: number
-      type: stream
-    out:
-      type: number
-
-
+    geometry:
+      position:
+        x: 0
+        "y": -30.5
+connections:
+  ~(:
+  - ~(Variance
+  Evaluate):
+  - )
+  Variance):
+  - x(Evaluate
+meta:
+  name: slang.math.aggregate.StandardDeviation
+  icon: ""
+  shortDescription: ""
+  description: ""
+geometry:
+  size:
+    width: 330
+    height: 252.5
