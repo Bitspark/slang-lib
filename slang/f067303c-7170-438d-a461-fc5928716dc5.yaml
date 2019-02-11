@@ -1,44 +1,57 @@
+id: f067303c-7170-438d-a461-fc5928716dc5
+services:
+  main:
+    in:
+      type: stream
+      stream:
+        type: map
+        map:
+          item:
+            type: generic
+            generic: itemType
+          pass:
+            type: boolean
+    out:
+      type: stream
+      stream:
+        type: generic
+        generic: itemType
+    geometry:
+      in:
+        position: 0
+      out:
+        position: -5
+operators:
+  Filter:
+    operator: 088c5f65-21a9-4e79-b58e-948b3a82f5da
+    generics:
+      itemType:
+        type: map
+        map:
+          item:
+            type: generic
+            generic: itemType
+          pass:
+            type: boolean
+    geometry:
+      position:
+        x: 5
+        "y": 4.5
 connections:
-  (:
-  - (Filter
+  ~.item(:
+  - ~.item(Filter
+  ~.pass(:
+  - ~.pass(Filter
   Filter)~.item:
   - )~
   Filter.filter)pass:
   - (Filter.filter
-id: f067303c-7170-438d-a461-fc5928716dc5
 meta:
-  description: ''
-  icon: ''
   name: slang.stream.FilterSimple
-  shortDescription: ''
-operators:
-  Filter:
-    generics:
-      itemType:
-        map:
-          item:
-            generic: itemType
-            type: generic
-          pass:
-            type: boolean
-        type: map
-    operator: 088c5f65-21a9-4e79-b58e-948b3a82f5da
-services:
-  main:
-    in:
-      stream:
-        map:
-          item:
-            generic: itemType
-            type: generic
-          pass:
-            type: boolean
-        type: map
-      type: stream
-    out:
-      stream:
-        generic: itemType
-        type: generic
-      type: stream
-
-
+  icon: ""
+  shortDescription: ""
+  description: ""
+geometry:
+  size:
+    width: 260
+    height: 200.25
