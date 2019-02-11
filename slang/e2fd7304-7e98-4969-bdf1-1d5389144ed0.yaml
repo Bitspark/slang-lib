@@ -1,14 +1,15 @@
-connections:
-  (:
-  - x(Evaluate
-  Evaluate):
-  - )
 id: e2fd7304-7e98-4969-bdf1-1d5389144ed0
-meta:
-  description: ''
-  icon: ''
-  name: slang.exception.IsNull
-  shortDescription: ''
+services:
+  main:
+    in:
+      type: primitive
+    out:
+      type: boolean
+    geometry:
+      in:
+        position: 0
+      out:
+        position: 0
 operators:
   Evaluate:
     operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
@@ -16,11 +17,21 @@ operators:
       expression: isNull(x)
       variables:
       - x
-services:
-  main:
-    in:
-      type: primitive
-    out:
-      type: boolean
-
-
+    geometry:
+      position:
+        x: 0
+        "y": 7
+connections:
+  (:
+  - x(Evaluate
+  Evaluate):
+  - )
+meta:
+  name: slang.exception.IsNull
+  icon: ""
+  shortDescription: ""
+  description: ""
+geometry:
+  size:
+    width: 300
+    height: 157.5
