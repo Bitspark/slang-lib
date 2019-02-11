@@ -1,14 +1,20 @@
-connections:
-  (:
-  - (Evaluate
-  Evaluate):
-  - )
 id: 4fe3f7d5-4401-4ff4-9c9b-120ff613b79a
-meta:
-  description: ''
-  icon: ''
-  name: slang.math.arith.Equal
-  shortDescription: ''
+services:
+  main:
+    in:
+      type: map
+      map:
+        a:
+          type: number
+        b:
+          type: number
+    out:
+      type: boolean
+    geometry:
+      in:
+        position: 0
+      out:
+        position: -5
 operators:
   Evaluate:
     operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
@@ -17,16 +23,23 @@ operators:
       variables:
       - a
       - b
-services:
-  main:
-    in:
-      map:
-        a:
-          type: number
-        b:
-          type: number
-      type: map
-    out:
-      type: boolean
-
-
+    geometry:
+      position:
+        x: -5
+        "y": 7.5
+connections:
+  Evaluate):
+  - )
+  a(:
+  - a(Evaluate
+  b(:
+  - b(Evaluate
+meta:
+  name: slang.math.arith.Equal
+  icon: ""
+  shortDescription: ""
+  description: ""
+geometry:
+  size:
+    width: 305
+    height: 158.5

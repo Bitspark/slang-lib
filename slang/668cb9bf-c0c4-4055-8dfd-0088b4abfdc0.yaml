@@ -1,14 +1,20 @@
-connections:
-  (:
-  - (Evaluate
-  Evaluate):
-  - )
 id: 668cb9bf-c0c4-4055-8dfd-0088b4abfdc0
-meta:
-  description: ''
-  icon: ''
-  name: slang.math.arith.Divide
-  shortDescription: ''
+services:
+  main:
+    in:
+      type: map
+      map:
+        a:
+          type: number
+        b:
+          type: number
+    out:
+      type: number
+    geometry:
+      in:
+        position: 0
+      out:
+        position: -5
 operators:
   Evaluate:
     operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
@@ -17,52 +23,23 @@ operators:
       variables:
       - a
       - b
-services:
-  main:
-    in:
-      map:
-        a:
-          type: number
-        b:
-          type: number
-      type: map
-    out:
-      type: number
-tests:
-- data:
-    in:
-    - a: 0
-      b: 1
-    - a: 1
-      b: 1
-    - a: 2
-      b: 5
-    - a: -2
-      b: 5
-    - a: 2
-      b: -5
-    - a: -2
-      b: -5
-    out:
-    - 0
-    - 1
-    - 0.4
-    - -0.4
-    - -0.4
-    - 0.4
-  name: Integers
-- data:
-    in:
-    - a: 0.5
-      b: 0.5
-    - a: 4.5
-      b: 0.5
-    - a: 1.5
-      b: 2.0
-    out:
-    - 1.0
-    - 9.0
-    - 0.75
-  name: Floats
-
-
+    geometry:
+      position:
+        x: -5
+        "y": -2.5
+connections:
+  Evaluate):
+  - )
+  a(:
+  - a(Evaluate
+  b(:
+  - b(Evaluate
+meta:
+  name: slang.math.arith.Divide
+  icon: ""
+  shortDescription: ""
+  description: ""
+geometry:
+  size:
+    width: 305
+    height: 159.25
