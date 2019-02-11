@@ -1,7 +1,67 @@
+id: 8345ea9e-98c9-463b-8494-7123ee261270
+services:
+  main:
+    in:
+      type: map
+      map:
+        "false":
+          type: generic
+          generic: itemType
+        "true":
+          type: generic
+          generic: itemType
+    out:
+      type: generic
+      generic: itemType
+    geometry:
+      in:
+        position: -30
+      out:
+        position: -25
+delegates:
+  chooser:
+    in:
+      type: boolean
+    out:
+      type: map
+      map:
+        "false":
+          type: generic
+          generic: itemType
+        "true":
+          type: generic
+          generic: itemType
+    geometry:
+      in:
+        position: 55
+      out:
+        position: -20
+operators:
+  Switch:
+    operator: cd6fc5c8-5b64-4b1a-9885-59ede141b398
+    properties:
+      cases:
+      - false
+    generics:
+      inType:
+        type: map
+        map:
+          "false":
+            type: generic
+            generic: itemType
+          "true":
+            type: generic
+            generic: itemType
+      outType:
+        type: generic
+        generic: itemType
+      selectType:
+        type: boolean
+    geometry:
+      position:
+        x: -25
+        "y": 109.5
 connections:
-  (:
-  - item(Switch
-  - .chooser)
   (.chooser:
   - select(Switch
   Switch):
@@ -10,59 +70,18 @@ connections:
   - (Switch.default
   Switch.false)false:
   - (Switch.false
-delegates:
-  chooser:
-    in:
-      type: boolean
-    out:
-      map:
-        'false':
-          generic: itemType
-          type: generic
-        'true':
-          generic: itemType
-          type: generic
-      type: map
-id: 8345ea9e-98c9-463b-8494-7123ee261270
+  false(:
+  - item.false(Switch
+  - .chooser)false
+  true(:
+  - item.true(Switch
+  - .chooser)true
 meta:
-  description: Takes two items and emits one of them.
-  icon: crosshairs
   name: slang.control.Choose
+  icon: crosshairs
   shortDescription: Takes two items and emits one of them.
-operators:
-  Switch:
-    generics:
-      inType:
-        map:
-          'false':
-            generic: itemType
-            type: generic
-          'true':
-            generic: itemType
-            type: generic
-        type: map
-      outType:
-        generic: itemType
-        type: generic
-      selectType:
-        type: boolean
-    operator: cd6fc5c8-5b64-4b1a-9885-59ede141b398
-    properties:
-      cases:
-      - false
-services:
-  main:
-    in:
-      map:
-        'false':
-          generic: itemType
-          type: generic
-        'true':
-          generic: itemType
-          type: generic
-      type: map
-    out:
-      generic: itemType
-      type: generic
-
-
+  description: Takes two items and emits one of them.
+geometry:
+  size:
+    width: 275
+    height: 332.75
