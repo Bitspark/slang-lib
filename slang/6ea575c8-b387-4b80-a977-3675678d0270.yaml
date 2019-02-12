@@ -56,10 +56,10 @@ tests:
   data:
     in:
     - 33.64
-    - 70
+    - 69.8896
     out:
     - 5.8
-    - 8.3666
+    - 8.36
 - name: Negative numbers
   description: returns null for negative numbers
   generics: {}

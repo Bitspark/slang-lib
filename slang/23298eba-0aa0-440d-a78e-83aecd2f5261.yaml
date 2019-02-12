@@ -52,42 +52,40 @@ meta:
   - aggregate
 tests:
 - name: Integers
-  description: ""
+  description: "emits the sum of all integers"
   generics: {}
   properties: {}
   data:
     in:
     - - 1
       - 2
-      - 3
+      - -3
       - 4
     - - 12
       - 9
       - 4
     out:
-    - 10
+    - 4
     - 25
 - name: Floats
-  description: ""
+  description: "emits the sum of all floating point numbers"
   generics: {}
   properties: {}
   data:
     in:
     - - 1.5
-      - 3.5
+      - -3.5
       - 2.5
     out:
-    - 7.5
+    - 0.5
 - name: Empty
-  description: ""
+  description: "emits 0 for empty streams"
   generics: {}
   properties: {}
   data:
     in:
     - []
-    - []
     out:
-    - 0
     - 0
 geometry:
   size:

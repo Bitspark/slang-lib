@@ -76,7 +76,7 @@ meta:
   - aggregate
 tests:
 - name: Integers
-  description: ""
+  description: "returns the integer for which the half of input values is greater and the other half is smaller"
   generics: {}
   properties:
     emptyValue: null
@@ -98,48 +98,11 @@ tests:
       - 24
       - 9
       - 76
-    - - 1
-      - 12
-      - 9
-      - 20
-      - 4
-      - 4
-      - 26
-      - 7
-      - 35
-      - 19
-      - 1
-      - 24
-      - 9
-      - 3
-      - 7
-      - 2
-      - 12
-      - 76
-      - 1
-      - 12
-      - 9
-      - 4
-      - 4
-      - 26
-      - 54
-      - 23
-      - 15
-      - 18
-      - 7
-      - 35
-      - 1
-      - 24
-      - 9
-      - 76
-      - 10
-      - 11
     out:
     - 2
     - 9
-    - 10
 - name: Floats
-  description: ""
+  description: "behaves accordingly for floats"
   generics: {}
   properties:
     emptyValue: null
@@ -151,16 +114,14 @@ tests:
     out:
     - 2.5
 - name: Empty
-  description: ""
+  description: "emits null for empty streams"
   generics: {}
   properties:
     emptyValue: null
   data:
     in:
     - []
-    - []
     out:
-    - null
     - null
 geometry:
   size:

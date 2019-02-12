@@ -70,77 +70,58 @@ meta:
   - aggregate
 tests:
 - name: Integers
-  description: ""
+  description: emits the smallest integer
   generics: {}
   properties:
     emptyValue: null
   data:
     in:
-    - - 1
-      - 2
+    - - 4
+      - 1
       - 3
+      - 2
+    - - 12
+      - 9
+      - 4
+      - 1
+      - 76
       - 4
     - - 12
       - 9
       - 4
-      - 4
       - 26
       - 7
       - 35
-      - 1
-      - 24
-      - 9
-      - 76
-    - - 12
-      - 9
       - 4
-      - 4
-      - 26
-      - 7
-      - 35
-      - 1
-      - 24
-      - 9
-      - 76
-      - 1
-      - 12
-      - 9
-      - 4
-      - 4
-      - 26
-      - 7
-      - 35
-      - 1
-      - 24
-      - 9
-      - 76
     out:
     - 1
     - 1
-    - 1
+    - 4
 - name: Floats
-  description: ""
+  description: emits the largest float
   generics: {}
   properties:
     emptyValue: null
   data:
     in:
-    - - 1.5
-      - 3.5
+    - - 3.5
+      - 1.5
       - 2.5
+    - - -1.5
+      - 8.2
+      - -22.25
     out:
     - 1.5
+    - -22.25
 - name: Empty
-  description: ""
+  description: emits null for empty streams
   generics: {}
   properties:
     emptyValue: null
   data:
     in:
     - []
-    - []
     out:
-    - null
     - null
 geometry:
   size:

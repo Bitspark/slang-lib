@@ -52,24 +52,31 @@ meta:
   tags:
   - boolean
 tests:
-- name: Booleans
-  description: ""
+- name: "True"
+  description: "returns true if exactly one input is true and one is false"
+  generics: {}
+  properties: {}
+  data:
+    in:
+    - a: true
+      b: false
+    - a: false
+      b: true
+    out:
+    - true
+    - true
+- name: "True"
+  description: "returns false if both inputs are true or both are false"
   generics: {}
   properties: {}
   data:
     in:
     - a: true
       b: true
-    - a: true
-      b: false
-    - a: false
-      b: true
     - a: false
       b: false
     out:
     - false
-    - true
-    - true
     - false
 geometry:
   size:

@@ -45,25 +45,32 @@ meta:
   - boolean
   - compare
 tests:
-- name: Booleans
-  description: ""
+- name: "True"
+  description: "returns true if both inputs are true or both are false"
   generics: {}
   properties: {}
   data:
     in:
     - a: true
       b: true
-    - a: true
-      b: false
-    - a: false
-      b: true
     - a: false
       b: false
     out:
     - true
-    - false
-    - false
     - true
+- name: "False"
+  description: "returns false if the inputs are not equal"
+  generics: {}
+  properties: {}
+  data:
+    in:
+    - a: true
+      b: false
+    - a: false
+      b: true
+    out:
+    - false
+    - false
 geometry:
   size:
     width: 305

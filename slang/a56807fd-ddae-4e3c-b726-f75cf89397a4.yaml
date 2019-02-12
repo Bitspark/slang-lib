@@ -36,8 +36,8 @@ meta:
   tags:
   - boolean
 tests:
-- name: Booleans
-  description: ""
+- name: Invert
+  description: "emits the inverse boolean"
   generics: {}
   properties: {}
   data:

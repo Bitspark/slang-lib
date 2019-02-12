@@ -45,39 +45,40 @@ meta:
   - math
   - arithmetic
 tests:
-- name: Integers
-  description: ""
+- name: Positive integers
+  description: "returns the remainder of an integer division"
   generics: {}
   properties: {}
   data:
     in:
-    - a: 0
-      b: 1
     - a: 1
       b: 1
     - a: 2
       b: 5
+    - a: 8
+      b: 3
+    out:
+    - 0
+    - 2
+    - 2
+- name: Negative integers
+  description: "can also process negative integers"
+  generics: {}
+  properties: {}
+  data:
+    in:
     - a: -2
       b: 5
     - a: 2
       b: -5
     - a: -2
       b: -5
-    - a: 8
-      b: 3
-    - a: 8
-      b: 5
     out:
-    - 0
-    - 0
-    - 2
     - -2
     - 2
     - -2
-    - 2
-    - 3
 - name: Floats
-  description: ""
+  description: "can even cope with floats"
   generics: {}
   properties: {}
   data:

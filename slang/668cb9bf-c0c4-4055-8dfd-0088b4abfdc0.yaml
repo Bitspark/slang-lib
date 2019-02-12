@@ -44,8 +44,8 @@ meta:
   - math
   - arithmetic
 tests:
-- name: Integers
-  description: ""
+- name: Positive integers
+  description: "divides integers and potentially emits a floating point number"
   generics: {}
   properties: {}
   data:
@@ -56,6 +56,16 @@ tests:
       b: 1
     - a: 2
       b: 5
+    out:
+    - 0
+    - 1
+    - 0.4
+- name: Negative integers
+  description: "divides integers with negative signs correctly"
+  generics: {}
+  properties: {}
+  data:
+    in:
     - a: -2
       b: 5
     - a: 2
@@ -63,14 +73,11 @@ tests:
     - a: -2
       b: -5
     out:
-    - 0
-    - 1
-    - 0.4
     - -0.4
     - -0.4
     - 0.4
-- name: Floats
-  description: ""
+- name: Float division
+  description: "divides floats"
   generics: {}
   properties: {}
   data:
@@ -85,6 +92,19 @@ tests:
     - 1
     - 9
     - 0.75
+- name: Division by zero
+  description: "returns null of the dividend is 0"
+  generics: {}
+  properties: {}
+  data:
+    in:
+    - a: 0.5
+      b: 0
+    - a: 0
+      b: 0
+    out:
+    - null
+    - null
 geometry:
   size:
     width: 305

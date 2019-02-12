@@ -45,8 +45,8 @@ meta:
   tags:
   - boolean
 tests:
-- name: Booleans
-  description: ""
+- name: "True"
+  description: "returns true if at least one of its inputs is true"
   generics: {}
   properties: {}
   data:
@@ -57,12 +57,19 @@ tests:
       b: false
     - a: false
       b: true
-    - a: false
-      b: false
     out:
     - true
     - true
     - true
+- name: "False"
+  description: "returns false only if both inputs are false"
+  generics: {}
+  properties: {}
+  data:
+    in:
+    - a: false
+      b: false
+    out:
     - false
 geometry:
   size:
