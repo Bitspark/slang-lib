@@ -1,3 +1,32 @@
+id: b4ea20d7-9df1-45ac-bee4-9682fc8345e7
+services:
+  main:
+    in:
+      type: map
+      map:
+        a:
+          type: boolean
+        b:
+          type: boolean
+    out:
+      type: boolean
+    geometry:
+      in:
+        position: 0
+      out:
+        position: -5
+operators:
+  Evaluate:
+    operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
+    properties:
+      expression: a && b
+      variables:
+      - a
+      - b
+    geometry:
+      position:
+        x: -5
+        "y": -2.5
 connections:
   Evaluate):
   - )
@@ -5,46 +34,16 @@ connections:
   - a(Evaluate
   b(:
   - b(Evaluate
-geometry:
-  size:
-    height: 164.25
-    width: 310
-id: b4ea20d7-9df1-45ac-bee4-9682fc8345e7
 meta:
+  name: and
+  icon: ""
+  shortDescription: emits true only if both given booleans A and B are true
   description: Takes two boolean values and emits true in case both values are true,
     and false otherwise.
   docUrl: https://bitspark.de/slang/docs/operator/and
-  icon: ''
-  name: and
-  shortDescription: emits true only if both given booleans A and B are true
   tags:
   - boolean
-operators:
-  Evaluate:
-    geometry:
-      position:
-        x: -5
-        y: -2.5
-    operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
-    properties:
-      expression: a && b
-      variables:
-      - a
-      - b
-services:
-  main:
-    geometry:
-      in:
-        position: 0
-      out:
-        position: -5
-    in:
-      map:
-        a:
-          type: boolean
-        b:
-          type: boolean
-      type: map
-    out:
-      type: boolean
-
+geometry:
+  size:
+    width: 310
+    height: 164.25

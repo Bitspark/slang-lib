@@ -1,3 +1,41 @@
+id: f7c858f5-d7aa-463f-8f33-99907d85f046
+services:
+  main:
+    in:
+      type: trigger
+    out:
+      type: stream
+      stream:
+        type: trigger
+    geometry:
+      in:
+        position: 0
+      out:
+        position: 0
+operators:
+  Crontab:
+    operator: 60b849fd-ca5a-4206-8312-996e4e3f6c31
+    generics:
+      itemType:
+        type: trigger
+    geometry:
+      position:
+        x: 0
+        "y": 9.5
+  Value:
+    operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
+    properties:
+      value: $crontab
+    generics:
+      valueType:
+        type: string
+    geometry:
+      position:
+        x: 0
+        "y": -77.5
+properties:
+  crontab:
+    type: string
 connections:
   (:
   - (Value
@@ -7,54 +45,15 @@ connections:
   - (Crontab.handler
   Value):
   - (Crontab
-geometry:
-  size:
-    height: 279.5
-    width: 300
-id: f7c858f5-d7aa-463f-8f33-99907d85f046
 meta:
-  description: ''
-  docUrl: https://bitspark.de/slang/docs/operator/schedule
-  icon: calendar-alt
   name: schedule
+  icon: calendar-alt
   shortDescription: emits triggers using a given crontab
+  description: ""
+  docUrl: https://bitspark.de/slang/docs/operator/schedule
   tags:
   - time
-operators:
-  Crontab:
-    generics:
-      itemType:
-        type: trigger
-    geometry:
-      position:
-        x: 0
-        y: 9.5
-    operator: 60b849fd-ca5a-4206-8312-996e4e3f6c31
-  Value:
-    generics:
-      valueType:
-        type: string
-    geometry:
-      position:
-        x: 0
-        y: -77.5
-    operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
-    properties:
-      value: $crontab
-properties:
-  crontab:
-    type: string
-services:
-  main:
-    geometry:
-      in:
-        position: 0
-      out:
-        position: 0
-    in:
-      type: trigger
-    out:
-      stream:
-        type: trigger
-      type: stream
-
+geometry:
+  size:
+    width: 300
+    height: 279.5

@@ -1,3 +1,32 @@
+id: 7b01fa17-7e11-4275-8d1e-fb1ad5b81c3d
+services:
+  main:
+    in:
+      type: map
+      map:
+        a:
+          type: number
+        b:
+          type: number
+    out:
+      type: number
+    geometry:
+      in:
+        position: 0
+      out:
+        position: -5
+operators:
+  Evaluate:
+    operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
+    properties:
+      expression: a+b
+      variables:
+      - a
+      - b
+    geometry:
+      position:
+        x: -5
+        "y": 2.5
 connections:
   Evaluate):
   - )
@@ -5,46 +34,16 @@ connections:
   - a(Evaluate
   b(:
   - b(Evaluate
-geometry:
-  size:
-    height: 164.25
-    width: 305
-id: 7b01fa17-7e11-4275-8d1e-fb1ad5b81c3d
 meta:
-  description: ''
-  docUrl: https://bitspark.de/slang/docs/operator/add
-  icon: plus
   name: add
+  icon: plus
   shortDescription: adds two numbers A and B and emits their sum
+  description: ""
+  docUrl: https://bitspark.de/slang/docs/operator/add
   tags:
   - math
   - arithmetic
-operators:
-  Evaluate:
-    geometry:
-      position:
-        x: -5
-        y: 2.5
-    operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
-    properties:
-      expression: a+b
-      variables:
-      - a
-      - b
-services:
-  main:
-    geometry:
-      in:
-        position: 0
-      out:
-        position: -5
-    in:
-      map:
-        a:
-          type: number
-        b:
-          type: number
-      type: map
-    out:
-      type: number
-
+geometry:
+  size:
+    width: 305
+    height: 164.25

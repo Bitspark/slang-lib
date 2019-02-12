@@ -1,3 +1,38 @@
+id: e31477ef-0513-40fd-82b6-803605503054
+services:
+  main:
+    in:
+      type: map
+      map:
+        a:
+          type: boolean
+        b:
+          type: boolean
+    out:
+      type: boolean
+    geometry:
+      in:
+        position: 5
+      out:
+        position: 0
+operators:
+  Evaluate:
+    operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
+    properties:
+      expression: a==b
+      variables:
+      - a
+      - b
+    geometry:
+      position:
+        x: 0
+        "y": -52.5
+  Not:
+    operator: a56807fd-ddae-4e3c-b726-f75cf89397a4
+    geometry:
+      position:
+        x: 0
+        "y": 34.5
 connections:
   Evaluate):
   - (Not
@@ -7,56 +42,21 @@ connections:
   - a(Evaluate
   b(:
   - b(Evaluate
-geometry:
-  size:
-    height: 247
-    width: 320
-id: e31477ef-0513-40fd-82b6-803605503054
 meta:
+  name: xor
+  icon: ""
+  shortDescription: emits true only if the given boolean values A and B are not equal
   description: Takes two boolean values and emits false in case both values are true
     or both are false, and true otherwise.
   docUrl: https://bitspark.de/slang/docs/operator/xor
-  icon: ''
-  name: xor
-  shortDescription: emits true only if the given boolean values A and B are not equal
   tags:
   - boolean
-operators:
-  Evaluate:
-    geometry:
-      position:
-        x: 0
-        y: -52.5
-    operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
-    properties:
-      expression: a==b
-      variables:
-      - a
-      - b
-  Not:
-    geometry:
-      position:
-        x: 0
-        y: 34.5
-    operator: a56807fd-ddae-4e3c-b726-f75cf89397a4
-services:
-  main:
-    geometry:
-      in:
-        position: 5
-      out:
-        position: 0
-    in:
-      map:
-        a:
-          type: boolean
-        b:
-          type: boolean
-      type: map
-    out:
-      type: boolean
 tests:
-- data:
+- name: Booleans
+  description: ""
+  generics: {}
+  properties: {}
+  data:
     in:
     - a: true
       b: true
@@ -71,8 +71,7 @@ tests:
     - true
     - true
     - false
-  description: ''
-  generics: {}
-  name: Booleans
-  properties: {}
-
+geometry:
+  size:
+    width: 320
+    height: 247

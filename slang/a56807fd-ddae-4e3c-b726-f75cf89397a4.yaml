@@ -1,54 +1,53 @@
-connections:
-  (:
-  - x(Evaluate
-  Evaluate):
-  - )
-geometry:
-  size:
-    height: 159.25
-    width: 300
 id: a56807fd-ddae-4e3c-b726-f75cf89397a4
-meta:
-  description: Takes a boolean and emits true in case it is false, and false if it
-    is true.
-  docUrl: https://bitspark.de/slang/docs/operator/boolean-not
-  icon: ''
-  name: boolean not
-  shortDescription: emits the inverse of a given boolean
-  tags:
-  - boolean
-operators:
-  Evaluate:
-    geometry:
-      position:
-        x: 0
-        y: -2.5
-    operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
-    properties:
-      expression: '!x'
-      variables:
-      - x
 services:
   main:
+    in:
+      type: boolean
+    out:
+      type: boolean
     geometry:
       in:
         position: 0
       out:
         position: 0
-    in:
-      type: boolean
-    out:
-      type: boolean
+operators:
+  Evaluate:
+    operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
+    properties:
+      expression: '!x'
+      variables:
+      - x
+    geometry:
+      position:
+        x: 0
+        "y": -2.5
+connections:
+  (:
+  - x(Evaluate
+  Evaluate):
+  - )
+meta:
+  name: boolean not
+  icon: ""
+  shortDescription: emits the inverse of a given boolean
+  description: Takes a boolean and emits true in case it is false, and false if it
+    is true.
+  docUrl: https://bitspark.de/slang/docs/operator/boolean-not
+  tags:
+  - boolean
 tests:
-- data:
+- name: Booleans
+  description: ""
+  generics: {}
+  properties: {}
+  data:
     in:
     - true
     - false
     out:
     - false
     - true
-  description: ''
-  generics: {}
-  name: Booleans
-  properties: {}
-
+geometry:
+  size:
+    width: 300
+    height: 159.25

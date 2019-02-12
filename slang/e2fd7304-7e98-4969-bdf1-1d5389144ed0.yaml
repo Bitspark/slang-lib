@@ -1,41 +1,40 @@
-connections:
-  (:
-  - x(Evaluate
-  Evaluate):
-  - )
-geometry:
-  size:
-    height: 157.5
-    width: 300
 id: e2fd7304-7e98-4969-bdf1-1d5389144ed0
-meta:
-  description: ''
-  docUrl: https://bitspark.de/slang/docs/operator/is-null
-  icon: bolt
-  name: is null
-  shortDescription: emits true only if a given primitive is null
-  tags:
-  - exception
-operators:
-  Evaluate:
-    geometry:
-      position:
-        x: 0
-        y: 7
-    operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
-    properties:
-      expression: isNull(x)
-      variables:
-      - x
 services:
   main:
+    in:
+      type: primitive
+    out:
+      type: boolean
     geometry:
       in:
         position: 0
       out:
         position: 0
-    in:
-      type: primitive
-    out:
-      type: boolean
-
+operators:
+  Evaluate:
+    operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
+    properties:
+      expression: isNull(x)
+      variables:
+      - x
+    geometry:
+      position:
+        x: 0
+        "y": 7
+connections:
+  (:
+  - x(Evaluate
+  Evaluate):
+  - )
+meta:
+  name: is null
+  icon: bolt
+  shortDescription: emits true only if a given primitive is null
+  description: ""
+  docUrl: https://bitspark.de/slang/docs/operator/is-null
+  tags:
+  - exception
+geometry:
+  size:
+    width: 300
+    height: 157.5

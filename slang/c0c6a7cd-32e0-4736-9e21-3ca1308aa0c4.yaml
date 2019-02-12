@@ -1,4 +1,73 @@
+id: c0c6a7cd-32e0-4736-9e21-3ca1308aa0c4
+services:
+  main:
+    in:
+      type: stream
+      stream:
+        type: number
+    out:
+      type: stream
+      stream:
+        type: number
+    geometry:
+      in:
+        position: 5
+      out:
+        position: 0
+operators:
+  Divide:
+    operator: 668cb9bf-c0c4-4055-8dfd-0088b4abfdc0
+    geometry:
+      position:
+        x: 0
+        "y": 204.5
+  Median:
+    operator: db72519d-c9f5-487b-962c-e6eb3068962e
+    properties:
+      emptyValue: 0
+    geometry:
+      position:
+        x: -40
+        "y": 14.5
+  StandardDeviation:
+    operator: 7b598b02-b51e-4c78-9dbd-712ebb3953cf
+    geometry:
+      position:
+        x: 95
+        "y": 54.5
+  Subtract:
+    operator: bc301ef9-52ac-4db8-a191-f0bbd84ce525
+    geometry:
+      position:
+        x: -150
+        "y": 119.5
+  TakeLast:
+    operator: 3fb28704-266d-4339-8cc7-8630436aab93
+    properties:
+      emptyValue: 0
+    generics:
+      itemType:
+        type: number
+    geometry:
+      position:
+        x: -155
+        "y": -35.5
+  Window:
+    operator: 5b704038-9617-454a-b7a1-2091277cff69
+    properties:
+      fill: false
+      size: 30
+      stride: 1
+    generics:
+      itemType:
+        type: number
+    geometry:
+      position:
+        x: 5
+        "y": -140.5
 connections:
+  ~(:
+  - ~(Window
   Divide):
   - )~
   Median):
@@ -13,87 +82,17 @@ connections:
   - ~(TakeLast
   - ~(Median
   - ~(StandardDeviation
-  ~(:
-  - ~(Window
-geometry:
-  size:
-    height: 566
-    width: 560
-id: c0c6a7cd-32e0-4736-9e21-3ca1308aa0c4
 meta:
-  description: ''
-  docUrl: https://bitspark.de/slang/docs/operator/moving-z-score
-  icon: ''
   name: moving z-score
+  icon: ""
   shortDescription: emits the z-score for each number of a stream of numbers
+  description: ""
+  docUrl: https://bitspark.de/slang/docs/operator/moving-z-score
   tags:
   - math
   - statistics
   - stream
-operators:
-  Divide:
-    geometry:
-      position:
-        x: 0
-        y: 204.5
-    operator: 668cb9bf-c0c4-4055-8dfd-0088b4abfdc0
-  Median:
-    geometry:
-      position:
-        x: -40
-        y: 14.5
-    operator: db72519d-c9f5-487b-962c-e6eb3068962e
-    properties:
-      emptyValue: 0
-  StandardDeviation:
-    geometry:
-      position:
-        x: 95
-        y: 54.5
-    operator: 7b598b02-b51e-4c78-9dbd-712ebb3953cf
-  Subtract:
-    geometry:
-      position:
-        x: -150
-        y: 119.5
-    operator: bc301ef9-52ac-4db8-a191-f0bbd84ce525
-  TakeLast:
-    generics:
-      itemType:
-        type: number
-    geometry:
-      position:
-        x: -155
-        y: -35.5
-    operator: 3fb28704-266d-4339-8cc7-8630436aab93
-    properties:
-      emptyValue: 0
-  Window:
-    generics:
-      itemType:
-        type: number
-    geometry:
-      position:
-        x: 5
-        y: -140.5
-    operator: 5b704038-9617-454a-b7a1-2091277cff69
-    properties:
-      fill: false
-      size: 30
-      stride: 1
-services:
-  main:
-    geometry:
-      in:
-        position: 5
-      out:
-        position: 0
-    in:
-      stream:
-        type: number
-      type: stream
-    out:
-      stream:
-        type: number
-      type: stream
-
+geometry:
+  size:
+    width: 560
+    height: 566

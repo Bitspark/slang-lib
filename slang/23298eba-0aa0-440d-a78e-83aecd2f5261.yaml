@@ -1,4 +1,38 @@
+id: 23298eba-0aa0-440d-a78e-83aecd2f5261
+services:
+  main:
+    in:
+      type: stream
+      stream:
+        type: number
+    out:
+      type: number
+    geometry:
+      in:
+        position: 0
+      out:
+        position: 0
+operators:
+  Add:
+    operator: 7b01fa17-7e11-4275-8d1e-fb1ad5b81c3d
+    geometry:
+      position:
+        x: 160
+        "y": 54.5
+  Reduce:
+    operator: b95e6da8-9770-4a04-a73d-cdfe2081870f
+    properties:
+      emptyValue: 0
+    generics:
+      itemType:
+        type: number
+    geometry:
+      position:
+        x: -30
+        "y": 19.5
 connections:
+  ~(:
+  - ~(Reduce
   Add):
   - (Reduce.reducer
   Reduce):
@@ -7,55 +41,21 @@ connections:
   - a(Add
   Reduce.reducer)b:
   - b(Add
-  ~(:
-  - ~(Reduce
-geometry:
-  size:
-    height: 277.75
-    width: 437.5
-id: 23298eba-0aa0-440d-a78e-83aecd2f5261
 meta:
-  description: ''
-  docUrl: https://bitspark.de/slang/docs/operator/sum
-  icon: plus-circle
   name: sum
+  icon: plus-circle
   shortDescription: emits the sum of a stream of numbers
+  description: ""
+  docUrl: https://bitspark.de/slang/docs/operator/sum
   tags:
   - math
   - aggregate
-operators:
-  Add:
-    geometry:
-      position:
-        x: 160
-        y: 54.5
-    operator: 7b01fa17-7e11-4275-8d1e-fb1ad5b81c3d
-  Reduce:
-    generics:
-      itemType:
-        type: number
-    geometry:
-      position:
-        x: -30
-        y: 19.5
-    operator: b95e6da8-9770-4a04-a73d-cdfe2081870f
-    properties:
-      emptyValue: 0
-services:
-  main:
-    geometry:
-      in:
-        position: 0
-      out:
-        position: 0
-    in:
-      stream:
-        type: number
-      type: stream
-    out:
-      type: number
 tests:
-- data:
+- name: Integers
+  description: ""
+  generics: {}
+  properties: {}
+  data:
     in:
     - - 1
       - 2
@@ -67,30 +67,29 @@ tests:
     out:
     - 10
     - 25
-  description: ''
+- name: Floats
+  description: ""
   generics: {}
-  name: Integers
   properties: {}
-- data:
+  data:
     in:
     - - 1.5
       - 3.5
       - 2.5
     out:
     - 7.5
-  description: ''
+- name: Empty
+  description: ""
   generics: {}
-  name: Floats
   properties: {}
-- data:
+  data:
     in:
     - []
     - []
     out:
     - 0
     - 0
-  description: ''
-  generics: {}
-  name: Empty
-  properties: {}
-
+geometry:
+  size:
+    width: 437.5
+    height: 277.75

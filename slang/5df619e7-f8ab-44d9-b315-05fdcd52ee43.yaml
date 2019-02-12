@@ -1,4 +1,50 @@
+id: 5df619e7-f8ab-44d9-b315-05fdcd52ee43
+services:
+  main:
+    in:
+      type: stream
+      stream:
+        type: generic
+        generic: itemType
+    out:
+      type: number
+    geometry:
+      in:
+        position: -25
+      out:
+        position: -25
+operators:
+  Add:
+    operator: 7b01fa17-7e11-4275-8d1e-fb1ad5b81c3d
+    geometry:
+      position:
+        x: 165
+        "y": 44.5
+  Reduce:
+    operator: b95e6da8-9770-4a04-a73d-cdfe2081870f
+    properties:
+      emptyValue: 0
+    generics:
+      itemType:
+        type: number
+    geometry:
+      position:
+        x: -25
+        "y": 9.5
+  Value:
+    operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
+    properties:
+      value: 1
+    generics:
+      valueType:
+        type: number
+    geometry:
+      position:
+        x: -25
+        "y": -77.5
 connections:
+  ~(:
+  - (Value
   Add):
   - (Reduce.reducer
   Reduce):
@@ -9,67 +55,23 @@ connections:
   - b(Add
   Value):
   - ~(Reduce
-  ~(:
-  - (Value
-geometry:
-  size:
-    height: 309
-    width: 462.5
-id: 5df619e7-f8ab-44d9-b315-05fdcd52ee43
 meta:
-  description: ''
-  docUrl: https://bitspark.de/slang/docs/operator/count-items
-  icon: abacus
   name: count items
+  icon: abacus
   shortDescription: counts number of items in a stream of generic items
+  description: ""
+  docUrl: https://bitspark.de/slang/docs/operator/count-items
   tags:
   - stream
   - aggregate
-operators:
-  Add:
-    geometry:
-      position:
-        x: 165
-        y: 44.5
-    operator: 7b01fa17-7e11-4275-8d1e-fb1ad5b81c3d
-  Reduce:
-    generics:
-      itemType:
-        type: number
-    geometry:
-      position:
-        x: -25
-        y: 9.5
-    operator: b95e6da8-9770-4a04-a73d-cdfe2081870f
-    properties:
-      emptyValue: 0
-  Value:
-    generics:
-      valueType:
-        type: number
-    geometry:
-      position:
-        x: -25
-        y: -77.5
-    operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
-    properties:
-      value: 1
-services:
-  main:
-    geometry:
-      in:
-        position: -25
-      out:
-        position: -25
-    in:
-      stream:
-        generic: itemType
-        type: generic
-      type: stream
-    out:
-      type: number
 tests:
-- data:
+- name: Count items
+  description: counts the number of items in a stream
+  generics:
+    itemType:
+      type: primitive
+  properties: {}
+  data:
     in:
     - - 1
       - b
@@ -87,21 +89,18 @@ tests:
     - 4
     - 5
     - 3
-  description: counts the number of items in a stream
-  generics:
-    itemType:
-      type: primitive
-  name: Count items
-  properties: {}
-- data:
-    in:
-    - []
-    out:
-    - 0
+- name: Zero if empty
   description: emits 0 for empty streams
   generics:
     itemType:
       type: number
-  name: Zero if empty
   properties: {}
-
+  data:
+    in:
+    - []
+    out:
+    - 0
+geometry:
+  size:
+    width: 462.5
+    height: 309

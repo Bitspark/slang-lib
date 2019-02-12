@@ -1,4 +1,61 @@
+id: db72519d-c9f5-487b-962c-e6eb3068962e
+services:
+  main:
+    in:
+      type: stream
+      stream:
+        type: number
+    out:
+      type: number
+    geometry:
+      in:
+        position: -20
+      out:
+        position: 40
+operators:
+  Count:
+    operator: 5df619e7-f8ab-44d9-b315-05fdcd52ee43
+    generics:
+      itemType:
+        type: number
+    geometry:
+      position:
+        x: -75
+        "y": -50.5
+  Evaluate1:
+    operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
+    properties:
+      expression: floor((x-1)/2)
+      variables:
+      - x
+    geometry:
+      position:
+        x: -75
+        "y": 52.5
+  IndexAccess:
+    operator: ea85366f-4046-4955-bb0e-391d27bf477d
+    properties:
+      default: $emptyValue
+    generics:
+      itemType:
+        type: number
+    geometry:
+      position:
+        x: 40
+        "y": 169.5
+  SortPrimitive:
+    operator: 5e3739da-6de1-45b2-9a77-a129d888b3fe
+    geometry:
+      position:
+        x: 45
+        "y": -50.5
+properties:
+  emptyValue:
+    type: number
 connections:
+  ~(:
+  - ~(SortPrimitive
+  - ~(Count
   Count):
   - x(Evaluate1
   Evaluate1):
@@ -7,79 +64,23 @@ connections:
   - )
   SortPrimitive)~:
   - items.~(IndexAccess
-  ~(:
-  - ~(SortPrimitive
-  - ~(Count
-geometry:
-  size:
-    height: 496
-    width: 445
-id: db72519d-c9f5-487b-962c-e6eb3068962e
 meta:
-  description: ''
-  docUrl: https://bitspark.de/slang/docs/operator/median
-  icon: compress-arrows-alt
   name: median
+  icon: compress-arrows-alt
   shortDescription: emits the median number of a stream of numbers
+  description: ""
+  docUrl: https://bitspark.de/slang/docs/operator/median
   tags:
   - math
   - stream
   - aggregate
-operators:
-  Count:
-    generics:
-      itemType:
-        type: number
-    geometry:
-      position:
-        x: -75
-        y: -50.5
-    operator: 5df619e7-f8ab-44d9-b315-05fdcd52ee43
-  Evaluate1:
-    geometry:
-      position:
-        x: -75
-        y: 52.5
-    operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
-    properties:
-      expression: floor((x-1)/2)
-      variables:
-      - x
-  IndexAccess:
-    generics:
-      itemType:
-        type: number
-    geometry:
-      position:
-        x: 40
-        y: 169.5
-    operator: ea85366f-4046-4955-bb0e-391d27bf477d
-    properties:
-      default: $emptyValue
-  SortPrimitive:
-    geometry:
-      position:
-        x: 45
-        y: -50.5
-    operator: 5e3739da-6de1-45b2-9a77-a129d888b3fe
-properties:
-  emptyValue:
-    type: number
-services:
-  main:
-    geometry:
-      in:
-        position: -20
-      out:
-        position: 40
-    in:
-      stream:
-        type: number
-      type: stream
-    out:
-      type: number
 tests:
-- data:
+- name: Integers
+  description: ""
+  generics: {}
+  properties:
+    emptyValue: null
+  data:
     in:
     - - 1
       - 2
@@ -137,33 +138,31 @@ tests:
     - 2
     - 9
     - 10
-  description: ''
+- name: Floats
+  description: ""
   generics: {}
-  name: Integers
   properties:
     emptyValue: null
-- data:
+  data:
     in:
     - - 1.5
       - 3.5
       - 2.5
     out:
     - 2.5
-  description: ''
+- name: Empty
+  description: ""
   generics: {}
-  name: Floats
   properties:
     emptyValue: null
-- data:
+  data:
     in:
     - []
     - []
     out:
     - null
     - null
-  description: ''
-  generics: {}
-  name: Empty
-  properties:
-    emptyValue: null
-
+geometry:
+  size:
+    width: 445
+    height: 496

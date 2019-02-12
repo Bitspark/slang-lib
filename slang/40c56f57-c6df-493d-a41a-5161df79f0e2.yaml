@@ -1,3 +1,32 @@
+id: 40c56f57-c6df-493d-a41a-5161df79f0e2
+services:
+  main:
+    in:
+      type: map
+      map:
+        a:
+          type: number
+        b:
+          type: number
+    out:
+      type: boolean
+    geometry:
+      in:
+        position: 0
+      out:
+        position: -5
+operators:
+  Evaluate:
+    operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
+    properties:
+      expression: a>=b
+      variables:
+      - a
+      - b
+    geometry:
+      position:
+        x: -5
+        "y": 2.5
 connections:
   Evaluate):
   - )
@@ -5,47 +34,17 @@ connections:
   - a(Evaluate
   b(:
   - b(Evaluate
-geometry:
-  size:
-    height: 164.25
-    width: 300
-id: 40c56f57-c6df-493d-a41a-5161df79f0e2
 meta:
-  description: ''
-  docUrl: https://bitspark.de/slang/docs/operator/greater-or-equal
-  icon: greater-than-equal
   name: greater or equal
+  icon: greater-than-equal
   shortDescription: emits true only if number A is greater than or equal to number
     B
+  description: ""
+  docUrl: https://bitspark.de/slang/docs/operator/greater-or-equal
   tags:
   - math
   - compare
-operators:
-  Evaluate:
-    geometry:
-      position:
-        x: -5
-        y: 2.5
-    operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
-    properties:
-      expression: a>=b
-      variables:
-      - a
-      - b
-services:
-  main:
-    geometry:
-      in:
-        position: 0
-      out:
-        position: -5
-    in:
-      map:
-        a:
-          type: number
-        b:
-          type: number
-      type: map
-    out:
-      type: boolean
-
+geometry:
+  size:
+    width: 300
+    height: 164.25

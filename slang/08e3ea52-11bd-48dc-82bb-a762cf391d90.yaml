@@ -1,3 +1,49 @@
+id: 08e3ea52-11bd-48dc-82bb-a762cf391d90
+services:
+  main:
+    in:
+      type: generic
+      generic: itemType
+    out:
+      type: string
+    geometry:
+      in:
+        position: -45
+      out:
+        position: -40
+operators:
+  Append:
+    operator: e49369c2-eac2-4dc7-9a6d-b635ae1654f9
+    properties:
+      newLine: true
+    geometry:
+      position:
+        x: -40
+        "y": 29.5
+  JSONWrite:
+    operator: d4aabe2d-dee7-409f-b2bb-713ebc836672
+    generics:
+      itemType:
+        type: generic
+        generic: itemType
+    geometry:
+      position:
+        x: -45
+        "y": -135.5
+  Value:
+    operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
+    properties:
+      value: $filename
+    generics:
+      valueType:
+        type: string
+    geometry:
+      position:
+        x: 25
+        "y": -83
+properties:
+  filename:
+    type: string
 connections:
   (:
   - (JSONWrite
@@ -8,62 +54,15 @@ connections:
   - content(Append
   Value):
   - filename(Append
-geometry:
-  size:
-    height: 392
-    width: 415
-id: 08e3ea52-11bd-48dc-82bb-a762cf391d90
 meta:
-  description: ''
-  docUrl: https://bitspark.de/slang/docs/operator/file-insert
-  icon: file-plus
   name: file insert
+  icon: file-plus
   shortDescription: appends serialization of generic item to file
+  description: ""
+  docUrl: https://bitspark.de/slang/docs/operator/file-insert
   tags:
   - file
-operators:
-  Append:
-    geometry:
-      position:
-        x: -40
-        y: 29.5
-    operator: e49369c2-eac2-4dc7-9a6d-b635ae1654f9
-    properties:
-      newLine: true
-  JSONWrite:
-    generics:
-      itemType:
-        generic: itemType
-        type: generic
-    geometry:
-      position:
-        x: -45
-        y: -135.5
-    operator: d4aabe2d-dee7-409f-b2bb-713ebc836672
-  Value:
-    generics:
-      valueType:
-        type: string
-    geometry:
-      position:
-        x: 25
-        y: -83
-    operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
-    properties:
-      value: $filename
-properties:
-  filename:
-    type: string
-services:
-  main:
-    geometry:
-      in:
-        position: -45
-      out:
-        position: -40
-    in:
-      generic: itemType
-      type: generic
-    out:
-      type: string
-
+geometry:
+  size:
+    width: 415
+    height: 392

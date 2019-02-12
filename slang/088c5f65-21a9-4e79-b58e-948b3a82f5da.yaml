@@ -1,64 +1,63 @@
-connections:
-  (.filter:
-  - (Split.controller
-  Split)true.~:
-  - )~
-  Split.controller):
-  - .filter)
-  ~(:
-  - ~(Split
-delegates:
-  filter:
-    geometry:
-      in:
-        position: 45
-      out:
-        position: -30
-    in:
-      type: boolean
-    out:
-      generic: itemType
-      type: generic
-geometry:
-  size:
-    height: 199
-    width: 260
 id: 088c5f65-21a9-4e79-b58e-948b3a82f5da
-meta:
-  description: ''
-  docUrl: https://bitspark.de/slang/docs/operator/filter
-  icon: filter
-  name: filter
-  shortDescription: filters generic items of a stream, using a filter delegate as
-    decider
-  tags:
-  - stream
-operators:
-  Split:
-    generics:
-      itemType:
-        generic: itemType
-        type: generic
-    geometry:
-      position:
-        x: 0
-        y: 4.5
-    operator: fed72b41-2584-424c-8213-1978410ccab6
 services:
   main:
+    in:
+      type: stream
+      stream:
+        type: generic
+        generic: itemType
+    out:
+      type: stream
+      stream:
+        type: generic
+        generic: itemType
     geometry:
       in:
         position: 0
       out:
         position: 10
+delegates:
+  filter:
     in:
-      stream:
-        generic: itemType
-        type: generic
-      type: stream
+      type: boolean
     out:
-      stream:
-        generic: itemType
+      type: generic
+      generic: itemType
+    geometry:
+      in:
+        position: 45
+      out:
+        position: -30
+operators:
+  Split:
+    operator: fed72b41-2584-424c-8213-1978410ccab6
+    generics:
+      itemType:
         type: generic
-      type: stream
-
+        generic: itemType
+    geometry:
+      position:
+        x: 0
+        "y": 4.5
+connections:
+  (.filter:
+  - (Split.controller
+  ~(:
+  - ~(Split
+  Split)true.~:
+  - )~
+  Split.controller):
+  - .filter)
+meta:
+  name: filter
+  icon: filter
+  shortDescription: filters generic items of a stream, using a filter delegate as
+    decider
+  description: ""
+  docUrl: https://bitspark.de/slang/docs/operator/filter
+  tags:
+  - stream
+geometry:
+  size:
+    width: 260
+    height: 199

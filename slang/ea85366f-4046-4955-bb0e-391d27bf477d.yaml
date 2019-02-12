@@ -1,3 +1,114 @@
+id: ea85366f-4046-4955-bb0e-391d27bf477d
+services:
+  main:
+    in:
+      type: map
+      map:
+        index:
+          type: number
+        items:
+          type: stream
+          stream:
+            type: generic
+            generic: itemType
+    out:
+      type: generic
+      generic: itemType
+    geometry:
+      in:
+        position: -170
+      out:
+        position: -175
+operators:
+  Equal:
+    operator: 4fe3f7d5-4401-4ff4-9c9b-120ff613b79a
+    geometry:
+      position:
+        x: 205
+        "y": -20.5
+  Evaluate:
+    operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
+    properties:
+      expression: x+1
+      variables:
+      - x
+    geometry:
+      position:
+        x: 100
+        "y": 57.5
+  Iterate:
+    operator: e58624d4-5568-40d3-8b77-ab792ef620f1
+    generics:
+      inItemType:
+        type: generic
+        generic: itemType
+      outItemType:
+        type: trigger
+      stateType:
+        type: map
+        map:
+          index:
+            type: number
+          item:
+            type: generic
+            generic: itemType
+          iter:
+            type: number
+    geometry:
+      position:
+        x: -175
+        "y": 129.5
+  Switch:
+    operator: cd6fc5c8-5b64-4b1a-9885-59ede141b398
+    properties:
+      cases:
+      - false
+    generics:
+      inType:
+        type: map
+        map:
+          a:
+            type: generic
+            generic: itemType
+          b:
+            type: generic
+            generic: itemType
+      outType:
+        type: generic
+        generic: itemType
+      selectType:
+        type: boolean
+    geometry:
+      position:
+        x: 195
+        "y": 164.5
+  Value:
+    operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
+    properties:
+      value: $default
+    generics:
+      valueType:
+        type: generic
+        generic: itemType
+    geometry:
+      position:
+        x: -185
+        "y": -17.5
+  Value1:
+    operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
+    properties:
+      value: 0
+    generics:
+      valueType:
+        type: number
+    geometry:
+      position:
+        x: -175
+        "y": -77.5
+properties:
+  default:
+    type: generic
+    generic: itemType
 connections:
   Equal):
   - select(Switch
@@ -32,128 +143,16 @@ connections:
   - (Value1
   items.~(:
   - items.~(Iterate
-geometry:
-  size:
-    height: 636.75
-    width: 805
-id: ea85366f-4046-4955-bb0e-391d27bf477d
 meta:
-  description: ''
-  docUrl: https://bitspark.de/slang/docs/operator/index-access
-  icon: memory
   name: index access
+  icon: memory
   shortDescription: selects the n-th item in a stream of generic items, n being the
     index
+  description: ""
+  docUrl: https://bitspark.de/slang/docs/operator/index-access
   tags:
   - stream
-operators:
-  Equal:
-    geometry:
-      position:
-        x: 205
-        y: -20.5
-    operator: 4fe3f7d5-4401-4ff4-9c9b-120ff613b79a
-  Evaluate:
-    geometry:
-      position:
-        x: 100
-        y: 57.5
-    operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
-    properties:
-      expression: x+1
-      variables:
-      - x
-  Iterate:
-    generics:
-      inItemType:
-        generic: itemType
-        type: generic
-      outItemType:
-        type: trigger
-      stateType:
-        map:
-          index:
-            type: number
-          item:
-            generic: itemType
-            type: generic
-          iter:
-            type: number
-        type: map
-    geometry:
-      position:
-        x: -175
-        y: 129.5
-    operator: e58624d4-5568-40d3-8b77-ab792ef620f1
-  Switch:
-    generics:
-      inType:
-        map:
-          a:
-            generic: itemType
-            type: generic
-          b:
-            generic: itemType
-            type: generic
-        type: map
-      outType:
-        generic: itemType
-        type: generic
-      selectType:
-        type: boolean
-    geometry:
-      position:
-        x: 195
-        y: 164.5
-    operator: cd6fc5c8-5b64-4b1a-9885-59ede141b398
-    properties:
-      cases:
-      - false
-  Value:
-    generics:
-      valueType:
-        generic: itemType
-        type: generic
-    geometry:
-      position:
-        x: -185
-        y: -17.5
-    operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
-    properties:
-      value: $default
-  Value1:
-    generics:
-      valueType:
-        type: number
-    geometry:
-      position:
-        x: -175
-        y: -77.5
-    operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
-    properties:
-      value: 0
-properties:
-  default:
-    generic: itemType
-    type: generic
-services:
-  main:
-    geometry:
-      in:
-        position: -170
-      out:
-        position: -175
-    in:
-      map:
-        index:
-          type: number
-        items:
-          stream:
-            generic: itemType
-            type: generic
-          type: stream
-      type: map
-    out:
-      generic: itemType
-      type: generic
-
+geometry:
+  size:
+    width: 805
+    height: 636.75

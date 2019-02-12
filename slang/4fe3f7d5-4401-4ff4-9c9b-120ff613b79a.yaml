@@ -1,3 +1,32 @@
+id: 4fe3f7d5-4401-4ff4-9c9b-120ff613b79a
+services:
+  main:
+    in:
+      type: map
+      map:
+        a:
+          type: number
+        b:
+          type: number
+    out:
+      type: boolean
+    geometry:
+      in:
+        position: 0
+      out:
+        position: -5
+operators:
+  Evaluate:
+    operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
+    properties:
+      expression: a==b
+      variables:
+      - a
+      - b
+    geometry:
+      position:
+        x: -5
+        "y": 7.5
 connections:
   Evaluate):
   - )
@@ -5,50 +34,21 @@ connections:
   - a(Evaluate
   b(:
   - b(Evaluate
-geometry:
-  size:
-    height: 158.5
-    width: 305
-id: 4fe3f7d5-4401-4ff4-9c9b-120ff613b79a
 meta:
-  description: ''
-  docUrl: https://bitspark.de/slang/docs/operator/equal
-  icon: equals
   name: equal
+  icon: equals
   shortDescription: emits true if number A equals number B
+  description: ""
+  docUrl: https://bitspark.de/slang/docs/operator/equal
   tags:
   - math
   - compare
-operators:
-  Evaluate:
-    geometry:
-      position:
-        x: -5
-        y: 7.5
-    operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
-    properties:
-      expression: a==b
-      variables:
-      - a
-      - b
-services:
-  main:
-    geometry:
-      in:
-        position: 0
-      out:
-        position: -5
-    in:
-      map:
-        a:
-          type: number
-        b:
-          type: number
-      type: map
-    out:
-      type: boolean
 tests:
-- data:
+- name: "True"
+  description: returns true for equal numbers
+  generics: {}
+  properties: {}
+  data:
     in:
     - a: 8.4
       b: 8.4
@@ -60,11 +60,11 @@ tests:
     - true
     - true
     - true
-  description: returns true for equal numbers
+- name: "False"
+  description: returns false for unequal numbers
   generics: {}
-  name: 'True'
   properties: {}
-- data:
+  data:
     in:
     - a: 6.4
       b: 3.4
@@ -76,11 +76,11 @@ tests:
     - false
     - false
     - false
-  description: returns false for unequal numbers
+- name: "Null"
+  description: emits false for comparisons with null except if both are null
   generics: {}
-  name: 'False'
   properties: {}
-- data:
+  data:
     in:
     - a: null
       b: null
@@ -92,8 +92,7 @@ tests:
     - true
     - false
     - false
-  description: emits false for comparisons with null except if both are null
-  generics: {}
-  name: 'Null'
-  properties: {}
-
+geometry:
+  size:
+    width: 305
+    height: 158.5

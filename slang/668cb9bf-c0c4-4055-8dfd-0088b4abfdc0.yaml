@@ -1,3 +1,32 @@
+id: 668cb9bf-c0c4-4055-8dfd-0088b4abfdc0
+services:
+  main:
+    in:
+      type: map
+      map:
+        a:
+          type: number
+        b:
+          type: number
+    out:
+      type: number
+    geometry:
+      in:
+        position: 0
+      out:
+        position: -5
+operators:
+  Evaluate:
+    operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
+    properties:
+      expression: a/b
+      variables:
+      - a
+      - b
+    geometry:
+      position:
+        x: -5
+        "y": -2.5
 connections:
   Evaluate):
   - )
@@ -5,50 +34,21 @@ connections:
   - a(Evaluate
   b(:
   - b(Evaluate
-geometry:
-  size:
-    height: 159.25
-    width: 305
-id: 668cb9bf-c0c4-4055-8dfd-0088b4abfdc0
 meta:
-  description: ''
-  docUrl: https://bitspark.de/slang/docs/operator/divide
-  icon: divide
   name: divide
+  icon: divide
   shortDescription: divides number A by number B
+  description: ""
+  docUrl: https://bitspark.de/slang/docs/operator/divide
   tags:
   - math
   - arithmetic
-operators:
-  Evaluate:
-    geometry:
-      position:
-        x: -5
-        y: -2.5
-    operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
-    properties:
-      expression: a/b
-      variables:
-      - a
-      - b
-services:
-  main:
-    geometry:
-      in:
-        position: 0
-      out:
-        position: -5
-    in:
-      map:
-        a:
-          type: number
-        b:
-          type: number
-      type: map
-    out:
-      type: number
 tests:
-- data:
+- name: Integers
+  description: ""
+  generics: {}
+  properties: {}
+  data:
     in:
     - a: 0
       b: 1
@@ -69,11 +69,11 @@ tests:
     - -0.4
     - -0.4
     - 0.4
-  description: ''
+- name: Floats
+  description: ""
   generics: {}
-  name: Integers
   properties: {}
-- data:
+  data:
     in:
     - a: 0.5
       b: 0.5
@@ -85,8 +85,7 @@ tests:
     - 1
     - 9
     - 0.75
-  description: ''
-  generics: {}
-  name: Floats
-  properties: {}
-
+geometry:
+  size:
+    width: 305
+    height: 159.25

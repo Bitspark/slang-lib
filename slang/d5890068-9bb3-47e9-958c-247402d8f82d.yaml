@@ -1,6 +1,69 @@
+id: d5890068-9bb3-47e9-958c-247402d8f82d
+services:
+  main:
+    in:
+      type: stream
+      stream:
+        type: generic
+        generic: itemType
+    out:
+      type: generic
+      generic: itemType
+    geometry:
+      in:
+        position: -55
+      out:
+        position: -45
+delegates:
+  chooser:
+    in:
+      type: boolean
+    out:
+      type: map
+      map:
+        "false":
+          type: generic
+          generic: itemType
+        "true":
+          type: generic
+          generic: itemType
+    geometry:
+      in:
+        position: 60
+      out:
+        position: 25
+operators:
+  Choose:
+    operator: 8345ea9e-98c9-463b-8494-7123ee261270
+    generics:
+      itemType:
+        type: generic
+        generic: itemType
+    geometry:
+      position:
+        x: 115
+        "y": 34.5
+  Reduce:
+    operator: b95e6da8-9770-4a04-a73d-cdfe2081870f
+    properties:
+      emptyValue: $emptyValue
+    generics:
+      itemType:
+        type: generic
+        generic: itemType
+    geometry:
+      position:
+        x: -75
+        "y": -0.5
+properties:
+  emptyValue:
+    type: generic
+    generic: itemType
 connections:
   (.chooser:
   - (Choose.chooser
+  ~(:
+  - ~(Reduce
   Choose):
   - (Reduce.reducer
   Choose.chooser)false:
@@ -13,81 +76,17 @@ connections:
   - false(Choose
   Reduce.reducer)b:
   - true(Choose
-  ~(:
-  - ~(Reduce
-delegates:
-  chooser:
-    geometry:
-      in:
-        position: 60
-      out:
-        position: 25
-    in:
-      type: boolean
-    out:
-      map:
-        'false':
-          generic: itemType
-          type: generic
-        'true':
-          generic: itemType
-          type: generic
-      type: map
-geometry:
-  size:
-    height: 246
-    width: 450
-id: d5890068-9bb3-47e9-958c-247402d8f82d
 meta:
-  description: ''
-  docUrl: https://bitspark.de/slang/docs/operator/find-best
-  icon: search
   name: find best
+  icon: search
   shortDescription: finds the best item using a chooser delegate to decide which item
     is better
+  description: ""
+  docUrl: https://bitspark.de/slang/docs/operator/find-best
   tags:
   - stream
   - aggregate
-operators:
-  Choose:
-    generics:
-      itemType:
-        generic: itemType
-        type: generic
-    geometry:
-      position:
-        x: 115
-        y: 34.5
-    operator: 8345ea9e-98c9-463b-8494-7123ee261270
-  Reduce:
-    generics:
-      itemType:
-        generic: itemType
-        type: generic
-    geometry:
-      position:
-        x: -75
-        y: -0.5
-    operator: b95e6da8-9770-4a04-a73d-cdfe2081870f
-    properties:
-      emptyValue: $emptyValue
-properties:
-  emptyValue:
-    generic: itemType
-    type: generic
-services:
-  main:
-    geometry:
-      in:
-        position: -55
-      out:
-        position: -45
-    in:
-      stream:
-        generic: itemType
-        type: generic
-      type: stream
-    out:
-      generic: itemType
-      type: generic
-
+geometry:
+  size:
+    width: 450
+    height: 246
