@@ -20,14 +20,14 @@ operators:
         type: number
     geometry:
       position:
-        x: 85
-        "y": 24.5
+        x: 25
+        "y": 39.5
   Greater:
     operator: 63ff93ec-89f1-4d6e-a952-aaf4aba68ac7
     geometry:
       position:
-        x: 275
-        "y": 59.5
+        x: 160
+        "y": 89.5
   Reduce:
     operator: b95e6da8-9770-4a04-a73d-cdfe2081870f
     properties:
@@ -64,66 +64,7 @@ meta:
   icon: arrow-to-top
   shortDescription: finds greatest number in a stream of numbers
   description: ""
-  docUrl: https://bitspark.de/slang/docs/operator/maximum-number
-  tags:
-  - math
-  - aggregate
-tests:
-- name: Integers
-  description: emits the largest integer
-  generics: {}
-  properties:
-    emptyValue: null
-  data:
-    in:
-    - - 1
-      - 2
-      - 3
-      - 4
-    - - 1
-      - 12
-      - 9
-      - 4
-      - 76
-      - 4
-    - - 12
-      - 9
-      - 4
-      - 26
-      - 7
-      - 35
-      - 4
-    out:
-    - 4
-    - 76
-    - 35
-- name: Floats
-  description: emits the largest float
-  generics: {}
-  properties:
-    emptyValue: null
-  data:
-    in:
-    - - 1.5
-      - 3.5
-      - 2.5
-    - - -1.5
-      - 8.2
-      - -22.25
-    out:
-    - 3.5
-    - 8.2
-- name: Empty
-  description: emits null for empty streams
-  generics: {}
-  properties:
-    emptyValue: null
-  data:
-    in:
-    - []
-    out:
-    - null
 geometry:
   size:
-    width: 655
-    height: 281
+    width: 702.5
+    height: 314.5

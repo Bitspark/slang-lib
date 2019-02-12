@@ -20,14 +20,14 @@ operators:
         type: number
     geometry:
       position:
-        x: 145
-        "y": 49.5
+        x: 80
+        "y": 69.5
   Less:
     operator: 8229c88c-ad78-4646-889c-ef4a533624a0
     geometry:
       position:
-        x: 335
-        "y": 84.5
+        x: 210
+        "y": 119.5
   Reduce:
     operator: b95e6da8-9770-4a04-a73d-cdfe2081870f
     properties:
@@ -64,85 +64,7 @@ meta:
   icon: arrow-to-bottom
   shortDescription: finds smallest number in a stream of numbers
   description: ""
-  docUrl: https://bitspark.de/slang/docs/operator/minimum-number
-  tags:
-  - math
-  - aggregate
-tests:
-- name: Integers
-  description: ""
-  generics: {}
-  properties:
-    emptyValue: null
-  data:
-    in:
-    - - 1
-      - 2
-      - 3
-      - 4
-    - - 12
-      - 9
-      - 4
-      - 4
-      - 26
-      - 7
-      - 35
-      - 1
-      - 24
-      - 9
-      - 76
-    - - 12
-      - 9
-      - 4
-      - 4
-      - 26
-      - 7
-      - 35
-      - 1
-      - 24
-      - 9
-      - 76
-      - 1
-      - 12
-      - 9
-      - 4
-      - 4
-      - 26
-      - 7
-      - 35
-      - 1
-      - 24
-      - 9
-      - 76
-    out:
-    - 1
-    - 1
-    - 1
-- name: Floats
-  description: ""
-  generics: {}
-  properties:
-    emptyValue: null
-  data:
-    in:
-    - - 1.5
-      - 3.5
-      - 2.5
-    out:
-    - 1.5
-- name: Empty
-  description: ""
-  generics: {}
-  properties:
-    emptyValue: null
-  data:
-    in:
-    - []
-    - []
-    out:
-    - null
-    - null
 geometry:
   size:
-    width: 642.5
-    height: 341
+    width: 756.25
+    height: 374.5

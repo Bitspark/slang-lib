@@ -41,8 +41,8 @@ operators:
       interval: $interval
     geometry:
       position:
-        x: -20
-        "y": 39.5
+        x: -55
+        "y": -65.5
   WindowCollect:
     operator: 14f5de1a-5e38-4f9c-a625-eff7a572078c
     properties:
@@ -53,8 +53,8 @@ operators:
         generic: itemType1
     geometry:
       position:
-        x: 170
-        "y": 19.5
+        x: 65
+        "y": -25.5
   WindowCollect1:
     operator: 14f5de1a-5e38-4f9c-a625-eff7a572078c
     properties:
@@ -65,8 +65,8 @@ operators:
         generic: itemType2
     geometry:
       position:
-        x: 80
-        "y": 29.5
+        x: 125
+        "y": -80.5
   WindowRelease:
     operator: 47b3f097-2043-42c6-aad5-0cfdb9004aef
     properties:
@@ -77,8 +77,8 @@ operators:
         generic: itemType1
     geometry:
       position:
-        x: -25
-        "y": 194.5
+        x: -105
+        "y": 89.5
   WindowRelease1:
     operator: 47b3f097-2043-42c6-aad5-0cfdb9004aef
     properties:
@@ -89,8 +89,8 @@ operators:
         generic: itemType2
     geometry:
       position:
-        x: 75
-        "y": 144.5
+        x: -10
+        "y": 89.5
 properties:
   interval:
     type: number
@@ -120,5 +120,5 @@ meta:
   - synchronize
 geometry:
   size:
-    width: 445
-    height: 369
+    width: 492.5
+    height: 463.5
