@@ -41,7 +41,7 @@ tests:
     - a: ha
       b: llo
     - a: Slang
-      b: " rocks"
+      b: ' rocks'
     out:
     - hallo
     - Slang rocks

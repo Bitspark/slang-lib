@@ -108,6 +108,30 @@ meta:
   tags:
   - math
   - stream
+tests:
+- name: Emit moving average
+  description: emits a moving average value for each incoming number
+  generics: {}
+  properties: {}
+  data:
+    in:
+    - - 1
+      - 2
+      - 3
+      - 4
+    - - 4
+      - 3
+      - 2
+      - 1
+    out:
+    - - 1
+      - 1.5
+      - 2
+      - 2.5
+    - - 4
+      - 3.5
+      - 3
+      - 2.5
 geometry:
   size:
     width: 695

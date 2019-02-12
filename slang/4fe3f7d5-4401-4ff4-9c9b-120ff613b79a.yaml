@@ -32,3 +32,43 @@ meta:
   tags:
   - math
   - compare
+tests:
+- name: "True"
+  description: "returns true for equal numbers"
+  generics: {}
+  properties: {}
+  data:
+    in:
+    - {a: 8.4, b: 8.4}
+    - {a: -3, b: -3}
+    - {a: 0, b: 0}
+    out:
+    - true
+    - true
+    - true
+- name: "False"
+  description: "returns false for unequal numbers"
+  generics: {}
+  properties: {}
+  data:
+    in:
+    - {a: 6.4, b: 3.4}
+    - {a: -4, b: -1}
+    - {a: 0, b: 2}
+    out:
+    - false
+    - false
+    - false
+- name: "Null"
+  description: "emits false for comparisons with null except if both are null"
+  generics: {}
+  properties: {}
+  data:
+    in:
+    - {a: null, b: null}
+    - {a: 1, b: null}
+    - {a: null, b: -2.5}
+    out:
+    - true
+    - false
+    - false

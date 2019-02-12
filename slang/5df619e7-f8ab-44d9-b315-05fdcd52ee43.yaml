@@ -45,3 +45,30 @@ meta:
   tags:
   - stream
   - aggregate
+tests:
+- name: "Count items"
+  description: "counts the number of items in a stream"
+  generics:
+    itemType:
+      type: primitive
+  properties: {}
+  data:
+    in:
+    - [1, "b", false, null]
+    - [1,2,3,4,5]
+    - ["a","b","abc"]
+    out:
+    - 4
+    - 5
+    - 3
+- name: "Zero if empty"
+  description: "emits 0 for empty streams"
+  generics:
+    itemType:
+      type: number
+  properties: {}
+  data:
+    in:
+    - []
+    out:
+    - 0

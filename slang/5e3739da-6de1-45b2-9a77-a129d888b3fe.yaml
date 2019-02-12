@@ -85,25 +85,6 @@ tests:
       - abc
       - c
       - f
-- name: "Null"
-  description: always treats null as smallest value
-  generics: {}
-  properties: {}
-  data:
-    in:
-    - - 1
-      - null
-      - -1
-    - - ""
-      - null
-      - a
-    out:
-    - - null
-      - -1
-      - 1
-    - - null
-      - ""
-      - a
 - name: Empty
   description: leaves empty streams unchanged
   generics: {}

@@ -109,22 +109,8 @@ meta:
   - stream
   - aggregate
 tests:
-- name: ""
-  description: ""
-  generics:
-    itemType:
-      type: boolean
-  properties:
-    emptyValue: null
-  data:
-    in:
-    - []
-    - []
-    out:
-    - null
-    - null
 - name: Strings
-  description: ""
+  description: "emits the first item of a stream of strings"
   generics:
     itemType:
       type: string
@@ -139,3 +125,34 @@ tests:
     out:
     - f
     - a
+- name: "Complex items"
+  description: "emits the first item of a stream of complex items"
+  generics:
+    itemType:
+      type: map
+      map:
+        a:
+          type: number
+        b:
+          type: string
+  properties:
+    emptyValue: null
+  data:
+    in:
+    - - {a: 1, b: "a"}
+      - {a: 2, b: "b"}
+      - {a: 3, b: "c"}
+    out:
+    - {a: 1, b: "a"}
+- name: "Empty"
+  description: "emits null for empty streams"
+  generics:
+    itemType:
+      type: boolean
+  properties:
+    emptyValue: null
+  data:
+    in:
+    - []
+    out:
+    - null
