@@ -1,6 +1,6 @@
 connections:
   (.comparator:
-  - ~(Take.compare
+  - (Take.compare
   Reduce)~:
   - )~
   Reduce.reducer)a.~:
@@ -9,9 +9,9 @@ connections:
   - false.~(Take
   Take)~:
   - ~(Reduce.reducer
-  Take.compare)~.false:
+  Take.compare)false:
   - .comparator)a
-  Take.compare)~.true:
+  Take.compare)true:
   - .comparator)b
   WrapItem)~:
   - ~.~(Reduce
