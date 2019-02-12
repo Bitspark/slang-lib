@@ -1,64 +1,4 @@
-id: 7d2857e5-e3b5-4a7b-a5f7-9eea0bbe8004
-services:
-  main:
-    in:
-      type: stream
-      stream:
-        type: number
-    out:
-      type: number
-    geometry:
-      in:
-        position: -15
-      out:
-        position: -55
-operators:
-  Average:
-    operator: f9e04d5b-3d56-47b4-bcb0-27741ef5a4aa
-    properties:
-      emptyValue: 0
-    geometry:
-      position:
-        x: 90
-        "y": 49.5
-  Average1:
-    operator: f9e04d5b-3d56-47b4-bcb0-27741ef5a4aa
-    properties:
-      emptyValue: 0
-    geometry:
-      position:
-        x: -50
-        "y": -70.5
-  Evaluate:
-    operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
-    properties:
-      expression: x**2
-      variables:
-      - x
-    geometry:
-      position:
-        x: 90
-        "y": -42.5
-  Evaluate1:
-    operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
-    properties:
-      expression: x**2
-      variables:
-      - x
-    geometry:
-      position:
-        x: -50
-        "y": 32.5
-  Subtract:
-    operator: bc301ef9-52ac-4db8-a191-f0bbd84ce525
-    geometry:
-      position:
-        x: -55
-        "y": 159.5
 connections:
-  ~(:
-  - ~(Average1
-  - x(Evaluate
   Average):
   - a(Subtract
   Average1):
@@ -69,12 +9,77 @@ connections:
   - b(Subtract
   Subtract):
   - )
-meta:
-  name: slang.math.aggregate.Variance
-  icon: ""
-  shortDescription: ""
-  description: ""
+  ~(:
+  - ~(Average1
+  - x(Evaluate
 geometry:
   size:
-    width: 470
     height: 534.5
+    width: 470
+id: 7d2857e5-e3b5-4a7b-a5f7-9eea0bbe8004
+meta:
+  description: ''
+  docUrl: https://bitspark.de/slang/docs/operator/variance
+  icon: ''
+  name: variance
+  shortDescription: emits variance of a stream of numbers
+  tags:
+  - statistics
+  - aggregate
+operators:
+  Average:
+    geometry:
+      position:
+        x: 90
+        y: 49.5
+    operator: f9e04d5b-3d56-47b4-bcb0-27741ef5a4aa
+    properties:
+      emptyValue: 0
+  Average1:
+    geometry:
+      position:
+        x: -50
+        y: -70.5
+    operator: f9e04d5b-3d56-47b4-bcb0-27741ef5a4aa
+    properties:
+      emptyValue: 0
+  Evaluate:
+    geometry:
+      position:
+        x: 90
+        y: -42.5
+    operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
+    properties:
+      expression: x**2
+      variables:
+      - x
+  Evaluate1:
+    geometry:
+      position:
+        x: -50
+        y: 32.5
+    operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
+    properties:
+      expression: x**2
+      variables:
+      - x
+  Subtract:
+    geometry:
+      position:
+        x: -55
+        y: 159.5
+    operator: bc301ef9-52ac-4db8-a191-f0bbd84ce525
+services:
+  main:
+    geometry:
+      in:
+        position: -15
+      out:
+        position: -55
+    in:
+      stream:
+        type: number
+      type: stream
+    out:
+      type: number
+

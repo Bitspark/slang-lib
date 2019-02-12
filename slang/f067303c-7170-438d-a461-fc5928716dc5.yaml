@@ -1,57 +1,62 @@
+connections:
+  Filter)~.item:
+  - )~
+  Filter.filter)pass:
+  - (Filter.filter
+  ~.item(:
+  - ~.item(Filter
+  ~.pass(:
+  - ~.pass(Filter
+geometry:
+  size:
+    height: 200.25
+    width: 260
 id: f067303c-7170-438d-a461-fc5928716dc5
-services:
-  main:
-    in:
-      type: stream
-      stream:
-        type: map
+meta:
+  description: ''
+  docUrl: https://bitspark.de/slang/docs/operator/pass-filter
+  icon: filter
+  name: pass filter
+  shortDescription: filters a stream letting items pass only if given boolean pass
+    is true
+  tags:
+  - stream
+operators:
+  Filter:
+    generics:
+      itemType:
         map:
           item:
-            type: generic
             generic: itemType
+            type: generic
           pass:
             type: boolean
-    out:
-      type: stream
-      stream:
-        type: generic
-        generic: itemType
+        type: map
+    geometry:
+      position:
+        x: 5
+        y: 4.5
+    operator: 088c5f65-21a9-4e79-b58e-948b3a82f5da
+services:
+  main:
     geometry:
       in:
         position: 0
       out:
         position: -5
-operators:
-  Filter:
-    operator: 088c5f65-21a9-4e79-b58e-948b3a82f5da
-    generics:
-      itemType:
-        type: map
+    in:
+      stream:
         map:
           item:
-            type: generic
             generic: itemType
+            type: generic
           pass:
             type: boolean
-    geometry:
-      position:
-        x: 5
-        "y": 4.5
-connections:
-  ~.item(:
-  - ~.item(Filter
-  ~.pass(:
-  - ~.pass(Filter
-  Filter)~.item:
-  - )~
-  Filter.filter)pass:
-  - (Filter.filter
-meta:
-  name: slang.stream.FilterSimple
-  icon: ""
-  shortDescription: ""
-  description: ""
-geometry:
-  size:
-    width: 260
-    height: 200.25
+        type: map
+      type: stream
+    out:
+      stream:
+        generic: itemType
+        type: generic
+      type: stream
+

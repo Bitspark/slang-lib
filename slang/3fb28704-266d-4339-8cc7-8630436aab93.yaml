@@ -1,57 +1,6 @@
-id: 3fb28704-266d-4339-8cc7-8630436aab93
-services:
-  main:
-    in:
-      type: stream
-      stream:
-        type: generic
-        generic: itemType
-    out:
-      type: generic
-      generic: itemType
-    geometry:
-      in:
-        position: 40
-      out:
-        position: 5
-operators:
-  Iterate:
-    operator: e58624d4-5568-40d3-8b77-ab792ef620f1
-    generics:
-      inItemType:
-        type: generic
-        generic: itemType
-      outItemType:
-        type: generic
-        generic: itemType
-      stateType:
-        type: generic
-        generic: itemType
-    geometry:
-      position:
-        x: 0
-        "y": 94.5
-  Value:
-    operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
-    properties:
-      value: $emptyValue
-    generics:
-      valueType:
-        type: generic
-        generic: itemType
-    geometry:
-      position:
-        x: -5
-        "y": -57.5
-properties:
-  emptyValue:
-    type: generic
-    generic: itemType
 connections:
   (:
   - (Value
-  ~(:
-  - items.~(Iterate
   Iterate)result:
   - )
   Iterate.iterator)item:
@@ -59,12 +8,120 @@ connections:
   - item(Iterate.iterator
   Value):
   - initial(Iterate
-meta:
-  name: slang.stream.TakeLast
-  icon: ""
-  shortDescription: ""
-  description: ""
+  ~(:
+  - items.~(Iterate
 geometry:
   size:
-    width: 340
     height: 329
+    width: 340
+id: 3fb28704-266d-4339-8cc7-8630436aab93
+meta:
+  description: ''
+  docUrl: https://bitspark.de/slang/docs/operator/take-last
+  icon: arrow-to-right
+  name: take last
+  shortDescription: emits last item of a stream of generic items
+  tags:
+  - stream
+  - aggregate
+operators:
+  Iterate:
+    generics:
+      inItemType:
+        generic: itemType
+        type: generic
+      outItemType:
+        generic: itemType
+        type: generic
+      stateType:
+        generic: itemType
+        type: generic
+    geometry:
+      position:
+        x: 0
+        y: 94.5
+    operator: e58624d4-5568-40d3-8b77-ab792ef620f1
+  Value:
+    generics:
+      valueType:
+        generic: itemType
+        type: generic
+    geometry:
+      position:
+        x: -5
+        y: -57.5
+    operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
+    properties:
+      value: $emptyValue
+properties:
+  emptyValue:
+    generic: itemType
+    type: generic
+services:
+  main:
+    geometry:
+      in:
+        position: 40
+      out:
+        position: 5
+    in:
+      stream:
+        generic: itemType
+        type: generic
+      type: stream
+    out:
+      generic: itemType
+      type: generic
+tests:
+- data:
+    in:
+    - - f
+      - a
+      - c
+    - - a
+    out:
+    - c
+    - a
+  description: emits the last item of a stream of strings
+  generics:
+    itemType:
+      type: string
+  name: Strings
+  properties:
+    emptyValue: null
+- data:
+    in:
+    - - a: 1
+        b: a
+      - a: 2
+        b: b
+      - a: 3
+        b: c
+    out:
+    - a: 3
+      b: c
+  description: emits the last item of a stream of complex items
+  generics:
+    itemType:
+      map:
+        a:
+          type: number
+        b:
+          type: string
+      type: map
+  name: Complex items
+  properties:
+    emptyValue: null
+- data:
+    in:
+    - []
+    out:
+    - null
+  description: emits null for empty streams
+  generics:
+    itemType:
+      type: boolean
+  name: Empty value null
+  properties:
+    emptyValue: null
+

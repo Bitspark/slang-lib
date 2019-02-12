@@ -1,32 +1,3 @@
-id: 85083721-a721-44bf-9b3c-a3903a580187
-services:
-  main:
-    in:
-      type: map
-      map:
-        a:
-          type: boolean
-        b:
-          type: boolean
-    out:
-      type: boolean
-    geometry:
-      in:
-        position: 0
-      out:
-        position: -5
-operators:
-  Evaluate:
-    operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
-    properties:
-      expression: a||b
-      variables:
-      - a
-      - b
-    geometry:
-      position:
-        x: -5
-        "y": -2.5
 connections:
   Evaluate):
   - )
@@ -34,13 +5,67 @@ connections:
   - a(Evaluate
   b(:
   - b(Evaluate
-meta:
-  name: slang.math.logic.Or
-  icon: ""
-  shortDescription: Takes two boolean values and emits false only if both are false.
-  description: Takes two boolean values and emits false in case both values are false,
-    and true otherwise.
 geometry:
   size:
-    width: 305
     height: 160
+    width: 305
+id: 85083721-a721-44bf-9b3c-a3903a580187
+meta:
+  description: Takes two boolean values and emits false in case both values are false,
+    and true otherwise.
+  docUrl: https://bitspark.de/slang/docs/operator/or
+  icon: ''
+  name: or
+  shortDescription: emits true only if at least one of the given booleans A and B
+    is true
+  tags:
+  - boolean
+operators:
+  Evaluate:
+    geometry:
+      position:
+        x: -5
+        y: -2.5
+    operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
+    properties:
+      expression: a||b
+      variables:
+      - a
+      - b
+services:
+  main:
+    geometry:
+      in:
+        position: 0
+      out:
+        position: -5
+    in:
+      map:
+        a:
+          type: boolean
+        b:
+          type: boolean
+      type: map
+    out:
+      type: boolean
+tests:
+- data:
+    in:
+    - a: true
+      b: true
+    - a: true
+      b: false
+    - a: false
+      b: true
+    - a: false
+      b: false
+    out:
+    - true
+    - true
+    - true
+    - false
+  description: ''
+  generics: {}
+  name: Booleans
+  properties: {}
+

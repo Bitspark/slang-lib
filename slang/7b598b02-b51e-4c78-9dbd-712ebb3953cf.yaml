@@ -1,47 +1,52 @@
+connections:
+  Evaluate):
+  - )
+  Variance):
+  - x(Evaluate
+  ~(:
+  - ~(Variance
+geometry:
+  size:
+    height: 252.5
+    width: 330
 id: 7b598b02-b51e-4c78-9dbd-712ebb3953cf
-services:
-  main:
-    in:
-      type: stream
-      stream:
-        type: number
-    out:
-      type: number
-    geometry:
-      in:
-        position: 0
-      out:
-        position: 0
+meta:
+  description: ''
+  docUrl: https://bitspark.de/slang/docs/operator/standard-deviation
+  icon: ''
+  name: standard deviation
+  shortDescription: emits standard deviation of a stream of numbers
+  tags:
+  - stream
+  - statistics
 operators:
   Evaluate:
+    geometry:
+      position:
+        x: 0
+        y: 57.5
     operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
     properties:
       expression: sqrt(x)
       variables:
       - x
-    geometry:
-      position:
-        x: 0
-        "y": 57.5
   Variance:
-    operator: 7d2857e5-e3b5-4a7b-a5f7-9eea0bbe8004
     geometry:
       position:
         x: 0
-        "y": -30.5
-connections:
-  ~(:
-  - ~(Variance
-  Evaluate):
-  - )
-  Variance):
-  - x(Evaluate
-meta:
-  name: slang.math.aggregate.StandardDeviation
-  icon: ""
-  shortDescription: ""
-  description: ""
-geometry:
-  size:
-    width: 330
-    height: 252.5
+        y: -30.5
+    operator: 7d2857e5-e3b5-4a7b-a5f7-9eea0bbe8004
+services:
+  main:
+    geometry:
+      in:
+        position: 0
+      out:
+        position: 0
+    in:
+      stream:
+        type: number
+      type: stream
+    out:
+      type: number
+

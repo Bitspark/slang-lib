@@ -1,108 +1,7 @@
-id: 21b88d35-8d82-4a38-b275-23527dffaf70
-services:
-  main:
-    in:
-      type: stream
-      stream:
-        type: generic
-        generic: itemType
-    out:
-      type: generic
-      generic: itemType
-    geometry:
-      in:
-        position: -50
-      out:
-        position: 0
-operators:
-  Iterate:
-    operator: e58624d4-5568-40d3-8b77-ab792ef620f1
-    generics:
-      inItemType:
-        type: generic
-        generic: itemType
-      outItemType:
-        type: trigger
-      stateType:
-        type: map
-        map:
-          done:
-            type: boolean
-          value:
-            type: generic
-            generic: itemType
-    geometry:
-      position:
-        x: 70
-        "y": 114.5
-  Switch:
-    operator: cd6fc5c8-5b64-4b1a-9885-59ede141b398
-    properties:
-      cases:
-      - false
-    generics:
-      inType:
-        type: map
-        map:
-          a:
-            type: generic
-            generic: itemType
-          b:
-            type: generic
-            generic: itemType
-      outType:
-        type: generic
-        generic: itemType
-      selectType:
-        type: boolean
-    geometry:
-      position:
-        x: 275
-        "y": 79.5
-  Value:
-    operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
-    properties:
-      value: false
-    generics:
-      valueType:
-        type: boolean
-    geometry:
-      position:
-        x: -80
-        "y": -27.5
-  Value1:
-    operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
-    properties:
-      value: $emptyValue
-    generics:
-      valueType:
-        type: generic
-        generic: itemType
-    geometry:
-      position:
-        x: 20
-        "y": -87.5
-  Value2:
-    operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
-    properties:
-      value: true
-    generics:
-      valueType:
-        type: boolean
-    geometry:
-      position:
-        x: 175
-        "y": 207.5
-properties:
-  emptyValue:
-    type: generic
-    generic: itemType
 connections:
   (:
   - (Value
   - (Value1
-  ~(:
-  - items.~(Iterate
   Iterate)result.value:
   - )
   Iterate.iterator)item:
@@ -125,12 +24,170 @@ connections:
   - initial.value(Iterate
   Value2):
   - state.done(Iterate.iterator
-meta:
-  name: slang.stream.TakeFirst
-  icon: ""
-  shortDescription: ""
-  description: ""
+  ~(:
+  - items.~(Iterate
 geometry:
   size:
-    width: 835
     height: 536.5
+    width: 835
+id: 21b88d35-8d82-4a38-b275-23527dffaf70
+meta:
+  description: ''
+  docUrl: https://bitspark.de/slang/docs/operator/take-first
+  icon: arrow-to-left
+  name: take first
+  shortDescription: emits first item of a stream of generic items
+  tags:
+  - stream
+  - aggregate
+operators:
+  Iterate:
+    generics:
+      inItemType:
+        generic: itemType
+        type: generic
+      outItemType:
+        type: trigger
+      stateType:
+        map:
+          done:
+            type: boolean
+          value:
+            generic: itemType
+            type: generic
+        type: map
+    geometry:
+      position:
+        x: 70
+        y: 114.5
+    operator: e58624d4-5568-40d3-8b77-ab792ef620f1
+  Switch:
+    generics:
+      inType:
+        map:
+          a:
+            generic: itemType
+            type: generic
+          b:
+            generic: itemType
+            type: generic
+        type: map
+      outType:
+        generic: itemType
+        type: generic
+      selectType:
+        type: boolean
+    geometry:
+      position:
+        x: 275
+        y: 79.5
+    operator: cd6fc5c8-5b64-4b1a-9885-59ede141b398
+    properties:
+      cases:
+      - false
+  Value:
+    generics:
+      valueType:
+        type: boolean
+    geometry:
+      position:
+        x: -80
+        y: -27.5
+    operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
+    properties:
+      value: false
+  Value1:
+    generics:
+      valueType:
+        generic: itemType
+        type: generic
+    geometry:
+      position:
+        x: 20
+        y: -87.5
+    operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
+    properties:
+      value: $emptyValue
+  Value2:
+    generics:
+      valueType:
+        type: boolean
+    geometry:
+      position:
+        x: 175
+        y: 207.5
+    operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
+    properties:
+      value: true
+properties:
+  emptyValue:
+    generic: itemType
+    type: generic
+services:
+  main:
+    geometry:
+      in:
+        position: -50
+      out:
+        position: 0
+    in:
+      stream:
+        generic: itemType
+        type: generic
+      type: stream
+    out:
+      generic: itemType
+      type: generic
+tests:
+- data:
+    in:
+    - - f
+      - a
+      - c
+    - - a
+    out:
+    - f
+    - a
+  description: emits the first item of a stream of strings
+  generics:
+    itemType:
+      type: string
+  name: Strings
+  properties:
+    emptyValue: null
+- data:
+    in:
+    - - a: 1
+        b: a
+      - a: 2
+        b: b
+      - a: 3
+        b: c
+    out:
+    - a: 1
+      b: a
+  description: emits the first item of a stream of complex items
+  generics:
+    itemType:
+      map:
+        a:
+          type: number
+        b:
+          type: string
+      type: map
+  name: Complex items
+  properties:
+    emptyValue: null
+- data:
+    in:
+    - []
+    out:
+    - null
+  description: emits null for empty streams
+  generics:
+    itemType:
+      type: boolean
+  name: Empty
+  properties:
+    emptyValue: null
+

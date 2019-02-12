@@ -1,32 +1,3 @@
-id: 4fe3f7d5-4401-4ff4-9c9b-120ff613b79a
-services:
-  main:
-    in:
-      type: map
-      map:
-        a:
-          type: number
-        b:
-          type: number
-    out:
-      type: boolean
-    geometry:
-      in:
-        position: 0
-      out:
-        position: -5
-operators:
-  Evaluate:
-    operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
-    properties:
-      expression: a==b
-      variables:
-      - a
-      - b
-    geometry:
-      position:
-        x: -5
-        "y": 7.5
 connections:
   Evaluate):
   - )
@@ -34,12 +5,95 @@ connections:
   - a(Evaluate
   b(:
   - b(Evaluate
-meta:
-  name: slang.math.arith.Equal
-  icon: ""
-  shortDescription: ""
-  description: ""
 geometry:
   size:
-    width: 305
     height: 158.5
+    width: 305
+id: 4fe3f7d5-4401-4ff4-9c9b-120ff613b79a
+meta:
+  description: ''
+  docUrl: https://bitspark.de/slang/docs/operator/equal
+  icon: equals
+  name: equal
+  shortDescription: emits true if number A equals number B
+  tags:
+  - math
+  - compare
+operators:
+  Evaluate:
+    geometry:
+      position:
+        x: -5
+        y: 7.5
+    operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
+    properties:
+      expression: a==b
+      variables:
+      - a
+      - b
+services:
+  main:
+    geometry:
+      in:
+        position: 0
+      out:
+        position: -5
+    in:
+      map:
+        a:
+          type: number
+        b:
+          type: number
+      type: map
+    out:
+      type: boolean
+tests:
+- data:
+    in:
+    - a: 8.4
+      b: 8.4
+    - a: -3
+      b: -3
+    - a: 0
+      b: 0
+    out:
+    - true
+    - true
+    - true
+  description: returns true for equal numbers
+  generics: {}
+  name: 'True'
+  properties: {}
+- data:
+    in:
+    - a: 6.4
+      b: 3.4
+    - a: -4
+      b: -1
+    - a: 0
+      b: 2
+    out:
+    - false
+    - false
+    - false
+  description: returns false for unequal numbers
+  generics: {}
+  name: 'False'
+  properties: {}
+- data:
+    in:
+    - a: null
+      b: null
+    - a: 1
+      b: null
+    - a: null
+      b: -2.5
+    out:
+    - true
+    - false
+    - false
+  description: emits false for comparisons with null except if both are null
+  generics: {}
+  name: 'Null'
+  properties: {}
+

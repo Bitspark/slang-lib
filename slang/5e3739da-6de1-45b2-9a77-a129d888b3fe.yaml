@@ -1,43 +1,4 @@
-id: 5e3739da-6de1-45b2-9a77-a129d888b3fe
-services:
-  main:
-    in:
-      type: stream
-      stream:
-        type: primitive
-    out:
-      type: stream
-      stream:
-        type: primitive
-    geometry:
-      in:
-        position: 0
-      out:
-        position: 0
-operators:
-  Evaluate:
-    operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
-    properties:
-      expression: a>b
-      variables:
-      - a
-      - b
-    geometry:
-      position:
-        x: 180
-        "y": 12.5
-  Sort:
-    operator: 72096116-885a-4218-a726-c101f6839cd5
-    generics:
-      itemType:
-        type: primitive
-    geometry:
-      position:
-        x: -10
-        "y": -10.5
 connections:
-  ~(:
-  - ~(Sort
   Evaluate):
   - (Sort.comparator
   Sort)~:
@@ -46,12 +7,110 @@ connections:
   - a(Evaluate
   Sort.comparator)b:
   - b(Evaluate
-meta:
-  name: slang.stream.SortPrimitive
-  icon: ""
-  shortDescription: ""
-  description: ""
+  ~(:
+  - ~(Sort
 geometry:
   size:
-    width: 502.5
     height: 286.75
+    width: 502.5
+id: 5e3739da-6de1-45b2-9a77-a129d888b3fe
+meta:
+  description: ''
+  docUrl: https://bitspark.de/slang/docs/operator/sort-primitives
+  icon: sort-amount-down
+  name: sort primitives
+  shortDescription: sorts a stream of primitive items
+  tags:
+  - stream
+  - sort
+operators:
+  Evaluate:
+    geometry:
+      position:
+        x: 180
+        y: 12.5
+    operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
+    properties:
+      expression: a>b
+      variables:
+      - a
+      - b
+  Sort:
+    generics:
+      itemType:
+        type: primitive
+    geometry:
+      position:
+        x: -10
+        y: -10.5
+    operator: 72096116-885a-4218-a726-c101f6839cd5
+services:
+  main:
+    geometry:
+      in:
+        position: 0
+      out:
+        position: 0
+    in:
+      stream:
+        type: primitive
+      type: stream
+    out:
+      stream:
+        type: primitive
+      type: stream
+tests:
+- data:
+    in:
+    - - 2
+      - 7
+      - 4
+      - 3
+    - - 5
+      - 3
+      - 3
+      - 3
+    out:
+    - - 2
+      - 3
+      - 4
+      - 7
+    - - 3
+      - 3
+      - 3
+      - 5
+  description: sorts streams of numbers ascendingly by their natural order
+  generics: {}
+  name: Integers
+  properties: {}
+- data:
+    in:
+    - - f
+      - a
+      - c
+    - - f
+      - ''
+      - c
+      - abc
+    out:
+    - - a
+      - c
+      - f
+    - - ''
+      - abc
+      - c
+      - f
+  description: sorts streams of strings lexically
+  generics: {}
+  name: Strings
+  properties: {}
+- data:
+    in:
+    - []
+    out:
+    - []
+  description: leaves empty streams unchanged
+  generics: {}
+  name: Empty
+  properties: {}
+

@@ -1,32 +1,3 @@
-id: 0b728e09-0651-46c3-bed3-20b0ad416569
-services:
-  main:
-    in:
-      type: map
-      map:
-        a:
-          type: string
-        b:
-          type: string
-    out:
-      type: string
-    geometry:
-      in:
-        position: 0
-      out:
-        position: -5
-operators:
-  Evaluate:
-    operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
-    properties:
-      expression: a+b
-      variables:
-      - a
-      - b
-    geometry:
-      position:
-        x: -5
-        "y": -2.5
 connections:
   Evaluate):
   - )
@@ -34,12 +5,75 @@ connections:
   - a(Evaluate
   b(:
   - b(Evaluate
-meta:
-  name: slang.string.Concatenate
-  icon: ""
-  shortDescription: ""
-  description: ""
 geometry:
   size:
-    width: 305
     height: 171.75
+    width: 305
+id: 0b728e09-0651-46c3-bed3-20b0ad416569
+meta:
+  description: ''
+  docUrl: https://bitspark.de/slang/docs/operator/concatenate-string
+  icon: layer-plus
+  name: concatenate
+  shortDescription: concatenates strings A and B
+  tags:
+  - string
+operators:
+  Evaluate:
+    geometry:
+      position:
+        x: -5
+        y: -2.5
+    operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
+    properties:
+      expression: a+b
+      variables:
+      - a
+      - b
+services:
+  main:
+    geometry:
+      in:
+        position: 0
+      out:
+        position: -5
+    in:
+      map:
+        a:
+          type: string
+        b:
+          type: string
+      type: map
+    out:
+      type: string
+tests:
+- data:
+    in:
+    - a: ha
+      b: llo
+    - a: Slang
+      b: ' rocks'
+    out:
+    - hallo
+    - Slang rocks
+  description: concatenates strings
+  generics: {}
+  name: Concatenate strings
+  properties: {}
+- data:
+    in:
+    - a: ''
+      b: Slang
+    - a: test
+      b: ''
+    - a: ''
+      b: ''
+    out:
+    - Slang
+    - test
+    - ''
+  description: empty strings
+  generics: {}
+  name: Empty strings
+  properties: {}
+

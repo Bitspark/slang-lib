@@ -1,35 +1,3 @@
-id: 05209aed-8ff7-447a-96e9-8c78488e6de3
-services:
-  main:
-    in:
-      type: map
-      map:
-        blue:
-          type: number
-        green:
-          type: number
-        red:
-          type: number
-    out:
-      type: number
-    geometry:
-      in:
-        position: 0
-      out:
-        position: 0
-operators:
-  Evaluate:
-    operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
-    properties:
-      expression: 0.2989 * red + 0.5870 * green + 0.1140 * blue
-      variables:
-      - red
-      - green
-      - blue
-    geometry:
-      position:
-        x: 0
-        "y": 17
 connections:
   Evaluate):
   - )
@@ -39,12 +7,49 @@ connections:
   - green(Evaluate
   red(:
   - red(Evaluate
-meta:
-  name: slang.image.filter.Grayscale
-  icon: ""
-  shortDescription: ""
-  description: ""
 geometry:
   size:
-    width: 310
     height: 162.5
+    width: 310
+id: 05209aed-8ff7-447a-96e9-8c78488e6de3
+meta:
+  description: ''
+  docUrl: https://bitspark.de/slang/docs/operator/grayscale-pixel
+  icon: palette
+  name: grayscale pixel
+  shortDescription: transforms an RGB pixel into a gray pixel
+  tags:
+  - image
+  - color
+operators:
+  Evaluate:
+    geometry:
+      position:
+        x: 0
+        y: 17
+    operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
+    properties:
+      expression: 0.2989 * red + 0.5870 * green + 0.1140 * blue
+      variables:
+      - red
+      - green
+      - blue
+services:
+  main:
+    geometry:
+      in:
+        position: 0
+      out:
+        position: 0
+    in:
+      map:
+        blue:
+          type: number
+        green:
+          type: number
+        red:
+          type: number
+      type: map
+    out:
+      type: number
+

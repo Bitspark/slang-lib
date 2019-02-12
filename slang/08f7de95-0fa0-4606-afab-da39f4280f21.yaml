@@ -1,45 +1,3 @@
-id: 08f7de95-0fa0-4606-afab-da39f4280f21
-services:
-  main:
-    in:
-      type: string
-    out:
-      type: primitive
-    geometry:
-      in:
-        position: -5
-      out:
-        position: -5
-operators:
-  Either:
-    operator: bf4960c8-76b2-4147-8802-a47619001477
-    generics:
-      itemType:
-        type: primitive
-    geometry:
-      position:
-        x: -5
-        "y": 179.5
-  IsNull:
-    operator: e2fd7304-7e98-4969-bdf1-1d5389144ed0
-    geometry:
-      position:
-        x: -70
-        "y": -30.5
-  Value:
-    operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
-    properties:
-      value: $default
-    generics:
-      valueType:
-        type: primitive
-    geometry:
-      position:
-        x: 80
-        "y": 2
-properties:
-  default:
-    type: primitive
 connections:
   (:
   - (IsNull
@@ -51,12 +9,90 @@ connections:
   - choose(Either
   Value):
   - true(Either
-meta:
-  name: slang.exception.ReplaceNull
-  icon: ""
-  shortDescription: ""
-  description: ""
 geometry:
   size:
-    width: 385
     height: 488.25
+    width: 385
+id: 08f7de95-0fa0-4606-afab-da39f4280f21
+meta:
+  description: ''
+  docUrl: https://bitspark.de/slang/docs/operator/replace-null
+  icon: braille
+  name: replace null
+  shortDescription: replaces null items with specified value in a stream of primitive
+    items
+  tags:
+  - exception
+operators:
+  Either:
+    generics:
+      itemType:
+        type: primitive
+    geometry:
+      position:
+        x: -5
+        y: 179.5
+    operator: bf4960c8-76b2-4147-8802-a47619001477
+  IsNull:
+    geometry:
+      position:
+        x: -70
+        y: -30.5
+    operator: e2fd7304-7e98-4969-bdf1-1d5389144ed0
+  Value:
+    generics:
+      valueType:
+        type: primitive
+    geometry:
+      position:
+        x: 80
+        y: 2
+    operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
+    properties:
+      value: $default
+properties:
+  default:
+    type: primitive
+services:
+  main:
+    geometry:
+      in:
+        position: -5
+      out:
+        position: -5
+    in:
+      type: string
+    out:
+      type: primitive
+tests:
+- data:
+    in:
+    - 1
+    - null
+    - 2
+    out:
+    - 1
+    - -1
+    - 2
+  description: ''
+  generics: {}
+  name: Integers
+  properties:
+    default: -1
+- data:
+    in:
+    - null
+    - a
+    - b
+    - null
+    out:
+    - ''
+    - a
+    - b
+    - ''
+  description: ''
+  generics: {}
+  name: Strings
+  properties:
+    default: ''
+

@@ -1,37 +1,42 @@
-id: 185635e5-7d49-4590-b6c8-5d9989ab7067
-services:
-  main:
-    in:
-      type: number
-    out:
-      type: number
-    geometry:
-      in:
-        position: 0
-      out:
-        position: 0
-operators:
-  Evaluate:
-    operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
-    properties:
-      expression: floor(x)
-      variables:
-      - x
-    geometry:
-      position:
-        x: 0
-        "y": -7.5
 connections:
   (:
   - x(Evaluate
   Evaluate):
   - )
-meta:
-  name: slang.math.function.Floor
-  icon: ""
-  shortDescription: ""
-  description: ""
 geometry:
   size:
-    width: 305
     height: 165
+    width: 305
+id: 185635e5-7d49-4590-b6c8-5d9989ab7067
+meta:
+  description: ''
+  docUrl: https://bitspark.de/slang/docs/operator/floor-number
+  icon: function
+  name: floor number
+  shortDescription: emits the greatest integer less than or equal to a given number
+  tags:
+  - math
+  - function
+operators:
+  Evaluate:
+    geometry:
+      position:
+        x: 0
+        y: -7.5
+    operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
+    properties:
+      expression: floor(x)
+      variables:
+      - x
+services:
+  main:
+    geometry:
+      in:
+        position: 0
+      out:
+        position: 0
+    in:
+      type: number
+    out:
+      type: number
+

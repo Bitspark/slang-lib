@@ -1,79 +1,6 @@
-id: 72096116-885a-4218-a726-c101f6839cd5
-services:
-  main:
-    in:
-      type: stream
-      stream:
-        type: generic
-        generic: itemType
-    out:
-      type: stream
-      stream:
-        type: generic
-        generic: itemType
-    geometry:
-      in:
-        position: 0
-      out:
-        position: 0
-delegates:
-  comparator:
-    in:
-      type: boolean
-    out:
-      type: map
-      map:
-        a:
-          type: generic
-          generic: itemType
-        b:
-          type: generic
-          generic: itemType
-    geometry:
-      in:
-        position: 95
-      out:
-        position: 70
-operators:
-  Reduce:
-    operator: b95e6da8-9770-4a04-a73d-cdfe2081870f
-    properties:
-      emptyValue: []
-    generics:
-      itemType:
-        type: stream
-        stream:
-          type: generic
-          generic: itemType
-    geometry:
-      position:
-        x: -40
-        "y": 44.5
-  Take:
-    operator: 9bebc4bf-d512-4944-bcb1-5b2c3d5b5471
-    generics:
-      itemType:
-        type: generic
-        generic: itemType
-    geometry:
-      position:
-        x: 150
-        "y": 79.5
-  WrapItem:
-    operator: 1aa54f7c-67c5-448e-a2ff-1aefe4a616dd
-    generics:
-      itemType:
-        type: generic
-        generic: itemType
-    geometry:
-      position:
-        x: -40
-        "y": -50.5
 connections:
   (.comparator:
   - ~(Take.compare
-  ~(:
-  - (WrapItem
   Reduce)~:
   - )~
   Reduce.reducer)a.~:
@@ -88,12 +15,90 @@ connections:
   - .comparator)b
   WrapItem)~:
   - ~.~(Reduce
-meta:
-  name: slang.stream.Sort
-  icon: ""
-  shortDescription: ""
-  description: ""
+  ~(:
+  - (WrapItem
+delegates:
+  comparator:
+    geometry:
+      in:
+        position: 95
+      out:
+        position: 70
+    in:
+      type: boolean
+    out:
+      map:
+        a:
+          generic: itemType
+          type: generic
+        b:
+          generic: itemType
+          type: generic
+      type: map
 geometry:
   size:
-    width: 417.5
     height: 348.5
+    width: 417.5
+id: 72096116-885a-4218-a726-c101f6839cd5
+meta:
+  description: ''
+  docUrl: https://bitspark.de/slang/docs/operator/sort-stream
+  icon: sort-amount-down
+  name: sort stream
+  shortDescription: sorts a stream, using a comparator delegate specifying the order
+  tags:
+  - stream
+  - sort
+operators:
+  Reduce:
+    generics:
+      itemType:
+        stream:
+          generic: itemType
+          type: generic
+        type: stream
+    geometry:
+      position:
+        x: -40
+        y: 44.5
+    operator: b95e6da8-9770-4a04-a73d-cdfe2081870f
+    properties:
+      emptyValue: []
+  Take:
+    generics:
+      itemType:
+        generic: itemType
+        type: generic
+    geometry:
+      position:
+        x: 150
+        y: 79.5
+    operator: 9bebc4bf-d512-4944-bcb1-5b2c3d5b5471
+  WrapItem:
+    generics:
+      itemType:
+        generic: itemType
+        type: generic
+    geometry:
+      position:
+        x: -40
+        y: -50.5
+    operator: 1aa54f7c-67c5-448e-a2ff-1aefe4a616dd
+services:
+  main:
+    geometry:
+      in:
+        position: 0
+      out:
+        position: 0
+    in:
+      stream:
+        generic: itemType
+        type: generic
+      type: stream
+    out:
+      stream:
+        generic: itemType
+        type: generic
+      type: stream
+

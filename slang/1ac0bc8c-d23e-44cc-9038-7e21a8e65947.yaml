@@ -1,32 +1,3 @@
-id: 1ac0bc8c-d23e-44cc-9038-7e21a8e65947
-services:
-  main:
-    in:
-      type: map
-      map:
-        a:
-          type: number
-        b:
-          type: number
-    out:
-      type: boolean
-    geometry:
-      in:
-        position: 0
-      out:
-        position: -5
-operators:
-  Evaluate:
-    operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
-    properties:
-      expression: a<=b
-      variables:
-      - a
-      - b
-    geometry:
-      position:
-        x: -5
-        "y": 7.5
 connections:
   Evaluate):
   - )
@@ -34,12 +5,83 @@ connections:
   - a(Evaluate
   b(:
   - b(Evaluate
-meta:
-  name: slang.math.arith.LessOrEqual
-  icon: ""
-  shortDescription: ""
-  description: ""
 geometry:
   size:
-    width: 300
     height: 169.25
+    width: 300
+id: 1ac0bc8c-d23e-44cc-9038-7e21a8e65947
+meta:
+  description: ''
+  docUrl: https://bitspark.de/slang/docs/operator/less-or-equal
+  icon: less-than-equal
+  name: less or equal
+  shortDescription: emits true only if number A is less than or equal to number B
+  tags:
+  - math
+  - compare
+operators:
+  Evaluate:
+    geometry:
+      position:
+        x: -5
+        y: 7.5
+    operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
+    properties:
+      expression: a<=b
+      variables:
+      - a
+      - b
+services:
+  main:
+    geometry:
+      in:
+        position: 0
+      out:
+        position: -5
+    in:
+      map:
+        a:
+          type: number
+        b:
+          type: number
+      type: map
+    out:
+      type: boolean
+tests:
+- data:
+    in:
+    - a: 1
+      b: 1
+    - a: -12
+      b: -9
+    - a: 6.5
+      b: 56
+    out:
+    - true
+    - true
+    - true
+  description: returns true if a is less than or equal to b
+  generics:
+    itemType:
+      type: string
+  name: 'True'
+  properties: {}
+- data:
+    in:
+    - a: 2
+      b: 1
+    - a: 8
+      b: -9
+    - a: 56
+      b: 6.5
+    out:
+    - false
+    - false
+    - false
+  description: returns false if a greater than b
+  generics:
+    itemType:
+      type: string
+  name: 'False'
+  properties: {}
+
