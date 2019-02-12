@@ -52,7 +52,7 @@ meta:
   - aggregate
 tests:
 - name: Integers
-  description: "emits the product of integers by multiplying all of them"
+  description: emits the product of integers by multiplying all of them
   generics: {}
   properties: {}
   data:
@@ -68,7 +68,7 @@ tests:
     - 24
     - 432
 - name: Floats
-  description: "emits the product of floats by multiplying all of them"
+  description: emits the product of floats by multiplying all of them
   generics: {}
   properties: {}
   data:
@@ -79,7 +79,7 @@ tests:
     out:
     - 13.125
 - name: Empty
-  description: "emits 1 if the input stream is empty"
+  description: emits 1 if the input stream is empty
   generics: {}
   properties: {}
   data:

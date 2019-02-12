@@ -35,6 +35,33 @@ meta:
   tags:
   - math
   - function
+tests:
+- name: Positive numbers
+  description: returns the floored positive number
+  generics: {}
+  properties: {}
+  data:
+    in:
+    - 1.4
+    - 0.3
+    - 135.74
+    out:
+    - 1
+    - 0
+    - 135
+- name: Negative numbers
+  description: returns the floored negative number
+  generics: {}
+  properties: {}
+  data:
+    in:
+    - -1.4
+    - -0.3
+    - -135.74
+    out:
+    - -2
+    - -1
+    - -136
 geometry:
   size:
     width: 305

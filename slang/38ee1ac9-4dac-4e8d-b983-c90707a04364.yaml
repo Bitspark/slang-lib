@@ -46,7 +46,7 @@ meta:
   - arithmetic
 tests:
 - name: Positive integers
-  description: "returns the remainder of an integer division"
+  description: returns the remainder of an integer division
   generics: {}
   properties: {}
   data:
@@ -62,7 +62,7 @@ tests:
     - 2
     - 2
 - name: Negative integers
-  description: "can also process negative integers"
+  description: can also process negative integers
   generics: {}
   properties: {}
   data:
@@ -78,7 +78,7 @@ tests:
     - 2
     - -2
 - name: Floats
-  description: "can even cope with floats"
+  description: can even cope with floats
   generics: {}
   properties: {}
   data:

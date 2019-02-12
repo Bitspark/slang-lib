@@ -134,6 +134,58 @@ meta:
   tags:
   - stream
   - aggregate
+tests:
+- name: Strings
+  description: emits the first item of a stream of strings
+  generics:
+    itemType:
+      type: string
+  properties:
+    emptyValue: null
+  data:
+    in:
+    - - f
+      - a
+      - c
+    - - a
+    out:
+    - f
+    - a
+- name: Complex items
+  description: emits the first item of a stream of complex items
+  generics:
+    itemType:
+      type: map
+      map:
+        a:
+          type: number
+        b:
+          type: string
+  properties:
+    emptyValue: null
+  data:
+    in:
+    - - a: 1
+        b: a
+      - a: 2
+        b: b
+      - a: 3
+        b: c
+    out:
+    - a: 1
+      b: a
+- name: Empty
+  description: emits null for empty streams
+  generics:
+    itemType:
+      type: boolean
+  properties:
+    emptyValue: null
+  data:
+    in:
+    - []
+    out:
+    - null
 geometry:
   size:
     width: 862.5

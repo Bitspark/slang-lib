@@ -37,7 +37,7 @@ meta:
   - boolean
 tests:
 - name: Invert
-  description: "emits the inverse boolean"
+  description: emits the inverse boolean
   generics: {}
   properties: {}
   data:

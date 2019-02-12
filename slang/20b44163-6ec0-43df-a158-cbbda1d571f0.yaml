@@ -46,7 +46,7 @@ meta:
   - compare
 tests:
 - name: "True"
-  description: "returns true if both inputs are true or both are false"
+  description: returns true if both inputs are true or both are false
   generics: {}
   properties: {}
   data:
@@ -59,7 +59,7 @@ tests:
     - true
     - true
 - name: "False"
-  description: "returns false if the inputs are not equal"
+  description: returns false if the inputs are not equal
   generics: {}
   properties: {}
   data:

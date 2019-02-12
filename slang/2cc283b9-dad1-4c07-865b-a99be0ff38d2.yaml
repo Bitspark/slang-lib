@@ -64,6 +64,65 @@ meta:
   icon: arrow-to-top
   shortDescription: finds greatest number in a stream of numbers
   description: ""
+  docUrl: https://bitspark.de/slang/docs/operator/maximum-number
+  tags:
+  - math
+  - aggregate
+tests:
+- name: Integers
+  description: emits the largest integer
+  generics: {}
+  properties:
+    emptyValue: null
+  data:
+    in:
+    - - 1
+      - 2
+      - 3
+      - 4
+    - - 1
+      - 12
+      - 9
+      - 4
+      - 76
+      - 4
+    - - 12
+      - 9
+      - 4
+      - 26
+      - 7
+      - 35
+      - 4
+    out:
+    - 4
+    - 76
+    - 35
+- name: Floats
+  description: emits the largest float
+  generics: {}
+  properties:
+    emptyValue: null
+  data:
+    in:
+    - - 1.5
+      - 3.5
+      - 2.5
+    - - -1.5
+      - 8.2
+      - -22.25
+    out:
+    - 3.5
+    - 8.2
+- name: Empty
+  description: emits null for empty streams
+  generics: {}
+  properties:
+    emptyValue: null
+  data:
+    in:
+    - []
+    out:
+    - null
 geometry:
   size:
     width: 702.5

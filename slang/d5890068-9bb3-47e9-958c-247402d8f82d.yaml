@@ -82,6 +82,10 @@ meta:
   shortDescription: finds the best item using a chooser delegate to decide which item
     is better
   description: ""
+  docUrl: https://bitspark.de/slang/docs/operator/find-best
+  tags:
+  - stream
+  - aggregate
 geometry:
   size:
     width: 450
