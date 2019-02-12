@@ -45,7 +45,7 @@ meta:
   - arithmetic
 tests:
 - name: Positive integers
-  description: "divides integers and potentially emits a floating point number"
+  description: divides integers and potentially emits a floating point number
   generics: {}
   properties: {}
   data:
@@ -61,7 +61,7 @@ tests:
     - 1
     - 0.4
 - name: Negative integers
-  description: "divides integers with negative signs correctly"
+  description: divides integers with negative signs correctly
   generics: {}
   properties: {}
   data:
@@ -77,7 +77,7 @@ tests:
     - -0.4
     - 0.4
 - name: Float division
-  description: "divides floats"
+  description: divides floats
   generics: {}
   properties: {}
   data:
@@ -93,7 +93,7 @@ tests:
     - 9
     - 0.75
 - name: Division by zero
-  description: "returns null of the dividend is 0"
+  description: returns null of the dividend is 0
   generics: {}
   properties: {}
   data:

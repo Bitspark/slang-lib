@@ -62,7 +62,7 @@ meta:
   - exception
 tests:
 - name: Integers
-  description: "replaces null values for integers (in this case with -1)"
+  description: replaces null values for integers (in this case with -1)
   generics: {}
   properties:
     default: -1
@@ -76,7 +76,7 @@ tests:
     - -1
     - 2
 - name: Strings
-  description: "replaces null values for strings (in this case with empty strings)"
+  description: replaces null values for strings (in this case with empty strings)
   generics: {}
   properties:
     default: ""

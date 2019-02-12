@@ -37,7 +37,7 @@ meta:
   - function
 tests:
 - name: Positive numbers
-  description: "returns the floored positive number"
+  description: returns the floored positive number
   generics: {}
   properties: {}
   data:
@@ -50,7 +50,7 @@ tests:
     - 0
     - 135
 - name: Negative numbers
-  description: "returns the floored negative number"
+  description: returns the floored negative number
   generics: {}
   properties: {}
   data:

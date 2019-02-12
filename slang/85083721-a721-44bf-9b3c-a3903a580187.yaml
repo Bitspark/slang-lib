@@ -46,7 +46,7 @@ meta:
   - boolean
 tests:
 - name: "True"
-  description: "returns true if at least one of its inputs is true"
+  description: returns true if at least one of its inputs is true
   generics: {}
   properties: {}
   data:
@@ -62,7 +62,7 @@ tests:
     - true
     - true
 - name: "False"
-  description: "returns false only if both inputs are false"
+  description: returns false only if both inputs are false
   generics: {}
   properties: {}
   data:

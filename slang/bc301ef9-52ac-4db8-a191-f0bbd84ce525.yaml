@@ -45,7 +45,7 @@ meta:
   - arithmetic
 tests:
 - name: Integers
-  description: "returns the difference of integers"
+  description: returns the difference of integers
   generics: {}
   properties: {}
   data:
@@ -64,7 +64,7 @@ tests:
     - 7
     - 3
 - name: Floats
-  description: "returns the difference of floats"
+  description: returns the difference of floats
   generics: {}
   properties: {}
   data:
