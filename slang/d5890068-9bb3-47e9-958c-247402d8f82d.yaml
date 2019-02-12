@@ -29,9 +29,9 @@ delegates:
           generic: itemType
     geometry:
       in:
-        position: 60
+        position: 84
       out:
-        position: 25
+        position: 10
 operators:
   Choose:
     operator: 8345ea9e-98c9-463b-8494-7123ee261270
@@ -41,8 +41,8 @@ operators:
         generic: itemType
     geometry:
       position:
-        x: 115
-        "y": 34.5
+        x: 55
+        "y": 49.5
   Reduce:
     operator: b95e6da8-9770-4a04-a73d-cdfe2081870f
     properties:
@@ -89,4 +89,4 @@ meta:
 geometry:
   size:
     width: 450
-    height: 246
+    height: 257

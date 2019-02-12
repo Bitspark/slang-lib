@@ -20,14 +20,14 @@ operators:
         type: number
     geometry:
       position:
-        x: 85
-        "y": 24.5
+        x: 25
+        "y": 39.5
   Greater:
     operator: 63ff93ec-89f1-4d6e-a952-aaf4aba68ac7
     geometry:
       position:
-        x: 275
-        "y": 59.5
+        x: 160
+        "y": 89.5
   Reduce:
     operator: b95e6da8-9770-4a04-a73d-cdfe2081870f
     properties:
@@ -125,5 +125,5 @@ tests:
     - null
 geometry:
   size:
-    width: 655
-    height: 281
+    width: 702.5
+    height: 314.5
