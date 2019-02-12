@@ -44,22 +44,28 @@ meta:
   - math
   - arithmetic
 tests:
-- name: Integers
-  description: ""
+- name: Positive integers
+  description: "returns the product of positive integers"
   generics: {}
   properties: {}
   data:
     in:
-    - a: 0
-      b: 0
     - a: 1
       b: 0
     - a: 0
-      b: 1
-    - a: 1
-      b: 1
+      b: 4
     - a: 2
       b: 5
+    out:
+    - 0
+    - 0
+    - 10
+- name: Negative integers
+  description: "evaluates the signs correctly"
+  generics: {}
+  properties: {}
+  data:
+    in:
     - a: -2
       b: 5
     - a: 2
@@ -67,27 +73,41 @@ tests:
     - a: -2
       b: -5
     out:
-    - 0
-    - 0
-    - 0
-    - 1
-    - 10
     - -10
     - -10
     - 10
 - name: Floats
-  description: ""
+  description: "copes with floating point numbers"
   generics: {}
   properties: {}
   data:
     in:
     - a: 0.5
       b: 0.5
-    - a: 1.3
+    - a: -1.3
       b: 0.5
+    - a: 6.2
+      b: 0
     out:
     - 0.25
-    - 0.65
+    - -0.65
+    - 0
+- name: "Null"
+  description: "returns null if one or both factors are null"
+  generics: {}
+  properties: {}
+  data:
+    in:
+    - a: null
+      b: 0.5
+    - a: null
+      b: null
+    - a: null
+      b: 0
+    out:
+    - null
+    - null
+    - null
 geometry:
   size:
     width: 305

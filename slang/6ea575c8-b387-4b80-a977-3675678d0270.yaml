@@ -59,7 +59,7 @@ tests:
     - 70
     out:
     - 5.8
-    - 8.366600265340756
+    - 8.3666
 - name: Negative numbers
   description: returns null for negative numbers
   generics: {}
