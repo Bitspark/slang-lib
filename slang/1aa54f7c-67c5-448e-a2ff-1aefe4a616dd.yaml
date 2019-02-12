@@ -63,3 +63,34 @@ meta:
   docUrl: https://bitspark.de/slang/docs/operator/wrap-item
   tags:
   - stream
+tests:
+- name: Wraps strings
+  description: wraps strings
+  generics:
+    itemType:
+      type: string
+  properties: {}
+  data:
+    in:
+    - a
+    - test
+    - ""
+    out:
+    - - a
+    - - test
+    - - ""
+- name: Wraps number
+  description: wraps numbers
+  generics:
+    itemType:
+      type: number
+  properties: {}
+  data:
+    in:
+    - 2
+    - -6.5
+    - 0
+    out:
+    - - 2
+    - - -6.5
+    - - 0

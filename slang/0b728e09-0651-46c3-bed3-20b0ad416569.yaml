@@ -32,22 +32,32 @@ meta:
   tags:
   - string
 tests:
-- name: Strings
-  description: ""
+- name: Concatenate strings
+  description: concatenates strings
+  generics: {}
+  properties: {}
+  data:
+    in:
+    - a: ha
+      b: llo
+    - a: Slang
+      b: " rocks"
+    out:
+    - hallo
+    - Slang rocks
+- name: Empty strings
+  description: empty strings
   generics: {}
   properties: {}
   data:
     in:
     - a: ""
+      b: Slang
+    - a: test
       b: ""
-    - a: ha
-      b: llo
     - a: ""
-      b: llo
-    - a: ha
       b: ""
     out:
+    - Slang
+    - test
     - ""
-    - hallo
-    - llo
-    - ha

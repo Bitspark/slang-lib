@@ -32,3 +32,40 @@ meta:
   tags:
   - math
   - compare
+tests:
+- name: "True"
+  description: returns true if a is less than or equal to b
+  generics:
+    itemType:
+      type: string
+  properties: {}
+  data:
+    in:
+    - a: 1
+      b: 1
+    - a: -12
+      b: -9
+    - a: 6.5
+      b: 56
+    out:
+    - true
+    - true
+    - true
+- name: "False"
+  description: returns false if a greater than b
+  generics:
+    itemType:
+      type: string
+  properties: {}
+  data:
+    in:
+    - a: 2
+      b: 1
+    - a: 8
+      b: -9
+    - a: 56
+      b: 6.5
+    out:
+    - false
+    - false
+    - false

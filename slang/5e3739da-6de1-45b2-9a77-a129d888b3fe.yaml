@@ -42,12 +42,11 @@ meta:
   - sort
 tests:
 - name: Integers
-  description: ""
+  description: sorts streams of numbers ascendingly by their natural order
   generics: {}
   properties: {}
   data:
     in:
-    - []
     - - 2
       - 7
       - 4
@@ -57,7 +56,6 @@ tests:
       - 3
       - 3
     out:
-    - []
     - - 2
       - 3
       - 4
@@ -67,7 +65,7 @@ tests:
       - 3
       - 5
 - name: Strings
-  description: ""
+  description: sorts streams of strings lexically
   generics: {}
   properties: {}
   data:
@@ -75,7 +73,43 @@ tests:
     - - f
       - a
       - c
+    - - f
+      - ""
+      - c
+      - abc
     out:
     - - a
       - c
       - f
+    - - ""
+      - abc
+      - c
+      - f
+- name: "Null"
+  description: always treats null as smallest value
+  generics: {}
+  properties: {}
+  data:
+    in:
+    - - 1
+      - null
+      - -1
+    - - ""
+      - null
+      - a
+    out:
+    - - null
+      - -1
+      - 1
+    - - null
+      - ""
+      - a
+- name: Empty
+  description: leaves empty streams unchanged
+  generics: {}
+  properties: {}
+  data:
+    in:
+    - []
+    out:
+    - []
