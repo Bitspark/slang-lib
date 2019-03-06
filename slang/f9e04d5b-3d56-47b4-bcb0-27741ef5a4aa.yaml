@@ -116,9 +116,13 @@ connections:
   - (Switch.default
 meta:
   name: average
-  icon: ""
-  shortDescription: emits the average number of a stream of numbers
+  icon: compress-arrows-alt
+  shortDescription: emits the average of a stream of numbers
   description: ""
+  docUrl: https://bitspark.de/slang/docs/operator/average
+  tags:
+  - aggregate
+  - math
 geometry:
   size:
     width: 825

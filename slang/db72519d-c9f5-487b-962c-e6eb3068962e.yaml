@@ -72,7 +72,6 @@ meta:
   docUrl: https://bitspark.de/slang/docs/operator/median
   tags:
   - math
-  - stream
   - aggregate
 tests:
 - name: Integers

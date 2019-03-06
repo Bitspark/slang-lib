@@ -189,6 +189,10 @@ meta:
   shortDescription: builds a URL value from given protocol, host, port, path and query
     string
   description: ""
+  docUrl: https://bitspark.de/slang/docs/operator/build-url
+  tags:
+  - string
+  - network
 geometry:
   size:
     width: 936.25
