@@ -1,6 +1,64 @@
+id: 7d2857e5-e3b5-4a7b-a5f7-9eea0bbe8004
+services:
+  main:
+    in:
+      type: stream
+      stream:
+        type: number
+    out:
+      type: number
+    geometry:
+      in:
+        position: -10
+      out:
+        position: -55
+operators:
+  Average:
+    operator: f9e04d5b-3d56-47b4-bcb0-27741ef5a4aa
+    properties:
+      emptyValue: 0
+    geometry:
+      position:
+        x: 90
+        "y": 49.5
+  Average1:
+    operator: f9e04d5b-3d56-47b4-bcb0-27741ef5a4aa
+    properties:
+      emptyValue: 0
+    geometry:
+      position:
+        x: -50
+        "y": -80.5
+  Evaluate:
+    operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
+    properties:
+      expression: x**2
+      variables:
+      - x
+    geometry:
+      position:
+        x: 90
+        "y": -42.5
+  Evaluate1:
+    operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
+    properties:
+      expression: x**2
+      variables:
+      - x
+    geometry:
+      position:
+        x: -50
+        "y": 32.5
+  Subtract:
+    operator: bc301ef9-52ac-4db8-a191-f0bbd84ce525
+    geometry:
+      position:
+        x: -55
+        "y": 159.5
 connections:
-  (:
-  - (Average1
+  ~(:
+  - ~(Average1
+  - x(Evaluate
   Average):
   - a(Subtract
   Average1):
@@ -11,44 +69,16 @@ connections:
   - b(Subtract
   Subtract):
   - )
-  ~(:
-  - x(Evaluate
-id: 7d2857e5-e3b5-4a7b-a5f7-9eea0bbe8004
 meta:
-  description: ''
-  icon: ''
-  name: slang.math.aggregate.Variance
-  shortDescription: ''
-operators:
-  Average:
-    operator: f9e04d5b-3d56-47b4-bcb0-27741ef5a4aa
-    properties:
-      emptyValue: 0
-  Average1:
-    operator: f9e04d5b-3d56-47b4-bcb0-27741ef5a4aa
-    properties:
-      emptyValue: 0
-  Evaluate:
-    operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
-    properties:
-      expression: x**2
-      variables:
-      - x
-  Evaluate1:
-    operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
-    properties:
-      expression: x**2
-      variables:
-      - x
-  Subtract:
-    operator: bc301ef9-52ac-4db8-a191-f0bbd84ce525
-services:
-  main:
-    in:
-      stream:
-        type: number
-      type: stream
-    out:
-      type: number
-
-
+  name: variance
+  icon: ""
+  shortDescription: emits variance of a stream of numbers
+  description: ""
+  docUrl: https://bitspark.de/slang/docs/operator/variance
+  tags:
+  - math
+  - aggregate
+geometry:
+  size:
+    width: 470
+    height: 534.5

@@ -1,14 +1,20 @@
-connections:
-  (:
-  - (Evaluate
-  Evaluate):
-  - )
 id: 40c56f57-c6df-493d-a41a-5161df79f0e2
-meta:
-  description: ''
-  icon: ''
-  name: slang.math.arith.GreaterOrEqual
-  shortDescription: ''
+services:
+  main:
+    in:
+      type: map
+      map:
+        a:
+          type: number
+        b:
+          type: number
+    out:
+      type: boolean
+    geometry:
+      in:
+        position: 0
+      out:
+        position: -5
 operators:
   Evaluate:
     operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
@@ -17,16 +23,28 @@ operators:
       variables:
       - a
       - b
-services:
-  main:
-    in:
-      map:
-        a:
-          type: number
-        b:
-          type: number
-      type: map
-    out:
-      type: boolean
-
-
+    geometry:
+      position:
+        x: -5
+        "y": 2.5
+connections:
+  Evaluate):
+  - )
+  a(:
+  - a(Evaluate
+  b(:
+  - b(Evaluate
+meta:
+  name: greater or equal
+  icon: greater-than-equal
+  shortDescription: emits true only if number A is greater than or equal to number
+    B
+  description: ""
+  docUrl: https://bitspark.de/slang/docs/operator/greater-or-equal
+  tags:
+  - math
+  - compare
+geometry:
+  size:
+    width: 300
+    height: 164.25

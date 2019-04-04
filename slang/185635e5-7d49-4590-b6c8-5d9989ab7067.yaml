@@ -1,14 +1,15 @@
-connections:
-  (:
-  - x(Evaluate
-  Evaluate):
-  - )
 id: 185635e5-7d49-4590-b6c8-5d9989ab7067
-meta:
-  description: ''
-  icon: ''
-  name: slang.math.function.Floor
-  shortDescription: ''
+services:
+  main:
+    in:
+      type: number
+    out:
+      type: number
+    geometry:
+      in:
+        position: 0
+      out:
+        position: 0
 operators:
   Evaluate:
     operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
@@ -16,11 +17,52 @@ operators:
       expression: floor(x)
       variables:
       - x
-services:
-  main:
+    geometry:
+      position:
+        x: 0
+        "y": -7.5
+connections:
+  (:
+  - x(Evaluate
+  Evaluate):
+  - )
+meta:
+  name: floor number
+  icon: function
+  shortDescription: emits the greatest integer less than or equal to a given number
+  description: ""
+  docUrl: https://bitspark.de/slang/docs/operator/floor-number
+  tags:
+  - math
+  - function
+tests:
+- name: Positive numbers
+  description: returns the floored positive number
+  generics: {}
+  properties: {}
+  data:
     in:
-      type: number
+    - 1.4
+    - 0.3
+    - 135.74
     out:
-      type: number
-
-
+    - 1
+    - 0
+    - 135
+- name: Negative numbers
+  description: returns the floored negative number
+  generics: {}
+  properties: {}
+  data:
+    in:
+    - -1.4
+    - -0.3
+    - -135.74
+    out:
+    - -2
+    - -1
+    - -136
+geometry:
+  size:
+    width: 305
+    height: 165

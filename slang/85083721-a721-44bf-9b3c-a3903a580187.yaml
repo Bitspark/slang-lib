@@ -1,15 +1,20 @@
-connections:
-  (:
-  - (Evaluate
-  Evaluate):
-  - )
 id: 85083721-a721-44bf-9b3c-a3903a580187
-meta:
-  description: Takes two boolean values and emits false in case both values are false,
-    and true otherwise.
-  icon: ''
-  name: slang.math.logic.Or
-  shortDescription: Takes two boolean values and emits false only if both are false.
+services:
+  main:
+    in:
+      type: map
+      map:
+        a:
+          type: boolean
+        b:
+          type: boolean
+    out:
+      type: boolean
+    geometry:
+      in:
+        position: 0
+      out:
+        position: -5
 operators:
   Evaluate:
     operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
@@ -18,19 +23,33 @@ operators:
       variables:
       - a
       - b
-services:
-  main:
-    in:
-      map:
-        a:
-          type: boolean
-        b:
-          type: boolean
-      type: map
-    out:
-      type: boolean
+    geometry:
+      position:
+        x: -5
+        "y": -2.5
+connections:
+  Evaluate):
+  - )
+  a(:
+  - a(Evaluate
+  b(:
+  - b(Evaluate
+meta:
+  name: or
+  icon: ""
+  shortDescription: emits true only if at least one of the given booleans A and B
+    is true
+  description: Takes two boolean values and emits false in case both values are false,
+    and true otherwise.
+  docUrl: https://bitspark.de/slang/docs/operator/or
+  tags:
+  - boolean
 tests:
-- data:
+- name: "True"
+  description: returns true if at least one of its inputs is true
+  generics: {}
+  properties: {}
+  data:
     in:
     - a: true
       b: true
@@ -38,13 +57,21 @@ tests:
       b: false
     - a: false
       b: true
-    - a: false
-      b: false
     out:
     - true
     - true
     - true
+- name: "False"
+  description: returns false only if both inputs are false
+  generics: {}
+  properties: {}
+  data:
+    in:
+    - a: false
+      b: false
+    out:
     - false
-  name: Booleans
-
-
+geometry:
+  size:
+    width: 305
+    height: 160

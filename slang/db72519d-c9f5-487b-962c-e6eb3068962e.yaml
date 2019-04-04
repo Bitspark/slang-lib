@@ -1,55 +1,86 @@
-connections:
-  (:
-  - (SortPrimitive
-  - (Count
-  Count):
-  - x(Evaluate1
-  Evaluate1):
-  - index(IndexAccess
-  IndexAccess):
-  - )
-  SortPrimitive):
-  - items(IndexAccess
 id: db72519d-c9f5-487b-962c-e6eb3068962e
-meta:
-  description: ''
-  icon: ''
-  name: slang.math.aggregate.Median
-  shortDescription: ''
+services:
+  main:
+    in:
+      type: stream
+      stream:
+        type: number
+    out:
+      type: number
+    geometry:
+      in:
+        position: -20
+      out:
+        position: 40
 operators:
   Count:
+    operator: 5df619e7-f8ab-44d9-b315-05fdcd52ee43
     generics:
       itemType:
         type: number
-    operator: 5df619e7-f8ab-44d9-b315-05fdcd52ee43
+    geometry:
+      position:
+        x: -75
+        "y": -50.5
   Evaluate1:
     operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
     properties:
       expression: floor((x-1)/2)
       variables:
       - x
+    geometry:
+      position:
+        x: -75
+        "y": 52.5
   IndexAccess:
-    generics:
-      itemType:
-        type: number
     operator: ea85366f-4046-4955-bb0e-391d27bf477d
     properties:
       default: $emptyValue
+    generics:
+      itemType:
+        type: number
+    geometry:
+      position:
+        x: 40
+        "y": 169.5
   SortPrimitive:
     operator: 5e3739da-6de1-45b2-9a77-a129d888b3fe
+    geometry:
+      position:
+        x: 45
+        "y": -50.5
 properties:
   emptyValue:
     type: number
-services:
-  main:
-    in:
-      stream:
-        type: number
-      type: stream
-    out:
-      type: number
+connections:
+  ~(:
+  - ~(SortPrimitive
+  - ~(Count
+  Count):
+  - x(Evaluate1
+  Evaluate1):
+  - index(IndexAccess
+  IndexAccess):
+  - )
+  SortPrimitive)~:
+  - items.~(IndexAccess
+meta:
+  name: median
+  icon: compress-arrows-alt
+  shortDescription: emits the median number of a stream of numbers
+  description: ""
+  docUrl: https://bitspark.de/slang/docs/operator/median
+  tags:
+  - math
+  - aggregate
 tests:
-- data:
+- name: Integers
+  description: returns the integer for which the half of input values is greater and
+    the other half is smaller
+  generics: {}
+  properties:
+    emptyValue: null
+  data:
     in:
     - - 1
       - 2
@@ -67,68 +98,32 @@ tests:
       - 24
       - 9
       - 76
-    - - 1
-      - 12
-      - 9
-      - 20
-      - 4
-      - 4
-      - 26
-      - 7
-      - 35
-      - 19
-      - 1
-      - 24
-      - 9
-      - 3
-      - 7
-      - 2
-      - 12
-      - 76
-      - 1
-      - 12
-      - 9
-      - 4
-      - 4
-      - 26
-      - 54
-      - 23
-      - 15
-      - 18
-      - 7
-      - 35
-      - 1
-      - 24
-      - 9
-      - 76
-      - 10
-      - 11
     out:
     - 2
     - 9
-    - 10
-  name: Integers
+- name: Floats
+  description: behaves accordingly for floats
+  generics: {}
   properties:
     emptyValue: null
-- data:
+  data:
     in:
     - - 1.5
       - 3.5
       - 2.5
     out:
     - 2.5
-  name: Floats
+- name: Empty
+  description: emits null for empty streams
+  generics: {}
   properties:
     emptyValue: null
-- data:
+  data:
     in:
-    - []
     - []
     out:
     - null
-    - null
-  name: Empty
-  properties:
-    emptyValue: null
-
-
+geometry:
+  size:
+    width: 445
+    height: 496

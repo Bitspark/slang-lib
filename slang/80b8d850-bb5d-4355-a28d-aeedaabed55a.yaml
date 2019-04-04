@@ -1,14 +1,20 @@
-connections:
-  (:
-  - (Evaluate
-  Evaluate):
-  - )
 id: 80b8d850-bb5d-4355-a28d-aeedaabed55a
-meta:
-  description: ''
-  icon: ''
-  name: slang.math.arith.Unequal
-  shortDescription: ''
+services:
+  main:
+    in:
+      type: map
+      map:
+        a:
+          type: number
+        b:
+          type: number
+    out:
+      type: boolean
+    geometry:
+      in:
+        position: 0
+      out:
+        position: -5
 operators:
   Evaluate:
     operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
@@ -17,16 +23,27 @@ operators:
       variables:
       - a
       - b
-services:
-  main:
-    in:
-      map:
-        a:
-          type: number
-        b:
-          type: number
-      type: map
-    out:
-      type: boolean
-
-
+    geometry:
+      position:
+        x: -5
+        "y": 12.5
+connections:
+  Evaluate):
+  - )
+  a(:
+  - a(Evaluate
+  b(:
+  - b(Evaluate
+meta:
+  name: unequal
+  icon: not-equal
+  shortDescription: emits true only if number A does not equal number B
+  description: ""
+  docUrl: https://bitspark.de/slang/docs/operator/unequal
+  tags:
+  - math
+  - compare
+geometry:
+  size:
+    width: 305
+    height: 164.25

@@ -1,14 +1,20 @@
-connections:
-  (:
-  - (Evaluate
-  Evaluate):
-  - )
 id: bc301ef9-52ac-4db8-a191-f0bbd84ce525
-meta:
-  description: ''
-  icon: ''
-  name: slang.math.arith.Subtract
-  shortDescription: ''
+services:
+  main:
+    in:
+      type: map
+      map:
+        a:
+          type: number
+        b:
+          type: number
+    out:
+      type: number
+    geometry:
+      in:
+        position: 0
+      out:
+        position: -5
 operators:
   Evaluate:
     operator: 37ccdc28-67b0-4bb1-8591-4e0e813e3ec1
@@ -17,32 +23,37 @@ operators:
       variables:
       - a
       - b
-services:
-  main:
-    in:
-      map:
-        a:
-          type: number
-        b:
-          type: number
-      type: map
-    out:
-      type: number
+    geometry:
+      position:
+        x: -5
+        "y": -2.5
+connections:
+  Evaluate):
+  - )
+  a(:
+  - a(Evaluate
+  b(:
+  - b(Evaluate
+meta:
+  name: subtract
+  icon: minus
+  shortDescription: subtracts number B from number A and emits the resulting difference
+  description: ""
+  docUrl: https://bitspark.de/slang/docs/operator/subtract
+  tags:
+  - math
+  - arithmetic
 tests:
-- data:
+- name: Integers
+  description: returns the difference of integers
+  generics: {}
+  properties: {}
+  data:
     in:
     - a: 0
       b: 0
     - a: 1
       b: 0
-    - a: 0
-      b: 1
-    - a: 1
-      b: 1
-    - a: 2
-      b: 5
-    - a: -2
-      b: 5
     - a: 2
       b: -5
     - a: -2
@@ -50,34 +61,25 @@ tests:
     out:
     - 0
     - 1
-    - -1
-    - 0
-    - -3
-    - -7
     - 7
     - 3
-  name: Integers
-- data:
+- name: Floats
+  description: returns the difference of floats
+  generics: {}
+  properties: {}
+  data:
     in:
     - a: 0.5
       b: 0.5
-    - a: 1.3
-      b: 0.5
     - a: -1.3
       b: 0.3
-    - a: 1.3
-      b: -0.3
     - a: -1.5
       b: -0.8
-    - a: 0.25
-      b: 0.5
     out:
-    - 0.0
-    - 0.8
+    - 0
     - -1.6
-    - 1.6
     - -0.7
-    - -0.25
-  name: Floats
-
-
+geometry:
+  size:
+    width: 305
+    height: 166.75
