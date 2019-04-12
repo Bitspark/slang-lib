@@ -1,0 +1,77 @@
+id: 3f8ae6f4-678b-4527-b00d-77c8b57a24e0
+services:
+  main:
+    in:
+      type: map
+      map:
+        item:
+          type: generic
+          generic: itemType
+        triggers:
+          type: stream
+          stream:
+            type: trigger
+    out:
+      type: stream
+      stream:
+        type: generic
+        generic: itemType
+    geometry:
+      in:
+        position: 0
+      out:
+        position: 0
+operators:
+  iterate:
+    operator: e58624d4-5568-40d3-8b77-ab792ef620f1
+    generics:
+      inItemType:
+        type: trigger
+      outItemType:
+        type: generic
+        generic: itemType
+      stateType:
+        type: generic
+        generic: itemType
+    geometry:
+      position:
+        x: 5
+        "y": -0.5
+connections:
+  item(:
+  - initial(iterate
+  iterate)items.~:
+  - )~
+  iterate.iterator)state:
+  - item(iterate.iterator
+  - state(iterate.iterator
+  triggers.~(:
+  - items.~(iterate
+meta:
+  name: repeat
+  icon: ""
+  shortDescription: ""
+  description: ""
+  docUrl: ""
+  tags: []
+geometry:
+  size:
+    width: 265
+    height: 253.5
+tests:
+- name: Strings
+  description: emits the same string for each incoming item
+  generics:
+    itemType:
+      type: string
+  data:
+    in:
+    - item: hallo welt
+      triggers:
+      - null
+      - null
+      - null
+    out:
+    - - hallo welt
+      - hallo welt
+      - hallo welt
