@@ -1,0 +1,75 @@
+id: fbbc1fda-2ef9-41a5-92e2-5f1e53901c1b
+services:
+  main:
+    in:
+      type: map
+      map:
+        condition:
+          type: boolean
+        item:
+          type: generic
+          generic: itemType
+    out:
+      type: generic
+      generic: itemType
+    geometry:
+      in:
+        position: 0
+      out:
+        position: -5
+delegates:
+  handler:
+    in:
+      type: generic
+      generic: itemType
+    out:
+      type: generic
+      generic: itemType
+    geometry:
+      in:
+        position: -15
+      out:
+        position: -40
+operators:
+  switch:
+    operator: cd6fc5c8-5b64-4b1a-9885-59ede141b398
+    properties:
+      cases:
+      - false
+    generics:
+      inType:
+        type: generic
+        generic: itemType
+      outType:
+        type: generic
+        generic: itemType
+      selectType:
+        type: boolean
+    geometry:
+      position:
+        x: -5
+        "y": -25.5
+connections:
+  (.handler:
+  - (switch.default
+  condition(:
+  - select(switch
+  item(:
+  - item(switch
+  switch):
+  - )
+  switch.default):
+  - .handler)
+  switch.false):
+  - (switch.false
+meta:
+  name: if
+  icon: ""
+  shortDescription: ""
+  description: ""
+  docUrl: ""
+  tags: []
+geometry:
+  size:
+    width: 530
+    height: 389
