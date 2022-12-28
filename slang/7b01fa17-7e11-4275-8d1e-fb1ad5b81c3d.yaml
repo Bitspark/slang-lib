@@ -35,7 +35,7 @@ connections:
   b(:
   - b(Evaluate
 meta:
-  name: add
+  name: ➕
   icon: plus
   shortDescription: adds two numbers A and B and emits their sum
   description: ""

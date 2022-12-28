@@ -35,7 +35,7 @@ connections:
   b(:
   - b(Evaluate
 meta:
-  name: subtract
+  name: ➖
   icon: minus
   shortDescription: subtracts number B from number A and emits the resulting difference
   description: ""
@@ -82,4 +82,4 @@ tests:
 geometry:
   size:
     width: 305
-    height: 166.75
+    height: 169

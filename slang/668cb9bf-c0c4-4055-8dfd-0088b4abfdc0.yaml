@@ -35,7 +35,7 @@ connections:
   b(:
   - b(Evaluate
 meta:
-  name: divide
+  name: ➗
   icon: divide
   shortDescription: divides number A by number B
   description: ""

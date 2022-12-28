@@ -35,7 +35,7 @@ connections:
   b(:
   - b(Evaluate
 meta:
-  name: greater or equal
+  name: ≥
   icon: greater-than-equal
   shortDescription: emits true only if number A is greater than or equal to number
     B

@@ -35,7 +35,7 @@ connections:
   b(:
   - b(Evaluate
 meta:
-  name: equal
+  name: =
   icon: equals
   shortDescription: emits true if number A equals number B
   description: ""
@@ -95,4 +95,4 @@ tests:
 geometry:
   size:
     width: 305
-    height: 158.5
+    height: 158.99805

@@ -89,5 +89,5 @@ tests:
     - 0
 geometry:
   size:
-    width: 437.5
-    height: 277.75
+    width: 499.375
+    height: 277.9375

@@ -27,7 +27,7 @@ connections:
   Evaluate):
   - )
 meta:
-  name: flip sign
+  name: ±
   icon: function
   shortDescription: flips the sign of a given number and emit the resulting number
   description: ""

@@ -35,7 +35,7 @@ connections:
   b(:
   - b(Evaluate
 meta:
-  name: less
+  name: <
   icon: less-than
   shortDescription: emits true only if number A is less than number B
   description: ""

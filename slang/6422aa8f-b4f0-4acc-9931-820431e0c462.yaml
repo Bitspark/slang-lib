@@ -60,7 +60,7 @@ connections:
   Reduce.reducer)b:
   - false(Choose
 meta:
-  name: minimum number
+  name: min
   icon: arrow-to-bottom
   shortDescription: finds smallest number in a stream of numbers
   description: ""
@@ -126,4 +126,4 @@ tests:
 geometry:
   size:
     width: 756.25
-    height: 374.5
+    height: 391.25
