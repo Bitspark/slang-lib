@@ -27,7 +27,7 @@ connections:
   Evaluate):
   - )
 meta:
-  name: boolean not
+  name: not
   icon: ""
   shortDescription: emits the inverse of a given boolean
   description: Takes a boolean and emits true in case it is false, and false if it

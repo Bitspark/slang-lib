@@ -89,7 +89,7 @@ connections:
   WrapItem)~:
   - ~.~(Reduce
 meta:
-  name: sort stream
+  name: sort
   icon: sort-amount-down
   shortDescription: sorts a stream, using a comparator delegate specifying the order
   description: ""

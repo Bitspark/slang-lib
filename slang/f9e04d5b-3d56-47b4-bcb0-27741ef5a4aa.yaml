@@ -121,8 +121,8 @@ meta:
   description: ""
   docUrl: https://bitspark.de/slang/docs/operator/average
   tags:
-  - aggregate
   - math
+  - aggregate
 geometry:
   size:
     width: 825

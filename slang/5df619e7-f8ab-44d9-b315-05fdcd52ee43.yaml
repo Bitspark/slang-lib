@@ -56,7 +56,7 @@ connections:
   Value):
   - ~(Reduce
 meta:
-  name: count items
+  name: count
   icon: abacus
   shortDescription: counts number of items in a stream of generic items
   description: ""

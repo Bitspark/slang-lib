@@ -43,27 +43,42 @@ operators:
       position:
         x: 40
         "y": 169.5
-  SortPrimitive:
-    operator: 5e3739da-6de1-45b2-9a77-a129d888b3fe
+  lessthan:
+    operator: 8229c88c-ad78-4646-889c-ef4a533624a0
     geometry:
       position:
-        x: 45
+        x: 195
+        "y": -0.5
+  sort:
+    operator: 72096116-885a-4218-a726-c101f6839cd5
+    generics:
+      itemType:
+        type: number
+    geometry:
+      position:
+        x: 55
         "y": -50.5
 properties:
   emptyValue:
     type: number
 connections:
   ~(:
-  - ~(SortPrimitive
   - ~(Count
+  - ~(sort
   Count):
   - x(Evaluate1
   Evaluate1):
   - index(IndexAccess
   IndexAccess):
   - )
-  SortPrimitive)~:
+  lessthan):
+  - (sort.comparator
+  sort)~:
   - items.~(IndexAccess
+  sort.comparator)a:
+  - a(lessthan
+  sort.comparator)b:
+  - b(lessthan
 meta:
   name: median
   icon: compress-arrows-alt
@@ -125,5 +140,5 @@ tests:
     - null
 geometry:
   size:
-    width: 445
-    height: 496
+    width: 673.75
+    height: 506.5
