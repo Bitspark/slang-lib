@@ -35,14 +35,14 @@ connections:
   b(:
   - b(Evaluate
 meta:
-  name: '>'
+  name: greater than
   icon: greater-than
   shortDescription: emits true only if number A is greater than number B
   description: ""
   docUrl: https://bitspark.de/slang/docs/operator/greater
   tags:
-  - math
   - compare
+  - math
 geometry:
   size:
     width: 305

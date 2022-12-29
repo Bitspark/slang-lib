@@ -35,14 +35,14 @@ connections:
   b(:
   - b(Evaluate
 meta:
-  name: <
+  name: less than
   icon: less-than
   shortDescription: emits true only if number A is less than number B
   description: ""
   docUrl: https://bitspark.de/slang/docs/operator/less
   tags:
-  - math
   - compare
+  - math
 geometry:
   size:
     width: 305

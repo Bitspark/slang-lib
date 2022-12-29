@@ -35,15 +35,15 @@ connections:
   b(:
   - b(Evaluate
 meta:
-  name: ≥
+  name: greater equal
   icon: greater-than-equal
   shortDescription: emits true only if number A is greater than or equal to number
     B
   description: ""
   docUrl: https://bitspark.de/slang/docs/operator/greater-or-equal
   tags:
-  - math
   - compare
+  - math
 geometry:
   size:
     width: 300

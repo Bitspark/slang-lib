@@ -35,13 +35,12 @@ connections:
   b(:
   - b(Evaluate
 meta:
-  name: =
+  name: equal
   icon: equals
   shortDescription: emits true if number A equals number B
   description: ""
   docUrl: https://bitspark.de/slang/docs/operator/equal
   tags:
-  - math
   - compare
 tests:
 - name: "True"

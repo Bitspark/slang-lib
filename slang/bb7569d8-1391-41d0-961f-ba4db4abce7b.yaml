@@ -35,7 +35,7 @@ connections:
   b(:
   - b(Evaluate
 meta:
-  name: ✖
+  name: multiply
   icon: times
   shortDescription: multiplies two numbers A and B and emits their product
   description: ""
