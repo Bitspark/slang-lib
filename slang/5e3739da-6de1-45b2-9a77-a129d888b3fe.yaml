@@ -54,7 +54,6 @@ meta:
   docUrl: https://bitspark.de/slang/docs/operator/sort-primitives
   tags:
   - stream
-  - sort
 tests:
 - name: Integers
   description: sorts streams of numbers ascendingly by their natural order

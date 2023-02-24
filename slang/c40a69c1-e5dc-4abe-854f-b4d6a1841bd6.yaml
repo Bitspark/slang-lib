@@ -34,6 +34,7 @@ meta:
   docUrl: https://bitspark.de/slang/docs/operator/flip-sign
   tags:
   - math
+  - function
 geometry:
   size:
     width: 310

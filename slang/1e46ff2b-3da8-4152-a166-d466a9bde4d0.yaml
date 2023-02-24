@@ -107,7 +107,7 @@ meta:
   docUrl: https://bitspark.de/slang/docs/operator/moving-average
   tags:
   - math
-  - stream
+  - statistics
 tests:
 - name: Emit moving average
   description: emits a moving average value for each incoming number

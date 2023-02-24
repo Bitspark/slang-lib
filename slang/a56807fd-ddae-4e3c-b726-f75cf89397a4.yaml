@@ -34,6 +34,7 @@ meta:
     is true.
   docUrl: https://bitspark.de/slang/docs/operator/boolean-not
   tags:
+  - math
   - boolean
 tests:
 - name: Invert

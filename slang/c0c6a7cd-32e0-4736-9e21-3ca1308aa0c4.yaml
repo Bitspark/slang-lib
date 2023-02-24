@@ -91,7 +91,6 @@ meta:
   tags:
   - math
   - statistics
-  - stream
 geometry:
   size:
     width: 560

@@ -41,8 +41,8 @@ meta:
   description: ""
   docUrl: https://bitspark.de/slang/docs/operator/less-or-equal
   tags:
-  - compare
   - math
+  - compare
 tests:
 - name: "True"
   description: returns true if a is less than or equal to b

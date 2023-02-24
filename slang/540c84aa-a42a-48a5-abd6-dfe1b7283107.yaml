@@ -192,7 +192,6 @@ meta:
   docUrl: https://bitspark.de/slang/docs/operator/build-url
   tags:
   - string
-  - network
 geometry:
   size:
     width: 936.25

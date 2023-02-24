@@ -43,7 +43,7 @@ meta:
   description: ""
   docUrl: https://bitspark.de/slang/docs/operator/standard-deviation
   tags:
-  - stream
+  - math
   - statistics
 geometry:
   size:

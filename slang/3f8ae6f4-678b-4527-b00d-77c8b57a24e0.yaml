@@ -53,7 +53,7 @@ meta:
   shortDescription: ""
   description: ""
   docUrl: ""
-  tags: []
+  tags: ["stream", "control"]
 geometry:
   size:
     width: 265

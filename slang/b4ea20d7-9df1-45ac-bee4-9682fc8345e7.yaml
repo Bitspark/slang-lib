@@ -42,6 +42,7 @@ meta:
     and false otherwise.
   docUrl: https://bitspark.de/slang/docs/operator/and
   tags:
+  - math
   - boolean
 geometry:
   size:

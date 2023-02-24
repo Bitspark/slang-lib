@@ -96,7 +96,6 @@ meta:
   docUrl: https://bitspark.de/slang/docs/operator/sort-stream
   tags:
   - stream
-  - sort
 geometry:
   size:
     width: 417.5

@@ -41,6 +41,7 @@ meta:
   description: ""
   docUrl: https://bitspark.de/slang/docs/operator/equal
   tags:
+  - math
   - compare
 tests:
 - name: "True"
