@@ -77,7 +77,7 @@ operators:
   Value1:
     operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
     properties:
-      value: $emptyValue
+      value: 0
     generics:
       valueType:
         type: number
@@ -85,9 +85,6 @@ operators:
       position:
         x: 160
         "y": 147.5
-properties:
-  emptyValue:
-    type: number
 connections:
   ~(:
   - ~(Count

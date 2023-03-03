@@ -31,7 +31,7 @@ operators:
   Reduce:
     operator: b95e6da8-9770-4a04-a73d-cdfe2081870f
     properties:
-      emptyValue: $emptyValue
+      emptyValue: 0
     generics:
       itemType:
         type: number
@@ -39,9 +39,6 @@ operators:
       position:
         x: -105
         "y": -10.5
-properties:
-  emptyValue:
-    type: number
 connections:
   ~(:
   - ~(Reduce

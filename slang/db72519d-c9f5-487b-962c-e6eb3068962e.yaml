@@ -35,7 +35,7 @@ operators:
   IndexAccess:
     operator: ea85366f-4046-4955-bb0e-391d27bf477d
     properties:
-      default: $emptyValue
+      default: 0
     generics:
       itemType:
         type: number
@@ -58,9 +58,6 @@ operators:
       position:
         x: 55
         "y": -50.5
-properties:
-  emptyValue:
-    type: number
 connections:
   ~(:
   - ~(Count

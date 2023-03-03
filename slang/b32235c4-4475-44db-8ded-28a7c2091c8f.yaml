@@ -22,7 +22,7 @@ operators:
   Reduce:
     operator: b95e6da8-9770-4a04-a73d-cdfe2081870f
     properties:
-      emptyValue: 1
+      emptyValue: 0
     generics:
       itemType:
         type: number
