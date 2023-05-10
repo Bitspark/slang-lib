@@ -1,0 +1,54 @@
+id: be4ec82a-3417-482c-9a49-86dcd1cb0093
+services:
+  main:
+    in:
+      type: stream
+      stream:
+        type: boolean
+    out:
+      type: boolean
+    geometry:
+      in:
+        position: 0
+      out:
+        position: 0
+operators:
+  or:
+    operator: 85083721-a721-44bf-9b3c-a3903a580187
+    geometry:
+      position:
+        x: 136
+        "y": 47
+  reduce:
+    operator: b95e6da8-9770-4a04-a73d-cdfe2081870f
+    properties:
+      emptyValue: false
+    generics:
+      itemType:
+        type: boolean
+    geometry:
+      position:
+        x: 0
+        "y": 0
+connections:
+  ~(:
+  - ~(reduce
+  or):
+  - (reduce.reducer
+  reduce):
+  - )
+  reduce.reducer)a:
+  - b(or
+  reduce.reducer)b:
+  - a(or
+meta:
+  name: any
+  icon: ""
+  shortDescription: "emits true if at least one element is true"
+  description: ""
+  docUrl: ""
+  tags: ["stream"]
+geometry:
+  size:
+    width: 438
+    height: 248.5

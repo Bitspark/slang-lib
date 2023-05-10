@@ -1,0 +1,238 @@
+id: 293a624a-eb3a-45a6-9164-50cead67f074
+services:
+  main:
+    in:
+      type: trigger
+    out:
+      type: stream
+      stream:
+        type: map
+        map:
+          '{ChannelNames}':
+            type: number
+    geometry:
+      in:
+        position: 0
+      out:
+        position: 0
+operators:
+  convert:
+    operator: d1191456-3583-4eaf-8ec1-e486c3818c60
+    generics:
+      fromType:
+        type: string
+      toType:
+        type: binary
+    geometry:
+      position:
+        x: -225
+        "y": -513
+  decodeprtgapihistoicdata:
+    operator: 71f01aee-860a-49a4-8fe0-2a449301ea54
+    properties:
+      ChannelNames: $ChannelNames
+    geometry:
+      position:
+        x: -240
+        "y": -165.5
+  format:
+    operator: 21dbddf2-2d07-494e-8950-3ac0224a3ff5
+    properties:
+      variables:
+      - "Y"
+      - M
+      - D
+      - h
+      - m
+      - s
+    geometry:
+      position:
+        x: 530
+        "y": -310.5
+  format-2:
+    operator: 21dbddf2-2d07-494e-8950-3ac0224a3ff5
+    properties:
+      variables:
+      - "Y"
+      - M
+      - D
+    geometry:
+      position:
+        x: 385
+        "y": -320.5
+  httpclient:
+    operator: f7f5907d-758b-4892-8a3e-ae86b877b869
+    geometry:
+      position:
+        x: -75
+        "y": -315.5
+  now:
+    operator: 808c7846-db9f-43ee-989b-37a08ce7e70d
+    geometry:
+      position:
+        x: 440
+        "y": -595.5
+  template-3:
+    operator: 3c39f999-b5c2-490d-aed1-19149d228b04
+    properties:
+      variables:
+      - sdate
+      - edate
+    geometry:
+      position:
+        x: 370
+        "y": -215.5
+  value:
+    operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
+    properties:
+      value: []
+    generics:
+      valueType:
+        type: stream
+        stream:
+          type: map
+          map:
+            key:
+              type: string
+            values:
+              type: stream
+              stream:
+                type: string
+    geometry:
+      position:
+        x: -80
+        "y": -543
+  value-2:
+    operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
+    properties:
+      value:
+        method: GET
+    generics:
+      valueType:
+        type: map
+        map:
+          method:
+            type: string
+    geometry:
+      position:
+        x: -5
+        "y": -473
+  value-3:
+    operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
+    properties:
+      value: ""
+    generics:
+      valueType:
+        type: string
+    geometry:
+      position:
+        x: -225
+        "y": -538
+  value-4:
+    operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
+    properties:
+      value: $Host/api/historicdata.json?id=$SensorId&username=$Username&passhash=$Passhash&usecaption=0&avg=0&{sdate}&{edate}
+    generics:
+      valueType:
+        type: string
+    geometry:
+      position:
+        x: 75
+        "y": -538
+  value-t1:
+    operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
+    properties:
+      value: edate=%02d-%02d-%02d-%02d-%02d-%02d
+    generics:
+      valueType:
+        type: string
+    geometry:
+      position:
+        x: 600
+        "y": -553
+  value-t2:
+    operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
+    properties:
+      value: sdate=%02d-%02d-%02d-00-00-00
+    generics:
+      valueType:
+        type: string
+    geometry:
+      position:
+        x: 295
+        "y": -608
+properties:
+  ChannelNames:
+    type: stream
+    stream:
+      type: string
+  Host:
+    type: string
+  Passhash:
+    type: string
+  SensorId:
+    type: string
+  Username:
+    type: string
+connections:
+  (:
+  - (value-4
+  - (value
+  - (value-3
+  - (value-2
+  - (value-t1
+  - (now
+  - (value-t2
+  convert):
+  - body(httpclient
+  decodeprtgapihistoicdata)channels.~.{ChannelNames}:
+  - )~.{ChannelNames}
+  format):
+  - edate(template-3
+  format-2):
+  - sdate(template-3
+  httpclient)body:
+  - (decodeprtgapihistoicdata
+  now)date.day:
+  - D(format
+  - D(format-2
+  now)date.month:
+  - M(format
+  - M(format-2
+  now)date.year:
+  - Y(format
+  - Y(format-2
+  now)time.hour:
+  - h(format
+  now)time.minute:
+  - m(format
+  now)time.second:
+  - s(format
+  template-3):
+  - url(httpclient
+  value)~.key:
+  - headers.~.key(httpclient
+  value)~.values.~:
+  - headers.~.values.~(httpclient
+  value-2)method:
+  - method(httpclient
+  value-3):
+  - (convert
+  value-4):
+  - content(template-3
+  value-t1):
+  - format(format
+  value-t2):
+  - format(format-2
+meta:
+  name: PRTG/Get Historic Data
+  icon: ""
+  shortDescription: ""
+  description: ""
+  docUrl: ""
+  tags: 
+    - connectivity
+geometry:
+  size:
+    width: 1415.0018
+    height: 599

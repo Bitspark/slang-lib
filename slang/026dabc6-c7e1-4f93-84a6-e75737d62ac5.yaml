@@ -103,8 +103,7 @@ meta:
   description: ""
   docUrl: https://bitspark.de/slang/docs/operator/http-get
   tags:
-  - network
-  - http
+  - connectivity
 geometry:
   size:
     width: 455

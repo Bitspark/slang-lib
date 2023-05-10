@@ -2,14 +2,15 @@ package main
 
 import (
 	"fmt"
-	"github.com/Bitspark/slang/pkg/api"
-	"github.com/Bitspark/slang/pkg/storage"
 	"log"
 	"os"
+
+	"github.com/Bitspark/slang/pkg/api"
+	"github.com/Bitspark/slang/pkg/storage"
 )
 
 func runTests(dir string) (int, int, int) {
-	stor := storage.NewStorage(nil).AddLoader(storage.NewFileSystem(dir))
+	stor := storage.NewStorage().AddBackend(storage.NewReadOnlyFileSystem(dir))
 	tb := api.NewTestBench(stor)
 
 	succsTotal := 0

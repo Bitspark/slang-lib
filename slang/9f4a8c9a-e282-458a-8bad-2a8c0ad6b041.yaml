@@ -1,0 +1,185 @@
+id: 9f4a8c9a-e282-458a-8bad-2a8c0ad6b041
+services:
+  main:
+    in:
+      type: stream
+      stream:
+        type: map
+        map:
+          key:
+            type: string
+          measurement:
+            type: string
+          value:
+            type: number
+    out:
+      type: stream
+      stream:
+        type: map
+        map:
+          content:
+            type: string
+          status:
+            type: number
+    geometry:
+      in:
+        position: 0
+      out:
+        position: 0
+operators:
+  convert:
+    operator: d1191456-3583-4eaf-8ec1-e486c3818c60
+    generics:
+      fromType:
+        type: string
+      toType:
+        type: binary
+    geometry:
+      position:
+        x: -309
+        "y": -132
+  convert-2:
+    operator: d1191456-3583-4eaf-8ec1-e486c3818c60
+    generics:
+      fromType:
+        type: binary
+      toType:
+        type: string
+    geometry:
+      position:
+        x: -145
+        "y": 212
+  httpclient:
+    operator: f7f5907d-758b-4892-8a3e-ae86b877b869
+    geometry:
+      position:
+        x: -125
+        "y": 99.5
+  template:
+    operator: 3c39f999-b5c2-490d-aed1-19149d228b04
+    properties:
+      variables:
+      - fieldKey
+      - fieldValue
+      - measurement
+    geometry:
+      position:
+        x: -308
+        "y": -201
+  value:
+    operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
+    properties:
+      value: '{measurement} {fieldKey}={fieldValue}'
+    generics:
+      valueType:
+        type: string
+    geometry:
+      position:
+        x: -387
+        "y": -296
+  value-2:
+    operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
+    properties:
+      value:
+      - key: Authorization
+        values:
+        - Token $Token
+      - key: Content-Type
+        values:
+        - text/plain
+        - charset=utf-8
+      - key: Accept
+        values:
+        - application/json
+    generics:
+      valueType:
+        type: stream
+        stream:
+          type: map
+          map:
+            key:
+              type: string
+            values:
+              type: stream
+              stream:
+                type: string
+    geometry:
+      position:
+        x: -135.5
+        "y": 0
+  value-3:
+    operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
+    properties:
+      value: $URL/api/v2/write?org=$Organization&bucket=$Bucket
+    generics:
+      valueType:
+        type: string
+    geometry:
+      position:
+        x: 30
+        "y": -193
+  value-4:
+    operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
+    properties:
+      value: POST
+    generics:
+      valueType:
+        type: string
+    geometry:
+      position:
+        x: 30
+        "y": -58
+properties:
+  Bucket:
+    type: string
+  Organization:
+    type: string
+  Precision:
+    type: string
+  Token:
+    type: string
+  URL:
+    type: string
+connections:
+  ~.key(:
+  - fieldKey(template
+  ~.measurement(:
+  - measurement(template
+  ~.value(:
+  - (value
+  - fieldValue(template
+  - (value-3
+  convert):
+  - body(httpclient
+  convert-2):
+  - )~.content
+  httpclient)body:
+  - (convert-2
+  httpclient)status:
+  - )~.status
+  template):
+  - (convert
+  value):
+  - content(template
+  value-2)~.key:
+  - headers.~.key(httpclient
+  value-2)~.values.~:
+  - headers.~.values.~(httpclient
+  value-3):
+  - (value-4
+  - (value-2
+  - url(httpclient
+  value-4):
+  - method(httpclient
+meta:
+  name: influxDB write
+  icon: ""
+  shortDescription: "writes key/value to influxDB bucket"
+  description: ""
+  docUrl: ""
+  tags:
+  - connectivity
+geometry:
+  size:
+    width: 1064.5
+    height: 694

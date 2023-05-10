@@ -1,0 +1,84 @@
+id: 4e3538e3-36fe-4fb9-ac27-40af1a74e0a5
+services:
+  main:
+    in:
+      type: string
+    out:
+      type: boolean
+    geometry:
+      in:
+        position: 0
+      out:
+        position: 0
+operators:
+  contains-2:
+    operator: 8a01dfe3-5dcf-4f40-9e54-f5b168148d2a
+    geometry:
+      position:
+        x: 148
+        "y": -253
+  iterate:
+    operator: e58624d4-5568-40d3-8b77-ab792ef620f1
+    generics:
+      inItemType:
+        type: string
+      outItemType:
+        type: boolean
+      stateType:
+        type: string
+    geometry:
+      position:
+        x: -32
+        "y": -329
+  stdliball:
+    operator: be4ec82a-3417-482c-9a49-86dcd1cb0092
+    geometry:
+      position:
+        x: -16
+        "y": -241
+  value:
+    operator: 8b62495a-e482-4a3e-8020-0ab8a350ad2d
+    properties:
+      value: $substrings
+    generics:
+      valueType:
+        type: stream
+        stream:
+          type: string
+    geometry:
+      position:
+        x: 35
+        "y": -424
+properties:
+  substrings:
+    type: stream
+    stream:
+      type: string
+connections:
+  (:
+  - initial(iterate
+  - (value
+  contains-2):
+  - item(iterate.iterator
+  iterate)items.~:
+  - ~(stdliball
+  iterate.iterator)item:
+  - substr(contains-2
+  iterate.iterator)state:
+  - str(contains-2
+  - state(iterate.iterator
+  stdliball):
+  - )
+  value)~:
+  - items.~(iterate
+meta:
+  name: contains all
+  icon: ""
+  shortDescription: "emits true if pushed string contains all defined strings"
+  description: ""
+  docUrl: ""
+  tags: ["string"]
+geometry:
+  size:
+    width: 845.90137
+    height: 346
