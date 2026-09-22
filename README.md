@@ -1,5 +1,3 @@
-[![CircleCI](https://circleci.com/gh/Bitspark/slang-lib/tree/master.svg?style=svg&circle-token=75a0b2707af46a1e9fba88952611759bf30ffa41)](https://circleci.com/gh/Bitspark/slang-lib/tree/master)
-
 # Slang Standard Library
 
 <p align="center">
