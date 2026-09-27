@@ -11,7 +11,7 @@
 
 ## Links
 
-- [TrySlang website](http://tryslang.com)
+- [Slang website](https://slang.bitspark.com/)
 - [Slang daemon repository](https://github.com/Bitspark/slang)
 - [Slang UI repository](https://github.com/Bitspark/slang-ui)
 - [Bitspark website](https://bitspark.de)
